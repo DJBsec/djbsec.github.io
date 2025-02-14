@@ -27,6 +27,17 @@ ninja.data = [{
       
         title: "CyberNews",
       
+      description: "Feb 14, 2025",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/cybernews/";
+        
+      },
+    },{id: "post-cybernews",
+      
+        title: "CyberNews",
+      
       description: "Jan 24, 2025",
       section: "Posts",
       handler: () => {
