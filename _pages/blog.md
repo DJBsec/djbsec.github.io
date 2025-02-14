@@ -1,12 +1,12 @@
 ---
 layout: default
 permalink: /blog/
-title: blog
-nav: false
+title: CyberNews Blog
+nav: true
 nav_order: 1
 pagination:
   enabled: true
-  collection: posts
+  collection: cybernews
   permalink: /page/:num/
   per_page: 5
   sort_field: date
