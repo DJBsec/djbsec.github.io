@@ -1,9 +1,9 @@
 ---
 layout: page
-title: projects
+title: CyberNews
 permalink: /projects/
-description: A growing collection of your cool projects.
-nav: false
+description: Your Daily Cyber News by DJBSEC
+nav: true
 nav_order: 3
 display_categories: [work, fun]
 horizontal: false
