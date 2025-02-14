@@ -15,7 +15,7 @@ images:
 ---
 # Cybersecurity Stories for January 17, 2025
 <audio controls>
-    <source src="https://github.com/DJBsec/cybersecurity/blob/main/headlines/01172025/CyberSecurityStories-01-17-2025.mp3" type="audio/mpeg">
+    <source src="assets/audio/news/CyberSecurityStories-01-17-2025.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
 </audio>
 
