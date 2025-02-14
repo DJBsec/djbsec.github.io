@@ -6,7 +6,7 @@ description: Jan 17, 2025
 tags: CyberNews
 categories: News
 thumbnail: assets/img/cybernews.webp
-featured: true
+featured: false
 images:
   lightbox2: true
   photoswipe: true
@@ -14,10 +14,16 @@ images:
   venobox: true
 ---
 # Cybersecurity Stories for January 17, 2025
-<audio controls>
-    <source src="assets/audio/news/CyberSecurityStories-01-17-2025.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include audio.liquid path="assets/audio/CyberSecurityStories-01-17-2025.mp3" controls=true %}
+    </div>
+</div>
+<div class="caption">
+  Todays stories in audio form
+</div>
+
 
 ## 1. Chinese Hackers Breach U.S. Treasury Department
 Chinese state-sponsored hackers leveraged a vulnerability in software provided by BeyondTrust, a third-party cybersecurity vendor, to gain access to the U.S. Treasury Department's internal systems. Among the compromised systems were those used by Treasury Secretary Janet Yellen. Classified as a "major incident," this breach highlights the ongoing threat posed by supply chain vulnerabilities and foreign cyber espionage. U.S. officials are investigating the incident, emphasizing the need for stricter vendor security protocols and rapid vulnerability patching.
