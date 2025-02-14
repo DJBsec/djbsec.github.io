@@ -3,7 +3,7 @@ layout: page
 title: CyberNews
 permalink: /projects/
 description: Your Daily Cyber News by DJBSEC
-nav: true
+nav: false
 nav_order: 2
 display_categories: [news]
 horizontal: false
