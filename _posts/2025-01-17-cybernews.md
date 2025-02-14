@@ -4,8 +4,8 @@ title: CyberNews
 date: 2025-01-17 06:59:00
 description: Jan 17, 2025
 tags: CyberNews
-categories: sample-posts
-thumbnail: assets/img/9.jpg
+categories: News
+thumbnail: assets/img/cybernews.webp
 images:
   lightbox2: true
   photoswipe: true
@@ -14,7 +14,7 @@ images:
 ---
 # Cybersecurity Stories for January 17, 2025
 <audio controls>
-    <source src="https://github.com/DJBsec/cybersecurity/headlines/01172025/CyberSecurityStories-01-17-2025.mp3" type="audio/mpeg">
+    <source src="https://github.com/DJBsec/cybersecurity/blob/main/headlines/01172025/CyberSecurityStories-01-17-2025.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
 </audio>
 
