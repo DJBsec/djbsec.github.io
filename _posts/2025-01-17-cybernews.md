@@ -6,6 +6,7 @@ description: Jan 17, 2025
 tags: CyberNews
 categories: News
 thumbnail: assets/img/cybernews.webp
+featured: true
 images:
   lightbox2: true
   photoswipe: true
