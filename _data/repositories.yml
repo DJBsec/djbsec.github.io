@@ -1,11 +1,10 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - djbsec
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
+  - djbsec/cybersecurity
   - jekyll/jekyll
   - twbs/bootstrap
   - jquery/jquery
