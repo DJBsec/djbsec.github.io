@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Man...Myth...Legend 
+subtitle:  
 
 profile:
   align: right
