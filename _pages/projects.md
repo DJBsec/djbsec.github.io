@@ -5,7 +5,7 @@ permalink: /projects/
 description: Your Daily Cyber News by DJBSEC
 nav: true
 nav_order: 3
-display_categories: [work, fun]
+display_categories: [news]
 horizontal: false
 ---
 
