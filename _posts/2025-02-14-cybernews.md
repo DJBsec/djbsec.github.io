@@ -14,7 +14,7 @@ images:
   venobox: true
 ---
 
-# Cybersecurity Stories for January 24, 2025
+# Cybersecurity Stories for Feb 24, 2025
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
