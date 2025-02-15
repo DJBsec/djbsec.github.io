@@ -2,10 +2,10 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: DJBSec # the website title (if blank, full name will be used instead)
-first_name: DJBSec
+title: DJBSec, CISSP # the website title (if blank, full name will be used instead)
+first_name: Ben
 middle_name: 
-last_name: 
+last_name: Sherrill, CISSP
 contact_note: >
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   DJBSec is an IT veteran with over 25 years of experience in IT and Cyber Security
