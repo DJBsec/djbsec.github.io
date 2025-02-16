@@ -63,6 +63,17 @@ ninja.data = [{
           window.location.href = "/blog/2025/cybernews/";
         
       },
+    },{id: "post-cybernews",
+      
+        title: "CyberNews",
+      
+      description: "Jan 17, 2025",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/cybernews/";
+        
+      },
     },{id: "post-a-distill-style-blog-post",
       
         title: "a distill-style blog post",
