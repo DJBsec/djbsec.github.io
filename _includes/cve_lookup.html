@@ -18,34 +18,64 @@
 
         let cve = document.getElementById("cve").value;
         let date = document.getElementById("date").value;
+        let resultDiv = document.getElementById("result");
 
         if (!cve || !date) {
             alert("Please enter both a CVE number and a date.");
             return;
         }
 
-        fetch('https://epss.onrender.com/get_epss', {  // Using your actual API URL
+        resultDiv.innerHTML = "Fetching data...";
+
+        fetch('https://epss.onrender.com/get_epss', {  // Using the correct API URL
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ cve: cve, date: date })
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => {
+            console.log("API Response:", data); // Debugging output in console
+
             if (data.error) {
-                document.getElementById("result").innerText = data.error;
+                resultDiv.innerHTML = `<p style="color:red;">Error: ${data.error}</p>`;
             } else {
-                document.getElementById("result").innerHTML = `
+                // Determine color for EPSS Score
+                let epssColor = "black"; // Default color
+                if (data.epss <= 30) {
+                    epssColor = "green";  // Low risk
+                } else if (data.epss > 30 && data.epss <= 75) {
+                    epssColor = "orange"; // Medium risk
+                } else {
+                    epssColor = "red";    // High risk
+                }
+
+                // Determine color for Percentile
+                let percentileColor = "black"; // Default color
+                if (data.percentile <= 30) {
+                    percentileColor = "green";  // Low risk
+                } else if (data.percentile > 30 && data.percentile <= 75) {
+                    percentileColor = "orange"; // Medium risk
+                } else {
+                    percentileColor = "red";    // High risk
+                }
+
+                resultDiv.innerHTML = `
                     <strong>CVE ID:</strong> ${data.cve} <br>
                     <strong>Date:</strong> ${data.date} <br>
-                    <strong>EPSS Score:</strong> ${data.epss}% <br>
-                    <strong>Percentile:</strong> ${data.percentile}% <br>
+                    <strong>EPSS Score:</strong> <span style="color:${epssColor}; font-weight:bold;">${data.epss}%</span> <br>
+                    <strong>Percentile:</strong> <span style="color:${percentileColor}; font-weight:bold;">${data.percentile}%</span> <br>
                     <strong>${data.message}</strong>
                 `;
             }
         })
         .catch(error => {
-            console.error('Error:', error);
-            document.getElementById("result").innerText = "An error occurred while fetching data.";
+            console.error("Error fetching data:", error);
+            resultDiv.innerHTML = `<p style="color:red;">An error occurred: ${error.message}</p>`;
         });
     });
 </script>
