@@ -29,6 +29,9 @@ latest_posts:
 
 Little bit about me - I've been in the IT industry 25 years.  I've done every technical job you can think of from being a helpdesk tech, desktop support, Systems Admin. Sr. Network Admin/Engineer. Over the years I have recieved multiple Cisco and Palo Alto certifications. Over the last 5+ years while continuing all those responsibilities, I've become responsible for building a Cybersecurity Program from the bottom up. In 2024 added to my certifications list by passing the CISSP.  
 
+
+{% include cve_lookup.html %}
+
 <!--Original Page 
 Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 

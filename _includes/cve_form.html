@@ -1,0 +1,46 @@
+<h2>CVE Lookup</h2>
+<form id="cveForm">
+    <label for="cve_number">CVE Number:</label>
+    <input type="text" id="cve_number" placeholder="CVE-YYYY-XXXXX" required>
+    <button type="submit">Get Results</button>
+</form>
+
+<h3>Results:</h3>
+<div id="result"></div>
+
+<script>
+    document.getElementById("cveForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent page reload
+
+        let cve_number = document.getElementById("cve_number").value;
+
+        if (!cve_number) {
+            alert("Please enter a CVE number.");
+            return;
+        }
+
+        fetch('https://epss.onrender.com/get_cve', {  // Use your actual API URL
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ cve_number: cve_number })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                document.getElementById("result").innerText = data.error;
+            } else {
+                document.getElementById("result").innerHTML = `
+                    <strong>CVE ID:</strong> ${data.cve_id} <br>
+                    <strong>Summary:</strong> ${data.summary} <br>
+                    <strong>CVSS v2:</strong> ${data.cvss_v2} <br>
+                    <strong>CVSS v3:</strong> ${data.cvss_v3} <br>
+                    <strong>EPSS:</strong> ${data.epss}% <br>
+                    <strong>Ranking EPSS:</strong> ${data.ranking_epss}% <br>
+                    <strong>Published:</strong> ${data.published_time} <br>
+                    <strong>References:</strong> <ul>${data.references.map(ref => `<li><a href="${ref}" target="_blank">${ref}</a></li>`).join('')}</ul>
+                `;
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    });
+</script>
