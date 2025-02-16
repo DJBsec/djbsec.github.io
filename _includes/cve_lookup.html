@@ -24,7 +24,7 @@
             return;
         }
 
-        fetch('https://epss.onrender.com/get_epss', {  // Use your actual API URL
+        fetch('https://epss.onrender.com/get_epss', {  // Using your actual API URL
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ cve: cve, date: date })
@@ -43,6 +43,9 @@
                 `;
             }
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById("result").innerText = "An error occurred while fetching data.";
+        });
     });
 </script>
