@@ -1,7 +1,11 @@
-<h2>CVE Lookup</h2>
-<form id="cveForm">
-    <label for="cve_number">CVE Number:</label>
-    <input type="text" id="cve_number" placeholder="CVE-YYYY-XXXXX" required>
+<h2>EPSS Lookup</h2>
+<form id="epssForm">
+    <label for="cve">CVE Number:</label>
+    <input type="text" id="cve" placeholder="CVE-YYYY-XXXXX" required>
+
+    <label for="date">Date:</label>
+    <input type="date" id="date" required>
+
     <button type="submit">Get Results</button>
 </form>
 
@@ -9,20 +13,21 @@
 <div id="result"></div>
 
 <script>
-    document.getElementById("cveForm").addEventListener("submit", function(event) {
+    document.getElementById("epssForm").addEventListener("submit", function(event) {
         event.preventDefault(); // Prevent page reload
 
-        let cve_number = document.getElementById("cve_number").value;
+        let cve = document.getElementById("cve").value;
+        let date = document.getElementById("date").value;
 
-        if (!cve_number) {
-            alert("Please enter a CVE number.");
+        if (!cve || !date) {
+            alert("Please enter both a CVE number and a date.");
             return;
         }
 
-        fetch('https://epss.onrender.com/get_cve', {  // Use your actual API URL
+        fetch('https://epss.onrender.com/get_epss', {  // Use your actual API URL
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ cve_number: cve_number })
+            body: JSON.stringify({ cve: cve, date: date })
         })
         .then(response => response.json())
         .then(data => {
@@ -30,14 +35,11 @@
                 document.getElementById("result").innerText = data.error;
             } else {
                 document.getElementById("result").innerHTML = `
-                    <strong>CVE ID:</strong> ${data.cve_id} <br>
-                    <strong>Summary:</strong> ${data.summary} <br>
-                    <strong>CVSS v2:</strong> ${data.cvss_v2} <br>
-                    <strong>CVSS v3:</strong> ${data.cvss_v3} <br>
-                    <strong>EPSS:</strong> ${data.epss}% <br>
-                    <strong>Ranking EPSS:</strong> ${data.ranking_epss}% <br>
-                    <strong>Published:</strong> ${data.published_time} <br>
-                    <strong>References:</strong> <ul>${data.references.map(ref => `<li><a href="${ref}" target="_blank">${ref}</a></li>`).join('')}</ul>
+                    <strong>CVE ID:</strong> ${data.cve} <br>
+                    <strong>Date:</strong> ${data.date} <br>
+                    <strong>EPSS Score:</strong> ${data.epss}% <br>
+                    <strong>Percentile:</strong> ${data.percentile}% <br>
+                    <strong>${data.message}</strong>
                 `;
             }
         })
