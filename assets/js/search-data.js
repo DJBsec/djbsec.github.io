@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
+        },{id: "nav-epss-score",
+          title: "EPSS Score",
+          description: "Find the EPSS Score of any CVE with this quick lookup.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/epss/";
+          },
         },{id: "nav-repositories",
           title: "repositories",
           description: "Edit the `_data/repositories.yml` and change the `github_users` and `github_repos` lists to include your own GitHub profile and repositories.",
