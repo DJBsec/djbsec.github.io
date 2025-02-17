@@ -18,7 +18,7 @@ images:
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include audio.liquid path="assets/audio/news/CyberSecurityStories-02-17-2025.mp3" controls=true %}
+        {% include audio.liquid path="assets/audio/news/CyberSecurityNews-02-17-2025.mp3" controls=true %}
     </div>
 </div>
 <div class="caption">
