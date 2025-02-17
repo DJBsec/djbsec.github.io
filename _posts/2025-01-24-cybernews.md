@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: CyberNews
 date: 2025-01-24
 description: Jan 24, 2025

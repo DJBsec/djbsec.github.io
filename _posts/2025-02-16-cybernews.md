@@ -7,23 +7,19 @@ tags: CyberNews
 categories: News
 thumbnail: assets/img/cybernews.webp
 featured: false
-images:
-  lightbox2: true
-  photoswipe: true
-  spotlight: true
-  venobox: true
 ---
 
 # Cybersecurity News for Feb 16, 2025
 
+<p>
+  Todays stories in audio form
+</p>
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include audio.liquid path="assets/audio/news/CyberSecurityStories-02-16-2025.mp3" controls=true %}
     </div>
 </div>
-<div class="caption">
-  Todays stories in audio form
-</div>
+
 
 ## Story 1: Storm-2372 Conducts Device Code Phishing Campaign
 
