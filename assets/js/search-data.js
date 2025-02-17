@@ -38,7 +38,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2025/cybernews/";
+          window.location.href = "/blog/2025/cybernews0217/";
         
       },
     },{id: "post-cybernews-2-16-25",
@@ -49,7 +49,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2025/cybernews/";
+          window.location.href = "/blog/2025/cybernews0216/";
         
       },
     },{id: "post-cybernews-2-14-25",
@@ -60,7 +60,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2025/cybernews/";
+          window.location.href = "/blog/2025/cybernews0214/";
         
       },
     },{id: "post-cybernews",
@@ -71,7 +71,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2025/cybernews/";
+          window.location.href = "/blog/2025/cybernews0124/";
         
       },
     },{id: "post-a-distill-style-blog-post",
