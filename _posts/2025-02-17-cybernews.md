@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CyberNews 2-17-25
-date: 2025-02-17 06:59:00
+date: 2025-02-17
 description: Feb 17, 2025
 tags: CyberNews
 categories: News
