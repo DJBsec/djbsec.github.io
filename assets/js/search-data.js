@@ -38,6 +38,17 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
+          window.location.href = "/blog/2025/cybernews0218/";
+        
+      },
+    },{id: "post-cybernews-2-17-25",
+      
+        title: "CyberNews 2-17-25",
+      
+      description: "Feb 17, 2025",
+      section: "Posts",
+      handler: () => {
+        
           window.location.href = "/blog/2025/cybernews0217/";
         
       },
