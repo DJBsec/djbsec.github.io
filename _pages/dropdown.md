@@ -1,6 +1,6 @@
 ---
 layout: page
-title: submenus
+title: tools
 nav: true
 nav_order: 8
 dropdown: true
@@ -8,6 +8,9 @@ children:
   - title: books
     permalink: /books/
   - title: divider
-  - title: placeholder
-    permalink: /placeholder/
+  - title: learning
+    permalink: /platforms/
+  - title: divider
+  - title: podcasts
+    permalink: /pocasts/
 ---
