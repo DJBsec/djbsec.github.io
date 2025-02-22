@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
+        },{id: "nav-cybersecurity-books",
+          title: "Cybersecurity Books",
+          description: "List of Cybersercurity Books I recommend",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/books/";
+          },
         },{id: "nav-epss-score",
           title: "EPSS Score",
           description: "Find the EPSS Score of any CVE with this quick lookup.",
@@ -30,7 +37,21 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "post-djbsec-39-s-cybernews-2-21-25",
+        },{id: "dropdown-books",
+              title: "books",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "";
+              },
+            },{id: "dropdown-placeholder",
+              title: "placeholder",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "";
+              },
+            },{id: "post-djbsec-39-s-cybernews-2-21-25",
       
         title: "DJBSEC&#39;s CyberNews 2-21-25",
       
