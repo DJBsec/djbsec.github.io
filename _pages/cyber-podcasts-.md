@@ -11,31 +11,118 @@ nav_order: 2
 
 # Cybersecurity podcasts/twitch/youtube channels:
 ### I will link all these sites once I've got the time
-| Channels                                   | Channels                                     |
-|--------------------------------------------|----------------------------------------------|
-| 2 Cyber Chicks                             | Cyberside Chats                             |
-| 401 Access Denied                          | CyberWire Daily                             |
-| 7 Minute Security                          | Darknet Diaries                             |
-| 8th Layer Insights                         | Defrag This                                 |
-| Absolute AppSec                            | H4unt3d Hacker                              |
-| Adopting Zero Trust                        | Hacker Valley Studio Podcast                |
-| Adventures of Alice and Bob                | Hacking Humans                              |
-| Breaking Down Security                     | Identity at the Center                      |
-| Click Here                                 | InfoSec Live                                |
-| Crypto-Gram Security Podcast               | InfoSec Real                                |
-| Cyber Insecurity                           | Life of a CISO                              |
-| Cyber Security Headlines by the CISO Series | Malicious Life                              |
-| Cyber Security Sauna                       | Naked Security Podcast                      |
-| Cyber Work                                 | Open Source Security Podcast                |
-| Cybersecurity Today by ITWC                | OWASP Podcast                               |
-| Risky Business                             | Security in Five                            |
-| SANS Internet Stormcenter Daily Cyber Podcast (Stormcast) | Security Now                     |
-| Security Weekly                            | Simply Cyber                                |
-| Smashing Security                          | Task Force 7 Cyber Security Radio          |
-| The 443 Security Simplified                | The Cyber Tap (cyberTAP)                    |
-| The Cyberlaw Podcast                       | The Hacker Chronicles Podcast               |
-| The Hacker Mind                            | The Privacy, Security, & OSINT Show         |
-| The Shared Security Show                   | The Shellsharks Podcast                     |
-| The Social-Engineer Podcast                | The Virtual CISO Moment                     |
-| Unsupervised Learning                      | We Talk Cyber                               |
-| What The Shell                             |                                            |
+
+<table>
+  <thead>
+    <tr>
+      <th>Channels</th>
+      <th>Channels</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2 Cyber Chicks</td>
+      <td>Cyberside Chats</td>
+    </tr>
+    <tr>
+      <td>401 Access Denied</td>
+      <td>CyberWire Daily</td>
+    </tr>
+    <tr>
+      <td>7 Minute Security</td>
+      <td>Darknet Diaries</td>
+    </tr>
+    <tr>
+      <td>8th Layer Insights</td>
+      <td>Defrag This</td>
+    </tr>
+    <tr>
+      <td>Absolute AppSec</td>
+      <td>H4unt3d Hacker</td>
+    </tr>
+    <tr>
+      <td>Adopting Zero Trust</td>
+      <td>Hacker Valley Studio Podcast</td>
+    </tr>
+    <tr>
+      <td>Adventures of Alice and Bob</td>
+      <td>Hacking Humans</td>
+    </tr>
+    <tr>
+      <td>Breaking Down Security</td>
+      <td>Identity at the Center</td>
+    </tr>
+    <tr>
+      <td>Click Here</td>
+      <td>InfoSec Live</td>
+    </tr>
+    <tr>
+      <td>Crypto-Gram Security Podcast</td>
+      <td>InfoSec Real</td>
+    </tr>
+    <tr>
+      <td>Cyber Insecurity</td>
+      <td>Life of a CISO</td>
+    </tr>
+    <tr>
+      <td>Cyber Security Headlines by the CISO Series</td>
+      <td>Malicious Life</td>
+    </tr>
+    <tr>
+      <td>Cyber Security Sauna</td>
+      <td>Naked Security Podcast</td>
+    </tr>
+    <tr>
+      <td>Cyber Work</td>
+      <td>Open Source Security Podcast</td>
+    </tr>
+    <tr>
+      <td>Cybersecurity Today by ITWC</td>
+      <td>OWASP Podcast</td>
+    </tr>
+    <tr>
+      <td>Risky Business</td>
+      <td>Security in Five</td>
+    </tr>
+    <tr>
+      <td>SANS Internet Stormcenter Daily Cyber Podcast (Stormcast)</td>
+      <td>Security Now</td>
+    </tr>
+    <tr>
+      <td>Security Weekly</td>
+      <td>Simply Cyber</td>
+    </tr>
+    <tr>
+      <td>Smashing Security</td>
+      <td>Task Force 7 Cyber Security Radio</td>
+    </tr>
+    <tr>
+      <td>The 443 Security Simplified</td>
+      <td>The Cyber Tap (cyberTAP)</td>
+    </tr>
+    <tr>
+      <td>The Cyberlaw Podcast</td>
+      <td>The Hacker Chronicles Podcast</td>
+    </tr>
+    <tr>
+      <td>The Hacker Mind</td>
+      <td>The Privacy, Security, &amp; OSINT Show</td>
+    </tr>
+    <tr>
+      <td>The Shared Security Show</td>
+      <td>The Shellsharks Podcast</td>
+    </tr>
+    <tr>
+      <td>The Social-Engineer Podcast</td>
+      <td>The Virtual CISO Moment</td>
+    </tr>
+    <tr>
+      <td>Unsupervised Learning</td>
+      <td>We Talk Cyber</td>
+    </tr>
+    <tr>
+      <td>What The Shell</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
