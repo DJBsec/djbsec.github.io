@@ -4,7 +4,7 @@ title: Cybersecurity Books
 permalink: /books/
 subtitle:  
 description: List of Cybersercurity Books I recommend
-nav: true
+nav: false
 nav_order: 2
 
 #profile:
