@@ -19,6 +19,7 @@ nav_order: 2
   th, td {
     padding: 10px;
     text-align: left;
+     color:rgb(0, 0, 0); /* Coral color for even rows */
   }
   tr:nth-child(odd) {
     color:rgb(0, 0, 0); /* Coral color for even rows */
