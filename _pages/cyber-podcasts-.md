@@ -9,8 +9,8 @@ nav_order: 2
 ---
 
 
-# Cybersecurity podcasts/twitch/youtube channels:
-### I will link all these sites once I've got the time
+# Cybersecurity podcasts, Twitch & Youtube channels:
+I will link all these sites once I've got the time
 
 <table>
   <thead>
