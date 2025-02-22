@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Cybersecurity Podcasts
-permalink: /pocasts/
+permalink: /podcasts/
 subtitle:  
 description: List of Cybersercurity Podcasts
 nav: false

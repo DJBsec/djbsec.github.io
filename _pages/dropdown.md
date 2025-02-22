@@ -12,8 +12,8 @@ children:
     permalink: /platforms/
   - title: divider
   - title: podcasts
-    permalink: /pocasts/
+    permalink: /podcasts/
   - title: divider
   - title: search engines
-    permalink: /searchengines/
+    permalink: /cybersearch/
 ---

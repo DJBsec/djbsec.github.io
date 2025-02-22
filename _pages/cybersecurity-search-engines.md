@@ -1,3 +1,13 @@
+---
+layout: page
+title: Cybersecurity Search Engines
+permalink: /cybersearch/
+subtitle:  
+description: List of Cybersecurity Search Engines
+nav: false
+nav_order: 2
+---
+
 # Cyber Security Search Engines
 
 * [Binary Edge](https://www.binaryedge.io/) — Scans the internet for threat intelligence.
