@@ -21,7 +21,7 @@ nav_order: 2
     text-align: left;
   }
   tr:nth-child(odd) {
-    color:rgb(255, 255, 255); /* Coral color for even rows */
+    color:rgb(0, 0, 0); /* Coral color for even rows */
     background-color:rgb(7, 191, 232); /* Teal color for odd rows */
   }
   tr:nth-child(even) {
