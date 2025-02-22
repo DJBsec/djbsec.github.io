@@ -10,7 +10,25 @@ nav_order: 2
 
 
 # Cybersecurity podcasts, Twitch & Youtube channels:
-I will link all these sites once I've got the time
+
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  tr:nth-child(odd) {
+    color:rgb(255, 255, 255); /* Coral color for even rows */
+    background-color:rgb(7, 191, 232); /* Teal color for odd rows */
+  }
+  tr:nth-child(even) {
+    color:rgb(255, 255, 255); /* Coral color for even rows */
+    background-color:rgb(141, 140, 140); /* Teal color for odd rows */
+  }
+</style>
 
 <table>
   <thead>
