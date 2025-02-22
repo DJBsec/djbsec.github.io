@@ -22,11 +22,9 @@ nav_order: 2
      color:rgb(0, 0, 0); /* Coral color for even rows */
   }
   tr:nth-child(odd) {
-    color:rgb(0, 0, 0); /* Coral color for even rows */
     background-color:rgb(7, 191, 232); /* Teal color for odd rows */
   }
   tr:nth-child(even) {
-    color:rgb(255, 255, 255); /* Coral color for even rows */
     background-color:rgb(141, 140, 140); /* Teal color for odd rows */
   }
 </style>
