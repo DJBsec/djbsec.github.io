@@ -16,13 +16,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "nav-cybersecurity-books",
-          title: "Cybersecurity Books",
-          description: "List of Cybersercurity Books I recommend",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/books/";
-          },
         },{id: "nav-epss-score",
           title: "EPSS Score",
           description: "Find the EPSS Score of any CVE with this quick lookup.",
