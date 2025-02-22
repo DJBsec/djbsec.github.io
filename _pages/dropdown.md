@@ -13,4 +13,7 @@ children:
   - title: divider
   - title: podcasts
     permalink: /pocasts/
+  - title: divider
+  - title: search engines
+    permalink: /searchengines/
 ---
