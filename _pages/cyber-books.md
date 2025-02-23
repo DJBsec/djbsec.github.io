@@ -1,5 +1,5 @@
 ---
-layout: about
+layout: page
 title: Cybersecurity Books
 permalink: /books/
 subtitle:  
