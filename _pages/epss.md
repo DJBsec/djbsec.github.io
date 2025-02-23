@@ -1,5 +1,5 @@
 ---
-layout: about
+layout: page
 title: EPSS Score
 permalink: /epss/
 subtitle:  
