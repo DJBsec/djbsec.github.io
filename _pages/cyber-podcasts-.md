@@ -8,7 +8,6 @@ nav: false
 nav_order: 2
 ---
 
-
 <style>
   table {
     width: 100%;

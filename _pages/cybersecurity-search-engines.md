@@ -8,7 +8,6 @@ nav: false
 nav_order: 2
 ---
 
-
 * [Binary Edge](https://www.binaryedge.io/) — Scans the internet for threat intelligence.
 * [Censys](https://censys.io/) — Assessing attack surface for internet connected devices.
 * [CRT sh](https://crt.sh/) — Search for certs that have been logged by CT.
