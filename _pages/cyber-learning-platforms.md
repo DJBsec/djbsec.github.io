@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Cyber Learning Platforms
+title: Cybersecurity Learning Platforms
 permalink: /platforms/
 subtitle:  
 description: List of Cybersercurity Learning Platforms
@@ -8,8 +8,6 @@ nav: false
 nav_order: 2
 ---
 
-
-# Cybersecurity Learning Platforms
 
 * [Certified Secure](https://www.certifiedsecure.com/)
 * [CyberSecLabs](https://www.cyberseclabs.co.uk/)

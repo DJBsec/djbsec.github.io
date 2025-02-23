@@ -8,7 +8,6 @@ nav: false
 nav_order: 2
 ---
 
-# Cyber Security Search Engines
 
 * [Binary Edge](https://www.binaryedge.io/) — Scans the internet for threat intelligence.
 * [Censys](https://censys.io/) — Assessing attack surface for internet connected devices.

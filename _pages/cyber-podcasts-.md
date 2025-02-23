@@ -9,8 +9,6 @@ nav_order: 2
 ---
 
 
-## Cybersecurity Podcasts, Twitch & Youtube channels:
-
 <style>
   table {
     width: 100%;
