@@ -60,7 +60,7 @@ ninja.data = [{
               },
             },{id: "post-djbsec-39-s-cybernews-2-24-25",
       
-        title: "DJBSec&#39;s CyberNews 2-24-25",
+        title: "DJBSEC&#39;s CyberNews 2-24-25",
       
       description: "Feb 24, 2025",
       section: "Posts",
