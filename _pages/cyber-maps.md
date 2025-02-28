@@ -9,9 +9,6 @@ nav_order: 5
 ---
 
 
-
-# Cyber Maps - Pew Pew Maps
-
 * [Akamai WebMonitor](https://www.akamai.com/us/en/resources/visualizing-akamai/real-time-web-monitor.jsp)
 * [BitDefender Threatmap](https://threatmap.bitdefender.com/)
 * [Checkpoint ThreatMap](https://threatmap.checkpoint.com/)
