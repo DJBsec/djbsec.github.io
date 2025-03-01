@@ -16,4 +16,7 @@ children:
   - title: divider
   - title: search engines
     permalink: /cybersearch/
+  - title: divider
+  - title: cyber maps
+    permalink: /maps/
 ---
