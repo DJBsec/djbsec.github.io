@@ -58,6 +58,13 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
+            },{id: "dropdown-cyber-maps",
+              title: "cyber maps",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "";
+              },
             },{id: "post-djbsec-39-s-cybernews-2-28-25",
       
         title: "DJBSEC&#39;s CyberNews 2-28-25",
