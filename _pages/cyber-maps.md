@@ -5,7 +5,7 @@ permalink: /maps/
 subtitle:  
 description: List of Cybersercurity Maps
 nav: false
-nav_order: 5
+nav_order: 2
 ---
 
 
