@@ -5,7 +5,7 @@ permalink: /epss/
 subtitle:  
 description: Find the EPSS Score of any CVE with this quick lookup.
 nav: true
-nav_order: 2
+nav_order: 3
 
 #profile:
 #  align: right
