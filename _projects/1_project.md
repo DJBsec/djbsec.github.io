@@ -46,7 +46,7 @@ Scammers use phishing (email scams) and smishing (text message scams) to trick p
 </div>
 
 ### **What’s Wrong?**  
-- These text messages usually an email that is not tied to the Toll Road Authority or a phone number out side of the U.S.
+- These text messages are usually an email that is not tied to the Toll Road Authority or a phone number out side of the U.S.
 - Toll Road authorities will not send text messages about past tolls.
 - Do not click on any links or call any numbers in the message.
 - If you have a toll authority in your area and have questions call their official direct number
