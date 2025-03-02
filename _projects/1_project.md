@@ -41,11 +41,13 @@ Scammers use phishing (email scams) and smishing (text message scams) to trick p
 ---
 
 ## **Example 2: Toll Way Payments (Smishing Text Message)**  
-
-![Smishing Message](assets/img/projects/smishing.jpg)
+<div style="text-align: center;">
+<img src="https://djbsec.github.io/assets/img/projects/smishing.jpg" alt="Description" width="300" height="auto">
+</div>
 
 ### **What’s Wrong?**  
-- Toll Road authorities will not send text messages about past tolls.  
+- These text messages usually an email that is not tied to the Toll Road Authority or a phone number out side of the U.S.
+- Toll Road authorities will not send text messages about past tolls.
 - Do not click on any links or call any numbers in the message.
 - If you have a toll authority in your area and have questions call their official direct number
 
