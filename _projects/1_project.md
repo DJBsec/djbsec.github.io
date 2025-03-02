@@ -16,8 +16,6 @@ Scammers use phishing (email scams) and smishing (text message scams) to trick p
 
 ## **Example 1: Fake Bank Alert (Phishing Email)**  
 
-## **Example 1: Fake Bank Alert (Phishing Email)**  
-
 **From:** <span style="color:blue;">support@yourbank-security.com</span>  
 **Subject:** <span style="color:orange;">Urgent: Unauthorized Login Attempt Detected</span> <span style="color:red;"><-- here we see the Urgency in the message praying on the users emotions </span>
 
