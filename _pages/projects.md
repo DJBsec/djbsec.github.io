@@ -5,7 +5,7 @@ permalink: /projects/
 description: Understanding Cybersecurity by DJBSEC
 nav: true
 nav_order: 2
-display_categories: [phishing][news]
+display_categories: [phishing]
 horizontal: false
 ---
 
