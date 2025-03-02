@@ -239,7 +239,7 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "projects-phishing",
           title: 'Phishing',
-          description: "with background image",
+          description: "what is phishing?",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
             },},{
