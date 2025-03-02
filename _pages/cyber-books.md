@@ -20,7 +20,7 @@ nav_order: 2
 ## Leadership Books
 - [Extreme Ownership by Jocko Willink & Leif Babin](https://a.co/d/9Kf2jbM)
 
-## Story Books with technical Backgrounds 
+## Story Books with Technical Backgrounds 
 *This is the order I would read them in.*
 1. [The Cuckoo's Egg: Tracking a Spy Through the Maze of Computer Espionage](https://a.co/d/gO9putQ)
 2. [This Is How They Tell Me the World Ends: The Cyberweapons Arms Race](https://a.co/d/0gfPwAO)
