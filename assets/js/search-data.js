@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
+        },{id: "nav-cs-explained",
+          title: "CS Explained",
+          description: "Understanding Cybersecurity by DJBSEC",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
         },{id: "nav-epss-score",
           title: "EPSS Score",
           description: "Find the EPSS Score of any CVE with this quick lookup.",
