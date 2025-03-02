@@ -23,13 +23,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/epss/";
           },
-        },{id: "nav-cybersecurity-explained-with-ease",
-          title: "Cybersecurity Explained with Ease",
-          description: "Understanding Cybersecurity by DJBSEC",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/projects/";
-          },
         },{id: "nav-repositories",
           title: "repositories",
           description: "Edit the `_data/repositories.yml` and change the `github_users` and `github_repos` lists to include your own GitHub profile and repositories.",
