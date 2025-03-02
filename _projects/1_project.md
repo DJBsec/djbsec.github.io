@@ -42,7 +42,7 @@ Scammers use phishing (email scams) and smishing (text message scams) to trick p
 
 ## **Example 2: Toll Way Payments (Smishing Text Message)**  
 
-![Smishing Message](./assets/img/projects/smishing.jpg)
+![Smishing Message](assets/img/projects/smishing.jpg)
 
 ### **What’s Wrong?**  
 - Toll Road authorities will not send text messages about past tolls.  
