@@ -1,11 +1,11 @@
 ---
 layout: page
-title: CyberNews
+title: Cybersecurity Explained with Ease
 permalink: /projects/
-description: Your Daily Cyber News by DJBSEC
-nav: false
+description: Understanding Cybersecurity by DJBSEC
+nav: true
 nav_order: 2
-display_categories: [news]
+display_categories: [phishing]
 horizontal: false
 ---
 

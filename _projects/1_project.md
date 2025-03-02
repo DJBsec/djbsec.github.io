@@ -1,81 +1,85 @@
 ---
 layout: page
-title: project 1
+title: Phishing
 description: with background image
-img: assets/img/12.jpg
+img: assets/img/projects/phishing.webp
 #importance: 1
-category: news
+category: phishing
 related_publications: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+# **Examples of Phishing and Smishing**  
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+Scammers use phishing (email scams) and smishing (text message scams) to trick people into giving up their personal information. Here are some examples so you can spot the tricks before falling for them.  
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+---
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+## **Example 1: Fake Bank Alert (Phishing Email)**  
 
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+**From:** support@yourbank-security.com  
+**Subject:** Urgent: Unauthorized Login Attempt Detected  
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+**Message:**  
+> Dear Customer,  
+>  
+> We have detected an unauthorized login attempt on your account. To secure your account, please verify your identity immediately by clicking the link below:  
+>  
+> [Verify Your Account](http://secure-yourbanklogin.com)  
+>  
+> Failure to verify within 24 hours will result in account suspension.  
+>  
+> Thank you,  
+> Your Bank Security Team  
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+### **What’s Wrong?**  
+- The sender's email isn’t from the bank’s real domain.  
+- Banks **never** ask you to click links in emails to verify accounts.  
+- The link leads to a fake website that steals your login details.  
 
-{% raw %}
+---
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+## **Example 2: Delivery Scam (Smishing Text Message)**  
 
-{% endraw %}
+**From:** +1 (456) 789-1234  
+**Message:**  
+> [UPS ALERT] Your package is delayed. Confirm your delivery details here: [bit.ly/fakeUPSlink]  
+
+### **What’s Wrong?**  
+- Real delivery companies don’t send links via random phone numbers.  
+- Clicking the link could install malware or steal personal data.  
+- If you didn’t order anything, there’s no package to track!  
+
+---
+
+## **Example 3: Tech Support Scam (Phishing Email)**  
+
+**From:** Microsoft Support <security@microsofthelp.com>  
+**Subject:** Your Computer is Infected!  
+
+**Message:**  
+> Our system has detected a virus on your Windows device. Your files may be at risk. Call our certified support team immediately at **1-800-FAKE-NUMBER** to remove the virus for free.  
+
+### **What’s Wrong?**  
+- Microsoft doesn’t send out virus alerts this way.  
+- They never ask you to call a phone number for help.  
+- Calling the number may lead to someone asking for payment or remote access to your computer.  
+
+---
+
+## **Example 4: Fake Friend in Trouble (Smishing Text Message)**  
+
+**From:** +1 (321) 654-9876  
+**Message:**  
+> Hey, it’s me! I lost my phone and I’m borrowing a friend’s. Can you send me $200 via Zelle? I’ll pay you back later.  
+
+### **What’s Wrong?**  
+- The sender is pretending to be someone you know.  
+- They’re pressuring you to send money quickly.  
+- Always confirm with the real person using another method before sending money.  
+
+---
+
+## **How to Protect Yourself**  
+If you get an email or text like these, **STOP and THINK** before clicking anything. Scammers try to create urgency so you act without questioning. Always verify through official websites or contact the real company/person directly.  
+
+By recognizing these scams, you can avoid falling for them!
