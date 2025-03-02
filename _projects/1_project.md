@@ -15,7 +15,7 @@ Scammers use phishing (email scams) and smishing (text message scams) to trick p
 
 ---
 
-## **Example 1: Fake Bank Alert (Phishing Email)**  
+### **Example 1: Fake Bank Alert (Phishing Email)**  
 
 **From:** <span style="color:blue;">support@yourbank-security.com</span>  
 **Subject:** <span style="color:orange;">Urgent: Unauthorized Login Attempt Detected</span> <span style="color:red;"><-- here we see the Urgency in the message praying on the users emotions </span>
@@ -41,7 +41,7 @@ Scammers use phishing (email scams) and smishing (text message scams) to trick p
 
 ---
 
-## **Example 2: Toll Way Payments (Smishing Text Message)**  
+### **Example 2: Toll Way Payments (Smishing Text Message)**  
 <div style="text-align: center;">
 <img src="https://djbsec.github.io/assets/img/projects/smishing.jpg" alt="Description" width="300" height="auto">
 </div>
@@ -52,7 +52,7 @@ Scammers use phishing (email scams) and smishing (text message scams) to trick p
 - Do not click on any links or call any numbers in the message.
 - If you have a toll authority in your area and have questions call their official direct number
 
-## **Example 3: Delivery Scam (Smishing Text Message)** 
+### **Example 3: Delivery Scam (Smishing Text Message)** 
 
 **From:** +1 (456) 789-1234  
 **Message:**  
@@ -64,7 +64,7 @@ Scammers use phishing (email scams) and smishing (text message scams) to trick p
 - If you didn’t order anything, there’s no package to track!  
 
 ---
-## **Example 4: Fake Friend in Trouble (Smishing Text Message)**  
+### **Example 4: Fake Friend in Trouble (Smishing Text Message)**  
 
 **From:** +1 (321) 654-9876  
 **Message:**  
