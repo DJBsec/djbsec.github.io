@@ -40,7 +40,16 @@ Scammers use phishing (email scams) and smishing (text message scams) to trick p
 
 ---
 
-## **Example 2: Delivery Scam (Smishing Text Message)**  
+## **Example 2: Toll Way Payments (Smishing Text Message)**  
+
+![Smishing Message](./assets/img/projects/smishing.jpg)
+
+### **What’s Wrong?**  
+- Toll Road authorities will not send text messages about past tolls.  
+- Do not click on any links or call any numbers in the message.
+- If you have a toll authority in your area and have questions call their official direct number
+
+## **Example 3: Delivery Scam (Smishing Text Message)** 
 
 **From:** +1 (456) 789-1234  
 **Message:**  
@@ -52,7 +61,7 @@ Scammers use phishing (email scams) and smishing (text message scams) to trick p
 - If you didn’t order anything, there’s no package to track!  
 
 ---
-## **Example 3: Fake Friend in Trouble (Smishing Text Message)**  
+## **Example 4: Fake Friend in Trouble (Smishing Text Message)**  
 
 **From:** +1 (321) 654-9876  
 **Message:**  
