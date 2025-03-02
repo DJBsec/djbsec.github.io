@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Phishing
-description: with background image
+description: what is phishing?
 img: assets/img/projects/phishing.webp
 #importance: 1
 category: phishing
@@ -16,20 +16,24 @@ Scammers use phishing (email scams) and smishing (text message scams) to trick p
 
 ## **Example 1: Fake Bank Alert (Phishing Email)**  
 
-**From:** support@yourbank-security.com  
-**Subject:** Urgent: Unauthorized Login Attempt Detected  
+## **Example 1: Fake Bank Alert (Phishing Email)**  
+
+**From:** <span style="color:blue;">support@yourbank-security.com</span>  
+**Subject:** <span style="color:orange;">Urgent: Unauthorized Login Attempt Detected</span> <span style="color:red;"><-- here we see the Urgency in the message praying on the users emotions </span>
 
 **Message:**  
+
 > Dear Customer,  
 >  
 > We have detected an unauthorized login attempt on your account. To secure your account, please verify your identity immediately by clicking the link below:  
 >  
-> [Verify Your Account](http://secure-yourbanklogin.com)  
+> [<span style="color:orange;">Verify Your Account</span>](http://secure-yourbanklogin.com)  <span style="color:red;">When hovering over this link you find that this link leads to  http://secure-yourbanklogin.com</span>
 >  
 > Failure to verify within 24 hours will result in account suspension.  
 >  
 > Thank you,  
 > Your Bank Security Team  
+
 
 ### **What’s Wrong?**  
 - The sender's email isn’t from the bank’s real domain.  
@@ -50,23 +54,7 @@ Scammers use phishing (email scams) and smishing (text message scams) to trick p
 - If you didn’t order anything, there’s no package to track!  
 
 ---
-
-## **Example 3: Tech Support Scam (Phishing Email)**  
-
-**From:** Microsoft Support <security@microsofthelp.com>  
-**Subject:** Your Computer is Infected!  
-
-**Message:**  
-> Our system has detected a virus on your Windows device. Your files may be at risk. Call our certified support team immediately at **1-800-FAKE-NUMBER** to remove the virus for free.  
-
-### **What’s Wrong?**  
-- Microsoft doesn’t send out virus alerts this way.  
-- They never ask you to call a phone number for help.  
-- Calling the number may lead to someone asking for payment or remote access to your computer.  
-
----
-
-## **Example 4: Fake Friend in Trouble (Smishing Text Message)**  
+## **Example 3: Fake Friend in Trouble (Smishing Text Message)**  
 
 **From:** +1 (321) 654-9876  
 **Message:**  
