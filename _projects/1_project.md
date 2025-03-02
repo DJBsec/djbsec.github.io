@@ -8,9 +8,10 @@ category: phishing
 related_publications: true
 ---
 
-# **Examples of Phishing and Smishing**  
-
+## **Examples of Phishing and Smishing**  
+<p style="font-size: 1.2em; "><i>
 Scammers use phishing (email scams) and smishing (text message scams) to trick people into giving up their personal information. Here are some examples so you can spot the tricks before falling for them.  
+</i></p>
 
 ---
 
