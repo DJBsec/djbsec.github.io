@@ -9,6 +9,10 @@ display_categories: [phishing]
 horizontal: false
 ---
 
+<p style="font-size: 18px; color: orange;">
+Here, you'll find projects designed to break down complex cybersecurity topics into simple, easy-to-understand explanations. Our goal is to make cybersecurity accessible to everyone—no technical background required!
+</p>
+
 <!-- pages/projects.md -->
 <div class="projects">
 {% if site.enable_project_categories and page.display_categories %}
