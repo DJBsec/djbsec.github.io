@@ -44,7 +44,7 @@ Scammers use phishing (email scams) and smishing (text message scams) to trick p
 
 ### **Example 2: Toll Way Payments (Smishing Text Message)**  
 <div style="text-align: center;">
-<img src="https://djbsec.github.io/assets/img/projects/smishing.jpg" alt="Description" width="300" height="auto">
+<a href="https://djbsec.github.io/assets/img/projects/smishing.jpg" target="_new"><img src="https://djbsec.github.io/assets/img/projects/smishing.jpg" alt="Real Text Message" width="300" height="auto"></a>
 </div>
 
 ### **What’s Wrong?**  
