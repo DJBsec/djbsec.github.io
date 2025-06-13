@@ -1,0 +1,32 @@
+name: AbuseIPDB IP Cache Updater
+
+on:
+  workflow_dispatch:
+    inputs:
+      ip:
+        description: 'IP Address to check'
+        required: true
+
+jobs:
+  update-ip-cache:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Query AbuseIPDB
+        run: |
+          mkdir -p assets/data/ipcache
+          curl -s "https://api.abuseipdb.com/api/v2/check?ipAddress=${{ github.event.inputs.ip }}&maxAgeInDays=90" \
+            -H "Key: ${{ secrets.ABUSEIPDB_API_KEY }}" \
+            -H "Accept: application/json" \
+            -o "assets/data/ipcache/${{ github.event.inputs.ip }}.json"
+
+      - name: Commit cache
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add assets/data/ipcache/
+          git commit -m "Update cache for ${{ github.event.inputs.ip }}" || echo "No changes"
+          git push
