@@ -10,9 +10,9 @@ children:
     children:
       - title: Search Engines
         permalink: /cybersearch/
-      - title: divider
       - title: cyber maps
         permalink: /maps/
+  - title: divider
   - title: Red Team
     permalink: /red-team/
   - title: divider
