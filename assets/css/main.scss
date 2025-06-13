@@ -23,3 +23,26 @@ $max-content-width: {{ site.max_width }};
   "tabler-icons/tabler-icons-filled.scss",
   "tabler-icons/tabler-icons-outline.scss"
 ;
+// ---------------------------------------------
+// Custom Styles for Nested Dropdowns
+// ---------------------------------------------
+
+.dropdown-submenu {
+  position: relative;
+
+  .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+    display: none;
+  }
+
+  &:hover > .dropdown-menu {
+    display: block;
+  }
+
+  > a::after {
+    content: " ▸";
+    float: right;
+  }
+}
