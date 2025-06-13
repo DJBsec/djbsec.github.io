@@ -72,20 +72,6 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "dropdown-search-engines",
-              title: "search engines",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "";
-              },
-            },{id: "dropdown-cyber-maps",
-              title: "cyber maps",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "";
-              },
             },{id: "post-djbsec-39-s-cybernews-3-25-25",
       
         title: "DJBSEC&#39;s CyberNews 3-25-25",
