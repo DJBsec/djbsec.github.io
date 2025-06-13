@@ -11,7 +11,7 @@ children:
       - title: IP Checker
         permalink: tools/ip-reputation/
       - title: Place Holder
-        permalink: tools/ip-reputation/
+        permalink: tools/
       - title: Search Engines
         permalink: /cybersearch/
       - title: cyber maps
