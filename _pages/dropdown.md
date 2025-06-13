@@ -7,6 +7,12 @@ dropdown: true
 children:
   - title: Blue Team
     permalink: /blue-team/
+    children:
+      - title: Search Engines
+        permalink: /cybersearch/
+      - title: divider
+      - title: cyber maps
+        permalink: /maps/
   - title: Red Team
     permalink: /red-team/
   - title: divider
@@ -18,10 +24,5 @@ children:
   - title: divider
   - title: podcasts
     permalink: /podcasts/
-  - title: divider
-  - title: search engines
-    permalink: /cybersearch/
-  - title: divider
-  - title: cyber maps
-    permalink: /maps/
+ 
 ---
