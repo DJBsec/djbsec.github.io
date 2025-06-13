@@ -2,22 +2,16 @@
 layout: page
 title: IP Reputation Checker
 permalink: /tools/ip-reputation/
+nav: false
 ---
 
 ## 🔐 Secure IP Reputation Checker
 
-Enter an IP you've previously submitted to check its abuse report:
+Enter an IP you've previously submitted via GitHub Actions:
 
-```liquid
-{% assign ip = '1.2.3.4' %}
-{% assign data = site.data.ipcache[ip] %}
+<input type="text" id="ipInput" placeholder="e.g. 1.2.3.4" />
+<button onclick="lookupIP()">Check</button>
 
-{% if data %}
-✅ **IP:** {{ data.data.ipAddress }}  
-🌍 **Country:** {{ data.data.countryCode }}  
-🛡️ **Abuse Score:** {{ data.data.abuseConfidenceScore }}  
-🕒 **Last Reported:** {{ data.data.lastReportedAt }}  
-🔗 [View on AbuseIPDB](https://www.abuseipdb.com/check/{{ ip }})
-{% else %}
-❌ No cached data found. Use the button below to query it via GitHub Actions.
-{% endif %}
+<pre id="ipResult" style="margin-top: 1rem; background: #111; color: #0f0; padding: 1rem;"></pre>
+
+<script src="/assets/js/ip-cache-reader.js"></script>

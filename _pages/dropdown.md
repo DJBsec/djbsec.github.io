@@ -8,6 +8,8 @@ children:
   - title: Blue Team
     permalink: /blue-team/
     children:
+      - title: IP Checker
+        permalink: tools/ip-reputation/
       - title: Search Engines
         permalink: /cybersearch/
       - title: cyber maps
