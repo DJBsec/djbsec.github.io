@@ -2,16 +2,22 @@
 layout: page
 title: IP Reputation Checker
 permalink: /tools/ip-reputation/
-nav: false
 ---
 
-## 🔍 IP Reputation Checker
+## 🔐 Secure IP Reputation Checker
 
-Enter an IP address below to check if it’s been reported for malicious activity using AbuseIPDB.
+Enter an IP you've previously submitted to check its abuse report:
 
-<input type="text" id="ipInput" placeholder="Enter IP address" />
-<button onclick="checkIP()">Check</button>
+```liquid
+{% assign ip = '1.2.3.4' %}
+{% assign data = site.data.ipcache[ip] %}
 
-<pre id="resultBox" style="margin-top: 1rem; background: #111; color: #0f0; padding: 1rem;"></pre>
-
-<script src="/assets/js/ip-checker.js"></script>
+{% if data %}
+✅ **IP:** {{ data.data.ipAddress }}  
+🌍 **Country:** {{ data.data.countryCode }}  
+🛡️ **Abuse Score:** {{ data.data.abuseConfidenceScore }}  
+🕒 **Last Reported:** {{ data.data.lastReportedAt }}  
+🔗 [View on AbuseIPDB](https://www.abuseipdb.com/check/{{ ip }})
+{% else %}
+❌ No cached data found. Use the button below to query it via GitHub Actions.
+{% endif %}
