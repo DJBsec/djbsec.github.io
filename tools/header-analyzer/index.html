@@ -47,6 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "permissions-policy"
       ];
 
+      const suggestions = [];
+
       importantHeaders.forEach(key => {
         const value = data.headers[key];
         const link = headerLinks[key];
@@ -54,8 +56,40 @@ document.addEventListener("DOMContentLoaded", function () {
           output.innerHTML += `<div class="header-pass">🟢 <strong><a href="${link}" target="_blank" style="color:#0f0">${key}</a></strong>: ${value}</div>`;
         } else {
           output.innerHTML += `<div class="header-fail">🔴 <strong><a href="${link}" target="_blank" style="color:#f55">${key}</a></strong>: Not Set</div>`;
+
+          // Suggestion logic
+          switch (key) {
+            case "strict-transport-security":
+              suggestions.push("🔒 Add `Strict-Transport-Security` to enforce HTTPS connections.");
+              break;
+            case "content-security-policy":
+              suggestions.push("🧱 Add `Content-Security-Policy` to prevent XSS and injection attacks.");
+              break;
+            case "x-frame-options":
+              suggestions.push("🖼️ Add `X-Frame-Options` to prevent clickjacking.");
+              break;
+            case "x-content-type-options":
+              suggestions.push("🧪 Add `X-Content-Type-Options` to block MIME-type sniffing.");
+              break;
+            case "referrer-policy":
+              suggestions.push("🔍 Add `Referrer-Policy` to limit referer info leaks.");
+              break;
+            case "permissions-policy":
+              suggestions.push("📱 Add `Permissions-Policy` to restrict features like camera, mic, geolocation.");
+              break;
+          }
         }
       });
+
+      // Add suggestions block
+      if (suggestions.length > 0) {
+        output.innerHTML += `<h3 style="margin-top: 2rem;">⚠️ Suggested Improvements</h3>`;
+        suggestions.forEach(s => {
+          output.innerHTML += `<div class="header-fail">${s}</div>`;
+        });
+      } else {
+        output.innerHTML += `<h3 style="margin-top: 2rem; color:#0f0;">✅ All key headers are set! Great job!</h3>`;
+      }
 
     } catch (err) {
       spinner.style.display = "none";
