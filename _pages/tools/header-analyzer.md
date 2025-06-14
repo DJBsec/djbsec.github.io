@@ -7,10 +7,12 @@ nav: false
 
 ## 🛡️ HTTP Header Security Analyzer
 
-<input type="text" id="urlInput" placeholder="https://example.com" style="width: 100%; max-width: 500px;" />
-<button id="checkButton">Check</button>
+<p>
+  <input type="text" id="urlInput" placeholder="https://example.com" style="width: 100%; max-width: 500px;" />
+  <button id="checkButton">Check</button>
+</p>
 
-<pre id="headerResults" style="margin-top: 1rem; background: #111; color: #0f0; padding: 1rem;"></pre>
+<pre id="headerResults" style="margin-top: 1rem; background: #111; color: #0f0; padding: 1rem;">Output will appear here...</pre>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -18,8 +20,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const input = document.getElementById("urlInput");
   const output = document.getElementById("headerResults");
 
+  if (!button || !input || !output) {
+    console.error("❌ One or more DOM elements not found:", { button, input, output });
+    return;
+  }
+
   button.addEventListener("click", async () => {
     const url = input.value.trim();
+
     if (!url.startsWith("https://")) {
       output.textContent = "❌ Please enter a valid HTTPS URL.";
       return;
