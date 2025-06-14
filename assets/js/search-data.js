@@ -37,6 +37,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
+        },{id: "nav-blue-team-tools",
+          title: "Blue Team Tools",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blue-team/";
+          },
         },{id: "dropdown-blue-team",
               title: "Blue Team",
               description: "",
