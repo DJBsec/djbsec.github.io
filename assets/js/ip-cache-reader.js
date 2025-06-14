@@ -1,21 +1,23 @@
-async function lookupIP() {
-  const ip = document.getElementById("ipInput").value.trim();
-  const resultBox = document.getElementById("ipResult");
-  resultBox.textContent = "🔎 Checking...";
+document.addEventListener("DOMContentLoaded", function () {
+  window.lookupIP = async function () {
+    const ip = document.getElementById("ipInput").value.trim();
+    const resultBox = document.getElementById("ipResult");
+    resultBox.textContent = "🔎 Checking...";
 
-  if (!/^(\d{1,3}\.){3}\d{1,3}$/.test(ip)) {
-    resultBox.textContent = "❌ Invalid IP format.";
-    return;
-  }
+    // Validate IPv4 address format
+    if (!/^(\d{1,3}\.){3}\d{1,3}$/.test(ip)) {
+      resultBox.textContent = "❌ Invalid IP format.";
+      return;
+    }
 
-  try {
-    const res = await fetch(`/assets/data/ipcache/${ip}.json`);
-    if (!res.ok) throw new Error("Not found");
+    try {
+      const res = await fetch(`/assets/data/ipcache/${ip}.json`);
+      if (!res.ok) throw new Error("Not found");
 
-    const data = await res.json();
-    const d = data.data;
+      const data = await res.json();
+      const d = data.data;
 
-    resultBox.textContent = `
+      resultBox.textContent = `
 ✅ IP: ${d.ipAddress}
 🌍 Country: ${d.countryCode}
 🏷️ ISP: ${d.isp}
@@ -23,8 +25,9 @@ async function lookupIP() {
 🛡️ Abuse Score: ${d.abuseConfidenceScore}
 📊 Total Reports: ${d.totalReports}
 🔗 https://www.abuseipdb.com/check/${ip}
-    `.trim();
-  } catch (e) {
-    resultBox.textContent = `❌ No cached data found for ${ip}. Use GitHub Actions to query it securely.`;
-  }
-}
+      `.trim();
+    } catch (e) {
+      resultBox.textContent = `❌ No cached data found for ${ip}. Use GitHub Actions to query it securely.`;
+    }
+  };
+});
