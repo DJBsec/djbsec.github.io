@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Blue Team Tools
+title: Blue Team
 permalink: /blue-team/
 nav: true
 nav_order: 5
@@ -21,30 +21,47 @@ This page provides a curated set of **Blue Team tools** to support these defensi
 
 ## 🔵 Blue Team Toolset
 
-These tools are designed to help defenders identify, analyze, and mitigate threats. Click to launch:
+<table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+  <thead>
+    <tr style="background-color: #333; color: white;">
+      <th style="padding: 0.5rem;">🔧 Tool</th>
+      <th style="padding: 0.5rem;">📝 Description</th>
+      <th style="padding: 0.5rem;">🚀 Launch</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr style="border-bottom: 1px solid #ccc;">
+      <td style="padding: 0.5rem;">🔍 Header Security Analyzer</td>
+      <td style="padding: 0.5rem;">Inspect HTTP security headers to detect missing protections</td>
+      <td style="padding: 0.5rem;"><a href="/tools/header-analyzer/" target="_blank">Launch Tool</a></td>
+    </tr>
+
+    <tr style="border-bottom: 1px solid #ccc;">
+      <td style="padding: 0.5rem;">🧭 Search Engines</td>
+      <td style="padding: 0.5rem;">Quick access to OSINT and cyber-focused search tools</td>
+      <td style="padding: 0.5rem;"><a href="/cybersearch/" target="_blank">Open</a></td>
+    </tr>
+
+    <tr style="border-bottom: 1px solid #ccc;">
+      <td style="padding: 0.5rem;">🗺️ Cyber Maps</td>
+      <td style="padding: 0.5rem;">Visualize threat activity and global attack telemetry</td>
+      <td style="padding: 0.5rem;"><a href="/maps/" target="_blank">Open</a></td>
+    </tr>
+
+    <!-- Uncomment when ready to launch -->
+    <!--
+    <tr style="border-bottom: 1px solid #ccc;">
+      <td style="padding: 0.5rem;">📡 IP Reputation Checker</td>
+      <td style="padding: 0.5rem;">Query suspicious IPs against AbuseIPDB / VirusTotal</td>
+      <td style="padding: 0.5rem;"><a href="/tools/ip-reputation/" target="_blank">Launch</a></td>
+    </tr>
+    -->
+
+  </tbody>
+</table>
 
 ---
 
-### 🔍 Header Security Analyzer  
-Inspect a website’s HTTP response headers for security misconfigurations  
-👉 [Launch Header Analyzer](/tools/header-analyzer/)
-
----
-
-### 🔍 Search Engines  
-👉 [Search Engines](/cybersearch/)
-### 🗺️ Cyber Maps
-👉 [Cyber Maps](/maps/)
-
----
-
-<!--
-### 📡 IP Reputation Checker  
-Check if an IP address is flagged for abuse, scanning, or malicious activity  
-👉 [Launch IP Reputation Checker](/tools/ip-reputation/)
--->
----
-
-### 🔜 More Tools Coming Soon  
-<!-- Have an idea for a new Blue Team tool? [Submit a feature request](mailto:you@example.com)
--->
+### 🛠️ More Tools Coming Soon  
+We're actively developing new tools to help defenders — stay tuned!
