@@ -5,18 +5,6 @@ nav: true
 nav_order: 8
 dropdown: true
 children:
-  - title: Blue Team
-    permalink: /blue-team/
-    children:
-      - title: Header Analyzer
-        permalink: tools/header-analyzer/
-      - title: Place Holder
-        permalink: tools/
-      - title: Search Engines
-        permalink: /cybersearch/
-      - title: cyber maps
-        permalink: /maps/
-  - title: divider
   - title: Red Team
     permalink: /red-team/
   - title: divider

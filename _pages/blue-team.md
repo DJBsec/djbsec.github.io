@@ -30,6 +30,14 @@ Inspect a website’s HTTP response headers for security misconfigurations
 👉 [Launch Header Analyzer](/tools/header-analyzer/)
 
 ---
+
+### 🔍 Search Engines  
+👉 [Search Engines](/cybersearch/)
+### 🗺️ Cyber Maps
+👉 [Cyber Maps](/maps/)
+
+---
+
 <!--
 ### 📡 IP Reputation Checker  
 Check if an IP address is flagged for abuse, scanning, or malicious activity  
