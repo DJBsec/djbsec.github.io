@@ -7,30 +7,56 @@ nav: false
 
 ## 🛡️ HTTP Header Security Analyzer
 
-Enter a secure URL (must be HTTPS):
+Enter a **secure website URL** (HTTPS only):
 
-<input type="text" id="urlInput" placeholder="https://example.com" style="width: 100%; max-width: 400px;" />
+<input type="text" id="urlInput" placeholder="https://example.com" style="width: 100%; max-width: 500px;" />
 <button onclick="checkHeaders()">Check</button>
 
-<div id="headerResults" style="margin-top: 1.5rem; padding: 1rem; background: #111; color: #0f0;"></div>
+<pre id="headerResults" style="margin-top: 1rem; background: #111; color: #0f0; padding: 1rem;"></pre>
 
 <script>
 async function checkHeaders() {
   const url = document.getElementById("urlInput").value.trim();
   const output = document.getElementById("headerResults");
-  output.textContent = "⏳ Fetching headers...";
+
+  if (!url.startsWith("https://")) {
+    output.textContent = "❌ Please enter a valid HTTPS URL.";
+    return;
+  }
+
+  output.textContent = "⏳ Checking headers...";
 
   try {
-    const response = await fetch(url, { method: 'HEAD', mode: 'no-cors' });
-    // The response will not expose headers in 'no-cors' mode, so we fake demo here
-    output.innerHTML = `
-⚠️ Most headers cannot be read due to browser CORS restrictions.<br><br>
-This tool must be run through a proxy or backend to access full headers from third-party domains.
+    const encodedURL = encodeURIComponent(url);
+    const res = await fetch(`https://header-proxy.onrender.com/headers?url=${encodedURL}`);
+    const data = await res.json();
 
-✅ You can try scanning your own domain by setting up a secure proxy.
-    `;
-  } catch (error) {
-    output.textContent = "❌ Error fetching headers: " + error.message;
+    if (data.error) {
+      output.textContent = `❌ Error: ${data.error}`;
+      return;
+    }
+
+    const importantHeaders = [
+      "strict-transport-security",
+      "content-security-policy",
+      "x-frame-options",
+      "x-content-type-options",
+      "referrer-policy",
+      "permissions-policy"
+    ];
+
+    let results = "📦 Security Headers:\n\n";
+    for (const key of importantHeaders) {
+      if (data.headers[key]) {
+        results += `✅ ${key}: ${data.headers[key]}\n`;
+      } else {
+        results += `❌ ${key}: Not Set\n`;
+      }
+    }
+
+    output.textContent = results;
+  } catch (err) {
+    output.textContent = `❌ Failed to check headers: ${err.message}`;
   }
 }
 </script>
