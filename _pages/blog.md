@@ -1,7 +1,7 @@
 ---
 layout: default
 permalink: /blog/
-title: CyberNews Blog
+title: CyberNews
 nav: true
 nav_order: 1
 pagination:

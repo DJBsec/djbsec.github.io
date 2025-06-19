@@ -1,6 +1,6 @@
 ---
 layout: page
-title: EPSS Score
+title: EPSS
 permalink: /epss/
 subtitle:  
 description: Find the EPSS Score of any CVE with this quick lookup.
