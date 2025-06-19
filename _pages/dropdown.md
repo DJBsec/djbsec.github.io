@@ -5,8 +5,6 @@ nav: true
 nav_order: 8
 dropdown: true
 children:
-  - title: Red Team
-    permalink: /red-team/
   - title: divider
   - title: books
     permalink: /books/
