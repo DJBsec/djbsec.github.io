@@ -41,9 +41,11 @@ This page will serve as a launchpad for **Red Team tools**, attack simulations, 
 </table>
 
 ---
-
+<!--
 ### 🧪 Want to Help Build Red Team Tools?
 
 We’re actively working on adding more offensive tools. Have an idea for something that should live here?
 
+
 👉 [Submit a feature request](mailto:you@example.com)
+-->

@@ -138,3 +138,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
+---
+
+<p style="margin-top: 2rem;">
+  🔙 <a href="/blue-team/">Back to Blue Team Tools</a>
+</p>

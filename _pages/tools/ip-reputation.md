@@ -40,3 +40,8 @@ Enter any IP address:
     }
   }
 </script>
+---
+
+<p style="margin-top: 2rem;">
+  🔙 <a href="/blue-team/">Back to Blue Team Tools</a>
+</p>
