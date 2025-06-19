@@ -44,14 +44,14 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blue-team/";
           },
-        },{id: "dropdown-red-team",
-              title: "Red Team",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "";
-              },
-            },{id: "dropdown-books",
+        },{id: "nav-red-team",
+          title: "Red Team",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/red-team/";
+          },
+        },{id: "dropdown-books",
               title: "books",
               description: "",
               section: "Dropdown",
