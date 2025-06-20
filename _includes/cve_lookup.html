@@ -1,83 +1,89 @@
-
-<p>EPSS is a daily estimate of the probability of exploitation activity being observed over the next 30 days. This page uses an API to connect to the <a href="https://www.first.org/epss/">EPSS scores</a> from the EPSS website. Scores will be shown for CVE's that are located in the EPSS Database. </p>
-<p style="color: rgb(217, 255, 5)">***Please note this tool runs on a container service from <a href="https://render.com">render.com</a> that is spun down when not in use. Your first lookup may take up to a minute to give a result while the container spins up.***</p>
+<p>
+  EPSS is a daily estimate of the probability of exploitation activity being observed over the next 30 days. This page uses an API to connect to the
+  <a href="https://www.first.org/epss/">EPSS scores</a> from the EPSS website. Scores will be shown for CVE's that are located in the EPSS Database.
+</p>
+<p style="color: rgb(217, 255, 5)">
+  ***Please note this tool runs on a container service from <a href="https://render.com">render.com</a> that is spun down when not in use. Your first
+  lookup may take up to a minute to give a result while the container spins up.***
+</p>
 <form id="epssForm">
-    <label for="cve">CVE Number:</label>
-    <input type="text" id="cve" placeholder="CVE-YYYY-XXXXX" required>
-<br>
-    <label for="date">Date:</label>
-    <input type="date" id="date" required>
+  <label for="cve">CVE Number:</label>
+  <input type="text" id="cve" placeholder="CVE-YYYY-XXXXX" required />
+  <br />
+  <label for="date">Date:</label>
+  <input type="date" id="date" required />
 
-    <button type="submit">Get Results</button>
+  <button type="submit">Get Results</button>
 </form>
 
 <h3>Results:</h3>
 <div id="result"></div>
 
 <script>
-    document.getElementById("epssForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent page reload
+  document.getElementById("epssForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent page reload
 
-        let cve = document.getElementById("cve").value;
-        let date = document.getElementById("date").value;
-        let resultDiv = document.getElementById("result");
+    let cve = document.getElementById("cve").value;
+    let date = document.getElementById("date").value;
+    let resultDiv = document.getElementById("result");
 
-        if (!cve || !date) {
-            alert("Please enter both a CVE number and a date.");
-            return;
+    if (!cve || !date) {
+      alert("Please enter both a CVE number and a date.");
+      return;
+    }
+
+    resultDiv.innerHTML = "Fetching data...";
+
+    fetch("https://epss.onrender.com/get_epss", {
+      // Using the correct API URL
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ cve: cve, date: date }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
         }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("API Response:", data); // Debugging output in console
 
-        resultDiv.innerHTML = "Fetching data...";
+        if (data.error) {
+          resultDiv.innerHTML = `<p style="color:red;">Error: ${data.error}</p>`;
+        } else {
+          // Determine color for EPSS Score
+          let epssColor = "black"; // Default color
+          if (data.epss <= 30) {
+            epssColor = "green"; // Low risk
+          } else if (data.epss > 30 && data.epss <= 75) {
+            epssColor = "orange"; // Medium risk
+          } else {
+            epssColor = "red"; // High risk
+          }
 
-        fetch('https://epss.onrender.com/get_epss', {  // Using the correct API URL
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ cve: cve, date: date })
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log("API Response:", data); // Debugging output in console
+          // Determine color for Percentile
+          let percentileColor = "black"; // Default color
+          if (data.percentile <= 30) {
+            percentileColor = "green"; // Low risk
+          } else if (data.percentile > 30 && data.percentile <= 75) {
+            percentileColor = "orange"; // Medium risk
+          } else {
+            percentileColor = "red"; // High risk
+          }
 
-            if (data.error) {
-                resultDiv.innerHTML = `<p style="color:red;">Error: ${data.error}</p>`;
-            } else {
-                // Determine color for EPSS Score
-                let epssColor = "black"; // Default color
-                if (data.epss <= 30) {
-                    epssColor = "green";  // Low risk
-                } else if (data.epss > 30 && data.epss <= 75) {
-                    epssColor = "orange"; // Medium risk
-                } else {
-                    epssColor = "red";    // High risk
-                }
-
-                // Determine color for Percentile
-                let percentileColor = "black"; // Default color
-                if (data.percentile <= 30) {
-                    percentileColor = "green";  // Low risk
-                } else if (data.percentile > 30 && data.percentile <= 75) {
-                    percentileColor = "orange"; // Medium risk
-                } else {
-                    percentileColor = "red";    // High risk
-                }
-
-                resultDiv.innerHTML = `
+          resultDiv.innerHTML = `
                     <strong>CVE ID:</strong> ${data.cve} <br>
                     <strong>For Date:</strong> ${data.date} <br>
                     <strong>EPSS Score:</strong> <span style="color:${epssColor}; font-weight:bold;">${data.epss}%</span> <br>
                     <strong>Percentile:</strong> <span style="color:${percentileColor}; font-weight:bold;">${data.percentile}%</span> <br>
                     <strong>${data.message}</strong>
                 `;
-            }
-        })
-        .catch(error => {
-            console.error("Error fetching data:", error);
-            resultDiv.innerHTML = `<p style="color:red;">An error occurred: ${error.message}</p>`;
-        });
-    });
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        resultDiv.innerHTML = `<p style="color:red;">An error occurred: ${error.message}</p>`;
+      });
+  });
 </script>

@@ -2,7 +2,7 @@
 layout: page
 title: Cybersecurity Maps
 permalink: /maps/
-subtitle:  
+subtitle:
 description: List of Cybersecurity Maps
 nav: false
 nav_order: 2

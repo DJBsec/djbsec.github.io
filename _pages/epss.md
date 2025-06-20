@@ -2,11 +2,10 @@
 layout: page
 title: EPSS
 permalink: /epss/
-subtitle:  
+subtitle:
 description: Find the EPSS Score of any CVE with this quick lookup.
 nav: true
-nav_order: 
-
+nav_order:
 #profile:
 #  align: right
 #  image: djbsec.png
@@ -16,6 +15,5 @@ nav_order:
 #    <p></p>
 #    <p></p>
 ---
-
 
 {% include cve_lookup.html %}
