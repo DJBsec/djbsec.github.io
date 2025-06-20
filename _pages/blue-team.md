@@ -32,6 +32,12 @@ This page provides a curated set of **Blue Team tools** to support these defensi
   <tbody>
 
     <tr style="border-bottom: 1px solid #ccc;">
+      <td style="padding: 0.5rem;">🔍 EPSS</td>
+      <td style="padding: 0.5rem;">Find out the EPSS score for a CVE</td>
+      <td style="padding: 0.5rem;"><a href="/epss/" >Launch Tool</a></td>
+    </tr>
+
+    <tr style="border-bottom: 1px solid #ccc;">
       <td style="padding: 0.5rem;">🔍 Header Security Analyzer</td>
       <td style="padding: 0.5rem;">Inspect HTTP security headers to detect missing protections</td>
       <td style="padding: 0.5rem;"><a href="/tools/header-analyzer/" >Launch Tool</a></td>
