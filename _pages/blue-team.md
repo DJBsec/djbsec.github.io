@@ -34,19 +34,19 @@ This page provides a curated set of **Blue Team tools** to support these defensi
     <tr style="border-bottom: 1px solid #ccc;">
       <td style="padding: 0.5rem;">🔍 Header Security Analyzer</td>
       <td style="padding: 0.5rem;">Inspect HTTP security headers to detect missing protections</td>
-      <td style="padding: 0.5rem;"><a href="/tools/header-analyzer/" target="_blank">Launch Tool</a></td>
+      <td style="padding: 0.5rem;"><a href="/tools/header-analyzer/" >Launch Tool</a></td>
     </tr>
 
     <tr style="border-bottom: 1px solid #ccc;">
       <td style="padding: 0.5rem;">🧭 Search Engines</td>
       <td style="padding: 0.5rem;">Quick access to OSINT and cyber-focused search tools</td>
-      <td style="padding: 0.5rem;"><a href="/cybersearch/" target="_blank">Open</a></td>
+      <td style="padding: 0.5rem;"><a href="/cybersearch/" >Open</a></td>
     </tr>
 
     <tr style="border-bottom: 1px solid #ccc;">
       <td style="padding: 0.5rem;">🗺️ Cyber Maps</td>
       <td style="padding: 0.5rem;">Visualize threat activity and global attack telemetry</td>
-      <td style="padding: 0.5rem;"><a href="/maps/" target="_blank">Open</a></td>
+      <td style="padding: 0.5rem;"><a href="/maps/" >Open</a></td>
     </tr>
 
     <!-- Uncomment when ready to launch -->
@@ -54,7 +54,7 @@ This page provides a curated set of **Blue Team tools** to support these defensi
     <tr style="border-bottom: 1px solid #ccc;">
       <td style="padding: 0.5rem;">📡 IP Reputation Checker</td>
       <td style="padding: 0.5rem;">Query suspicious IPs against AbuseIPDB / VirusTotal</td>
-      <td style="padding: 0.5rem;"><a href="/tools/ip-reputation/" target="_blank">Launch</a></td>
+      <td style="padding: 0.5rem;"><a href="/tools/ip-reputation/" >Launch</a></td>
     </tr>
     -->
 
