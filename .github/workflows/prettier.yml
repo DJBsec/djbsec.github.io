@@ -46,3 +46,15 @@ jobs:
         with:
           event-type: prettier-failed-on-pr
           client-payload: '{"pr_number": "${{ github.event.number }}", "artifact_url": "${{ steps.artifact-upload.outputs.artifact-url }}", "run_id": "${{ github.run_id }}"}'
+      - name: 🔐 Set Git credentials
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+      - name: ✅ Commit and push changes if needed
+        run: |
+          git add .
+          git diff --quiet && git diff --staged --quiet || (
+            git commit -m "chore: auto-format with Prettier"
+            git push
+          )
