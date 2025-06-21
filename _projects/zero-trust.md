@@ -2,7 +2,7 @@
 layout: page
 title: Zero Trust
 description: What is Zero Trust security?
-img: assets/img/projects/zero-trust.webp
+img: assets/img/projects/zero-trust.png
 category: explained
 ---
 

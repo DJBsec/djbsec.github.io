@@ -2,7 +2,7 @@
 layout: page
 title: Strong Passwords
 description: What is a strong password?
-img: assets/img/projects/passwords.webp
+img: assets/img/projects/passwords.png
 category: explained
 ---
 

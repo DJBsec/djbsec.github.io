@@ -2,7 +2,7 @@
 layout: page
 title: Email Spoofing
 description: What is email spoofing?
-img: assets/img/projects/email-spoofing.webp
+img: assets/img/projects/emailspoofing.png
 category: explained
 ---
 

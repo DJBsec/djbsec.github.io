@@ -2,7 +2,7 @@
 layout: page
 title: Firewalls
 description: What is a firewall?
-img: assets/img/projects/firewall.webp
+img: assets/img/projects/firewall.png
 category: explained
 ---
 

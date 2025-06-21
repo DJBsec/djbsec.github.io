@@ -2,7 +2,7 @@
 layout: page
 title: Ransomware
 description: What is ransomware?
-img: assets/img/projects/ransomware.webp
+img: assets/img/projects/ransomware.png
 category: explained
 ---
 

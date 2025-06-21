@@ -2,7 +2,7 @@
 layout: page
 title: Two-Factor Authentication
 description: What is 2FA?
-img: assets/img/projects/2fa.webp
+img: assets/img/projects/2fa.png
 category: explained
 ---
 
