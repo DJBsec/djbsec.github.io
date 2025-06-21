@@ -16,7 +16,7 @@ A **strong password** is long, unique, and hard to guess.
 
 Bad: `123456` or `password`  
 Good: `f!R9v8@P2#xQzB$e`
-
+Better: `Exclaim0-Ragged-Dart-Icon-Dallying`
 ---
 
 ### 🛡️ Password Tips
