@@ -9,14 +9,7 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-epss",
-          title: "EPSS",
-          description: "Find the EPSS Score of any CVE with this quick lookup.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/epss/";
-          },
-        },{id: "nav-cybernews",
+  },{id: "nav-cybernews",
           title: "CyberNews",
           description: "",
           section: "Navigation",
