@@ -26,10 +26,7 @@ Scammers use phishing (email scams) and smishing (text message scams) to trick p
 > Dear Customer,
 > <br><br>
 > We have detected an unauthorized login attempt on your account. To secure your account, please verify your identity immediately by clicking the link below:
-> <br>
-> <br>
-> [<span style="color:orange;">Verify Your Account</span>](http://secure-yourbanklogin.com) <span style="color:red;">When hovering over this link you find that this link leads to http://secure-yourbanklogin.com</span> > <br>
-> <br>
+> <br> > <br> > [<span style="color:orange;">Verify Your Account</span>](http://secure-yourbanklogin.com) <span style="color:red;">When hovering over this link you find that this link leads to http://secure-yourbanklogin.com</span> > <br> > <br>
 > Failure to verify within 24 hours will result in account suspension.
 > <br> <br>
 > Thank you,  
