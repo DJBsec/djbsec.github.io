@@ -8,7 +8,7 @@ category: explained
 
 ## 🔐 What Is Two-Factor Authentication (2FA)?
 
-**2FA** adds a second step to logging in—something you *have* (like your phone), in addition to something you *know* (like your password).
+**2FA** adds a second step to logging in—something you _have_ (like your phone), in addition to something you _know_ (like your password).
 
 ---
 
