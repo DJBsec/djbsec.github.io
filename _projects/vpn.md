@@ -2,7 +2,7 @@
 layout: page
 title: VPN
 description: What is a VPN?
-img: assets/img/projects/vpn.vpn
+img: assets/img/projects/vpn.png
 category: explained
 ---
 
