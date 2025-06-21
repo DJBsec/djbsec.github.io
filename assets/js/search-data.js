@@ -21,7 +21,7 @@ ninja.data = [{
           description: "Understanding Cybersecurity by DJBSEC",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/projects/";
+            window.location.href = "/explained/";
           },
         },{id: "nav-repos",
           title: "repos",
