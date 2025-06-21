@@ -1,7 +1,7 @@
 ---
 layout: page
 title: CS Explained
-permalink: /projects/
+permalink: /explained/
 description: Understanding Cybersecurity by DJBSEC
 nav: true
 nav_order: 2
