@@ -2,7 +2,7 @@
 layout: page
 title: Red Team
 permalink: /red-team/
-nav: true
+nav: false
 nav_order: 6
 ---
 
