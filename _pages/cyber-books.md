@@ -2,11 +2,10 @@
 layout: page
 title: Cybersecurity Books
 permalink: /books/
-subtitle:  
+subtitle:
 description: List of Cybersercurity Books I recommend
 nav: false
 nav_order: 2
-
 #profile:
 #  align: right
 #  image: djbsec.png
@@ -18,10 +17,13 @@ nav_order: 2
 ---
 
 ## Leadership Books
+
 - [Extreme Ownership by Jocko Willink & Leif Babin](https://a.co/d/9Kf2jbM)
 
-## Story Books with Technical Backgrounds 
-*This is the order I would read them in.*
+## Story Books with Technical Backgrounds
+
+_This is the order I would read them in._
+
 1. [The Cuckoo's Egg: Tracking a Spy Through the Maze of Computer Espionage](https://a.co/d/gO9putQ)
 2. [This Is How They Tell Me the World Ends: The Cyberweapons Arms Race](https://a.co/d/0gfPwAO)
 3. [Ghost in the Wires: My Adventures as the World’s Most Wanted Hacker](https://a.co/d/4l73HPp)
@@ -33,6 +35,7 @@ nav_order: 2
 9. [Scary Smart: The Future of Artificial Intelligence and How You Can Save Our World](https://a.co/d/7YUY7bE)
 
 ## Technical Books
+
 - [Understand, Manage, and Measure Cyber Risk: Practical Solutions for Creating a Sustainable Cyber Program by Ryan Leirvik](https://a.co/d/9VDVLzP)
 - [Building a Second Brain: A Proven Method to Organize Your Digital Life and Unlock Your Creative Potential](https://a.co/d/2hD7l1K)
 - [Computer Programming and Cyber Security for Beginners: This Book Includes: Python Machine Learning, SQL, Linux, Hacking with Kali Linux, Ethical Hacking. Coding and Cybersecurity Fundamentals](https://a.co/d/g1bM5Qw)
@@ -42,6 +45,7 @@ nav_order: 2
 - [The Tao of Open Source Intelligence](https://a.co/d/6r1fJvM)
 
 ## Business Books
+
 - [The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win 5th Anniversary Edition](https://a.co/d/ebZ90xC)
 - [Beyond the Phoenix Project: The Origins and Evolution of DevOps](https://a.co/d/3G2i5PJ)
 - [The Unicorn Project: A Novel About Developers, Digital Disruption, and Thriving in the Age of Data](https://a.co/d/dkafgPm)

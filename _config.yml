@@ -4,13 +4,13 @@
 
 title: DJBSec, CISSP # the website title (if blank, full name will be used instead)
 first_name: Ben
-middle_name: 
+middle_name:
 last_name: Sherrill, CISSP
 contact_note: >
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   DJBSec is an IT veteran with over 25 years of experience in IT and Cyber Security
-footer_text: > 
-        Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+footer_text: >
+  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)

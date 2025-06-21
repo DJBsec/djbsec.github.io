@@ -10,9 +10,9 @@ nav_order: 6
 
 A **Red Teamer** is a cybersecurity professional who emulates real-world adversaries to test and challenge an organization’s security posture. Their mission is to:
 
-- Identify exploitable vulnerabilities  
-- Simulate advanced persistent threats (APTs)  
-- Evade detection mechanisms  
+- Identify exploitable vulnerabilities
+- Simulate advanced persistent threats (APTs)
+- Evade detection mechanisms
 - Provide insight into gaps in defenses
 
 This page will serve as a launchpad for **Red Team tools**, attack simulations, and offensive research utilities.
@@ -41,6 +41,7 @@ This page will serve as a launchpad for **Red Team tools**, attack simulations, 
 </table>
 
 ---
+
 <!--
 ### 🧪 Want to Help Build Red Team Tools?
 

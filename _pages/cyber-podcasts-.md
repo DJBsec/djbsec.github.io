@@ -2,7 +2,7 @@
 layout: page
 title: Cybersecurity Podcasts
 permalink: /podcasts/
-subtitle:  
+subtitle:
 description: List of Cybersercurity Podcasts
 nav: false
 nav_order: 2

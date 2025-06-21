@@ -2,7 +2,7 @@
 layout: page
 title: Cybersecurity Search Engines
 permalink: /cybersearch/
-subtitle:  
+subtitle:
 description: List of Cybersecurity Search Engines
 nav: false
 nav_order: 2
