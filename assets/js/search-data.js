@@ -360,7 +360,7 @@ ninja.data = [{
           title: 'Email Spoofing',
           description: "What is email spoofing?",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
+              window.location.href = "/projects/emailspoofing/";
             },},{id: "projects-firewalls",
           title: 'Firewalls',
           description: "What is a firewall?",
