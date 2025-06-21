@@ -16,8 +16,8 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "nav-cs-explained",
-          title: "CS Explained",
+        },{id: "nav-cybersecurity-explained",
+          title: "Cybersecurity Explained",
           description: "Understanding Cybersecurity by DJBSEC",
           section: "Navigation",
           handler: () => {
