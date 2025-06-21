@@ -2,7 +2,7 @@
 layout: page
 title: Social Engineering
 description: What is social engineering?
-img: assets/img/projects/social-engineering.webp
+img: assets/img/projects/social-engineering.png
 category: explained
 ---
 
