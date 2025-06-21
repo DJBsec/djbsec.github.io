@@ -1,6 +1,6 @@
 ---
 layout: page
-title: CS Explained
+title: Cybersecurity Explained
 permalink: /explained/
 description: Understanding Cybersecurity by DJBSEC
 nav: true
