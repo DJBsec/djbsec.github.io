@@ -149,7 +149,7 @@ collections:
   projects:
     output: true
     permalink: /:collection/:title/
-  projects:
+  explained:
     output: true
     permalink: /explained/:title/
 
