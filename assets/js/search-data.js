@@ -340,7 +340,52 @@ ninja.data = [{
           window.location.href = "/blog/2021/distill/";
         
       },
-    },{id: "news-a-simple-inline-announcement",
+    },{id: "explained-phishing",
+          title: 'Phishing',
+          description: "what is phishing?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/1_project/";
+            },},{id: "explained-email-spoofing",
+          title: 'Email Spoofing',
+          description: "What is email spoofing?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/emailspoofing/";
+            },},{id: "explained-firewalls",
+          title: 'Firewalls',
+          description: "What is a firewall?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/firewalls/";
+            },},{id: "explained-ransomware",
+          title: 'Ransomware',
+          description: "What is ransomware?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/ransomware/";
+            },},{id: "explained-social-engineering",
+          title: 'Social Engineering',
+          description: "What is social engineering?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/social-engineering/";
+            },},{id: "explained-strong-passwords",
+          title: 'Strong Passwords',
+          description: "What is a strong password?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/strong-passwords/";
+            },},{id: "explained-two-factor-authentication",
+          title: 'Two-Factor Authentication',
+          description: "What is 2FA?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/two-factor-authentication/";
+            },},{id: "explained-vpn",
+          title: 'VPN',
+          description: "What is a VPN?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/vpn/";
+            },},{id: "explained-zero-trust",
+          title: 'Zero Trust',
+          description: "What is Zero Trust security?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/zero-trust/";
+            },},{id: "news-a-simple-inline-announcement",
           title: 'A simple inline announcement.',
           description: "",
           section: "News",},{id: "news-a-long-announcement-with-details",
