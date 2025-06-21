@@ -45,7 +45,7 @@ Here, you'll find projects designed to break down complex cybersecurity topics i
 
 <!-- Display projects without categories -->
 
-{% assign sorted_projects = site.projects | sort: "importance" %}
+{% assign sorted_projects = site.explained | sort: "importance" %}
 
   <!-- Generate cards for each project -->
 

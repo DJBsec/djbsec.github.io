@@ -148,7 +148,7 @@ collections:
     permalink: /:collection/:title/
   projects:
     output: true
-    permalink: /:collection/:title/
+    permalink: /explained/:title/
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
