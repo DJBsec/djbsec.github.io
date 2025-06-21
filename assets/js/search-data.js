@@ -356,6 +356,46 @@ ninja.data = [{
           description: "what is phishing?",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
+            },},{id: "projects-email-spoofing",
+          title: 'Email Spoofing',
+          description: "What is email spoofing?",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/email-spoofing/";
+            },},{id: "projects-firewalls",
+          title: 'Firewalls',
+          description: "What is a firewall?",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/firewalls/";
+            },},{id: "projects-ransomware",
+          title: 'Ransomware',
+          description: "What is ransomware?",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/ransomware/";
+            },},{id: "projects-social-engineering",
+          title: 'Social Engineering',
+          description: "What is social engineering?",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/social-engineering/";
+            },},{id: "projects-strong-passwords",
+          title: 'Strong Passwords',
+          description: "What is a strong password?",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/strong-passwords/";
+            },},{id: "projects-two-factor-authentication",
+          title: 'Two-Factor Authentication',
+          description: "What is 2FA?",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/two-factor-authentication/";
+            },},{id: "projects-vpn",
+          title: 'VPN',
+          description: "What is a VPN?",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/vpn/";
+            },},{id: "projects-zero-trust",
+          title: 'Zero Trust',
+          description: "What is Zero Trust security?",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/zero-trust/";
             },},{
         id: 'social-github',
         title: 'GitHub',
