@@ -31,7 +31,7 @@ I’m an experienced IT leader with a career spanning over 25 years, built on a 
 
 In recent years, I’ve led efforts to design and implement a cybersecurity program from the ground up—balancing strategy, compliance, and technical execution. My approach blends practical experience with a strong understanding of risk management and security architecture.
 
-I hold multiple industry certifications, including those from Cisco and Palo Alto Networks, and most recently earned the CISSP in 2024. I’m passionate about evolving with the threat landscape and helping organizations build secure, resilient environments that scale.
+Ive held multiple industry certifications, including those from Cisco and Palo Alto Networks, and most recently earned the CISSP in 2024. I’m passionate about evolving with the threat landscape and helping organizations build secure, resilient environments that scale.
 
 <!--Original Page
 Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
