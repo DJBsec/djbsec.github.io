@@ -1,45 +1,140 @@
-<p>
-  EPSS is a daily estimate of the probability of exploitation activity being observed over the next 30 days. This page uses an API to connect to the
-  <a href="https://www.first.org/epss/">EPSS scores</a> from the EPSS website. Scores will be shown for CVE's that are located in the EPSS Database.
-</p>
-<p style="color: rgb(217, 255, 5)">
-  ***Please note this tool runs on a container service from <a href="https://render.com">render.com</a> that is spun down when not in use. Your first
-  lookup may take up to a minute to give a result while the container spins up.***
-</p>
-<form id="epssForm">
-  <label for="cve">CVE Number:</label>
-  <input type="text" id="cve" placeholder="CVE-YYYY-XXXXX" required />
-  <br />
-  <label for="date">Date:</label>
-  <input type="date" id="date" required />
-
-  <button type="submit">Get Results</button>
-</form>
-
-<h3>Results:</h3>
-<div id="result"></div>
-
-<script>
-  document.getElementById("epssForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent page reload
-
-    let cve = document.getElementById("cve").value;
-    let date = document.getElementById("date").value;
-    let resultDiv = document.getElementById("result");
-
-    if (!cve || !date) {
-      alert("Please enter both a CVE number and a date.");
-      return;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EPSS Lookup Tool</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 1em;
+      background-color: #f9f9f9;
     }
 
-    resultDiv.innerHTML = "Fetching data...";
+    #epssForm {
+      margin-bottom: 1em;
+    }
 
-    fetch("https://epss.onrender.com/get_epss", {
-      // Using the correct API URL
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ cve: cve, date: date }),
-    })
+    label {
+      display: block;
+      margin-top: 0.5em;
+    }
+
+    input, button {
+      padding: 0.5em;
+      margin-top: 0.25em;
+      font-size: 1em;
+    }
+
+    .spinner {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #ffc107;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      animation: spin 0.8s linear infinite;
+      margin: 1em auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    #result {
+      margin-top: 1em;
+    }
+
+    .legend {
+      margin-top: 2em;
+    }
+
+    .legend ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .legend li {
+      margin: 0.25em 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🔍 EPSS Lookup Tool</h2>
+  <p>
+    EPSS is a daily estimate of the probability of exploitation activity being observed over the next 30 days.
+    This page uses an API to connect to the <a href="https://www.first.org/epss/" target="_blank">EPSS scores</a> from the EPSS website.
+  </p>
+  <p style="color: #999;">
+    ⚠️ This tool runs on a container service from <a href="https://render.com" target="_blank">Render</a>. If it's sleeping, first lookups may take 30–60 seconds.
+  </p>
+
+  <form id="epssForm">
+    <label for="cve">CVE Number:</label>
+    <input type="text" id="cve" placeholder="CVE-YYYY-NNNNN" pattern="^CVE-\\d{4}-\\d{4,}$" required />
+
+    <label for="date">Date:</label>
+    <input type="date" id="date" required />
+
+    <br>
+    <button type="submit" id="submitBtn">Get Results</button>
+    <button type="button" id="resetBtn">Reset</button>
+  </form>
+
+  <h3>Results:</h3>
+  <div id="result"></div>
+
+  <div class="legend">
+    <h4>Risk Color Legend:</h4>
+    <ul>
+      <li><span style="color:green;">🟢 Low Risk (≤ 30%)</span></li>
+      <li><span style="color:orange;">🟠 Medium Risk (31–75%)</span></li>
+      <li><span style="color:red;">🔴 High Risk (> 75%)</span></li>
+    </ul>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Set today’s date by default
+      const dateField = document.getElementById("date");
+      const today = new Date().toISOString().split('T')[0];
+      dateField.value = today;
+    });
+
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      document.getElementById("cve").value = "";
+      document.getElementById("date").value = new Date().toISOString().split('T')[0];
+      document.getElementById("result").innerHTML = "";
+    });
+
+    document.getElementById("epssForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const cve = document.getElementById("cve").value.trim();
+      const date = document.getElementById("date").value.trim();
+      const resultDiv = document.getElementById("result");
+      const submitBtn = document.getElementById("submitBtn");
+
+      if (!/^CVE-\d{4}-\d{4,}$/.test(cve)) {
+        alert("Invalid CVE format. Use CVE-YYYY-NNNN.");
+        return;
+      }
+
+      if (!date) {
+        alert("Please enter a date.");
+        return;
+      }
+
+      // Disable button and show spinner
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Fetching...";
+      resultDiv.innerHTML = `<div class="spinner"></div>`;
+
+      fetch("https://epss.onrender.com/get_epss", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ cve, date }),
+      })
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -47,43 +142,30 @@
         return response.json();
       })
       .then((data) => {
-        console.log("API Response:", data); // Debugging output in console
-
         if (data.error) {
           resultDiv.innerHTML = `<p style="color:red;">Error: ${data.error}</p>`;
         } else {
-          // Determine color for EPSS Score
-          let epssColor = "black"; // Default color
-          if (data.epss <= 30) {
-            epssColor = "green"; // Low risk
-          } else if (data.epss > 30 && data.epss <= 75) {
-            epssColor = "orange"; // Medium risk
-          } else {
-            epssColor = "red"; // High risk
-          }
-
-          // Determine color for Percentile
-          let percentileColor = "black"; // Default color
-          if (data.percentile <= 30) {
-            percentileColor = "green"; // Low risk
-          } else if (data.percentile > 30 && data.percentile <= 75) {
-            percentileColor = "orange"; // Medium risk
-          } else {
-            percentileColor = "red"; // High risk
-          }
+          const epssColor = data.epss <= 30 ? "green" : data.epss <= 75 ? "orange" : "red";
+          const percentileColor = data.percentile <= 30 ? "green" : data.percentile <= 75 ? "orange" : "red";
 
           resultDiv.innerHTML = `
-                    <strong>CVE ID:</strong> ${data.cve} <br>
-                    <strong>For Date:</strong> ${data.date} <br>
-                    <strong>EPSS Score:</strong> <span style="color:${epssColor}; font-weight:bold;">${data.epss}%</span> <br>
-                    <strong>Percentile:</strong> <span style="color:${percentileColor}; font-weight:bold;">${data.percentile}%</span> <br>
-                    <strong>${data.message}</strong>
-                `;
+            <strong>CVE ID:</strong> ${data.cve}<br>
+            <strong>For Date:</strong> ${data.date}<br>
+            <strong>EPSS Score:</strong> <span style="color:${epssColor}; font-weight:bold;">${data.epss}%</span><br>
+            <strong>Percentile:</strong> <span style="color:${percentileColor}; font-weight:bold;">${data.percentile}%</span><br>
+            <strong>${data.message}</strong>
+          `;
         }
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
         resultDiv.innerHTML = `<p style="color:red;">An error occurred: ${error.message}</p>`;
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Get Results";
       });
-  });
-</script>
+    });
+  </script>
+</body>
+</html>
