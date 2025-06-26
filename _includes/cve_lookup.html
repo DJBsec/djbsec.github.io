@@ -27,8 +27,12 @@
     }
 
     @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
     }
 
     .epss-tool #result {
@@ -51,11 +55,12 @@
 
   <h2>🔍 EPSS Lookup Tool</h2>
   <p>
-    EPSS is a daily estimate of the probability of exploitation activity being observed over the next 30 days.
-    This page uses an API to connect to the <a href="https://www.first.org/epss/" target="_blank">EPSS scores</a> from the EPSS website.
+    EPSS is a daily estimate of the probability of exploitation activity being observed over the next 30 days. This page uses an API to connect to the
+    <a href="https://www.first.org/epss/" target="_blank">EPSS scores</a> from the EPSS website.
   </p>
-  <p style="color: #999;">
-    ⚠️ This tool runs on a container service from <a href="https://render.com" target="_blank">Render</a>. If it's sleeping, first lookups may take 30–60 seconds.
+  <p style="color: #999">
+    ⚠️ This tool runs on a container service from <a href="https://render.com" target="_blank">Render</a>. If it's sleeping, first lookups may take
+    30–60 seconds.
   </p>
 
   <form id="epssForm">
@@ -76,22 +81,22 @@
   <div class="legend">
     <h4>Risk Color Legend:</h4>
     <ul>
-      <li><span style="color:green;">🟢 Low Risk (≤ 30%)</span></li>
-      <li><span style="color:orange;">🟠 Medium Risk (31–75%)</span></li>
-      <li><span style="color:red;">🔴 High Risk (> 75%)</span></li>
+      <li><span style="color: green">🟢 Low Risk (≤ 30%)</span></li>
+      <li><span style="color: orange">🟠 Medium Risk (31–75%)</span></li>
+      <li><span style="color: red">🔴 High Risk (> 75%)</span></li>
     </ul>
   </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const dateField = document.getElementById("date");
-      const today = new Date().toISOString().split('T')[0];
+      const today = new Date().toISOString().split("T")[0];
       dateField.value = today;
     });
 
     document.getElementById("resetBtn").addEventListener("click", () => {
       document.getElementById("cve").value = "";
-      document.getElementById("date").value = new Date().toISOString().split('T')[0];
+      document.getElementById("date").value = new Date().toISOString().split("T")[0];
       document.getElementById("result").innerHTML = "";
     });
 
@@ -122,36 +127,36 @@
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ cve, date }),
       })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        if (data.error) {
-          resultDiv.innerHTML = `<p style="color:red;">Error: ${data.error}</p>`;
-        } else {
-          const epssColor = data.epss <= 30 ? "green" : data.epss <= 75 ? "orange" : "red";
-          const percentileColor = data.percentile <= 30 ? "green" : data.percentile <= 75 ? "orange" : "red";
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          if (data.error) {
+            resultDiv.innerHTML = `<p style="color:red;">Error: ${data.error}</p>`;
+          } else {
+            const epssColor = data.epss <= 30 ? "green" : data.epss <= 75 ? "orange" : "red";
+            const percentileColor = data.percentile <= 30 ? "green" : data.percentile <= 75 ? "orange" : "red";
 
-          resultDiv.innerHTML = `
+            resultDiv.innerHTML = `
             <strong>CVE ID:</strong> ${data.cve}<br>
             <strong>For Date:</strong> ${data.date}<br>
             <strong>EPSS Score:</strong> <span style="color:${epssColor}; font-weight:bold;">${data.epss}%</span><br>
             <strong>Percentile:</strong> <span style="color:${percentileColor}; font-weight:bold;">${data.percentile}%</span><br>
             <strong>${data.message}</strong>
           `;
-        }
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-        resultDiv.innerHTML = `<p style="color:red;">An error occurred: ${error.message}</p>`;
-      })
-      .finally(() => {
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Get Results";
-      });
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+          resultDiv.innerHTML = `<p style="color:red;">An error occurred: ${error.message}</p>`;
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Get Results";
+        });
     });
   </script>
 </div>
