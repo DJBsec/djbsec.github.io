@@ -27,12 +27,8 @@
     }
 
     @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     .epss-tool #result {
@@ -55,12 +51,13 @@
 
   <h2>🔍 EPSS Lookup Tool</h2>
   <p>
-    EPSS is a daily estimate of the probability of exploitation activity being observed over the next 30 days. This page uses an API to connect to the
+    EPSS is a daily estimate of the probability of exploitation activity being observed over the next 30 days.
+    This page uses an API to connect to the
     <a href="https://www.first.org/epss/" target="_blank">EPSS scores</a> from the EPSS website.
   </p>
   <p style="color: #999">
-    ⚠️ This tool runs on a container service from <a href="https://render.com" target="_blank">Render</a>. If it's sleeping, first lookups may take
-    30–60 seconds.
+    ⚠️ This tool runs on a container service from <a href="https://render.com" target="_blank">Render</a>.
+    If it's sleeping, first lookups may take 30–60 seconds.
   </p>
 
   <form id="epssForm">
@@ -92,6 +89,11 @@
       const dateField = document.getElementById("date");
       const today = new Date().toISOString().split("T")[0];
       dateField.value = today;
+
+      const cveInput = document.getElementById("cve");
+      cveInput.addEventListener("input", function () {
+        this.value = this.value.toUpperCase().replace(/\s+/g, "");
+      });
     });
 
     document.getElementById("resetBtn").addEventListener("click", () => {
