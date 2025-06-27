@@ -27,12 +27,8 @@
     }
 
     @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     .epss-tool #result {
@@ -55,17 +51,18 @@
 
   <h2>🔍 EPSS Lookup Tool</h2>
   <p>
-    EPSS is a daily estimate of the probability of exploitation activity being observed over the next 30 days. This page uses an API to connect to the
+    EPSS is a daily estimate of the probability of exploitation activity being observed over the next 30 days.
+    This page uses an API to connect to the
     <a href="https://www.first.org/epss/" target="_blank">EPSS scores</a> from the EPSS website.
   </p>
   <p style="color: #999">
-    ⚠️ This tool runs on a container service from <a href="https://render.com" target="_blank">Render</a>. If it's sleeping, first lookups may take
-    30–60 seconds.
+    ⚠️ This tool runs on a container service from <a href="https://render.com" target="_blank">Render</a>.
+    If it's sleeping, first lookups may take 30–60 seconds.
   </p>
 
   <form id="epssForm">
     <label for="cve">CVE Number:</label>
-    <input type="text" id="cve" placeholder="CVE-2024-13834" pattern="^CVE-\d{4}-\d{4,}$" required />
+    <input type="text" id="cve" placeholder="CVE-2024-13834" pattern="^CVE-\\d{4}-\\d{4,}$" required />
 
     <label for="date">Date:</label>
     <input type="date" id="date" required />
@@ -128,9 +125,7 @@
         body: JSON.stringify({ cve, date }),
       })
         .then((response) => {
-          if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-          }
+          if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
           return response.json();
         })
         .then((data) => {
@@ -141,12 +136,13 @@
             const percentileColor = data.percentile <= 30 ? "green" : data.percentile <= 75 ? "orange" : "red";
 
             resultDiv.innerHTML = `
-            <strong>CVE ID:</strong> ${data.cve}<br>
-            <strong>For Date:</strong> ${data.date}<br>
-            <strong>EPSS Score:</strong> <span style="color:${epssColor}; font-weight:bold;">${data.epss}%</span><br>
-            <strong>Percentile:</strong> <span style="color:${percentileColor}; font-weight:bold;">${data.percentile}%</span><br>
-            <strong>${data.message}</strong>
-          `;
+              <strong>CVE ID:</strong> ${data.cve}<br>
+              <strong>For Date:</strong> ${data.date}<br>
+              <strong>EPSS Score:</strong> <span style="color:${epssColor}; font-weight:bold;">${data.epss}%</span><br>
+              <strong>Percentile:</strong> <span style="color:${percentileColor}; font-weight:bold;">${data.percentile}%</span><br>
+              <strong>Description:</strong> ${data.description || "Not available"}<br>
+              <strong>${data.message}</strong>
+            `;
           }
         })
         .catch((error) => {
