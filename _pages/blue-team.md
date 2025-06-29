@@ -147,21 +147,22 @@ This page provides a curated set of **Blue Team tools** to support these defensi
 
 **New to Blue Team operations?** Here's a recommended workflow:
 
-1. **🔍 Start with EPSS Scanner** – Identify which vulnerabilities to prioritize
-2. **🛡️ Run Header Analyzer** – Check your web applications for basic security headers
-3. **🧭 Use OSINT Search** – Research threats and gather intelligence
-4. **🗺️ Monitor Threat Maps** – Stay aware of current global threat landscape
-5. **📝 Document Findings & Next Steps** – Record actions taken and plan remediations or monitoring adjustments
+<br>
 
----
+1. **🔍 Start with EPSS Scanner**  
+   Identify which vulnerabilities to prioritize.
 
-### 💡 Tool Suggestions
+2. **🛡️ Run Header Analyzer**  
+   Check your web applications for basic security headers.
 
-Have an idea for a Blue Team tool that would help defenders? [Open an issue](https://github.com/DJBsec/djbsec.github.io/issues) or reach out with your suggestions!
+3. **🧭 Use OSINT Search**  
+   Research threats and gather intelligence.
 
-### 🛠️ Contributing
+4. **🗺️ Monitor Threat Maps**  
+   Stay aware of the current global threat landscape.
 
-Interested in contributing to these tools? Check out the [source code](https://github.com/DJBsec/djbsec.github.io) and feel free to submit pull requests.
+5. **📝 Document Findings & Next Steps**  
+   Record actions taken and plan remediations or monitoring adjustments.
 
   </div>
 </div>
