@@ -68,22 +68,22 @@ This page provides a curated set of **Blue Team tools** to support these defensi
     <tr>
       <td><strong>📡 IP Reputation</strong></td>
       <td>Query suspicious IPs against multiple threat intelligence sources (AbuseIPDB, VirusTotal, etc.)</td>
-      <td><span class="badge bg-secondary">Intel</span></td>
-      <td><span class="badge bg-light text-dark">Coming Soon</span></td>
+      <td><span>Intel</span></td>
+      <td><span>Coming Soon</span></td>
     </tr>
 
     <tr>
       <td><strong>🔒 Hash Lookup</strong></td>
       <td>Check file hashes against malware databases and threat intelligence feeds</td>
-      <td><span class="badge bg-secondary">Forensics</span></td>
-      <td><span class="badge bg-light text-dark">Coming Soon</span></td>
+      <td><span>Forensics</span></td>
+      <td><span>Coming Soon</span></td>
     </tr>
 
     <tr>
       <td><strong>📊 Log Analyzer</strong></td>
       <td>Parse and analyze common log formats for suspicious patterns and IOCs</td>
-      <td><span class="badge bg-secondary">Analysis</span></td>
-      <td><span class="badge bg-light text-dark">Coming Soon</span></td>
+      <td><span>Analysis</span></td>
+      <td><span>Coming Soon</span></td>
     </tr>
 
   </tbody>
