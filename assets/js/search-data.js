@@ -32,7 +32,7 @@ ninja.data = [{
           },
         },{id: "nav-blue-team",
           title: "Blue Team",
-          description: "",
+          description: "Defensive cybersecurity tools and resources for Blue Team professionals, including vulnerability management, web security analysis, and threat intelligence.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/blue-team/";
