@@ -149,17 +149,17 @@ This page provides a curated set of **Blue Team tools** to support these defensi
 
 <br>
 
-1. **🔍 Start with EPSS Scanner**  <br>
+1. **🔍 Start with EPSS Scanner** <br>
    Identify which vulnerabilities to prioritize.<br><br>
 
-2. **🛡️ Run Header Analyzer**  <br>
+2. **🛡️ Run Header Analyzer** <br>
    Check your web applications for basic security headers.<br><br>
 
-3. **🧭 Use OSINT Search**  <br>
+3. **🧭 Use OSINT Search** <br>
    Research threats and gather intelligence.<br><br>
 
-4. **🗺️ Monitor Threat Maps**  <br>
+4. **🗺️ Monitor Threat Maps** <br>
    Stay aware of the current global threat landscape.<br><br>
 
-5. **📝 Document Findings & Next Steps**  <br>
+5. **📝 Document Findings & Next Steps** <br>
    Record actions taken and plan remediations or monitoring adjustments.<br><br>
