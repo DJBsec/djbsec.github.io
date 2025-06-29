@@ -141,6 +141,7 @@ This page provides a curated set of **Blue Team tools** to support these defensi
 ## 🚀 Quick Start Guide
 
 **New to Blue Team operations?** Here's a recommended workflow:
+
 1. **🔍 Start with EPSS Scanner** - Identify which vulnerabilities to prioritize
 2. **🛡️ Run Header Analyzer** - Check your web applications for basic security headers
 3. **🧭 Use OSINT Search** - Research threats and gather intelligence
