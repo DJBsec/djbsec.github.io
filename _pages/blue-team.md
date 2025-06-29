@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Blue Team
+description: Defensive cybersecurity tools and resources for Blue Team professionals, including vulnerability management, web security analysis, and threat intelligence.
 permalink: /blue-team/
 nav: true
 nav_order: 5
@@ -11,7 +12,7 @@ nav_order: 5
 
 ## 🛡️ What Is a Blue Teamer?
 
-A **Blue Teamer** is a cybersecurity defender focused on protecting systems, networks, and data from threats. Their responsibilities include:
+A **Blue Teamer** is a cybersecurity professional dedicated to defending systems, networks, and data against threats. Their responsibilities include:
 
 - **🔍 Monitoring and detecting** malicious activity
 - **🔎 Analyzing vulnerabilities** and misconfigurations
@@ -38,7 +39,7 @@ This page provides a curated set of **Blue Team tools** to support these defensi
 
     <tr>
       <td><strong>🔍 EPSS Scanner</strong></td>
-      <td>Find out the EPSS (Exploit Prediction Scoring System) score for CVEs to prioritize vulnerability patching efforts</td>
+      <td>Determine the EPSS (Exploit Prediction Scoring System) score for CVEs to prioritize patching efforts</td>
       <td><span class="badge bg-primary">Vuln Mgmt</span></td>
       <td><a href="/epss/" class="btn btn-sm btn-outline-primary">Launch</a></td>
     </tr>
@@ -52,7 +53,7 @@ This page provides a curated set of **Blue Team tools** to support these defensi
 
     <tr>
       <td><strong>🧭 OSINT Search</strong></td>
-      <td>Quick access to OSINT and cyber-focused search engines for threat intelligence gathering</td>
+      <td>Quickly access OSINT and cybersecurity-focused search engines for threat intelligence gathering</td>
       <td><span class="badge bg-warning text-dark">Intel</span></td>
       <td><a href="/cybersearch/" class="btn btn-sm btn-outline-warning">Open</a></td>
     </tr>
@@ -68,22 +69,22 @@ This page provides a curated set of **Blue Team tools** to support these defensi
     <tr>
       <td><strong>📡 IP Reputation</strong></td>
       <td>Query suspicious IPs against multiple threat intelligence sources (AbuseIPDB, VirusTotal, etc.)</td>
-      <td><span>Intel</span></td>
-      <td><span>Coming Soon</span></td>
+      <td><span class="badge bg-secondary">Intel</span></td>
+      <td><span class="badge bg-secondary">Coming Soon</span></td>
     </tr>
 
     <tr>
       <td><strong>🔒 Hash Lookup</strong></td>
-      <td>Check file hashes against malware databases and threat intelligence feeds</td>
-      <td><span>Forensics</span></td>
-      <td><span>Coming Soon</span></td>
+      <td>Look up file hashes in malware databases and threat intelligence feeds to identify potential threats</td>
+      <td><span class="badge bg-secondary">Forensics</span></td>
+      <td><span class="badge bg-secondary">Coming Soon</span></td>
     </tr>
 
     <tr>
       <td><strong>📊 Log Analyzer</strong></td>
-      <td>Parse and analyze common log formats for suspicious patterns and IOCs</td>
-      <td><span>Analysis</span></td>
-      <td><span>Coming Soon</span></td>
+      <td>Parse and analyze common log formats to detect suspicious patterns and IOCs</td>
+      <td><span class="badge bg-secondary">Analysis</span></td>
+      <td><span class="badge bg-secondary">Coming Soon</span></td>
     </tr>
 
   </tbody>
@@ -121,6 +122,10 @@ This page provides a curated set of **Blue Team tools** to support these defensi
         <h5 class="card-title">🕵️ Threat Intelligence</h5>
         <p class="card-text">OSINT tools and threat data aggregation for security research</p>
         <span class="badge bg-warning text-dark">2 Active</span>
+        <ul class="list-unstyled mt-2">
+          <li>• OSINT Search</li>
+          <li>• Threat Maps</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -142,10 +147,11 @@ This page provides a curated set of **Blue Team tools** to support these defensi
 
 **New to Blue Team operations?** Here's a recommended workflow:
 
-1. **🔍 Start with EPSS Scanner** - Identify which vulnerabilities to prioritize
-2. **🛡️ Run Header Analyzer** - Check your web applications for basic security headers
-3. **🧭 Use OSINT Search** - Research threats and gather intelligence
-4. **🗺️ Monitor Threat Maps** - Stay aware of current global threat landscape
+1. **🔍 Start with EPSS Scanner** – Identify which vulnerabilities to prioritize
+2. **🛡️ Run Header Analyzer** – Check your web applications for basic security headers
+3. **🧭 Use OSINT Search** – Research threats and gather intelligence
+4. **🗺️ Monitor Threat Maps** – Stay aware of current global threat landscape
+5. **📝 Document Findings & Next Steps** – Record actions taken and plan remediations or monitoring adjustments
 
 ---
 
