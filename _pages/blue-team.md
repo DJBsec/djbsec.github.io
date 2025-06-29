@@ -14,7 +14,7 @@ nav_order: 5
 A **Blue Teamer** is a cybersecurity defender focused on protecting systems, networks, and data from threats. Their responsibilities include:
 
 - **🔍 Monitoring and detecting** malicious activity
-- **🔎 Analyzing vulnerabilities** and misconfigurations  
+- **🔎 Analyzing vulnerabilities** and misconfigurations
 - **🔒 Implementing hardening** measures
 - **🚨 Responding to security** incidents
 
