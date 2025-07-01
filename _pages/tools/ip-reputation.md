@@ -1,7 +1,7 @@
 ---
 layout: page
 title: IP Reputation Checker
-description: Query suspicious IPs against AbuseIPDB, VirusTotal, and GreyNoise.
+description: Query suspicious IPs against GeoLocation, AbuseIPDB, VirusTotal, and GreyNoise.
 permalink: /tools/ip-reputation/
 nav: false
 category: tools
