@@ -5,6 +5,11 @@
       const dateField = document.getElementById("date");
       const today = new Date().toISOString().split("T")[0];
       dateField.value = today;
+
+      const cveInput = document.getElementById("cve");
+      cveInput.addEventListener("input", function () {
+        this.value = this.value.toUpperCase().replace(/\s+/g, "");
+      });
     });
 
     document.getElementById("resetBtn").addEventListener("click", () => {
