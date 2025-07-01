@@ -24,8 +24,23 @@ document.getElementById('iplookup-form').addEventListener('submit', function(e) 
         abuseBadge = '<span class="badge bg-warning text-dark">🟡 Suspicious</span>';
       }
 
+      const geo = data.ipinfo;
+      const geoCard = `
+        <div class="card mb-3">
+          <div class="card-header">IP Geolocation</div>
+          <div class="card-body">
+            <p>Country: ${geo.country || 'N/A'}</p>
+            <p>Region: ${geo.region || 'N/A'}</p>
+            <p>City: ${geo.city || 'N/A'}</p>
+            <p>ISP/Org: ${geo.org || 'N/A'}</p>
+          </div>
+        </div>
+      `;
+
       const output = `
         <h5>Results for ${ip}</h5>
+
+        ${geoCard}
 
         <div class="card mb-3">
           <div class="card-header">AbuseIPDB</div>
