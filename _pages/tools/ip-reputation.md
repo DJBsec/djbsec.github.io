@@ -7,6 +7,10 @@ nav: false
 category: tools
 ---
 
+<p style="margin-top: 2rem;">
+  🔙 <a href="/blue-team/">Back to Blue Team Tools</a>
+</p>
+
 <div class="container my-4">
   <div class="text-center mb-4">
     <h2>📡 IP Reputation Checker</h2>
