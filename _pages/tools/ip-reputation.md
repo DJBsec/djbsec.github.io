@@ -29,7 +29,7 @@ document.getElementById('iplookup-form').addEventListener('submit', function(e) 
   const ip = document.getElementById('ip-input').value;
   document.getElementById('iplookup-results').innerHTML = "Loading...";
 
-  fetch(`https://your-render-url.onrender.com/iplookup?ip=${ip}`)
+  fetch(`https://ip-reputation.onrender.com/iplookup?ip=${ip}`)
     .then(res => res.json())
     .then(data => {
       let output = `
