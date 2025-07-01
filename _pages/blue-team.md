@@ -64,7 +64,7 @@ This page provides a curated set of **Blue Team tools** to support these defensi
       <td><span class="badge bg-info">Visualization</span></td>
       <td><a href="/maps/" class="btn btn-sm btn-outline-info">Open</a></td>
     </tr>
-    
+
     <tr>
       <td><strong>📡 IP Reputation</strong></td>
       <td>Query suspicious IPs against multiple threat intelligence sources (AbuseIPDB, VirusTotal, etc.)</td>
