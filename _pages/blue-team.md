@@ -72,7 +72,7 @@ This page provides a curated set of **Blue Team tools** to support these defensi
       <td><a href="/maps/" class="btn btn-sm btn-outline-info">Open</a></td>
     </tr>
 
- 
+
     <!-- Coming Soon Tools -->
     <tr>
       <td><strong>🔒 Hash Lookup</strong></td>
