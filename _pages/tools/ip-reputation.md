@@ -3,7 +3,7 @@ layout: page
 title: IP Reputation Checker
 description: Query suspicious IPs against AbuseIPDB, VirusTotal, and GreyNoise.
 permalink: /tools/ip-reputation/
-nav: true
+nav: false
 category: tools
 ---
 
