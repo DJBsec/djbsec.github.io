@@ -58,11 +58,11 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-djbsec-39-s-cybernews-3-25-25",
+            },{id: "post-djbsec-39-s-cybernews-7-1-2025",
       
-        title: "DJBSEC&#39;s CyberNews 3-25-25",
+        title: "DJBSEC&#39;s CyberNews 7-1-2025",
       
-      description: "3-25-25",
+      description: "7-01-25",
       section: "Posts",
       handler: () => {
         
