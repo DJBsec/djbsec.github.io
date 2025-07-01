@@ -9,14 +9,7 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-ip-reputation-checker",
-          title: "IP Reputation Checker",
-          description: "Query suspicious IPs against AbuseIPDB, VirusTotal, and GreyNoise.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/tools/ip-reputation/";
-          },
-        },{id: "nav-cybernews",
+  },{id: "nav-cybernews",
           title: "CyberNews",
           description: "",
           section: "Navigation",
