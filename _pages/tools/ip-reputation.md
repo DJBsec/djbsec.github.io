@@ -23,48 +23,66 @@ category: tools
   <div id="iplookup-results"></div>
 </div>
 
+<!-- 🔻 THIS SCRIPT GOES HERE -->
 <script>
 document.getElementById('iplookup-form').addEventListener('submit', function(e) {
   e.preventDefault();
   const ip = document.getElementById('ip-input').value;
-  document.getElementById('iplookup-results').innerHTML = "Loading...";
+  const resultsDiv = document.getElementById('iplookup-results');
+  resultsDiv.innerHTML = `
+    <div class="text-center my-3">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  `;
 
   fetch(`https://ip-reputation.onrender.com/iplookup?ip=${ip}`)
     .then(res => res.json())
     .then(data => {
-      let output = `
+      let abuseScore = data.abuseipdb.abuseConfidenceScore;
+      let abuseBadge = '<span class="badge bg-success">🟢 Clean</span>';
+      if (abuseScore >= 70) {
+        abuseBadge = '<span class="badge bg-danger">🔴 High Risk</span>';
+      } else if (abuseScore >= 20) {
+        abuseBadge = '<span class="badge bg-warning text-dark">🟡 Suspicious</span>';
+      }
+
+      const output = `
         <h5>Results for ${ip}</h5>
+
         <div class="card mb-3">
+          <div class="card-header">AbuseIPDB</div>
           <div class="card-body">
-            <h6>AbuseIPDB</h6>
-            <p>Confidence Score: ${data.abuseipdb.abuseConfidenceScore}</p>
+            <p>Confidence Score: ${abuseScore} ${abuseBadge}</p>
             <p>Total Reports: ${data.abuseipdb.totalReports}</p>
             <p>ISP: ${data.abuseipdb.isp}</p>
+            <p>Country: ${data.abuseipdb.countryCode}</p>
           </div>
         </div>
 
         <div class="card mb-3">
+          <div class="card-header">GreyNoise</div>
           <div class="card-body">
-            <h6>GreyNoise</h6>
-            <p>Classification: ${data.greynoise.classification}</p>
+            <p>Classification: <span class="badge bg-info">${data.greynoise.classification}</span></p>
             <p>Name: ${data.greynoise.name}</p>
-            <p><a href="${data.greynoise.link}" target="_blank">GreyNoise Link</a></p>
+            <p><a href="${data.greynoise.link}" target="_blank">GreyNoise Link 🔗</a></p>
           </div>
         </div>
 
         <div class="card mb-3">
+          <div class="card-header">VirusTotal</div>
           <div class="card-body">
-            <h6>VirusTotal</h6>
             <p>ASN Owner: ${data.virustotal.as_owner}</p>
             <p>Country: ${data.virustotal.country}</p>
             <p>Malicious Reports: ${data.virustotal.last_analysis_stats.malicious}</p>
           </div>
         </div>
       `;
-      document.getElementById('iplookup-results').innerHTML = output;
+      resultsDiv.innerHTML = output;
     })
     .catch(err => {
-      document.getElementById('iplookup-results').innerHTML = '<p class="text-danger">Error fetching IP data.</p>';
+      resultsDiv.innerHTML = `<div class="alert alert-danger">❌ Error fetching IP data: ${err.message}</div>`;
     });
 });
 </script>
