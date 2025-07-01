@@ -55,7 +55,7 @@ This page provides a curated set of **Blue Team tools** to support these defensi
       <td><strong>📡 IP Reputation</strong></td>
       <td>Query suspicious IPs against multiple threat intelligence sources (AbuseIPDB, VirusTotal, etc.)</td>
       <td><span class="badge bg-warning text-dark">Intel</span></td>
-      <td><a href="/tools/ip-reputation.md" class="btn btn-sm btn-outline-warning">Open</a></td>
+      <td><a href="/tools/ip-reputation" class="btn btn-sm btn-outline-warning">Open</a></td>
     </tr>
 
     <tr>
