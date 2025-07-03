@@ -69,11 +69,11 @@ ninja.data = [{
           window.location.href = "/blog/2025/cybernews0703/";
         
       },
-    },{id: "post-djbsec-39-s-cybernews-7-1-2025",
+    },{id: "post-djbsec-39-s-cybernews-7-2-2025",
       
-        title: "DJBSEC&#39;s CyberNews 7-1-2025",
+        title: "DJBSEC&#39;s CyberNews 7-2-2025",
       
-      description: "7-01-25",
+      description: "7-02-25",
       section: "Posts",
       handler: () => {
         
