@@ -117,7 +117,7 @@ What The Shell|https://whattheshellpod.com|General infosec discussions
 
   <div class="podcast-card">
     <a href="{{ parts[1] }}" target="_blank">
-      <img src="https://via.placeholder.com/80?text=🎧" alt="{{ parts[0] }} Logo">
+     <!-- <img src="https://via.placeholder.com/80?text=🎧" alt="{{ parts[0] }} Logo"> -->
       <h3>{{ parts[0] }}</h3>
       <p>{{ parts[2] }}</p>
     </a>
