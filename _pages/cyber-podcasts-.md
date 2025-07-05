@@ -113,7 +113,8 @@ What The Shell|https://whattheshellpod.com|General infosec discussions
 " %}
 
 {% for line in podcasts %}
-  {% assign parts = line | split: "|" %}
+{% assign parts = line | split: "|" %}
+
   <div class="podcast-card">
     <a href="{{ parts[1] }}" target="_blank">
       <img src="https://via.placeholder.com/80?text=🎧" alt="{{ parts[0] }} Logo">
