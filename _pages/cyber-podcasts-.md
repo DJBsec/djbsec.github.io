@@ -70,7 +70,7 @@ Adventures of Alice and Bob|https://adventuresofaliceandbob.com|Security explain
 Breaking Down Security|https://brakeingsecurity.com|Security concepts and news
 Click Here|https://clickhereshow.com|Deep dives into security breaches
 Crypto-Gram Security Podcast|https://www.schneier.com/crypto-gram|Bruce Schneier's monthly digest
-Cyber Insecurity|https://cyberinsecuritypodcast.com|Candid security conversations
+Cyber Insecurity|https://www.cyberinsecurity.tv/ | Candid security conversations
 Cyber Security Headlines|https://cisoseries.com/cyber-security-headlines|Daily news briefings
 Cyber Security Sauna|https://blog.f-secure.com/podcast|Interviews with security experts
 Cyber Work|https://www.infosecinstitute.com/podcast|Career development in security
