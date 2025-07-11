@@ -45,7 +45,6 @@
     }
   </style>
 
-  <h2>🔍 EPSS & Shodan CVE Lookup Tool</h2>
   <p>This page queries EPSS and Shodan CVE DB to provide exploitation probability, CVSS scores, CWE, and vulnerability summaries.</p>
 
   <form id="epssForm">
@@ -66,9 +65,9 @@
   <div class="legend">
     <h4>Risk Color Legend:</h4>
     <ul>
-      <li><span style="color: green">🟢 Low Risk (≤ 30%)</span></li>
-      <li><span style="color: orange">🟠 Medium Risk (31–75%)</span></li>
-      <li><span style="color: red">🔴 High Risk (> 75%)</span></li>
+      <li><span style="color: green">🟢 Low Risk (≤ 30%) (≤ 4)</span></li>
+      <li><span style="color: orange">🟠 Medium Risk (31–75%) (4.1-7.9)</span></li>
+      <li><span style="color: red">🔴 High Risk (> 75%) (>= 8)</span></li>
     </ul>
   </div>
 
@@ -137,17 +136,16 @@
             resultDiv.innerHTML = `
               <strong>CVE ID:</strong> ${data.cve}<br>
               <strong>For Date:</strong> ${data.date}<br>
-              <strong>Summary:</strong> ${data.summary || "Not available"}<br>
+              <strong>Summary:</strong> ${data.summary || "Not available"}<br><br>
               <strong>EPSS Score (FIRST.org/epss):</strong> <span style="color:${epssColor}; font-weight:bold;">${data.epss}%</span><br>
               <strong>Ranking Percentile:</strong> <span style="color:${percentileColor}; font-weight:bold;">${data.percentile}%</span><br>
               <strong>CVSS v2:</strong> <span style="color:${cvss_v2Color}; font-weight:bold;">${data.cvss_v2 || "N/A"}</span><br>
               <strong>CVSS v3:</strong>  <span style="color:${cvss_v3Color}; font-weight:bold;">${data.cvss_v3 || "N/A"}</span><br>
-              <strong>Shodan EPSS:</strong> <span style="color:${rankingColor}; font-weight:bold;">${data.shodan_epss || "N/A"}%</span><br>
-              <strong>Ranking EPSS:</strong> <span style="color:${rankingColor}; font-weight:bold;">${data.ranking_epss || "N/A"}%</span><br>
+              <strong>${data.message}</strong><br><br>
               <strong>Published Time:</strong> ${data.published_time || "N/A"}<br>
               <strong>References:</strong><br>
               ${(data.references || []).map((ref) => `- <a href="${ref}" target="_blank">${ref}</a>`).join("<br>")}<br>
-              <strong>${data.message}</strong>
+              
             `;
           }
         })
