@@ -129,7 +129,7 @@
           } else {
             const epssColor = data.epss <= 30 ? "green" : data.epss <= 75 ? "orange" : "red";
             const percentileColor = data.percentile <= 30 ? "green" : data.percentile <= 75 ? "orange" : "red";
-            const rankingColor = data.ranking_epss <= 30 ? "green" : data.ranking_epss <= 69 ? "orange" : "red";
+            const rankingColor = data.ranking_epss <= 30 ? "green" : data.ranking_epss <= 75 ? "orange" : "red";
             const cvss_v2Color = data.cvss_v2 <= 4 ? "green" : data.cvss_v2 <= 8 ? "orange" : "red";
             const cvss_v3Color = data.cvss_v3 <= 4 ? "green" : data.cvss_v3 <= 8 ? "orange" : "red";
 
@@ -138,10 +138,10 @@
               <strong>For Date:</strong> ${data.date}<br>
               <strong>Summary:</strong> ${data.summary || "Not available"}<br><br>
               <strong>EPSS Score (FIRST.org/epss):</strong> <span style="color:${epssColor}; font-weight:bold;">${data.epss}%</span><br>
-              <strong>Ranking Percentile:</strong> <span style="color:${percentileColor}; font-weight:bold;">${data.percentile}%</span><br>
+              <strong>EPSS Ranking %:</strong> <span style="color:${percentileColor}; font-weight:bold;">${data.percentile}%</span><br>
+              <strong>${data.message}</strong><br><br>
               <strong>CVSS v2:</strong> <span style="color:${cvss_v2Color}; font-weight:bold;">${data.cvss_v2 || "N/A"}</span><br>
               <strong>CVSS v3:</strong>  <span style="color:${cvss_v3Color}; font-weight:bold;">${data.cvss_v3 || "N/A"}</span><br>
-              <strong>${data.message}</strong><br><br>
               <strong>Published Time:</strong> ${data.published_time || "N/A"}<br>
               <strong>References:</strong><br>
               ${(data.references || []).map((ref) => `- <a href="${ref}" target="_blank">${ref}</a>`).join("<br>")}<br>
