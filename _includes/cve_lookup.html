@@ -141,7 +141,7 @@
               <strong>EPSS Ranking %:</strong> <span style="color:${percentileColor}; font-weight:bold;">${data.percentile}%</span><br>
               <strong>${data.message}</strong><br><br>
               <strong>CVSS v2:</strong> <span style="color:${cvss_v2Color}; font-weight:bold;">${data.cvss_v2 || "N/A"}</span><br>
-              <strong>CVSS v3:</strong>  <span style="color:${cvss_v3Color}; font-weight:bold;">${data.cvss_v3 || "N/A"}</span><br>
+              <strong>CVSS v3:</strong>  <span style="color:${cvss_v3Color}; font-weight:bold;">${data.cvss_v3 || "N/A"}</span><br><br>
               <strong>Published Time:</strong> ${data.published_time || "N/A"}<br>
               <strong>References:</strong><br>
               ${(data.references || []).map((ref) => `- <a href="${ref}" target="_blank">${ref}</a>`).join("<br>")}<br>

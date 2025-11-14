@@ -3,7 +3,7 @@ layout: page
 title: EPSS
 permalink: /epss/
 subtitle:
-description: Find the EPSS Score of any CVE with this quick lookup.
+description: 🔍 EPSS & Shodan CVE Lookup Tool
 nav: false
 nav_order:
 #profile:
