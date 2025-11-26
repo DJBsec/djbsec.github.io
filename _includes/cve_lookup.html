@@ -114,7 +114,7 @@
       submitBtn.textContent = "Fetching...";
       resultDiv.innerHTML = `<div class="spinner"></div>`;
 
-      fetch("https://epss-worker.bsherrill676.workers.dev/", {
+      fetch("https://epss-worker.bsherrill676.workers.dev/get_epss", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ cve, date }),
