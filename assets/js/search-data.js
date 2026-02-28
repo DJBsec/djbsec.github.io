@@ -23,6 +23,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/explained/";
           },
+        },{id: "nav-ai-tools-amp-prompts",
+          title: "AI Tools &amp; Prompts",
+          description: "Learn how to use AI effectively with curated prompt repositories and resources to get better results from tools like ChatGPT, Claude, Copilot, and more.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/ai-tools-prompts/";
+          },
         },{id: "nav-repos",
           title: "repos",
           description: "",
