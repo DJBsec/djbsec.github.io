@@ -27,11 +27,44 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I’m an experienced IT leader with a career spanning over 25 years, built on a foundation of technical expertise and a drive for continuous improvement. From helpdesk support to senior roles in systems and network engineering, I’ve worked hands-on across nearly every layer of enterprise infrastructure.
+**Cybersecurity leader, CISSP, and 25-year IT veteran** — this site is where I share daily cyber news, security resources, and AI tools to help you stay ahead of the threat landscape.
 
-In recent years, I’ve led efforts to design and implement a cybersecurity program from the ground up—balancing strategy, compliance, and technical execution. My approach blends practical experience with a strong understanding of risk management and security architecture.
+---
 
-Ive held multiple industry certifications, including those from Cisco and Palo Alto Networks, and most recently earned the CISSP in 2024. I’m passionate about evolving with the threat landscape and helping organizations build secure, resilient environments that scale.
+### Who I Am
+
+I started in IT at the helpdesk and worked my way through systems administration, network engineering, and eventually into senior leadership — touching nearly every layer of enterprise infrastructure along the way.
+
+In recent years my focus has shifted fully to cybersecurity. I’ve led the design and build of a cybersecurity program from the ground up, balancing hands-on technical work with strategy, compliance, and risk management. I hold certifications from Cisco and Palo Alto Networks, and earned my **CISSP in 2024**.
+
+### What You’ll Find Here
+
+<div class="row mt-3 mb-2">
+  <div class="col-sm-4 mb-3">
+    <div class="card h-100 text-center border-primary">
+      <div class="card-body">
+        <h5 class="card-title">📰 CyberNews</h5>
+        <p class="card-text">Daily cybersecurity news — curated, summarized, and straight to the point.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 mb-3">
+    <div class="card h-100 text-center border-success">
+      <div class="card-body">
+        <h5 class="card-title">🛡️ Security Resources</h5>
+        <p class="card-text">Blue team tools, threat maps, search engines, and learning platforms.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 mb-3">
+    <div class="card h-100 text-center border-info">
+      <div class="card-body">
+        <h5 class="card-title">🤖 AI & Prompts</h5>
+        <p class="card-text">Prompt libraries and guides for getting real work done with AI tools.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!--Original Page
 Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
