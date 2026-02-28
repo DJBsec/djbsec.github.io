@@ -4,8 +4,8 @@ title: EPSS
 permalink: /epss/
 subtitle:
 description: 🔍 EPSS & Shodan CVE Lookup Tool
-nav: false
-nav_order:
+nav: true
+nav_order: 3
 #profile:
 #  align: right
 #  image: djbsec.png

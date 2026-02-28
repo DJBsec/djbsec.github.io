@@ -4,7 +4,7 @@ title: AI Tools & Prompts
 description: Learn how to use AI effectively with curated prompt repositories and resources to get better results from tools like ChatGPT, Claude, Copilot, and more.
 permalink: /ai-tools-prompts/
 nav: true
-nav_order: 3
+nav_order: 4
 ---
 
 ## 🤖 AI Tools & Prompt Library
