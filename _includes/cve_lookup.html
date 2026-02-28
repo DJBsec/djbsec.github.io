@@ -1,20 +1,45 @@
 <div class="epss-tool">
   <style>
-    .epss-tool form { margin-bottom: 1em; }
-    .epss-tool label { display: block; margin-top: 0.5em; }
-    .epss-tool input, .epss-tool button { padding: 0.5em; margin-top: 0.25em; font-size: 1em; }
+    .epss-tool form {
+      margin-bottom: 1em;
+    }
+    .epss-tool label {
+      display: block;
+      margin-top: 0.5em;
+    }
+    .epss-tool input,
+    .epss-tool button {
+      padding: 0.5em;
+      margin-top: 0.25em;
+      font-size: 1em;
+    }
     .epss-tool .spinner {
       border: 4px solid #f3f3f3;
       border-top: 4px solid #ffc107;
       border-radius: 50%;
-      width: 30px; height: 30px;
+      width: 30px;
+      height: 30px;
       animation: spin 0.8s linear infinite;
       margin: 1em auto;
     }
-    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-    .epss-tool .legend { margin-top: 2em; }
-    .epss-tool .legend ul { list-style: none; padding: 0; }
-    .epss-tool .legend li { margin: 0.25em 0; }
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    .epss-tool .legend {
+      margin-top: 2em;
+    }
+    .epss-tool .legend ul {
+      list-style: none;
+      padding: 0;
+    }
+    .epss-tool .legend li {
+      margin: 0.25em 0;
+    }
     .epss-tool .result-section {
       border: 1px solid #dee2e6;
       border-radius: 6px;
@@ -27,37 +52,65 @@
       border-bottom: 1px solid #dee2e6;
     }
     .epss-tool .kev-yes {
-      display: inline-block; padding: 0.2em 0.7em; border-radius: 4px;
-      background: #dc3545; color: white; font-weight: bold; font-size: 0.9em;
+      display: inline-block;
+      padding: 0.2em 0.7em;
+      border-radius: 4px;
+      background: #dc3545;
+      color: white;
+      font-weight: bold;
+      font-size: 0.9em;
     }
     .epss-tool .kev-no {
-      display: inline-block; padding: 0.2em 0.7em; border-radius: 4px;
-      background: #198754; color: white; font-weight: bold; font-size: 0.9em;
+      display: inline-block;
+      padding: 0.2em 0.7em;
+      border-radius: 4px;
+      background: #198754;
+      color: white;
+      font-weight: bold;
+      font-size: 0.9em;
     }
     .epss-tool .chip {
-      display: inline-block; padding: 0.2em 0.7em; border-radius: 12px;
-      background: #e9ecef; border: 1px solid #dee2e6;
-      font-size: 0.85em; cursor: pointer; transition: background 0.15s;
+      display: inline-block;
+      padding: 0.2em 0.7em;
+      border-radius: 12px;
+      background: #e9ecef;
+      border: 1px solid #dee2e6;
+      font-size: 0.85em;
+      cursor: pointer;
+      transition: background 0.15s;
     }
-    .epss-tool .chip:hover { background: #ced4da; }
+    .epss-tool .chip:hover {
+      background: #ced4da;
+    }
     .epss-tool #copyBtn {
-      padding: 0.4em 1em; font-size: 0.9em; cursor: pointer;
-      border: 1px solid #dee2e6; border-radius: 4px; background: #f8f9fa;
+      padding: 0.4em 1em;
+      font-size: 0.9em;
+      cursor: pointer;
+      border: 1px solid #dee2e6;
+      border-radius: 4px;
+      background: #f8f9fa;
     }
-    .epss-tool #copyBtn:hover { background: #e9ecef; }
+    .epss-tool #copyBtn:hover {
+      background: #e9ecef;
+    }
     .epss-tool .chart-box {
-      display: none; margin-top: 1.5em; padding: 1em 1.2em;
-      border: 1px solid #dee2e6; border-radius: 6px;
+      display: none;
+      margin-top: 1.5em;
+      padding: 1em 1.2em;
+      border: 1px solid #dee2e6;
+      border-radius: 6px;
     }
-    .epss-tool .chart-box h4 { margin-top: 0; }
+    .epss-tool .chart-box h4 {
+      margin-top: 0;
+    }
   </style>
 
   <p>Query EPSS and Shodan CVE DB for exploitation probability, CVSS scores, CISA KEV status, and 30-day trend data.</p>
 
   <!-- Recent Lookups -->
-  <div id="recentLookups" style="display:none; margin-bottom: 1.2em;">
-    <strong style="font-size: 0.9em; display: block; margin-bottom: 0.4em;">Recent Lookups:</strong>
-    <div id="recentChips" style="display: flex; flex-wrap: wrap; gap: 0.4em;"></div>
+  <div id="recentLookups" style="display: none; margin-bottom: 1.2em">
+    <strong style="font-size: 0.9em; display: block; margin-bottom: 0.4em">Recent Lookups:</strong>
+    <div id="recentChips" style="display: flex; flex-wrap: wrap; gap: 0.4em"></div>
   </div>
 
   <!-- Form -->
@@ -67,8 +120,8 @@
     <label for="date">Date:</label>
     <input type="date" id="date" required />
     <br />
-    <button type="submit" id="submitBtn" style="margin-top: 0.6em;">Get Results</button>
-    <button type="button" id="resetBtn" style="margin-top: 0.6em;">Reset</button>
+    <button type="submit" id="submitBtn" style="margin-top: 0.6em">Get Results</button>
+    <button type="button" id="resetBtn" style="margin-top: 0.6em">Reset</button>
   </form>
 
   <!-- Results -->
@@ -84,10 +137,10 @@
   <div class="legend">
     <h4>Risk Color Legend:</h4>
     <ul>
-      <li><span style="color:green">🟢 Low Risk — EPSS ≤ 30% &nbsp;|&nbsp; CVSS ≤ 4.0</span></li>
-      <li><span style="color:orange">🟠 Medium Risk — EPSS 31–75% &nbsp;|&nbsp; CVSS 4.1–7.9</span></li>
-      <li><span style="color:red">🔴 High Risk — EPSS > 75% &nbsp;|&nbsp; CVSS ≥ 8.0</span></li>
-      <li><span style="color:red">🚨 CISA KEV — Confirmed active exploitation by CISA</span></li>
+      <li><span style="color: green">🟢 Low Risk — EPSS ≤ 30% &nbsp;|&nbsp; CVSS ≤ 4.0</span></li>
+      <li><span style="color: orange">🟠 Medium Risk — EPSS 31–75% &nbsp;|&nbsp; CVSS 4.1–7.9</span></li>
+      <li><span style="color: red">🔴 High Risk — EPSS > 75% &nbsp;|&nbsp; CVSS ≥ 8.0</span></li>
+      <li><span style="color: red">🚨 CISA KEV — Confirmed active exploitation by CISA</span></li>
     </ul>
   </div>
 
@@ -99,7 +152,10 @@
     /* ── Chart.js loader ───────────────────────────────────────────── */
     function ensureChartJs() {
       return new Promise((resolve) => {
-        if (window.Chart) { resolve(); return; }
+        if (window.Chart) {
+          resolve();
+          return;
+        }
         const s = document.createElement("script");
         s.src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js";
         s.onload = resolve;
@@ -112,7 +168,10 @@
       if (kevCache) return Promise.resolve(kevCache);
       return fetch("https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json")
         .then((r) => r.json())
-        .then((d) => { kevCache = d; return d; })
+        .then((d) => {
+          kevCache = d;
+          return d;
+        })
         .catch(() => null);
     }
 
@@ -131,11 +190,12 @@
       const recent = getRecent();
       const wrap = document.getElementById("recentLookups");
       const chips = document.getElementById("recentChips");
-      if (!recent.length) { wrap.style.display = "none"; return; }
+      if (!recent.length) {
+        wrap.style.display = "none";
+        return;
+      }
       wrap.style.display = "block";
-      chips.innerHTML = recent
-        .map((cve) => `<span class="chip" onclick="epssQuickLookup('${cve}')">${cve}</span>`)
-        .join("");
+      chips.innerHTML = recent.map((cve) => `<span class="chip" onclick="epssQuickLookup('${cve}')">${cve}</span>`).join("");
     }
 
     function epssQuickLookup(cve) {
@@ -144,14 +204,23 @@
     }
 
     /* ── Color helpers ─────────────────────────────────────────────── */
-    function epssCol(v) { return v <= 30 ? "green" : v <= 75 ? "orange" : "red"; }
-    function cvssCol(v) { return v <= 4 ? "green" : v <= 8 ? "orange" : "red"; }
-    function dot(v) { return v <= 30 ? "🟢" : v <= 75 ? "🟠" : "🔴"; }
+    function epssCol(v) {
+      return v <= 30 ? "green" : v <= 75 ? "orange" : "red";
+    }
+    function cvssCol(v) {
+      return v <= 4 ? "green" : v <= 8 ? "orange" : "red";
+    }
+    function dot(v) {
+      return v <= 30 ? "🟢" : v <= 75 ? "🟠" : "🔴";
+    }
 
     /* ── Render trend chart ────────────────────────────────────────── */
     function renderChart(trendData) {
       const box = document.getElementById("chartBox");
-      if (!trendData || !trendData.length) { box.style.display = "none"; return; }
+      if (!trendData || !trendData.length) {
+        box.style.display = "none";
+        return;
+      }
       const ctx = document.getElementById("epssChart").getContext("2d");
       if (chartInstance) chartInstance.destroy();
       box.style.display = "block";
@@ -159,16 +228,18 @@
         type: "line",
         data: {
           labels: trendData.map((d) => d.date),
-          datasets: [{
-            label: "EPSS %",
-            data: trendData.map((d) => +(parseFloat(d.epss) * 100).toFixed(4)),
-            borderColor: "#ffc107",
-            backgroundColor: "rgba(255,193,7,0.12)",
-            tension: 0.35,
-            fill: true,
-            pointRadius: 2,
-            pointHoverRadius: 5,
-          }],
+          datasets: [
+            {
+              label: "EPSS %",
+              data: trendData.map((d) => +(parseFloat(d.epss) * 100).toFixed(4)),
+              borderColor: "#ffc107",
+              backgroundColor: "rgba(255,193,7,0.12)",
+              tension: 0.35,
+              fill: true,
+              pointRadius: 2,
+              pointHoverRadius: 5,
+            },
+          ],
         },
         options: {
           responsive: true,
@@ -258,12 +329,11 @@
 
       document.getElementById("copyBtn").addEventListener("click", () => {
         const btn = document.getElementById("copyBtn");
-        (navigator.clipboard
-          ? navigator.clipboard.writeText(copyText)
-          : Promise.resolve(document.execCommand("copy", false, copyText))
-        ).then(() => {
+        (navigator.clipboard ? navigator.clipboard.writeText(copyText) : Promise.resolve(document.execCommand("copy", false, copyText))).then(() => {
           btn.textContent = "✅ Copied!";
-          setTimeout(() => { btn.textContent = "📋 Copy Results"; }, 2000);
+          setTimeout(() => {
+            btn.textContent = "📋 Copy Results";
+          }, 2000);
         });
       });
     }
@@ -292,7 +362,10 @@
         document.getElementById("date").value = y.toISOString().split("T")[0];
         document.getElementById("result").innerHTML = "";
         document.getElementById("chartBox").style.display = "none";
-        if (chartInstance) { chartInstance.destroy(); chartInstance = null; }
+        if (chartInstance) {
+          chartInstance.destroy();
+          chartInstance = null;
+        }
       });
 
       // Form submit
@@ -320,7 +393,10 @@
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ cve, date }),
           })
-            .then((r) => { if (!r.ok) throw new Error(`Worker error: ${r.status}`); return r.json(); })
+            .then((r) => {
+              if (!r.ok) throw new Error(`Worker error: ${r.status}`);
+              return r.json();
+            })
             .catch((err) => ({ error: err.message })),
           fetch(`https://api.first.org/data/v1/epss?cve=${encodeURIComponent(cve)}&scope=time-series`)
             .then((r) => r.json())
@@ -332,9 +408,7 @@
               resultDiv.innerHTML = `<p style="color:red;">Error: ${workerData.error}</p>`;
               return;
             }
-            const kevEntry = kevData
-              ? kevData.vulnerabilities.find((v) => v.cveID === cve) || null
-              : null;
+            const kevEntry = kevData ? kevData.vulnerabilities.find((v) => v.cveID === cve) || null : null;
             renderResults(workerData, kevEntry);
             renderChart(trendResp?.data?.[0]?.["time-series"] || null);
             addRecent(cve);
