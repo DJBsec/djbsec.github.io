@@ -59,7 +59,7 @@ Prompts are organized into three sections based on the tool or use case:
           <tr>
             <td><strong>M365 Security Advisor</strong></td>
             <td>A system prompt that configures AI as an M365 security advisor — providing tailored guidance on tenant security, policies, and best practices</td>
-            <td><a href="https://github.com/DJBsec/ai_prompts/blob/main/Security/M365_Secuirty_Advisor.md" class="btn btn-sm btn-outline-danger" target="_blank" rel="noopener noreferrer">View</a></td>
+            <td><a href="https://github.com/DJBsec/ai_prompts/blob/main/Security/M365_Security_Advisor.md" class="btn btn-sm btn-outline-danger" target="_blank" rel="noopener noreferrer">View</a></td>
           </tr>
         </tbody>
       </table>
@@ -135,6 +135,9 @@ Prompts are organized into three sections based on the tool or use case:
           </tr>
         </tbody>
       </table>
+    </div>
+    <div class="card-footer text-muted" style="font-size: 0.85rem;">
+      More Copilot prompts are being added. <a href="https://github.com/DJBsec/ai_prompts/tree/main/Copilot" target="_blank" rel="noopener noreferrer">Watch the repo</a> for updates.
     </div>
   </div>
 </div>
