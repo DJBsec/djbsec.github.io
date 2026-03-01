@@ -2,13 +2,13 @@
  * Config — Planning config CRUD operations
  */
 
-const fs = require('fs');
-const path = require('path');
-const { output, error } = require('./core.cjs');
+const fs = require("fs");
+const path = require("path");
+const { output, error } = require("./core.cjs");
 
 function cmdConfigEnsureSection(cwd, raw) {
-  const configPath = path.join(cwd, '.planning', 'config.json');
-  const planningDir = path.join(cwd, '.planning');
+  const configPath = path.join(cwd, ".planning", "config.json");
+  const planningDir = path.join(cwd, ".planning");
 
   // Ensure .planning directory exists
   try {
@@ -16,27 +16,27 @@ function cmdConfigEnsureSection(cwd, raw) {
       fs.mkdirSync(planningDir, { recursive: true });
     }
   } catch (err) {
-    error('Failed to create .planning directory: ' + err.message);
+    error("Failed to create .planning directory: " + err.message);
   }
 
   // Check if config already exists
   if (fs.existsSync(configPath)) {
-    const result = { created: false, reason: 'already_exists' };
-    output(result, raw, 'exists');
+    const result = { created: false, reason: "already_exists" };
+    output(result, raw, "exists");
     return;
   }
 
   // Detect Brave Search API key availability
-  const homedir = require('os').homedir();
-  const braveKeyFile = path.join(homedir, '.gsd', 'brave_api_key');
+  const homedir = require("os").homedir();
+  const braveKeyFile = path.join(homedir, ".gsd", "brave_api_key");
   const hasBraveSearch = !!(process.env.BRAVE_API_KEY || fs.existsSync(braveKeyFile));
 
   // Load user-level defaults from ~/.gsd/defaults.json if available
-  const globalDefaultsPath = path.join(homedir, '.gsd', 'defaults.json');
+  const globalDefaultsPath = path.join(homedir, ".gsd", "defaults.json");
   let userDefaults = {};
   try {
     if (fs.existsSync(globalDefaultsPath)) {
-      userDefaults = JSON.parse(fs.readFileSync(globalDefaultsPath, 'utf-8'));
+      userDefaults = JSON.parse(fs.readFileSync(globalDefaultsPath, "utf-8"));
     }
   } catch (err) {
     // Ignore malformed global defaults, fall back to hardcoded
@@ -44,12 +44,12 @@ function cmdConfigEnsureSection(cwd, raw) {
 
   // Create default config (user-level defaults override hardcoded defaults)
   const hardcoded = {
-    model_profile: 'balanced',
+    model_profile: "balanced",
     commit_docs: true,
     search_gitignored: false,
-    branching_strategy: 'none',
-    phase_branch_template: 'gsd/phase-{phase}-{slug}',
-    milestone_branch_template: 'gsd/{milestone}-{slug}',
+    branching_strategy: "none",
+    phase_branch_template: "gsd/phase-{phase}-{slug}",
+    milestone_branch_template: "gsd/{milestone}-{slug}",
     workflow: {
       research: true,
       plan_check: true,
@@ -66,43 +66,43 @@ function cmdConfigEnsureSection(cwd, raw) {
   };
 
   try {
-    fs.writeFileSync(configPath, JSON.stringify(defaults, null, 2), 'utf-8');
-    const result = { created: true, path: '.planning/config.json' };
-    output(result, raw, 'created');
+    fs.writeFileSync(configPath, JSON.stringify(defaults, null, 2), "utf-8");
+    const result = { created: true, path: ".planning/config.json" };
+    output(result, raw, "created");
   } catch (err) {
-    error('Failed to create config.json: ' + err.message);
+    error("Failed to create config.json: " + err.message);
   }
 }
 
 function cmdConfigSet(cwd, keyPath, value, raw) {
-  const configPath = path.join(cwd, '.planning', 'config.json');
+  const configPath = path.join(cwd, ".planning", "config.json");
 
   if (!keyPath) {
-    error('Usage: config-set <key.path> <value>');
+    error("Usage: config-set <key.path> <value>");
   }
 
   // Parse value (handle booleans and numbers)
   let parsedValue = value;
-  if (value === 'true') parsedValue = true;
-  else if (value === 'false') parsedValue = false;
-  else if (!isNaN(value) && value !== '') parsedValue = Number(value);
+  if (value === "true") parsedValue = true;
+  else if (value === "false") parsedValue = false;
+  else if (!isNaN(value) && value !== "") parsedValue = Number(value);
 
   // Load existing config or start with empty object
   let config = {};
   try {
     if (fs.existsSync(configPath)) {
-      config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
+      config = JSON.parse(fs.readFileSync(configPath, "utf-8"));
     }
   } catch (err) {
-    error('Failed to read config.json: ' + err.message);
+    error("Failed to read config.json: " + err.message);
   }
 
   // Set nested value using dot notation (e.g., "workflow.research")
-  const keys = keyPath.split('.');
+  const keys = keyPath.split(".");
   let current = config;
   for (let i = 0; i < keys.length - 1; i++) {
     const key = keys[i];
-    if (current[key] === undefined || typeof current[key] !== 'object') {
+    if (current[key] === undefined || typeof current[key] !== "object") {
       current[key] = {};
     }
     current = current[key];
@@ -111,38 +111,38 @@ function cmdConfigSet(cwd, keyPath, value, raw) {
 
   // Write back
   try {
-    fs.writeFileSync(configPath, JSON.stringify(config, null, 2), 'utf-8');
+    fs.writeFileSync(configPath, JSON.stringify(config, null, 2), "utf-8");
     const result = { updated: true, key: keyPath, value: parsedValue };
     output(result, raw, `${keyPath}=${parsedValue}`);
   } catch (err) {
-    error('Failed to write config.json: ' + err.message);
+    error("Failed to write config.json: " + err.message);
   }
 }
 
 function cmdConfigGet(cwd, keyPath, raw) {
-  const configPath = path.join(cwd, '.planning', 'config.json');
+  const configPath = path.join(cwd, ".planning", "config.json");
 
   if (!keyPath) {
-    error('Usage: config-get <key.path>');
+    error("Usage: config-get <key.path>");
   }
 
   let config = {};
   try {
     if (fs.existsSync(configPath)) {
-      config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
+      config = JSON.parse(fs.readFileSync(configPath, "utf-8"));
     } else {
-      error('No config.json found at ' + configPath);
+      error("No config.json found at " + configPath);
     }
   } catch (err) {
-    if (err.message.startsWith('No config.json')) throw err;
-    error('Failed to read config.json: ' + err.message);
+    if (err.message.startsWith("No config.json")) throw err;
+    error("Failed to read config.json: " + err.message);
   }
 
   // Traverse dot-notation path (e.g., "workflow.auto_advance")
-  const keys = keyPath.split('.');
+  const keys = keyPath.split(".");
   let current = config;
   for (const key of keys) {
-    if (current === undefined || current === null || typeof current !== 'object') {
+    if (current === undefined || current === null || typeof current !== "object") {
       error(`Key not found: ${keyPath}`);
     }
     current = current[key];

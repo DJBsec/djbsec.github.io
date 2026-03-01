@@ -17,19 +17,19 @@
 // Debounce: 5 tool uses between warnings to avoid spam
 // Severity escalation bypasses debounce (WARNING -> CRITICAL fires immediately)
 
-const fs = require('fs');
-const os = require('os');
-const path = require('path');
+const fs = require("fs");
+const os = require("os");
+const path = require("path");
 
-const WARNING_THRESHOLD = 35;  // remaining_percentage <= 35%
+const WARNING_THRESHOLD = 35; // remaining_percentage <= 35%
 const CRITICAL_THRESHOLD = 25; // remaining_percentage <= 25%
-const STALE_SECONDS = 60;      // ignore metrics older than 60s
-const DEBOUNCE_CALLS = 5;      // min tool uses between warnings
+const STALE_SECONDS = 60; // ignore metrics older than 60s
+const DEBOUNCE_CALLS = 5; // min tool uses between warnings
 
-let input = '';
-process.stdin.setEncoding('utf8');
-process.stdin.on('data', chunk => input += chunk);
-process.stdin.on('end', () => {
+let input = "";
+process.stdin.setEncoding("utf8");
+process.stdin.on("data", (chunk) => (input += chunk));
+process.stdin.on("end", () => {
   try {
     const data = JSON.parse(input);
     const sessionId = data.session_id;
@@ -46,11 +46,11 @@ process.stdin.on('end', () => {
       process.exit(0);
     }
 
-    const metrics = JSON.parse(fs.readFileSync(metricsPath, 'utf8'));
+    const metrics = JSON.parse(fs.readFileSync(metricsPath, "utf8"));
     const now = Math.floor(Date.now() / 1000);
 
     // Ignore stale metrics
-    if (metrics.timestamp && (now - metrics.timestamp) > STALE_SECONDS) {
+    if (metrics.timestamp && now - metrics.timestamp > STALE_SECONDS) {
       process.exit(0);
     }
 
@@ -69,7 +69,7 @@ process.stdin.on('end', () => {
 
     if (fs.existsSync(warnPath)) {
       try {
-        warnData = JSON.parse(fs.readFileSync(warnPath, 'utf8'));
+        warnData = JSON.parse(fs.readFileSync(warnPath, "utf8"));
         firstWarn = false;
       } catch (e) {
         // Corrupted file, reset
@@ -79,11 +79,11 @@ process.stdin.on('end', () => {
     warnData.callsSinceWarn = (warnData.callsSinceWarn || 0) + 1;
 
     const isCritical = remaining <= CRITICAL_THRESHOLD;
-    const currentLevel = isCritical ? 'critical' : 'warning';
+    const currentLevel = isCritical ? "critical" : "warning";
 
     // Emit immediately on first warning, then debounce subsequent ones
     // Severity escalation (WARNING -> CRITICAL) bypasses debounce
-    const severityEscalated = currentLevel === 'critical' && warnData.lastLevel === 'warning';
+    const severityEscalated = currentLevel === "critical" && warnData.lastLevel === "warning";
     if (!firstWarn && warnData.callsSinceWarn < DEBOUNCE_CALLS && !severityEscalated) {
       // Update counter and exit without warning
       fs.writeFileSync(warnPath, JSON.stringify(warnData));
@@ -98,20 +98,22 @@ process.stdin.on('end', () => {
     // Build warning message
     let message;
     if (isCritical) {
-      message = `CONTEXT MONITOR CRITICAL: Usage at ${usedPct}%. Remaining: ${remaining}%. ` +
-        'STOP new work immediately. Save state NOW and inform the user that context is nearly exhausted. ' +
-        'If using GSD, run /gsd:pause-work to save execution state.';
+      message =
+        `CONTEXT MONITOR CRITICAL: Usage at ${usedPct}%. Remaining: ${remaining}%. ` +
+        "STOP new work immediately. Save state NOW and inform the user that context is nearly exhausted. " +
+        "If using GSD, run /gsd:pause-work to save execution state.";
     } else {
-      message = `CONTEXT MONITOR WARNING: Usage at ${usedPct}%. Remaining: ${remaining}%. ` +
-        'Begin wrapping up current task. Do not start new complex work. ' +
-        'If using GSD, consider /gsd:pause-work to save state.';
+      message =
+        `CONTEXT MONITOR WARNING: Usage at ${usedPct}%. Remaining: ${remaining}%. ` +
+        "Begin wrapping up current task. Do not start new complex work. " +
+        "If using GSD, consider /gsd:pause-work to save state.";
     }
 
     const output = {
       hookSpecificOutput: {
         hookEventName: "PostToolUse",
-        additionalContext: message
-      }
+        additionalContext: message,
+      },
     };
 
     process.stdout.write(JSON.stringify(output));

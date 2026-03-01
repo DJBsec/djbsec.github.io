@@ -127,6 +127,7 @@ TRANSITION=$(node "$HOME/.claude/get-shit-done/bin/gsd-tools.cjs" phase complete
 ```
 
 The CLI handles:
+
 - Marking the phase checkbox as `[x]` complete with today's date
 - Updating plan count to final (e.g., "3/3 plans complete")
 - Updating the Progress table (Status → Complete, adding date)
@@ -157,18 +158,22 @@ cat .planning/phases/XX-current/*-SUMMARY.md
 **Assess requirement changes:**
 
 1. **Requirements validated?**
+
    - Any Active requirements shipped in this phase?
    - Move to Validated with phase reference: `- ✓ [Requirement] — Phase X`
 
 2. **Requirements invalidated?**
+
    - Any Active requirements discovered to be unnecessary or wrong?
    - Move to Out of Scope with reason: `- [Requirement] — [why invalidated]`
 
 3. **Requirements emerged?**
+
    - Any new requirements discovered during building?
    - Add to Active: `- [ ] [New requirement]`
 
 4. **Decisions to log?**
+
    - Extract decisions from SUMMARY.md files
    - Add to Key Decisions table with outcome if known
 
@@ -182,7 +187,8 @@ Make the edits inline. Update "Last updated" footer:
 
 ```markdown
 ---
-*Last updated: [date] after Phase [X]*
+
+_Last updated: [date] after Phase [X]_
 ```
 
 **Example evolution:**
@@ -340,12 +346,14 @@ Resume file: None
 **Use the transition result from `gsd-tools phase complete`:**
 
 The `is_last_phase` field from the phase complete result tells you directly:
+
 - `is_last_phase: false` → More phases remain → Go to **Route A**
 - `is_last_phase: true` → Milestone complete → Go to **Route B**
 
 The `next_phase` and `next_phase_name` fields give you the next phase details.
 
 If you need additional context, use:
+
 ```bash
 ROADMAP=$(node "$HOME/.claude/get-shit-done/bin/gsd-tools.cjs" roadmap analyze)
 ```
@@ -452,6 +460,7 @@ Exit skill and invoke SlashCommand("/gsd:discuss-phase [X+1] --auto")
 **Route B: Milestone complete (all phases done)**
 
 **Clear auto-advance** — milestone boundary is the natural stopping point:
+
 ```bash
 node "$HOME/.claude/get-shit-done/bin/gsd-tools.cjs" config-set workflow.auto_advance false
 ```

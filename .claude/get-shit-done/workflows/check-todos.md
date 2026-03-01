@@ -18,6 +18,7 @@ INIT=$(node "$HOME/.claude/get-shit-done/bin/gsd-tools.cjs" init todos)
 Extract from init JSON: `todo_count`, `todos`, `pending_dir`.
 
 If `todo_count` is 0:
+
 ```
 No pending todos.
 
@@ -93,15 +94,17 @@ If `files` field has entries, read and briefly summarize each.
 Check for roadmap (can use init progress or directly check file existence):
 
 If `.planning/ROADMAP.md` exists:
+
 1. Check if todo's area matches an upcoming phase
 2. Check if todo's files overlap with a phase's scope
 3. Note any match for action options
-</step>
+   </step>
 
 <step name="offer_actions">
 **If todo maps to a roadmap phase:**
 
 Use AskUserQuestion:
+
 - header: "Action"
 - question: "This todo relates to Phase [N]: [name]. What would you like to do?"
 - options:
@@ -113,6 +116,7 @@ Use AskUserQuestion:
 **If no roadmap match:**
 
 Use AskUserQuestion:
+
 - header: "Action"
 - question: "What would you like to do with this todo?"
 - options:
@@ -120,7 +124,7 @@ Use AskUserQuestion:
   - "Create a phase" — /gsd:add-phase with this scope
   - "Brainstorm approach" — think through before deciding
   - "Put it back" — return to list
-</step>
+    </step>
 
 <step name="execute_action">
 **Work on it now:**
@@ -165,6 +169,7 @@ Confirm: "Committed: docs: start work on todo - [title]"
 </process>
 
 <success_criteria>
+
 - [ ] All pending todos listed with title, area, age
 - [ ] Area filter applied if specified
 - [ ] Selected todo's full context loaded
@@ -173,4 +178,4 @@ Confirm: "Committed: docs: start work on todo - [title]"
 - [ ] Selected action executed
 - [ ] STATE.md updated if todo count changed
 - [ ] Changes committed to git (if todo moved to done/)
-</success_criteria>
+      </success_criteria>

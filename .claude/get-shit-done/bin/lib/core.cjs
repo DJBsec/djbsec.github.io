@@ -2,31 +2,31 @@
  * Core — Shared utilities, constants, and internal helpers
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+const fs = require("fs");
+const path = require("path");
+const { execSync } = require("child_process");
 
 // ─── Path helpers ────────────────────────────────────────────────────────────
 
 /** Normalize a relative path to always use forward slashes (cross-platform). */
 function toPosixPath(p) {
-  return p.split(path.sep).join('/');
+  return p.split(path.sep).join("/");
 }
 
 // ─── Model Profile Table ─────────────────────────────────────────────────────
 
 const MODEL_PROFILES = {
-  'gsd-planner':              { quality: 'opus', balanced: 'opus',   budget: 'sonnet' },
-  'gsd-roadmapper':           { quality: 'opus', balanced: 'sonnet', budget: 'sonnet' },
-  'gsd-executor':             { quality: 'opus', balanced: 'sonnet', budget: 'sonnet' },
-  'gsd-phase-researcher':     { quality: 'opus', balanced: 'sonnet', budget: 'haiku' },
-  'gsd-project-researcher':   { quality: 'opus', balanced: 'sonnet', budget: 'haiku' },
-  'gsd-research-synthesizer': { quality: 'sonnet', balanced: 'sonnet', budget: 'haiku' },
-  'gsd-debugger':             { quality: 'opus', balanced: 'sonnet', budget: 'sonnet' },
-  'gsd-codebase-mapper':      { quality: 'sonnet', balanced: 'haiku', budget: 'haiku' },
-  'gsd-verifier':             { quality: 'sonnet', balanced: 'sonnet', budget: 'haiku' },
-  'gsd-plan-checker':         { quality: 'sonnet', balanced: 'sonnet', budget: 'haiku' },
-  'gsd-integration-checker':  { quality: 'sonnet', balanced: 'sonnet', budget: 'haiku' },
+  "gsd-planner": { quality: "opus", balanced: "opus", budget: "sonnet" },
+  "gsd-roadmapper": { quality: "opus", balanced: "sonnet", budget: "sonnet" },
+  "gsd-executor": { quality: "opus", balanced: "sonnet", budget: "sonnet" },
+  "gsd-phase-researcher": { quality: "opus", balanced: "sonnet", budget: "haiku" },
+  "gsd-project-researcher": { quality: "opus", balanced: "sonnet", budget: "haiku" },
+  "gsd-research-synthesizer": { quality: "sonnet", balanced: "sonnet", budget: "haiku" },
+  "gsd-debugger": { quality: "opus", balanced: "sonnet", budget: "sonnet" },
+  "gsd-codebase-mapper": { quality: "sonnet", balanced: "haiku", budget: "haiku" },
+  "gsd-verifier": { quality: "sonnet", balanced: "sonnet", budget: "haiku" },
+  "gsd-plan-checker": { quality: "sonnet", balanced: "sonnet", budget: "haiku" },
+  "gsd-integration-checker": { quality: "sonnet", balanced: "sonnet", budget: "haiku" },
 };
 
 // ─── Output helpers ───────────────────────────────────────────────────────────
@@ -39,9 +39,9 @@ function output(result, raw, rawValue) {
     // Large payloads exceed Claude Code's Bash tool buffer (~50KB).
     // Write to tmpfile and output the path prefixed with @file: so callers can detect it.
     if (json.length > 50000) {
-      const tmpPath = path.join(require('os').tmpdir(), `gsd-${Date.now()}.json`);
-      fs.writeFileSync(tmpPath, json, 'utf-8');
-      process.stdout.write('@file:' + tmpPath);
+      const tmpPath = path.join(require("os").tmpdir(), `gsd-${Date.now()}.json`);
+      fs.writeFileSync(tmpPath, json, "utf-8");
+      process.stdout.write("@file:" + tmpPath);
     } else {
       process.stdout.write(json);
     }
@@ -50,7 +50,7 @@ function output(result, raw, rawValue) {
 }
 
 function error(message) {
-  process.stderr.write('Error: ' + message + '\n');
+  process.stderr.write("Error: " + message + "\n");
   process.exit(1);
 }
 
@@ -58,21 +58,21 @@ function error(message) {
 
 function safeReadFile(filePath) {
   try {
-    return fs.readFileSync(filePath, 'utf-8');
+    return fs.readFileSync(filePath, "utf-8");
   } catch {
     return null;
   }
 }
 
 function loadConfig(cwd) {
-  const configPath = path.join(cwd, '.planning', 'config.json');
+  const configPath = path.join(cwd, ".planning", "config.json");
   const defaults = {
-    model_profile: 'balanced',
+    model_profile: "balanced",
     commit_docs: true,
     search_gitignored: false,
-    branching_strategy: 'none',
-    phase_branch_template: 'gsd/phase-{phase}-{slug}',
-    milestone_branch_template: 'gsd/{milestone}-{slug}',
+    branching_strategy: "none",
+    phase_branch_template: "gsd/phase-{phase}-{slug}",
+    milestone_branch_template: "gsd/{milestone}-{slug}",
     research: true,
     plan_checker: true,
     verifier: true,
@@ -82,7 +82,7 @@ function loadConfig(cwd) {
   };
 
   try {
-    const raw = fs.readFileSync(configPath, 'utf-8');
+    const raw = fs.readFileSync(configPath, "utf-8");
     const parsed = JSON.parse(raw);
 
     const get = (key, nested) => {
@@ -94,25 +94,26 @@ function loadConfig(cwd) {
     };
 
     const parallelization = (() => {
-      const val = get('parallelization');
-      if (typeof val === 'boolean') return val;
-      if (typeof val === 'object' && val !== null && 'enabled' in val) return val.enabled;
+      const val = get("parallelization");
+      if (typeof val === "boolean") return val;
+      if (typeof val === "object" && val !== null && "enabled" in val) return val.enabled;
       return defaults.parallelization;
     })();
 
     return {
-      model_profile: get('model_profile') ?? defaults.model_profile,
-      commit_docs: get('commit_docs', { section: 'planning', field: 'commit_docs' }) ?? defaults.commit_docs,
-      search_gitignored: get('search_gitignored', { section: 'planning', field: 'search_gitignored' }) ?? defaults.search_gitignored,
-      branching_strategy: get('branching_strategy', { section: 'git', field: 'branching_strategy' }) ?? defaults.branching_strategy,
-      phase_branch_template: get('phase_branch_template', { section: 'git', field: 'phase_branch_template' }) ?? defaults.phase_branch_template,
-      milestone_branch_template: get('milestone_branch_template', { section: 'git', field: 'milestone_branch_template' }) ?? defaults.milestone_branch_template,
-      research: get('research', { section: 'workflow', field: 'research' }) ?? defaults.research,
-      plan_checker: get('plan_checker', { section: 'workflow', field: 'plan_check' }) ?? defaults.plan_checker,
-      verifier: get('verifier', { section: 'workflow', field: 'verifier' }) ?? defaults.verifier,
-      nyquist_validation: get('nyquist_validation', { section: 'workflow', field: 'nyquist_validation' }) ?? defaults.nyquist_validation,
+      model_profile: get("model_profile") ?? defaults.model_profile,
+      commit_docs: get("commit_docs", { section: "planning", field: "commit_docs" }) ?? defaults.commit_docs,
+      search_gitignored: get("search_gitignored", { section: "planning", field: "search_gitignored" }) ?? defaults.search_gitignored,
+      branching_strategy: get("branching_strategy", { section: "git", field: "branching_strategy" }) ?? defaults.branching_strategy,
+      phase_branch_template: get("phase_branch_template", { section: "git", field: "phase_branch_template" }) ?? defaults.phase_branch_template,
+      milestone_branch_template:
+        get("milestone_branch_template", { section: "git", field: "milestone_branch_template" }) ?? defaults.milestone_branch_template,
+      research: get("research", { section: "workflow", field: "research" }) ?? defaults.research,
+      plan_checker: get("plan_checker", { section: "workflow", field: "plan_check" }) ?? defaults.plan_checker,
+      verifier: get("verifier", { section: "workflow", field: "verifier" }) ?? defaults.verifier,
+      nyquist_validation: get("nyquist_validation", { section: "workflow", field: "nyquist_validation" }) ?? defaults.nyquist_validation,
       parallelization,
-      brave_search: get('brave_search') ?? defaults.brave_search,
+      brave_search: get("brave_search") ?? defaults.brave_search,
       model_overrides: parsed.model_overrides || null,
     };
   } catch {
@@ -124,9 +125,9 @@ function loadConfig(cwd) {
 
 function isGitIgnored(cwd, targetPath) {
   try {
-    execSync('git check-ignore -q -- ' + targetPath.replace(/[^a-zA-Z0-9._\-/]/g, ''), {
+    execSync("git check-ignore -q -- " + targetPath.replace(/[^a-zA-Z0-9._\-/]/g, ""), {
       cwd,
-      stdio: 'pipe',
+      stdio: "pipe",
     });
     return true;
   } catch {
@@ -136,21 +137,21 @@ function isGitIgnored(cwd, targetPath) {
 
 function execGit(cwd, args) {
   try {
-    const escaped = args.map(a => {
+    const escaped = args.map((a) => {
       if (/^[a-zA-Z0-9._\-/=:@]+$/.test(a)) return a;
       return "'" + a.replace(/'/g, "'\\''") + "'";
     });
-    const stdout = execSync('git ' + escaped.join(' '), {
+    const stdout = execSync("git " + escaped.join(" "), {
       cwd,
-      stdio: 'pipe',
-      encoding: 'utf-8',
+      stdio: "pipe",
+      encoding: "utf-8",
     });
-    return { exitCode: 0, stdout: stdout.trim(), stderr: '' };
+    return { exitCode: 0, stdout: stdout.trim(), stderr: "" };
   } catch (err) {
     return {
       exitCode: err.status ?? 1,
-      stdout: (err.stdout ?? '').toString().trim(),
-      stderr: (err.stderr ?? '').toString().trim(),
+      stdout: (err.stdout ?? "").toString().trim(),
+      stderr: (err.stderr ?? "").toString().trim(),
     };
   }
 }
@@ -158,15 +159,15 @@ function execGit(cwd, args) {
 // ─── Phase utilities ──────────────────────────────────────────────────────────
 
 function escapeRegex(value) {
-  return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 function normalizePhaseName(phase) {
   const match = String(phase).match(/^(\d+)([A-Z])?((?:\.\d+)*)/i);
   if (!match) return phase;
-  const padded = match[1].padStart(2, '0');
-  const letter = match[2] ? match[2].toUpperCase() : '';
-  const decimal = match[3] || '';
+  const padded = match[1].padStart(2, "0");
+  const letter = match[2] ? match[2].toUpperCase() : "";
+  const decimal = match[3] || "";
   return padded + letter + decimal;
 }
 
@@ -177,16 +178,26 @@ function comparePhaseNum(a, b) {
   const intDiff = parseInt(pa[1], 10) - parseInt(pb[1], 10);
   if (intDiff !== 0) return intDiff;
   // No letter sorts before letter: 12 < 12A < 12B
-  const la = (pa[2] || '').toUpperCase();
-  const lb = (pb[2] || '').toUpperCase();
+  const la = (pa[2] || "").toUpperCase();
+  const lb = (pb[2] || "").toUpperCase();
   if (la !== lb) {
     if (!la) return -1;
     if (!lb) return 1;
     return la < lb ? -1 : 1;
   }
   // Segment-by-segment decimal comparison: 12A < 12A.1 < 12A.1.2 < 12A.2
-  const aDecParts = pa[3] ? pa[3].slice(1).split('.').map(p => parseInt(p, 10)) : [];
-  const bDecParts = pb[3] ? pb[3].slice(1).split('.').map(p => parseInt(p, 10)) : [];
+  const aDecParts = pa[3]
+    ? pa[3]
+        .slice(1)
+        .split(".")
+        .map((p) => parseInt(p, 10))
+    : [];
+  const bDecParts = pb[3]
+    ? pb[3]
+        .slice(1)
+        .split(".")
+        .map((p) => parseInt(p, 10))
+    : [];
   const maxLen = Math.max(aDecParts.length, bDecParts.length);
   if (aDecParts.length === 0 && bDecParts.length > 0) return -1;
   if (bDecParts.length === 0 && aDecParts.length > 0) return 1;
@@ -201,8 +212,11 @@ function comparePhaseNum(a, b) {
 function searchPhaseInDir(baseDir, relBase, normalized) {
   try {
     const entries = fs.readdirSync(baseDir, { withFileTypes: true });
-    const dirs = entries.filter(e => e.isDirectory()).map(e => e.name).sort((a, b) => comparePhaseNum(a, b));
-    const match = dirs.find(d => d.startsWith(normalized));
+    const dirs = entries
+      .filter((e) => e.isDirectory())
+      .map((e) => e.name)
+      .sort((a, b) => comparePhaseNum(a, b));
+    const match = dirs.find((d) => d.startsWith(normalized));
     if (!match) return null;
 
     const dirMatch = match.match(/^(\d+[A-Z]?(?:\.\d+)*)-?(.*)/i);
@@ -211,17 +225,15 @@ function searchPhaseInDir(baseDir, relBase, normalized) {
     const phaseDir = path.join(baseDir, match);
     const phaseFiles = fs.readdirSync(phaseDir);
 
-    const plans = phaseFiles.filter(f => f.endsWith('-PLAN.md') || f === 'PLAN.md').sort();
-    const summaries = phaseFiles.filter(f => f.endsWith('-SUMMARY.md') || f === 'SUMMARY.md').sort();
-    const hasResearch = phaseFiles.some(f => f.endsWith('-RESEARCH.md') || f === 'RESEARCH.md');
-    const hasContext = phaseFiles.some(f => f.endsWith('-CONTEXT.md') || f === 'CONTEXT.md');
-    const hasVerification = phaseFiles.some(f => f.endsWith('-VERIFICATION.md') || f === 'VERIFICATION.md');
+    const plans = phaseFiles.filter((f) => f.endsWith("-PLAN.md") || f === "PLAN.md").sort();
+    const summaries = phaseFiles.filter((f) => f.endsWith("-SUMMARY.md") || f === "SUMMARY.md").sort();
+    const hasResearch = phaseFiles.some((f) => f.endsWith("-RESEARCH.md") || f === "RESEARCH.md");
+    const hasContext = phaseFiles.some((f) => f.endsWith("-CONTEXT.md") || f === "CONTEXT.md");
+    const hasVerification = phaseFiles.some((f) => f.endsWith("-VERIFICATION.md") || f === "VERIFICATION.md");
 
-    const completedPlanIds = new Set(
-      summaries.map(s => s.replace('-SUMMARY.md', '').replace('SUMMARY.md', ''))
-    );
-    const incompletePlans = plans.filter(p => {
-      const planId = p.replace('-PLAN.md', '').replace('PLAN.md', '');
+    const completedPlanIds = new Set(summaries.map((s) => s.replace("-SUMMARY.md", "").replace("SUMMARY.md", "")));
+    const incompletePlans = plans.filter((p) => {
+      const planId = p.replace("-PLAN.md", "").replace("PLAN.md", "");
       return !completedPlanIds.has(planId);
     });
 
@@ -230,7 +242,12 @@ function searchPhaseInDir(baseDir, relBase, normalized) {
       directory: toPosixPath(path.join(relBase, match)),
       phase_number: phaseNumber,
       phase_name: phaseName,
-      phase_slug: phaseName ? phaseName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') : null,
+      phase_slug: phaseName
+        ? phaseName
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/^-+|-+$/g, "")
+        : null,
       plans,
       summaries,
       incomplete_plans: incompletePlans,
@@ -246,29 +263,29 @@ function searchPhaseInDir(baseDir, relBase, normalized) {
 function findPhaseInternal(cwd, phase) {
   if (!phase) return null;
 
-  const phasesDir = path.join(cwd, '.planning', 'phases');
+  const phasesDir = path.join(cwd, ".planning", "phases");
   const normalized = normalizePhaseName(phase);
 
   // Search current phases first
-  const current = searchPhaseInDir(phasesDir, '.planning/phases', normalized);
+  const current = searchPhaseInDir(phasesDir, ".planning/phases", normalized);
   if (current) return current;
 
   // Search archived milestone phases (newest first)
-  const milestonesDir = path.join(cwd, '.planning', 'milestones');
+  const milestonesDir = path.join(cwd, ".planning", "milestones");
   if (!fs.existsSync(milestonesDir)) return null;
 
   try {
     const milestoneEntries = fs.readdirSync(milestonesDir, { withFileTypes: true });
     const archiveDirs = milestoneEntries
-      .filter(e => e.isDirectory() && /^v[\d.]+-phases$/.test(e.name))
-      .map(e => e.name)
+      .filter((e) => e.isDirectory() && /^v[\d.]+-phases$/.test(e.name))
+      .map((e) => e.name)
       .sort()
       .reverse();
 
     for (const archiveName of archiveDirs) {
       const version = archiveName.match(/^(v[\d.]+)-phases$/)[1];
       const archivePath = path.join(milestonesDir, archiveName);
-      const relBase = '.planning/milestones/' + archiveName;
+      const relBase = ".planning/milestones/" + archiveName;
       const result = searchPhaseInDir(archivePath, relBase, normalized);
       if (result) {
         result.archived = version;
@@ -281,7 +298,7 @@ function findPhaseInternal(cwd, phase) {
 }
 
 function getArchivedPhaseDirs(cwd) {
-  const milestonesDir = path.join(cwd, '.planning', 'milestones');
+  const milestonesDir = path.join(cwd, ".planning", "milestones");
   const results = [];
 
   if (!fs.existsSync(milestonesDir)) return results;
@@ -290,8 +307,8 @@ function getArchivedPhaseDirs(cwd) {
     const milestoneEntries = fs.readdirSync(milestonesDir, { withFileTypes: true });
     // Find v*-phases directories, sort newest first
     const phaseDirs = milestoneEntries
-      .filter(e => e.isDirectory() && /^v[\d.]+-phases$/.test(e.name))
-      .map(e => e.name)
+      .filter((e) => e.isDirectory() && /^v[\d.]+-phases$/.test(e.name))
+      .map((e) => e.name)
       .sort()
       .reverse();
 
@@ -299,13 +316,16 @@ function getArchivedPhaseDirs(cwd) {
       const version = archiveName.match(/^(v[\d.]+)-phases$/)[1];
       const archivePath = path.join(milestonesDir, archiveName);
       const entries = fs.readdirSync(archivePath, { withFileTypes: true });
-      const dirs = entries.filter(e => e.isDirectory()).map(e => e.name).sort((a, b) => comparePhaseNum(a, b));
+      const dirs = entries
+        .filter((e) => e.isDirectory())
+        .map((e) => e.name)
+        .sort((a, b) => comparePhaseNum(a, b));
 
       for (const dir of dirs) {
         results.push({
           name: dir,
           milestone: version,
-          basePath: path.join('.planning', 'milestones', archiveName),
+          basePath: path.join(".planning", "milestones", archiveName),
           fullPath: path.join(archivePath, dir),
         });
       }
@@ -319,13 +339,13 @@ function getArchivedPhaseDirs(cwd) {
 
 function getRoadmapPhaseInternal(cwd, phaseNum) {
   if (!phaseNum) return null;
-  const roadmapPath = path.join(cwd, '.planning', 'ROADMAP.md');
+  const roadmapPath = path.join(cwd, ".planning", "ROADMAP.md");
   if (!fs.existsSync(roadmapPath)) return null;
 
   try {
-    const content = fs.readFileSync(roadmapPath, 'utf-8');
+    const content = fs.readFileSync(roadmapPath, "utf-8");
     const escapedPhase = escapeRegex(phaseNum.toString());
-    const phasePattern = new RegExp(`#{2,4}\\s*Phase\\s+${escapedPhase}:\\s*([^\\n]+)`, 'i');
+    const phasePattern = new RegExp(`#{2,4}\\s*Phase\\s+${escapedPhase}:\\s*([^\\n]+)`, "i");
     const headerMatch = content.match(phasePattern);
     if (!headerMatch) return null;
 
@@ -357,15 +377,15 @@ function resolveModelInternal(cwd, agentType) {
   // Check per-agent override first
   const override = config.model_overrides?.[agentType];
   if (override) {
-    return override === 'opus' ? 'inherit' : override;
+    return override === "opus" ? "inherit" : override;
   }
 
   // Fall back to profile lookup
-  const profile = config.model_profile || 'balanced';
+  const profile = config.model_profile || "balanced";
   const agentModels = MODEL_PROFILES[agentType];
-  if (!agentModels) return 'sonnet';
-  const resolved = agentModels[profile] || agentModels['balanced'] || 'sonnet';
-  return resolved === 'opus' ? 'inherit' : resolved;
+  if (!agentModels) return "sonnet";
+  const resolved = agentModels[profile] || agentModels["balanced"] || "sonnet";
+  return resolved === "opus" ? "inherit" : resolved;
 }
 
 // ─── Misc utilities ───────────────────────────────────────────────────────────
@@ -382,30 +402,33 @@ function pathExistsInternal(cwd, targetPath) {
 
 function generateSlugInternal(text) {
   if (!text) return null;
-  return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 }
 
 function getMilestoneInfo(cwd) {
   try {
-    const roadmap = fs.readFileSync(path.join(cwd, '.planning', 'ROADMAP.md'), 'utf-8');
+    const roadmap = fs.readFileSync(path.join(cwd, ".planning", "ROADMAP.md"), "utf-8");
     // Strip <details>...</details> blocks so shipped milestones don't interfere
-    const cleaned = roadmap.replace(/<details>[\s\S]*?<\/details>/gi, '');
+    const cleaned = roadmap.replace(/<details>[\s\S]*?<\/details>/gi, "");
     // Extract version and name from the same ## heading for consistency
     const headingMatch = cleaned.match(/## .*v(\d+\.\d+)[:\s]+([^\n(]+)/);
     if (headingMatch) {
       return {
-        version: 'v' + headingMatch[1],
+        version: "v" + headingMatch[1],
         name: headingMatch[2].trim(),
       };
     }
     // Fallback: try bare version match
     const versionMatch = cleaned.match(/v(\d+\.\d+)/);
     return {
-      version: versionMatch ? versionMatch[0] : 'v1.0',
-      name: 'milestone',
+      version: versionMatch ? versionMatch[0] : "v1.0",
+      name: "milestone",
     };
   } catch {
-    return { version: 'v1.0', name: 'milestone' };
+    return { version: "v1.0", name: "milestone" };
   }
 }
 
