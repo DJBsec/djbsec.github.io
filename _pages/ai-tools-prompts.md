@@ -22,7 +22,7 @@ Prompts are organized into three sections based on the tool or use case:
 ---
 
 <!-- ===================== Security ===================== -->
-<div class="card mb-5 shadow-sm">
+<div class="card mb-5" style="border-left: 4px solid #dc3545; border-top: none; border-right: none; border-bottom: none;">
   <div class="card-header bg-danger text-white d-flex justify-content-between align-items-center py-3">
     <div>
       <h3 class="mb-1">🔐 Security Prompts</h3>
@@ -68,7 +68,7 @@ Prompts are organized into three sections based on the tool or use case:
 </div>
 
 <!-- ===================== ChatGPT ===================== -->
-<div class="card mb-5 shadow-sm">
+<div class="card mb-5" style="border-left: 4px solid #007bff; border-top: none; border-right: none; border-bottom: none;">
   <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center py-3">
     <div>
       <h3 class="mb-1">💬 ChatGPT Prompts</h3>
@@ -109,7 +109,7 @@ Prompts are organized into three sections based on the tool or use case:
 </div>
 
 <!-- ===================== Copilot ===================== -->
-<div class="card mb-5 shadow-sm">
+<div class="card mb-5" style="border-left: 4px solid #17a2b8; border-top: none; border-right: none; border-bottom: none;">
   <div class="card-header bg-info text-white d-flex justify-content-between align-items-center py-3">
     <div>
       <h3 class="mb-1">🪟 Copilot Prompts</h3>
@@ -145,7 +145,7 @@ Prompts are organized into three sections based on the tool or use case:
 ---
 
 <!-- ===================== Tips ===================== -->
-<div class="card mb-4 shadow-sm">
+<div class="card mb-4" style="border-left: 4px solid #ffc107; border-top: none; border-right: none; border-bottom: none;">
   <div class="card-header bg-warning text-dark py-3">
     <h3 class="mb-1">💡 Prompt Writing Tips</h3>
     <p class="mb-0" style="font-size: 0.9rem; opacity: 0.8;">Five principles for getting better results from any AI tool</p>

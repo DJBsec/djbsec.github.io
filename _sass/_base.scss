@@ -590,12 +590,21 @@ footer.sticky-bottom {
 
   li {
     border-bottom: 1px solid var(--global-divider-color);
+    border-left: 3px solid transparent;
     list-style: none;
+    padding-left: 0.5rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
+    transition: border-left-color 0.2s ease, padding-left 0.2s ease;
+
+    &:hover {
+      border-left-color: var(--global-theme-color);
+      padding-left: 0.85rem;
+    }
 
     .post-meta {
-      color: var(--global-text-color-light);
+      color: var(--global-theme-color);
+      font-family: 'Courier New', monospace;
       font-size: 0.875rem;
       margin-bottom: 0;
     }
@@ -909,7 +918,8 @@ html.transition *:after {
 // Extra Markdown style (post Customization)
 .post {
   .post-meta {
-    color: var(--global-text-color-light);
+    color: var(--global-theme-color);
+    font-family: 'Courier New', monospace;
     font-size: 0.875rem;
     margin-bottom: 0;
   }
@@ -928,6 +938,34 @@ html.transition *:after {
         color: var(--global-theme-color);
       }
     }
+  }
+}
+
+// CyberNews post content styling
+.post-content {
+  h2 {
+    border-left: 3px solid var(--global-theme-color);
+    padding-left: 0.75rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    background: rgba(0, 191, 255, 0.04);
+    border-radius: 0 4px 4px 0;
+  }
+
+  hr {
+    border-color: var(--global-theme-color);
+    opacity: 0.2;
+    border-width: 1px 0 0 0;
+  }
+}
+
+// Blue Team table row hover accent
+.table-hover tbody tr {
+  border-left: 3px solid transparent;
+  transition: border-left-color 0.2s ease;
+
+  &:hover {
+    border-left-color: var(--global-theme-color);
   }
 }
 

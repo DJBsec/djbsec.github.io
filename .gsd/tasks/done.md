@@ -43,6 +43,13 @@
 
 - [x] Change site accent color to cyber blue — `$purple-color: #00bfff` in `_sass/_variables.scss`, cascades to all nav highlights, links, and hover states
 - [x] EPSS terminal-style inputs — dark background, monospace font, cyan glow on focus, left-border accent on result sections and chart box
+- [x] About page stats bar — 3-column row (25+ Years / CISSP / Daily) in monospace cyan between intro and "Who I Am"
+- [x] About + AI Tools cards — replaced full Bootstrap `border-*` classes with left-only `4px` accent stripes per card color
+- [x] Blue Team table — replaced "Coming Soon" badges with italic "In development" text; table rows now show cyan left accent on hover via `box-shadow`
+- [x] Blog post dates — `.post-meta` in `.post-list` and `.post` now uses monospace font + `var(--global-theme-color)` (cyan)
+- [x] CyberNews post list — left border hover accent with smooth transition on `.post-list li`
+- [x] CyberNews post H2 headings — left cyan border + subtle background tint on `.post-content h2`
+- [x] CyberNews post HR dividers — slim cyan-tinted rule on `.post-content hr`
 
 ## Config
 
