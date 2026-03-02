@@ -40,6 +40,7 @@
 - [x] Unpublish template.md — added `published: false` so Jekyll skips it during build; no longer appears in blog listing
 
 ## UI Improvements
+
 - [x] Change site accent color to cyber blue — `$purple-color: #00bfff` in `_sass/_variables.scss`, cascades to all nav highlights, links, and hover states
 - [x] EPSS terminal-style inputs — dark background, monospace font, cyan glow on focus, left-border accent on result sections and chart box
 

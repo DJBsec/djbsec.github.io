@@ -3,6 +3,7 @@
 ---
 
 ## Task 3 — About page credential/stats bar
+
 **Priority:** Medium
 The intro jumps straight to prose with no visual anchor. A stat row (25+ Years / CISSP / Daily News) communicates authority at a glance and uses `--global-theme-color` so it works in both light and dark mode.
 
@@ -13,18 +14,21 @@ The intro jumps straight to prose with no visual anchor. A stat row (25+ Years /
 ---
 
 ## Task 4 — Blue Team table row improvements
+
 **Priority:** Medium
 Row hover has no directional accent. "Coming Soon" badges look like abandoned placeholders.
 
 **Files:** `_pages/blue-team.md`
 **Changes:**
+
 - Add left border accent on row hover via inline style or `_sass/_base.scss`
 - Replace `<span class="badge bg-secondary">Coming Soon</span>` with italic "In development" text
-**Acceptance:** Hovering a row shows a left accent stripe; Coming Soon rows look intentional rather than unfinished.
+  **Acceptance:** Hovering a row shows a left accent stripe; Coming Soon rows look intentional rather than unfinished.
 
 ---
 
 ## Task 5 — Blog post dates in monospace
+
 **Priority:** Low
 Post dates use default styling. Monospace + theme color gives the CyberNews feed a terminal/news-ticker feel consistent with the cybersecurity brand.
 
@@ -35,6 +39,7 @@ Post dates use default styling. Monospace + theme color gives the CyberNews feed
 ---
 
 ## Task 6 — Replace full card borders with left-only accent stripe
+
 **Priority:** Low
 The "What You'll Find Here" cards on the about page and section cards on the AI Tools page use full Bootstrap border classes that look like default components. A left-only accent stripe is more editorial and less generic.
 
