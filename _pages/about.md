@@ -29,16 +29,16 @@ latest_posts:
 
 **Cybersecurity leader, CISSP, and 25-year IT veteran** — this site is where I share daily cyber news, security resources, and AI tools to help you stay ahead of the threat landscape.
 
-<div class="row text-center my-4">
-  <div class="col-4">
+<div style="display: flex; text-align: center; margin: 1.5rem 0;">
+  <div style="flex: 1;">
     <div style="font-size: 1.75rem; font-weight: 700; color: var(--global-theme-color); font-family: 'Courier New', monospace;">25+</div>
     <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--global-text-color-light);">Years in IT</div>
   </div>
-  <div class="col-4">
+  <div style="flex: 1;">
     <div style="font-size: 1.75rem; font-weight: 700; color: var(--global-theme-color); font-family: 'Courier New', monospace;">CISSP</div>
     <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--global-text-color-light);">Certified 2024</div>
   </div>
-  <div class="col-4">
+  <div style="flex: 1;">
     <div style="font-size: 1.75rem; font-weight: 700; color: var(--global-theme-color); font-family: 'Courier New', monospace;">Daily</div>
     <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--global-text-color-light);">CyberNews</div>
   </div>
@@ -54,29 +54,23 @@ In recent years my focus has shifted fully to cybersecurity. I’ve led the desi
 
 ### What You’ll Find Here
 
-<div class="row mt-3 mb-2">
-  <div class="col-sm-4 mb-3">
-    <div class="card h-100 text-center" style="border-left: 4px solid #007bff; border-top: none; border-right: none; border-bottom: none;">
-      <div class="card-body">
-        <h5 class="card-title">📰 CyberNews</h5>
-        <p class="card-text">Daily cybersecurity news — curated, summarized, and straight to the point.</p>
-      </div>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; margin-bottom: 0.5rem;">
+  <div style="flex: 1; min-width: 180px;">
+    <div style="height: 100%; text-align: center; border-left: 4px solid #007bff; border-top: none; border-right: none; border-bottom: none; background: var(--global-card-bg-color); border-radius: 0.25rem; padding: 1rem;">
+      <h5>📰 CyberNews</h5>
+      <p style="font-size: 0.9rem; margin-bottom: 0;">Daily cybersecurity news — curated, summarized, and straight to the point.</p>
     </div>
   </div>
-  <div class="col-sm-4 mb-3">
-    <div class="card h-100 text-center" style="border-left: 4px solid #28a745; border-top: none; border-right: none; border-bottom: none;">
-      <div class="card-body">
-        <h5 class="card-title">🛡️ Security Resources</h5>
-        <p class="card-text">Blue team tools, threat maps, search engines, and learning platforms.</p>
-      </div>
+  <div style="flex: 1; min-width: 180px;">
+    <div style="height: 100%; text-align: center; border-left: 4px solid #28a745; border-top: none; border-right: none; border-bottom: none; background: var(--global-card-bg-color); border-radius: 0.25rem; padding: 1rem;">
+      <h5>🛡️ Security Resources</h5>
+      <p style="font-size: 0.9rem; margin-bottom: 0;">Blue team tools, threat maps, search engines, and learning platforms.</p>
     </div>
   </div>
-  <div class="col-sm-4 mb-3">
-    <div class="card h-100 text-center" style="border-left: 4px solid #17a2b8; border-top: none; border-right: none; border-bottom: none;">
-      <div class="card-body">
-        <h5 class="card-title">🤖 AI & Prompts</h5>
-        <p class="card-text">Prompt libraries and guides for getting real work done with AI tools.</p>
-      </div>
+  <div style="flex: 1; min-width: 180px;">
+    <div style="height: 100%; text-align: center; border-left: 4px solid #17a2b8; border-top: none; border-right: none; border-bottom: none; background: var(--global-card-bg-color); border-radius: 0.25rem; padding: 1rem;">
+      <h5>🤖 AI & Prompts</h5>
+      <p style="font-size: 0.9rem; margin-bottom: 0;">Prompt libraries and guides for getting real work done with AI tools.</p>
     </div>
   </div>
 </div>
