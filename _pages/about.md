@@ -29,6 +29,21 @@ latest_posts:
 
 **Cybersecurity leader, CISSP, and 25-year IT veteran** — this site is where I share daily cyber news, security resources, and AI tools to help you stay ahead of the threat landscape.
 
+<div class="row text-center my-4">
+  <div class="col-4">
+    <div style="font-size: 1.75rem; font-weight: 700; color: var(--global-theme-color); font-family: 'Courier New', monospace;">25+</div>
+    <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--global-text-color-light);">Years in IT</div>
+  </div>
+  <div class="col-4">
+    <div style="font-size: 1.75rem; font-weight: 700; color: var(--global-theme-color); font-family: 'Courier New', monospace;">CISSP</div>
+    <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--global-text-color-light);">Certified 2024</div>
+  </div>
+  <div class="col-4">
+    <div style="font-size: 1.75rem; font-weight: 700; color: var(--global-theme-color); font-family: 'Courier New', monospace;">Daily</div>
+    <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--global-text-color-light);">CyberNews</div>
+  </div>
+</div>
+
 ---
 
 ### Who I Am
@@ -41,7 +56,7 @@ In recent years my focus has shifted fully to cybersecurity. I’ve led the desi
 
 <div class="row mt-3 mb-2">
   <div class="col-sm-4 mb-3">
-    <div class="card h-100 text-center border-primary">
+    <div class="card h-100 text-center" style="border-left: 4px solid #007bff; border-top: none; border-right: none; border-bottom: none;">
       <div class="card-body">
         <h5 class="card-title">📰 CyberNews</h5>
         <p class="card-text">Daily cybersecurity news — curated, summarized, and straight to the point.</p>
@@ -49,7 +64,7 @@ In recent years my focus has shifted fully to cybersecurity. I’ve led the desi
     </div>
   </div>
   <div class="col-sm-4 mb-3">
-    <div class="card h-100 text-center border-success">
+    <div class="card h-100 text-center" style="border-left: 4px solid #28a745; border-top: none; border-right: none; border-bottom: none;">
       <div class="card-body">
         <h5 class="card-title">🛡️ Security Resources</h5>
         <p class="card-text">Blue team tools, threat maps, search engines, and learning platforms.</p>
@@ -57,7 +72,7 @@ In recent years my focus has shifted fully to cybersecurity. I’ve led the desi
     </div>
   </div>
   <div class="col-sm-4 mb-3">
-    <div class="card h-100 text-center border-info">
+    <div class="card h-100 text-center" style="border-left: 4px solid #17a2b8; border-top: none; border-right: none; border-bottom: none;">
       <div class="card-body">
         <h5 class="card-title">🤖 AI & Prompts</h5>
         <p class="card-text">Prompt libraries and guides for getting real work done with AI tools.</p>
