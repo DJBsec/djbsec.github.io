@@ -8,6 +8,7 @@ You are a thinking partner, not an interviewer. The user is the visionary — yo
 **CONTEXT.md feeds into:**
 
 1. **gsd-phase-researcher** — Reads CONTEXT.md to know WHAT to research
+
    - "User wants card-based layout" → researcher investigates card component patterns
    - "Infinite scroll decided" → researcher looks into virtualization libraries
 
@@ -24,12 +25,14 @@ You are a thinking partner, not an interviewer. The user is the visionary — yo
 **User = founder/visionary. Claude = builder.**
 
 The user knows:
+
 - How they imagine it working
 - What it should look/feel like
 - What's essential vs nice-to-have
 - Specific behaviors or references they have in mind
 
 The user doesn't know (and shouldn't be asked):
+
 - Codebase patterns (researcher reads the code)
 - Technical risks (researcher identifies these)
 - Implementation approach (planner figures this out)
@@ -44,11 +47,13 @@ Ask about vision and implementation choices. Capture decisions for downstream ag
 The phase boundary comes from ROADMAP.md and is FIXED. Discussion clarifies HOW to implement what's scoped, never WHETHER to add new capabilities.
 
 **Allowed (clarifying ambiguity):**
+
 - "How should posts be displayed?" (layout, density, info shown)
 - "What happens on empty state?" (within the feature)
 - "Pull to refresh or manual?" (behavior choice)
 
 **Not allowed (scope creep):**
+
 - "Should we also add comments?" (new capability)
 - "What about search/filtering?" (new capability)
 - "Maybe include bookmarking?" (new capability)
@@ -56,6 +61,7 @@ The phase boundary comes from ROADMAP.md and is FIXED. Discussion clarifies HOW 
 **The heuristic:** Does this clarify how we implement what's already in the phase, or does it add a new capability that could be its own phase?
 
 **When user suggests scope creep:**
+
 ```
 "[Feature X] would be a new capability — that's its own phase.
 Want me to note it for the roadmap backlog?
@@ -99,11 +105,12 @@ Phase: "API documentation"
 **The key question:** What decisions would change the outcome that the user should weigh in on?
 
 **Claude handles these (don't ask):**
+
 - Technical implementation details
 - Architecture patterns
 - Performance optimization
 - Scope (roadmap defines this)
-</gray_area_identification>
+  </gray_area_identification>
 
 <process>
 
@@ -119,11 +126,13 @@ INIT=$(node "$HOME/.claude/get-shit-done/bin/gsd-tools.cjs" init phase-op "${PHA
 Parse JSON for: `commit_docs`, `phase_found`, `phase_dir`, `phase_number`, `phase_name`, `phase_slug`, `padded_phase`, `has_research`, `has_context`, `has_plans`, `has_verification`, `plan_count`, `roadmap_exists`, `planning_exists`.
 
 **If `phase_found` is false:**
+
 ```
 Phase [X] not found in roadmap.
 
 Use /gsd:progress to see available phases.
 ```
+
 Exit workflow.
 
 **If `phase_found` is true:** Continue to check_existing.
@@ -138,6 +147,7 @@ ls ${phase_dir}/*-CONTEXT.md 2>/dev/null
 
 **If exists:**
 Use AskUserQuestion:
+
 - header: "Context"
 - question: "Phase [X] already has context. What do you want to do?"
 - options:
@@ -154,6 +164,7 @@ If "Skip": Exit workflow
 Check `has_plans` and `plan_count` from init. **If `has_plans` is true:**
 
 Use AskUserQuestion:
+
 - header: "Plans exist"
 - question: "Phase [X] already has {plan_count} plan(s) created without user context. Your decisions here won't affect existing plans unless you replan."
 - options:
@@ -172,11 +183,13 @@ If "Cancel": Exit workflow.
 Lightweight scan of existing code to inform gray area identification and discussion. Uses ~10% context — acceptable for an interactive session.
 
 **Step 1: Check for existing codebase maps**
+
 ```bash
 ls .planning/codebase/*.md 2>/dev/null
 ```
 
 **If codebase maps exist:** Read the most relevant ones (CONVENTIONS.md, STRUCTURE.md, STACK.md based on phase type). Extract:
+
 - Reusable components/hooks/utilities
 - Established patterns (state management, styling, data fetching)
 - Integration points (where new code would connect)
@@ -202,6 +215,7 @@ Read the 3-5 most relevant files to understand existing patterns.
 **Step 3: Build internal codebase_context**
 
 From the scan, identify:
+
 - **Reusable assets** — existing components, hooks, utilities that could be used in this phase
 - **Established patterns** — how the codebase does state management, styling, data fetching
 - **Integration points** — where new code would connect (routes, nav, providers)
@@ -224,6 +238,7 @@ Analyze the phase to identify gray areas worth discussing. **Use codebase_contex
 **Output your analysis internally, then present to user.**
 
 Example analysis for "Post Feed" phase (with code context):
+
 ```
 Domain: Displaying posts from followed users
 Existing: Card component (src/components/ui/Card.tsx), useInfiniteQuery hook, Tailwind CSS
@@ -234,12 +249,14 @@ Gray areas:
 - Empty State: What shows when no posts exist — EmptyState component exists in ui/
 - Content: What metadata displays (time, author, reactions count)
 ```
+
 </step>
 
 <step name="present_gray_areas">
 Present the domain boundary and gray areas to user.
 
 **First, state the boundary:**
+
 ```
 Phase [X]: [Name]
 Domain: [What this phase delivers — from your analysis]
@@ -249,6 +266,7 @@ We'll clarify HOW to implement this.
 ```
 
 **Then use AskUserQuestion (multiSelect: true):**
+
 - header: "Discuss"
 - question: "Which areas do you want to discuss for [phase name]?"
 - options: Generate 3-4 phase-specific gray areas, each with:
@@ -257,6 +275,7 @@ We'll clarify HOW to implement this.
   - **Highlight the recommended choice with brief explanation why**
 
 **Code context annotations:** When the scout found relevant existing code, annotate the gray area description:
+
 ```
 ☐ Layout style — Cards vs list vs timeline?
   (You already have a Card component with shadow/rounded variants. Reusing it keeps the app consistent.)
@@ -267,6 +286,7 @@ We'll clarify HOW to implement this.
 **Examples by domain (with code context):**
 
 For "Post Feed" (visual feature):
+
 ```
 ☐ Layout style — Cards vs list vs timeline? (Card component exists with variants)
 ☐ Loading behavior — Infinite scroll or pagination? (useInfiniteQuery hook available)
@@ -275,6 +295,7 @@ For "Post Feed" (visual feature):
 ```
 
 For "Database backup CLI" (command-line tool):
+
 ```
 ☐ Output format — JSON, table, or plain text? Verbosity levels?
 ☐ Flag design — Short flags, long flags, or both? Required vs optional?
@@ -283,6 +304,7 @@ For "Database backup CLI" (command-line tool):
 ```
 
 For "Organize photo library" (organization task):
+
 ```
 ☐ Grouping criteria — By date, location, faces, or events?
 ☐ Duplicate handling — Keep best, keep all, or prompt each time?
@@ -303,11 +325,13 @@ Ask 4 questions per area before offering to continue or move on. Each answer oft
 **For each area:**
 
 1. **Announce the area:**
+
    ```
    Let's talk about [Area].
    ```
 
 2. **Ask 4 questions using AskUserQuestion:**
+
    - header: "[Area]" (max 12 chars — abbreviate if needed)
    - question: Specific decision for this area
    - options: 2-3 concrete choices (AskUserQuestion adds "Other" automatically), with the recommended choice highlighted and brief explanation why
@@ -322,6 +346,7 @@ Ask 4 questions per area before offering to continue or move on. Each answer oft
    - **Context7 for library choices:** When a gray area involves library selection (e.g., "magic links" → query next-auth docs) or API approach decisions, use `mcp__context7__*` tools to fetch current documentation and inform the options. Don't use Context7 for every question — only when library-specific knowledge improves the options.
 
 3. **After 4 questions, check:**
+
    - header: "[Area]" (max 12 chars)
    - question: "More questions about [area], or move to next?"
    - options: "More questions" / "Next area"
@@ -343,12 +368,14 @@ Ask 4 questions per area before offering to continue or move on. Each answer oft
    - If "I'm ready for context": Proceed to write_context
 
 **Question design:**
+
 - Options should be concrete, not abstract ("Cards" not "Option A")
 - Each answer should inform the next question
 - If user picks "Other", receive their input, reflect it back, confirm
 
 **Scope creep handling:**
 If user mentions something outside the phase domain:
+
 ```
 "[Feature] sounds like a new capability — that belongs in its own phase.
 I'll note it as a deferred idea.
@@ -367,6 +394,7 @@ Create CONTEXT.md capturing decisions made.
 Use values from init: `phase_dir`, `phase_slug`, `padded_phase`.
 
 If `phase_dir` is null (phase exists in roadmap but no directory):
+
 ```bash
 mkdir -p ".planning/phases/${padded_phase}-${phase_slug}"
 ```
@@ -392,27 +420,34 @@ mkdir -p ".planning/phases/${padded_phase}-${phase_slug}"
 ## Implementation Decisions
 
 ### [Category 1 that was discussed]
+
 - [Decision or preference captured]
 - [Another decision if applicable]
 
 ### [Category 2 that was discussed]
+
 - [Decision or preference captured]
 
 ### Claude's Discretion
+
 [Areas where user said "you decide" — note that Claude has flexibility here]
 
 </decisions>
 
 <code_context>
+
 ## Existing Code Insights
 
 ### Reusable Assets
+
 - [Component/hook/utility]: [How it could be used in this phase]
 
 ### Established Patterns
+
 - [Pattern]: [How it constrains/enables this phase]
 
 ### Integration Points
+
 - [Where new code connects to existing system]
 
 </code_context>
@@ -437,8 +472,8 @@ mkdir -p ".planning/phases/${padded_phase}-${phase_slug}"
 
 ---
 
-*Phase: XX-name*
-*Context gathered: [date]*
+_Phase: XX-name_
+_Context gathered: [date]_
 ```
 
 Write file.
@@ -480,6 +515,7 @@ Created: .planning/phases/${PADDED_PHASE}-${SLUG}/${PADDED_PHASE}-CONTEXT.md
 
 ---
 ```
+
 </step>
 
 <step name="git_commit">
@@ -506,6 +542,7 @@ Commit STATE.md:
 ```bash
 node "$HOME/.claude/get-shit-done/bin/gsd-tools.cjs" commit "docs(state): record phase ${PHASE} context session" --files .planning/STATE.md
 ```
+
 </step>
 
 <step name="auto_advance">
@@ -518,6 +555,7 @@ Check for auto-advance trigger:
    ```
 
 **If `--auto` flag present AND `AUTO_CFG` is not true:** Persist auto-advance to config (handles direct `--auto` usage without new-project):
+
 ```bash
 node "$HOME/.claude/get-shit-done/bin/gsd-tools.cjs" config-set workflow.auto_advance true
 ```
@@ -525,6 +563,7 @@ node "$HOME/.claude/get-shit-done/bin/gsd-tools.cjs" config-set workflow.auto_ad
 **If `--auto` flag present OR `AUTO_CFG` is true:**
 
 Display banner:
+
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  GSD ► AUTO-ADVANCING TO PLAN
@@ -534,6 +573,7 @@ Context captured. Spawning plan-phase...
 ```
 
 Spawn plan-phase as Task with direct workflow file reference (do NOT use Skill tool — Skills don't resolve inside Task subagents):
+
 ```
 Task(
   prompt="
@@ -567,7 +607,9 @@ Task(
 ```
 
 **Handle plan-phase return:**
+
 - **PHASE COMPLETE** → Full chain succeeded. Display:
+
   ```
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    GSD ► PHASE ${PHASE} COMPLETE
@@ -578,6 +620,7 @@ Task(
   Next: /gsd:discuss-phase ${NEXT_PHASE} --auto
   <sub>/clear first → fresh context window</sub>
   ```
+
 - **PLANNING COMPLETE** → Planning done, execution didn't complete:
   ```
   Auto-advance partial: Planning complete, execution did not finish.
@@ -601,6 +644,7 @@ Route to `confirm_creation` step (existing behavior — show manual next steps).
 </process>
 
 <success_criteria>
+
 - Phase validated against roadmap
 - Codebase scouted for reusable assets, patterns, and integration points
 - Gray areas identified through intelligent analysis with code context annotations
@@ -612,4 +656,4 @@ Route to `confirm_creation` step (existing behavior — show manual next steps).
 - Deferred ideas preserved for future phases
 - STATE.md updated with session info
 - User knows next steps
-</success_criteria>
+  </success_criteria>
