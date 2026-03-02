@@ -7,7 +7,29 @@
       display: block;
       margin-top: 0.5em;
     }
-    .epss-tool input,
+    .epss-tool input[type="text"],
+    .epss-tool input[type="date"] {
+      background: #0d1117;
+      color: #00bfff;
+      border: 1px solid rgba(0, 191, 255, 0.3);
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 0.04em;
+      width: 100%;
+      padding: 0.55em 0.8em;
+      margin-top: 0.25em;
+      font-size: 1em;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .epss-tool input[type="text"]:focus,
+    .epss-tool input[type="date"]:focus {
+      outline: none;
+      border-color: #00bfff;
+      box-shadow: 0 0 8px rgba(0, 191, 255, 0.35);
+    }
+    .epss-tool input[type="text"]::placeholder {
+      color: rgba(0, 191, 255, 0.35);
+    }
     .epss-tool button {
       padding: 0.5em;
       margin-top: 0.25em;
@@ -41,15 +63,19 @@
       margin: 0.25em 0;
     }
     .epss-tool .result-section {
-      border: 1px solid #dee2e6;
-      border-radius: 6px;
+      border-left: 3px solid #00bfff;
+      border-top: 1px solid rgba(0, 191, 255, 0.15);
+      border-right: none;
+      border-bottom: none;
+      border-radius: 0 4px 4px 0;
+      background: rgba(0, 191, 255, 0.03);
       padding: 1em 1.2em;
       margin-bottom: 1em;
     }
     .epss-tool .result-section h4 {
       margin-top: 0;
       padding-bottom: 0.4em;
-      border-bottom: 1px solid #dee2e6;
+      border-bottom: 1px solid rgba(0, 191, 255, 0.15);
     }
     .epss-tool .kev-yes {
       display: inline-block;
@@ -97,8 +123,12 @@
       display: none;
       margin-top: 1.5em;
       padding: 1em 1.2em;
-      border: 1px solid #dee2e6;
-      border-radius: 6px;
+      border-left: 3px solid #00bfff;
+      border-top: 1px solid rgba(0, 191, 255, 0.15);
+      border-right: none;
+      border-bottom: none;
+      border-radius: 0 4px 4px 0;
+      background: rgba(0, 191, 255, 0.03);
     }
     .epss-tool .chart-box h4 {
       margin-top: 0;
