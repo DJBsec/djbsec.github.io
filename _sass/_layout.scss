@@ -51,3 +51,65 @@ body.sticky-bottom-footer {
 *****************************************************************************/
 
 // TODO: redefine projects layout.
+
+// ── 2026 Visual Polish ─────────────────────────────────────────────
+
+// Antialiased text rendering for crisp dark-mode type
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.7;
+}
+
+// Frosted glass navbar — modern depth without opacity loss
+nav#navbar {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--global-divider-color);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+html[data-theme="dark"] nav#navbar {
+  background-color: rgba(28, 28, 29, 0.82) !important;
+}
+
+// Active nav link indicator — subtle underline dot
+nav#navbar .nav-item.active .nav-link {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--global-theme-color);
+  }
+}
+
+// Nav link hover — smooth color fade
+nav#navbar .nav-link {
+  transition: color 0.15s ease;
+}
+
+// Profile image — depth shadow in dark mode
+.profile img {
+  transition: box-shadow 0.2s ease;
+}
+
+html[data-theme="dark"] .profile img {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06),
+              0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+// Post list — subtle slide-in on hover for latest-posts entries
+.post-list li {
+  transition: transform 0.15s ease;
+
+  &:hover {
+    transform: translateX(3px);
+  }
+}
