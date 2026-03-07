@@ -26,7 +26,7 @@ Explore internet-wide scan platforms, threat intelligence engines, and OSINT dat
     <tr><td>Censys</td><td>Assess attack surfaces of internet-connected devices</td><td><a href="https://censys.io/" target="_blank">Visit</a></td></tr>
     <tr><td>crt.sh</td><td>Search for certs logged by Certificate Transparency</td><td><a href="https://crt.sh/" target="_blank">Visit</a></td></tr>
     <tr><td>Extension Total</td><td>Analyze browser extensions for risk and compliance</td><td><a href="https://www.extensiontotal.com/" target="_blank">Visit</a></td></tr>
-    <tr><td>Fofa</td><td>Search for global threat intelligence (Chinese platform)</td><td><a href="#" target="_blank">Visit</a></td></tr>
+    <tr><td>Fofa</td><td>Search for global threat intelligence (Chinese platform)</td><td><a href="https://en.fofa.info/" target="_blank">Visit</a></td></tr>
     <tr><td>FullHunt</td><td>Search and discover attack surfaces and exposures</td><td><a href="https://fullhunt.io/" target="_blank">Visit</a></td></tr>
     <tr><td>GrayHatWarfare</td><td>Search publicly exposed Amazon S3 buckets</td><td><a href="https://grayhatwarfare.com/" target="_blank">Visit</a></td></tr>
     <tr><td>Grep App</td><td>Search across open-source GitHub repositories</td><td><a href="https://grep.app/" target="_blank">Visit</a></td></tr>
