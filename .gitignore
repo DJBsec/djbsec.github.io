@@ -12,4 +12,5 @@ node_modules/
 vendor
 .idea
 .claude/
-.gsd/backlog.md
+.gsd/
+security-fixes-2026-03-07.md

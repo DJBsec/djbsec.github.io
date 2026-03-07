@@ -103,6 +103,7 @@
       border-radius: 12px;
       background: #e9ecef;
       border: 1px solid #dee2e6;
+      color: #212529;
       font-size: 0.85em;
       cursor: pointer;
       transition: background 0.15s;
@@ -181,7 +182,28 @@
     let chartInstance = null;
     let kevCache = null;
 
-    /* ── Chart.js loader ───────────────────────────────────────────── */
+    /* ── HTML escape helper (SEC-13) ────────────────────────────────── */
+    function esc(s) {
+      if (s == null) return "";
+      return String(s)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    /* ── Safe https:-only URL helper (SEC-13) ───────────────────────── */
+    function safeHref(url) {
+      try {
+        const u = new URL(url);
+        return u.protocol === "https:" ? esc(url) : null;
+      } catch {
+        return null;
+      }
+    }
+
+    /* ── Chart.js loader (SEC-07: SRI added) ───────────────────────── */
     function ensureChartJs() {
       return new Promise((resolve) => {
         if (window.Chart) {
@@ -190,6 +212,8 @@
         }
         const s = document.createElement("script");
         s.src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js";
+        s.integrity = "sha512-CQBWl4fJHWbryGE+Pc7UAxWMUMNMWzWxF4SQo9CgkJIN1kx6djDQZjh3Y8SZ1d+6I+1zze6Z7kHXO7q3UyZAWw==";
+        s.crossOrigin = "anonymous";
         s.onload = resolve;
         document.head.appendChild(s);
       });
@@ -207,9 +231,16 @@
         .catch(() => null);
     }
 
-    /* ── Recent lookups ────────────────────────────────────────────── */
+    /* ── Recent lookups (SEC-08: validated on read) ─────────────────── */
+    const CVE_RE = /^CVE-\d{4}-\d{4,}$/;
+
     function getRecent() {
-      return JSON.parse(localStorage.getItem("epssRecent") || "[]");
+      try {
+        const val = JSON.parse(localStorage.getItem("epssRecent") || "[]");
+        return Array.isArray(val) ? val.filter((c) => typeof c === "string" && CVE_RE.test(c)) : [];
+      } catch {
+        return [];
+      }
     }
 
     function addRecent(cve) {
@@ -218,6 +249,7 @@
       renderChips();
     }
 
+    /* ── Render chips (SEC-01: data-cve + event delegation, no inline onclick) */
     function renderChips() {
       const recent = getRecent();
       const wrap = document.getElementById("recentLookups");
@@ -227,7 +259,14 @@
         return;
       }
       wrap.style.display = "block";
-      chips.innerHTML = recent.map((cve) => `<span class="chip" onclick="epssQuickLookup('${cve}')">${cve}</span>`).join("");
+      chips.innerHTML = "";
+      recent.forEach((cve) => {
+        const span = document.createElement("span");
+        span.className = "chip";
+        span.textContent = cve;
+        span.dataset.cve = cve;
+        chips.appendChild(span);
+      });
     }
 
     function epssQuickLookup(cve) {
@@ -287,7 +326,7 @@
       });
     }
 
-    /* ── Render results ────────────────────────────────────────────── */
+    /* ── Render results (SEC-13: all API values escaped, refs validated) */
     function renderResults(data, kevEntry) {
       const ec = epssCol(data.epss);
       const pc = epssCol(data.percentile);
@@ -299,10 +338,10 @@
         ? `<div class="result-section" style="border-color:#dc3545;">
             <h4>🚨 CISA Known Exploited Vulnerability (KEV)</h4>
             <strong>Status:</strong> <span class="kev-yes">⚠️ IN KEV LIST</span><br><br>
-            <strong>Vulnerability Name:</strong> ${kevEntry.vulnerabilityName}<br>
-            <strong>Date Added to KEV:</strong> ${kevEntry.dateAdded}<br>
-            <strong>Remediation Due Date (FCEB):</strong> ${kevEntry.dueDate || "N/A"}<br>
-            <strong>Required Action:</strong> ${kevEntry.requiredAction}
+            <strong>Vulnerability Name:</strong> ${esc(kevEntry.vulnerabilityName)}<br>
+            <strong>Date Added to KEV:</strong> ${esc(kevEntry.dateAdded)}<br>
+            <strong>Remediation Due Date (FCEB):</strong> ${esc(kevEntry.dueDate) || "N/A"}<br>
+            <strong>Required Action:</strong> ${esc(kevEntry.requiredAction)}
            </div>`
         : `<div class="result-section" style="border-color:#198754;">
             <h4>✅ CISA KEV Status</h4>
@@ -313,34 +352,38 @@
       // EPSS section
       const epssHtml = `<div class="result-section">
         <h4>📊 EPSS Score <small style="font-weight:normal; font-size:0.8em;">(FIRST.org)</small></h4>
-        <strong>EPSS Score:</strong> <span style="color:${ec}; font-weight:bold;">${dot(data.epss)} ${data.epss}%</span><br>
-        <strong>EPSS Percentile:</strong> <span style="color:${pc}; font-weight:bold;">${data.percentile}%</span><br>
-        <em style="font-size:0.9em; color:#6c757d;">${data.message}</em>
+        <strong>EPSS Score:</strong> <span style="color:${ec}; font-weight:bold;">${dot(data.epss)} ${esc(data.epss)}%</span><br>
+        <strong>EPSS Percentile:</strong> <span style="color:${pc}; font-weight:bold;">${esc(data.percentile)}%</span><br>
+        <em style="font-size:0.9em; color:#6c757d;">${esc(data.message)}</em>
        </div>`;
 
       // CVSS section
       const cvssHtml = `<div class="result-section">
         <h4>🔢 CVSS Severity Scores</h4>
-        <strong>CVSS v2:</strong> <span style="color:${v2c}; font-weight:bold;">${data.cvss_v2 || "N/A"}</span>&emsp;
-        <strong>CVSS v3:</strong> <span style="color:${v3c}; font-weight:bold;">${data.cvss_v3 || "N/A"}</span>
+        <strong>CVSS v2:</strong> <span style="color:${v2c}; font-weight:bold;">${esc(data.cvss_v2) || "N/A"}</span>&emsp;
+        <strong>CVSS v3:</strong> <span style="color:${v3c}; font-weight:bold;">${esc(data.cvss_v3) || "N/A"}</span>
        </div>`;
 
-      // Details section
-      const refsHtml = (data.references || [])
+      // Details section — reference URLs validated to https: only
+      const refsHtml = (Array.isArray(data.references) ? data.references : [])
         .slice(0, 5)
-        .map((r) => `<li><a href="${r}" target="_blank" rel="noopener noreferrer">${r}</a></li>`)
+        .map((r) => {
+          const href = safeHref(r);
+          return href ? `<li><a href="${href}" target="_blank" rel="noopener noreferrer">${esc(r)}</a></li>` : "";
+        })
+        .filter(Boolean)
         .join("");
 
       const detailsHtml = `<div class="result-section">
         <h4>📋 Vulnerability Details</h4>
-        <strong>CVE ID:</strong> ${data.cve}<br>
-        <strong>Query Date:</strong> ${data.date}<br>
-        <strong>Published:</strong> ${data.published_time || "N/A"}<br>
-        <strong>Summary:</strong> ${data.summary || "Not available"}
+        <strong>CVE ID:</strong> ${esc(data.cve)}<br>
+        <strong>Query Date:</strong> ${esc(data.date)}<br>
+        <strong>Published:</strong> ${esc(data.published_time) || "N/A"}<br>
+        <strong>Summary:</strong> ${esc(data.summary) || "Not available"}
         ${refsHtml ? `<br><br><strong>References:</strong><ul style="margin-top:0.3em; padding-left:1.2em;">${refsHtml}</ul>` : ""}
        </div>`;
 
-      // Copy text
+      // Copy text (plain text — no escaping needed)
       const copyText = [
         `CVE: ${data.cve}`,
         `Date: ${data.date}`,
@@ -354,7 +397,7 @@
       ].join("\n");
 
       document.getElementById("result").innerHTML = `
-        <h3 style="margin-bottom: 0.8em;">Results — ${data.cve}</h3>
+        <h3 style="margin-bottom: 0.8em;">Results — ${esc(data.cve)}</h3>
         ${epssHtml}${cvssHtml}${kevHtml}${detailsHtml}
         <button id="copyBtn">📋 Copy Results</button>
       `;
@@ -385,6 +428,12 @@
 
       // Render saved recent lookups
       renderChips();
+
+      // SEC-01: event delegation for chip clicks (no inline onclick)
+      document.getElementById("recentChips").addEventListener("click", (e) => {
+        const chip = e.target.closest("[data-cve]");
+        if (chip) epssQuickLookup(chip.dataset.cve);
+      });
 
       // Reset button
       document.getElementById("resetBtn").addEventListener("click", () => {
@@ -436,17 +485,21 @@
           getKevData(),
         ])
           .then(([, workerData, trendResp, kevData]) => {
-            if (workerData.error) {
-              resultDiv.innerHTML = `<p style="color:red;">Error: ${workerData.error}</p>`;
+            // SEC-03: validate worker response shape before rendering
+            if (workerData.error || typeof workerData.epss !== "number" || typeof workerData.cve !== "string") {
+              resultDiv.innerHTML = `<p style="color:red;">Error: ${esc(workerData.error || "Unexpected response from API")}</p>`;
               return;
             }
-            const kevEntry = kevData ? kevData.vulnerabilities.find((v) => v.cveID === cve) || null : null;
+            // SEC-03: validate KEV data shape before accessing .vulnerabilities
+            const kevEntry = Array.isArray(kevData?.vulnerabilities)
+              ? kevData.vulnerabilities.find((v) => v.cveID === cve) || null
+              : null;
             renderResults(workerData, kevEntry);
             renderChart(trendResp?.data?.[0]?.["time-series"] || null);
             addRecent(cve);
           })
           .catch((err) => {
-            resultDiv.innerHTML = `<p style="color:red;">An error occurred: ${err.message}</p>`;
+            resultDiv.innerHTML = `<p style="color:red;">An error occurred: ${esc(err.message)}</p>`;
           })
           .finally(() => {
             submitBtn.disabled = false;

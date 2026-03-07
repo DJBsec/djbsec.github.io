@@ -111,7 +111,7 @@ giscus:
   lang: en
 
 # Disqus comments (DEPRECATED)
-disqus_shortname: al-folio # put your disqus shortname
+disqus_shortname: # cleared — was set to upstream al-folio demo value (SEC-20)
 # https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
 # External sources.

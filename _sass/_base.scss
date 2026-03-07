@@ -38,10 +38,12 @@ table {
 a,
 table.table a {
   color: var(--global-theme-color);
+  transition: color 0.15s ease, opacity 0.15s ease;
 
   &:hover {
     color: var(--global-theme-color);
     text-decoration: underline;
+    opacity: 0.85;
   }
 
   &:hover:after :not(.nav-item.dropdown) {
@@ -1381,4 +1383,41 @@ ninja-keys::part(ninja-input-wrapper) {
 ::highlight(search) {
   background-color: var(--global-theme-color);
   color: var(--global-text-color);
+}
+
+// ── 2026 Visual Polish ─────────────────────────────────────────────
+
+// Text selection — themed highlight
+::selection {
+  background: rgba(0, 191, 255, 0.18);
+  color: inherit;
+}
+
+html[data-theme="dark"] ::selection {
+  background: rgba(38, 152, 186, 0.28);
+  color: inherit;
+}
+
+// Keyboard-focus rings — accessible and on-brand
+:focus-visible {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+// Blockquote — rounded right edge for modern softness
+blockquote {
+  border-radius: 0 6px 6px 0;
+}
+
+// Dark mode blockquote — subtle background lift
+html[data-theme="dark"] blockquote {
+  background: rgba(255, 255, 255, 0.03);
+  border-left-color: var(--global-theme-color);
+}
+
+// Horizontal rule — fade edges for elegance
+html[data-theme="dark"] hr {
+  border-color: var(--global-divider-color);
+  opacity: 0.6;
 }
