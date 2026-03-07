@@ -8,12 +8,7 @@
     /* ── HTML escape helper (SEC-13) ────────────────────────────────── */
     function esc(s) {
       if (s == null) return "";
-      return String(s)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#39;");
+      return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
     }
 
     /* ── Safe https:-only URL helper (SEC-13) ───────────────────────── */
@@ -314,9 +309,7 @@
               return;
             }
             // SEC-03: validate KEV data shape before accessing .vulnerabilities
-            const kevEntry = Array.isArray(kevData?.vulnerabilities)
-              ? kevData.vulnerabilities.find((v) => v.cveID === cve) || null
-              : null;
+            const kevEntry = Array.isArray(kevData?.vulnerabilities) ? kevData.vulnerabilities.find((v) => v.cveID === cve) || null : null;
             renderResults(workerData, kevEntry);
             renderChart(trendResp?.data?.[0]?.["time-series"] || null);
             addRecent(cve);
