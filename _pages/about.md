@@ -27,52 +27,49 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-**Cybersecurity leader, CISSP, and 25-year IT veteran** — this site is where I share daily cyber news, security resources, and AI tools to help you stay ahead of the threat landscape.
-
-<div style="display: flex; text-align: center; margin: 1.5rem 0;">
-  <div style="flex: 1;">
-    <div style="font-size: 1.75rem; font-weight: 700; color: var(--global-theme-color); font-family: 'Courier New', monospace;">25+</div>
-    <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--global-text-color-light);">Years in IT</div>
+<div style="border-bottom: 1px solid var(--global-divider-color); padding-bottom: 1.25rem; margin-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 1.5rem 3rem;">
+  <div>
+    <div style="font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--global-text-color-light); margin-bottom: 0.2rem;">Experience</div>
+    <div style="font-size: 1.1rem; font-weight: 700; color: var(--global-theme-color); font-family: 'Courier New', monospace;">25+ years</div>
   </div>
-  <div style="flex: 1;">
-    <div style="font-size: 1.75rem; font-weight: 700; color: var(--global-theme-color); font-family: 'Courier New', monospace;">CISSP</div>
-    <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--global-text-color-light);">Certified 2024</div>
+  <div>
+    <div style="font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--global-text-color-light); margin-bottom: 0.2rem;">Certification</div>
+    <div style="font-size: 1.1rem; font-weight: 700; color: var(--global-theme-color); font-family: 'Courier New', monospace;">CISSP &rsquo;24</div>
   </div>
-  <div style="flex: 1;">
-    <div style="font-size: 1.75rem; font-weight: 700; color: var(--global-theme-color); font-family: 'Courier New', monospace;">Daily</div>
-    <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--global-text-color-light);">CyberNews</div>
+  <div>
+    <div style="font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--global-text-color-light); margin-bottom: 0.2rem;">Publishing cadence</div>
+    <div style="font-size: 1.1rem; font-weight: 700; color: var(--global-theme-color); font-family: 'Courier New', monospace;">Daily</div>
+  </div>
+  <div>
+    <div style="font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--global-text-color-light); margin-bottom: 0.2rem;">Network certs</div>
+    <div style="font-size: 1.1rem; font-weight: 700; color: var(--global-theme-color); font-family: 'Courier New', monospace;">Cisco &bull; Palo Alto</div>
   </div>
 </div>
 
----
+<div style="display: flex; flex-wrap: wrap; gap: 2.5rem; margin-bottom: 2rem; align-items: flex-start;">
 
-### Who I Am
-
-I started in IT at the helpdesk and worked my way through systems administration, network engineering, and eventually into senior leadership — touching nearly every layer of enterprise infrastructure along the way.
-
-In recent years my focus has shifted fully to cybersecurity. I’ve led the design and build of a cybersecurity program from the ground up, balancing hands-on technical work with strategy, compliance, and risk management. I hold certifications from Cisco and Palo Alto Networks, and earned my **CISSP in 2024**.
-
-### What You’ll Find Here
-
-<div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; margin-bottom: 0.5rem;">
-  <div style="flex: 1; min-width: 180px;">
-    <div style="height: 100%; text-align: center; border-left: 4px solid #007bff; border-top: none; border-right: none; border-bottom: none; background: var(--global-card-bg-color); border-radius: 0.25rem; padding: 1rem;">
-      <h5>📰 CyberNews</h5>
-      <p style="font-size: 0.9rem; margin-bottom: 0;">Daily cybersecurity news — curated, summarized, and straight to the point.</p>
+  <div style="flex: 1; min-width: 220px;">
+    <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--global-text-color-light); margin-bottom: 1rem; font-weight: 600;">What you’ll find here</div>
+    <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--global-divider-color);">
+      <div style="font-weight: 700; font-size: 0.9rem; margin-bottom: 0.2rem;"><a href="/blog/" style="color: var(--global-text-color); text-decoration: none;">Daily CyberNews</a></div>
+      <div style="font-size: 0.85rem; color: var(--global-text-color-light); line-height: 1.55;">Curated cybersecurity news, summarized and published every day.</div>
+    </div>
+    <div style="margin-bottom: 0;">
+      <div style="font-weight: 700; font-size: 0.9rem; margin-bottom: 0.2rem;"><a href="/blue-team/" style="color: var(--global-text-color); text-decoration: none;">Security Resources</a></div>
+      <div style="font-size: 0.85rem; color: var(--global-text-color-light); line-height: 1.55;">Blue team tools, threat intelligence, and learning platforms.</div>
     </div>
   </div>
-  <div style="flex: 1; min-width: 180px;">
-    <div style="height: 100%; text-align: center; border-left: 4px solid #28a745; border-top: none; border-right: none; border-bottom: none; background: var(--global-card-bg-color); border-radius: 0.25rem; padding: 1rem;">
-      <h5>🛡️ Security Resources</h5>
-      <p style="font-size: 0.9rem; margin-bottom: 0;">Blue team tools, threat maps, search engines, and learning platforms.</p>
-    </div>
+
+  <div style="flex: 1.4; min-width: 260px;">
+    <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--global-text-color-light); margin-bottom: 1rem; font-weight: 600;">Background</div>
+    <p style="font-size: 0.9rem; line-height: 1.8; color: var(--global-text-color); margin-bottom: 1rem;">
+      I started in IT at the helpdesk and worked my way through systems administration, network engineering, and eventually senior leadership — touching nearly every layer of enterprise infrastructure along the way.
+    </p>
+    <p style="font-size: 0.9rem; line-height: 1.8; color: var(--global-text-color); margin-bottom: 0;">
+      In recent years my focus has shifted fully to cybersecurity. I’ve led the design and build of a security program from the ground up, balancing hands-on technical work with strategy, compliance, and risk management. I hold certifications from Cisco and Palo Alto Networks, and earned my <strong>CISSP in 2024</strong>.
+    </p>
   </div>
-  <div style="flex: 1; min-width: 180px;">
-    <div style="height: 100%; text-align: center; border-left: 4px solid #17a2b8; border-top: none; border-right: none; border-bottom: none; background: var(--global-card-bg-color); border-radius: 0.25rem; padding: 1rem;">
-      <h5>🤖 AI & Prompts</h5>
-      <p style="font-size: 0.9rem; margin-bottom: 0;">Prompt libraries and guides for getting real work done with AI tools.</p>
-    </div>
-  </div>
+
 </div>
 
 <!--Original Page
