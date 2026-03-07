@@ -5,12 +5,7 @@
 
   function esc(s) {
     if (s == null) return "";
-    return String(s)
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#39;");
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
   }
 
   function safeHref(url) {
@@ -72,9 +67,7 @@
 
         // SEC-02: validate GreyNoise link is https: before rendering as href
         const gnLink = safeHref(data.greynoise.link);
-        const gnLinkHtml = gnLink
-          ? `<p><a href="${gnLink}" target="_blank" rel="noopener noreferrer">GreyNoise Link 🔗</a></p>`
-          : "";
+        const gnLinkHtml = gnLink ? `<p><a href="${gnLink}" target="_blank" rel="noopener noreferrer">GreyNoise Link 🔗</a></p>` : "";
 
         const vtStats = data.virustotal.last_analysis_stats || {};
         const output = `

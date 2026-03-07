@@ -66,7 +66,9 @@ nav#navbar {
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--global-divider-color);
-  transition: background-color 0.25s ease, border-color 0.25s ease;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease;
 }
 
 html[data-theme="dark"] nav#navbar {
@@ -101,8 +103,9 @@ nav#navbar .nav-link {
 }
 
 html[data-theme="dark"] .profile img {
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06),
-              0 12px 40px rgba(0, 0, 0, 0.5);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 12px 40px rgba(0, 0, 0, 0.5);
 }
 
 // Post list — subtle slide-in on hover for latest-posts entries

@@ -38,7 +38,9 @@ table {
 a,
 table.table a {
   color: var(--global-theme-color);
-  transition: color 0.15s ease, opacity 0.15s ease;
+  transition:
+    color 0.15s ease,
+    opacity 0.15s ease;
 
   &:hover {
     color: var(--global-theme-color);
