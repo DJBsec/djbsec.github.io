@@ -3,7 +3,7 @@ layout: page
 title: EPSS
 permalink: /epss/
 subtitle:
-description: 🔍 EPSS & Shodan CVE Lookup Tool
+description: Look up EPSS scores, CISA KEV status, and CVSS severity for any CVE.
 nav: true
 nav_order: 3
 #profile:

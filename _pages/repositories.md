@@ -2,7 +2,7 @@
 layout: page
 permalink: /repositories/
 title: repos
-description:
+description: GitHub repositories and projects from DJBSec.
 nav: true
 nav_order: 5
 ---
