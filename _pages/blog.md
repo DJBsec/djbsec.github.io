@@ -22,6 +22,7 @@ pagination:
 {% assign blog_description_size = site.blog_description | size %}
 
 {% if blog_name_size > 0 or blog_description_size > 0 %}
+
 <div class="news-masthead">
   <div class="news-masthead-inner">
     <div class="news-masthead-title">
@@ -37,6 +38,7 @@ pagination:
 {% endif %}
 
 {% if site.display_tags and site.display_tags.size > 0 or site.display_categories and site.display_categories.size > 0 %}
+
 <div class="news-filter-bar">
   {% for tag in site.display_tags %}
     <a class="news-pill" href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}">
@@ -56,13 +58,14 @@ pagination:
 {% assign secondary_posts = sorted_posts | slice: 1, 2 %}
 
 {% if hero_post %}
+
 <div class="news-featured-section">
 
-  {% if hero_post.external_source == blank %}
-    {% assign hero_read_time = hero_post.content | number_of_words | divided_by: 180 | plus: 1 %}
-  {% else %}
-    {% assign hero_read_time = hero_post.feed_content | strip_html | number_of_words | divided_by: 180 | plus: 1 %}
-  {% endif %}
+{% if hero_post.external_source == blank %}
+{% assign hero_read_time = hero_post.content | number_of_words | divided_by: 180 | plus: 1 %}
+{% else %}
+{% assign hero_read_time = hero_post.feed_content | strip_html | number_of_words | divided_by: 180 | plus: 1 %}
+{% endif %}
 
   <a class="news-hero-card" href="{{ hero_post.url | relative_url }}">
     {% if hero_post.thumbnail %}
@@ -117,50 +120,50 @@ pagination:
 
 <div class="news-grid">
 
-  {% if page.pagination.enabled %}
-    {% assign postlist = paginator.posts %}
-  {% else %}
-    {% assign postlist = site.posts %}
-  {% endif %}
+{% if page.pagination.enabled %}
+{% assign postlist = paginator.posts %}
+{% else %}
+{% assign postlist = site.posts %}
+{% endif %}
 
-  {% for post in postlist %}
+{% for post in postlist %}
 
-  {% if post.external_source == blank %}
-    {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
-  {% else %}
-    {% assign read_time = post.feed_content | strip_html | number_of_words | divided_by: 180 | plus: 1 %}
-  {% endif %}
+{% if post.external_source == blank %}
+{% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
+{% else %}
+{% assign read_time = post.feed_content | strip_html | number_of_words | divided_by: 180 | plus: 1 %}
+{% endif %}
 
-  {% if post.redirect == blank %}
-    {% assign post_url = post.url | relative_url %}
-  {% elsif post.redirect contains '://' %}
-    {% assign post_url = post.redirect %}
-  {% else %}
-    {% assign post_url = post.redirect | relative_url %}
-  {% endif %}
+{% if post.redirect == blank %}
+{% assign post_url = post.url | relative_url %}
+{% elsif post.redirect contains '://' %}
+{% assign post_url = post.redirect %}
+{% else %}
+{% assign post_url = post.redirect | relative_url %}
+{% endif %}
 
-  <a class="news-card" href="{{ post_url }}"{% if post.redirect contains '://' %} target="_blank" rel="noopener"{% endif %}>
-    {% if post.thumbnail %}
-    <div class="news-card-img">
-      <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}">
-    </div>
-    {% endif %}
-    <div class="news-card-body">
-      {% assign post_categories = post.categories | join: "" %}
-      {% if post_categories != "" %}
-      <span class="news-badge news-badge--cat">{{ post.categories[0] }}</span>
-      {% endif %}
-      <h3 class="news-card-title">{{ post.title }}</h3>
-      {% if post.description %}
-      <p class="news-card-excerpt">{{ post.description }}</p>
-      {% endif %}
-      <div class="news-card-meta">
-        {{ post.date | date: "%b %d, %Y" }} &middot; {{ read_time }} min read
-      </div>
-    </div>
-  </a>
+<a class="news-card" href="{{ post_url }}"{% if post.redirect contains '://' %} target="\_blank" rel="noopener"{% endif %}>
+{% if post.thumbnail %}
+<div class="news-card-img">
+<img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}">
+</div>
+{% endif %}
+<div class="news-card-body">
+{% assign post_categories = post.categories | join: "" %}
+{% if post_categories != "" %}
+<span class="news-badge news-badge--cat">{{ post.categories[0] }}</span>
+{% endif %}
+<h3 class="news-card-title">{{ post.title }}</h3>
+{% if post.description %}
+<p class="news-card-excerpt">{{ post.description }}</p>
+{% endif %}
+<div class="news-card-meta">
+{{ post.date | date: "%b %d, %Y" }} &middot; {{ read_time }} min read
+</div>
+</div>
+</a>
 
-  {% endfor %}
+{% endfor %}
 
 </div>
 

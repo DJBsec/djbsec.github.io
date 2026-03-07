@@ -689,7 +689,9 @@ footer.sticky-bottom {
   background: var(--global-card-bg-color);
   text-decoration: none;
   overflow: hidden;
-  transition: border-left-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-left-color 0.2s ease,
+    box-shadow 0.2s ease;
 
   &:hover {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
@@ -867,7 +869,9 @@ footer.sticky-bottom {
   background: var(--global-card-bg-color);
   text-decoration: none;
   overflow: hidden;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 
   &:hover {
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
