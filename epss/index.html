@@ -1,11 +1,32 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> EPSS | DJBSec, CISSP </title> <meta name="author" content="Ben Sherrill, CISSP"> <meta name="description" content="🔍 EPSS &amp; Shodan CVE Lookup Tool"> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <link rel="stylesheet" href="/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5"> <link defer rel="stylesheet" href="/assets/css/scholar-icons.css?62b2ac103a88034e6882a5be5f3e2772"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e"> <link rel="canonical" href="https://djbsec.github.io/epss/"> <script src="/assets/js/theme.js?9a0c749ec5240d9cda97bc72359a72c0"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta http-equiv="X-Content-Type-Options" content="nosniff"> <meta name="referrer" content="strict-origin-when-cross-origin"> <title> EPSS | DJBSec, CISSP </title> <meta name="author" content="Ben Sherrill, CISSP"> <meta name="description" content="🔍 EPSS &amp; Shodan CVE Lookup Tool"> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <link rel="stylesheet" href="/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5"> <link defer rel="stylesheet" href="/assets/css/scholar-icons.css?62b2ac103a88034e6882a5be5f3e2772"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e"> <link rel="canonical" href="https://djbsec.github.io/epss/"> <script src="/assets/js/theme.js?9a0c749ec5240d9cda97bc72359a72c0"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
-  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> DJBSec, CISSP </a> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/index.html">CyberNews </a> </li> <li class="nav-item "> <a class="nav-link" href="/explained/">Cybersecurity Explained </a> </li> <li class="nav-item active"> <a class="nav-link" href="/epss/">EPSS <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/ai-tools-prompts/">AI Tools &amp; Prompts </a> </li> <li class="nav-item "> <a class="nav-link" href="/repositories/">repos </a> </li> <li class="nav-item "> <a class="nav-link" href="/blue-team/">Blue Team </a> </li> <li class="nav-item dropdown "> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-74" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">misc </a> <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-74"> <div class="dropdown-divider"></div> <a class="dropdown-item " href="/books/"> books </a> <div class="dropdown-divider"></div> <a class="dropdown-item " href="/platforms/"> learning </a> <div class="dropdown-divider"></div> <a class="dropdown-item " href="/podcasts/"> podcasts </a> </div> </li> <li class="nav-item"> <button id="search-toggle" title="Search" onclick="openSearchModal()"> <span class="nav-link">ctrl k <i class="ti ti-search"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme"> <i class="ti ti-sun-moon" id="light-toggle-system"></i> <i class="ti ti-moon-filled" id="light-toggle-dark"></i> <i class="ti ti-sun-filled" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">EPSS</h1> <p class="post-description">🔍 EPSS &amp; Shodan CVE Lookup Tool</p> </header> <article> <div class="epss-tool"> <style>.epss-tool form{margin-bottom:1em}.epss-tool label{display:block;margin-top:.5em}.epss-tool input[type="text"],.epss-tool input[type="date"]{background:#0d1117;color:#00bfff;border:1px solid rgba(0,191,255,0.3);border-radius:4px;font-family:"Courier New",monospace;letter-spacing:.04em;width:100%;padding:.55em .8em;margin-top:.25em;font-size:1em;transition:border-color .2s,box-shadow .2s}.epss-tool input[type="text"]:focus,.epss-tool input[type="date"]:focus{outline:0;border-color:#00bfff;box-shadow:0 0 8px rgba(0,191,255,0.35)}.epss-tool input[type="text"]::placeholder{color:rgba(0,191,255,0.35)}.epss-tool button{padding:.5em;margin-top:.25em;font-size:1em}.epss-tool .spinner{border:4px solid #f3f3f3;border-top:4px solid #ffc107;border-radius:50%;width:30px;height:30px;animation:spin .8s linear infinite;margin:1em auto}@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}.epss-tool .legend{margin-top:2em}.epss-tool .legend ul{list-style:none;padding:0}.epss-tool .legend li{margin:.25em 0}.epss-tool .result-section{border-left:3px solid #00bfff;border-top:1px solid rgba(0,191,255,0.15);border-right:0;border-bottom:0;border-radius:0 4px 4px 0;background:rgba(0,191,255,0.03);padding:1em 1.2em;margin-bottom:1em}.epss-tool .result-section h4{margin-top:0;padding-bottom:.4em;border-bottom:1px solid rgba(0,191,255,0.15)}.epss-tool .kev-yes{display:inline-block;padding:.2em .7em;border-radius:4px;background:#dc3545;color:white;font-weight:bold;font-size:.9em}.epss-tool .kev-no{display:inline-block;padding:.2em .7em;border-radius:4px;background:#198754;color:white;font-weight:bold;font-size:.9em}.epss-tool .chip{display:inline-block;padding:.2em .7em;border-radius:12px;background:#e9ecef;border:1px solid #dee2e6;font-size:.85em;cursor:pointer;transition:background .15s}.epss-tool .chip:hover{background:#ced4da}.epss-tool #copyBtn{padding:.4em 1em;font-size:.9em;cursor:pointer;border:1px solid #dee2e6;border-radius:4px;background:#f8f9fa}.epss-tool #copyBtn:hover{background:#e9ecef}.epss-tool .chart-box{display:none;margin-top:1.5em;padding:1em 1.2em;border-left:3px solid #00bfff;border-top:1px solid rgba(0,191,255,0.15);border-right:0;border-bottom:0;border-radius:0 4px 4px 0;background:rgba(0,191,255,0.03)}.epss-tool .chart-box h4{margin-top:0}</style> <p>Query EPSS and Shodan CVE DB for exploitation probability, CVSS scores, CISA KEV status, and 30-day trend data.</p> <div id="recentLookups" style="display: none; margin-bottom: 1.2em"> <strong style="font-size: 0.9em; display: block; margin-bottom: 0.4em">Recent Lookups:</strong> <div id="recentChips" style="display: flex; flex-wrap: wrap; gap: 0.4em"></div> </div> <form id="epssForm"> <label for="cve">CVE Number:</label> <input type="text" id="cve" placeholder="CVE-2024-13834" pattern="^CVE-\d{4}-\d{4,}$" required=""> <label for="date">Date:</label> <input type="date" id="date" required=""> <br> <button type="submit" id="submitBtn" style="margin-top: 0.6em">Get Results</button> <button type="button" id="resetBtn" style="margin-top: 0.6em">Reset</button> </form> <div id="result"></div> <div id="chartBox" class="chart-box"> <h4>📈 30-Day EPSS Score Trend</h4> <canvas id="epssChart" height="110"></canvas> </div> <div class="legend"> <h4>Risk Color Legend:</h4> <ul> <li><span style="color: green">🟢 Low Risk — EPSS ≤ 30%  |  CVSS ≤ 4.0</span></li> <li><span style="color: orange">🟠 Medium Risk — EPSS 31–75%  |  CVSS 4.1–7.9</span></li> <li><span style="color: red">🔴 High Risk — EPSS &gt; 75%  |  CVSS ≥ 8.0</span></li> <li><span style="color: red">🚨 CISA KEV — Confirmed active exploitation by CISA</span></li> </ul> </div> <script>
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> DJBSec, CISSP </a> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/index.html">CyberNews </a> </li> <li class="nav-item "> <a class="nav-link" href="/explained/">Cybersecurity Explained </a> </li> <li class="nav-item active"> <a class="nav-link" href="/epss/">EPSS <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/ai-tools-prompts/">AI Tools &amp; Prompts </a> </li> <li class="nav-item "> <a class="nav-link" href="/repositories/">repos </a> </li> <li class="nav-item "> <a class="nav-link" href="/blue-team/">Blue Team </a> </li> <li class="nav-item dropdown "> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-74" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">misc </a> <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-74"> <div class="dropdown-divider"></div> <a class="dropdown-item " href="/books/"> books </a> <div class="dropdown-divider"></div> <a class="dropdown-item " href="/platforms/"> learning </a> <div class="dropdown-divider"></div> <a class="dropdown-item " href="/podcasts/"> podcasts </a> </div> </li> <li class="nav-item"> <button id="search-toggle" title="Search" onclick="openSearchModal()"> <span class="nav-link">ctrl k <i class="ti ti-search"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme"> <i class="ti ti-sun-moon" id="light-toggle-system"></i> <i class="ti ti-moon-filled" id="light-toggle-dark"></i> <i class="ti ti-sun-filled" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">EPSS</h1> <p class="post-description">🔍 EPSS &amp; Shodan CVE Lookup Tool</p> </header> <article> <div class="epss-tool"> <style>.epss-tool form{margin-bottom:1em}.epss-tool label{display:block;margin-top:.5em}.epss-tool input[type="text"],.epss-tool input[type="date"]{background:#0d1117;color:#00bfff;border:1px solid rgba(0,191,255,0.3);border-radius:4px;font-family:"Courier New",monospace;letter-spacing:.04em;width:100%;padding:.55em .8em;margin-top:.25em;font-size:1em;transition:border-color .2s,box-shadow .2s}.epss-tool input[type="text"]:focus,.epss-tool input[type="date"]:focus{outline:0;border-color:#00bfff;box-shadow:0 0 8px rgba(0,191,255,0.35)}.epss-tool input[type="text"]::placeholder{color:rgba(0,191,255,0.35)}.epss-tool button{padding:.5em;margin-top:.25em;font-size:1em}.epss-tool .spinner{border:4px solid #f3f3f3;border-top:4px solid #ffc107;border-radius:50%;width:30px;height:30px;animation:spin .8s linear infinite;margin:1em auto}@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}.epss-tool .legend{margin-top:2em}.epss-tool .legend ul{list-style:none;padding:0}.epss-tool .legend li{margin:.25em 0}.epss-tool .result-section{border-left:3px solid #00bfff;border-top:1px solid rgba(0,191,255,0.15);border-right:0;border-bottom:0;border-radius:0 4px 4px 0;background:rgba(0,191,255,0.03);padding:1em 1.2em;margin-bottom:1em}.epss-tool .result-section h4{margin-top:0;padding-bottom:.4em;border-bottom:1px solid rgba(0,191,255,0.15)}.epss-tool .kev-yes{display:inline-block;padding:.2em .7em;border-radius:4px;background:#dc3545;color:white;font-weight:bold;font-size:.9em}.epss-tool .kev-no{display:inline-block;padding:.2em .7em;border-radius:4px;background:#198754;color:white;font-weight:bold;font-size:.9em}.epss-tool .chip{display:inline-block;padding:.2em .7em;border-radius:12px;background:#e9ecef;border:1px solid #dee2e6;color:#212529;font-size:.85em;cursor:pointer;transition:background .15s}.epss-tool .chip:hover{background:#ced4da}.epss-tool #copyBtn{padding:.4em 1em;font-size:.9em;cursor:pointer;border:1px solid #dee2e6;border-radius:4px;background:#f8f9fa}.epss-tool #copyBtn:hover{background:#e9ecef}.epss-tool .chart-box{display:none;margin-top:1.5em;padding:1em 1.2em;border-left:3px solid #00bfff;border-top:1px solid rgba(0,191,255,0.15);border-right:0;border-bottom:0;border-radius:0 4px 4px 0;background:rgba(0,191,255,0.03)}.epss-tool .chart-box h4{margin-top:0}</style> <p>Query EPSS and Shodan CVE DB for exploitation probability, CVSS scores, CISA KEV status, and 30-day trend data.</p> <div id="recentLookups" style="display: none; margin-bottom: 1.2em"> <strong style="font-size: 0.9em; display: block; margin-bottom: 0.4em">Recent Lookups:</strong> <div id="recentChips" style="display: flex; flex-wrap: wrap; gap: 0.4em"></div> </div> <form id="epssForm"> <label for="cve">CVE Number:</label> <input type="text" id="cve" placeholder="CVE-2024-13834" pattern="^CVE-\d{4}-\d{4,}$" required=""> <label for="date">Date:</label> <input type="date" id="date" required=""> <br> <button type="submit" id="submitBtn" style="margin-top: 0.6em">Get Results</button> <button type="button" id="resetBtn" style="margin-top: 0.6em">Reset</button> </form> <div id="result"></div> <div id="chartBox" class="chart-box"> <h4>📈 30-Day EPSS Score Trend</h4> <canvas id="epssChart" height="110"></canvas> </div> <div class="legend"> <h4>Risk Color Legend:</h4> <ul> <li><span style="color: green">🟢 Low Risk — EPSS ≤ 30%  |  CVSS ≤ 4.0</span></li> <li><span style="color: orange">🟠 Medium Risk — EPSS 31–75%  |  CVSS 4.1–7.9</span></li> <li><span style="color: red">🔴 High Risk — EPSS &gt; 75%  |  CVSS ≥ 8.0</span></li> <li><span style="color: red">🚨 CISA KEV — Confirmed active exploitation by CISA</span></li> </ul> </div> <script>
     /* ── State ─────────────────────────────────────────────────────── */
     let chartInstance = null;
     let kevCache = null;
 
-    /* ── Chart.js loader ───────────────────────────────────────────── */
+    /* ── HTML escape helper (SEC-13) ────────────────────────────────── */
+    function esc(s) {
+      if (s == null) return "";
+      return String(s)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    /* ── Safe https:-only URL helper (SEC-13) ───────────────────────── */
+    function safeHref(url) {
+      try {
+        const u = new URL(url);
+        return u.protocol === "https:" ? esc(url) : null;
+      } catch {
+        return null;
+      }
+    }
+
+    /* ── Chart.js loader (SEC-07: SRI added) ───────────────────────── */
     function ensureChartJs() {
       return new Promise((resolve) => {
         if (window.Chart) {
@@ -14,6 +35,8 @@
         }
         const s = document.createElement("script");
         s.src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js";
+        s.integrity = "sha512-CQBWl4fJHWbryGE+Pc7UAxWMUMNMWzWxF4SQo9CgkJIN1kx6djDQZjh3Y8SZ1d+6I+1zze6Z7kHXO7q3UyZAWw==";
+        s.crossOrigin = "anonymous";
         s.onload = resolve;
         document.head.appendChild(s);
       });
@@ -31,9 +54,16 @@
         .catch(() => null);
     }
 
-    /* ── Recent lookups ────────────────────────────────────────────── */
+    /* ── Recent lookups (SEC-08: validated on read) ─────────────────── */
+    const CVE_RE = /^CVE-\d{4}-\d{4,}$/;
+
     function getRecent() {
-      return JSON.parse(localStorage.getItem("epssRecent") || "[]");
+      try {
+        const val = JSON.parse(localStorage.getItem("epssRecent") || "[]");
+        return Array.isArray(val) ? val.filter((c) => typeof c === "string" && CVE_RE.test(c)) : [];
+      } catch {
+        return [];
+      }
     }
 
     function addRecent(cve) {
@@ -42,6 +72,7 @@
       renderChips();
     }
 
+    /* ── Render chips (SEC-01: data-cve + event delegation, no inline onclick) */
     function renderChips() {
       const recent = getRecent();
       const wrap = document.getElementById("recentLookups");
@@ -51,7 +82,14 @@
         return;
       }
       wrap.style.display = "block";
-      chips.innerHTML = recent.map((cve) => `<span class="chip" onclick="epssQuickLookup('${cve}')">${cve}</span>`).join("");
+      chips.innerHTML = "";
+      recent.forEach((cve) => {
+        const span = document.createElement("span");
+        span.className = "chip";
+        span.textContent = cve;
+        span.dataset.cve = cve;
+        chips.appendChild(span);
+      });
     }
 
     function epssQuickLookup(cve) {
@@ -111,7 +149,7 @@
       });
     }
 
-    /* ── Render results ────────────────────────────────────────────── */
+    /* ── Render results (SEC-13: all API values escaped, refs validated) */
     function renderResults(data, kevEntry) {
       const ec = epssCol(data.epss);
       const pc = epssCol(data.percentile);
@@ -123,10 +161,10 @@
         ? `<div class="result-section" style="border-color:#dc3545;">
             <h4>🚨 CISA Known Exploited Vulnerability (KEV)</h4>
             <strong>Status:</strong> <span class="kev-yes">⚠️ IN KEV LIST</span><br><br>
-            <strong>Vulnerability Name:</strong> ${kevEntry.vulnerabilityName}<br>
-            <strong>Date Added to KEV:</strong> ${kevEntry.dateAdded}<br>
-            <strong>Remediation Due Date (FCEB):</strong> ${kevEntry.dueDate || "N/A"}<br>
-            <strong>Required Action:</strong> ${kevEntry.requiredAction}
+            <strong>Vulnerability Name:</strong> ${esc(kevEntry.vulnerabilityName)}<br>
+            <strong>Date Added to KEV:</strong> ${esc(kevEntry.dateAdded)}<br>
+            <strong>Remediation Due Date (FCEB):</strong> ${esc(kevEntry.dueDate) || "N/A"}<br>
+            <strong>Required Action:</strong> ${esc(kevEntry.requiredAction)}
            </div>`
         : `<div class="result-section" style="border-color:#198754;">
             <h4>✅ CISA KEV Status</h4>
@@ -137,34 +175,38 @@
       // EPSS section
       const epssHtml = `<div class="result-section">
         <h4>📊 EPSS Score <small style="font-weight:normal; font-size:0.8em;">(FIRST.org)</small></h4>
-        <strong>EPSS Score:</strong> <span style="color:${ec}; font-weight:bold;">${dot(data.epss)} ${data.epss}%</span><br>
-        <strong>EPSS Percentile:</strong> <span style="color:${pc}; font-weight:bold;">${data.percentile}%</span><br>
-        <em style="font-size:0.9em; color:#6c757d;">${data.message}</em>
+        <strong>EPSS Score:</strong> <span style="color:${ec}; font-weight:bold;">${dot(data.epss)} ${esc(data.epss)}%</span><br>
+        <strong>EPSS Percentile:</strong> <span style="color:${pc}; font-weight:bold;">${esc(data.percentile)}%</span><br>
+        <em style="font-size:0.9em; color:#6c757d;">${esc(data.message)}</em>
        </div>`;
 
       // CVSS section
       const cvssHtml = `<div class="result-section">
         <h4>🔢 CVSS Severity Scores</h4>
-        <strong>CVSS v2:</strong> <span style="color:${v2c}; font-weight:bold;">${data.cvss_v2 || "N/A"}</span>&emsp;
-        <strong>CVSS v3:</strong> <span style="color:${v3c}; font-weight:bold;">${data.cvss_v3 || "N/A"}</span>
+        <strong>CVSS v2:</strong> <span style="color:${v2c}; font-weight:bold;">${esc(data.cvss_v2) || "N/A"}</span>&emsp;
+        <strong>CVSS v3:</strong> <span style="color:${v3c}; font-weight:bold;">${esc(data.cvss_v3) || "N/A"}</span>
        </div>`;
 
-      // Details section
-      const refsHtml = (data.references || [])
+      // Details section — reference URLs validated to https: only
+      const refsHtml = (Array.isArray(data.references) ? data.references : [])
         .slice(0, 5)
-        .map((r) => `<li><a href="${r}" target="_blank" rel="noopener noreferrer">${r}</a></li>`)
+        .map((r) => {
+          const href = safeHref(r);
+          return href ? `<li><a href="${href}" target="_blank" rel="noopener noreferrer">${esc(r)}</a></li>` : "";
+        })
+        .filter(Boolean)
         .join("");
 
       const detailsHtml = `<div class="result-section">
         <h4>📋 Vulnerability Details</h4>
-        <strong>CVE ID:</strong> ${data.cve}<br>
-        <strong>Query Date:</strong> ${data.date}<br>
-        <strong>Published:</strong> ${data.published_time || "N/A"}<br>
-        <strong>Summary:</strong> ${data.summary || "Not available"}
+        <strong>CVE ID:</strong> ${esc(data.cve)}<br>
+        <strong>Query Date:</strong> ${esc(data.date)}<br>
+        <strong>Published:</strong> ${esc(data.published_time) || "N/A"}<br>
+        <strong>Summary:</strong> ${esc(data.summary) || "Not available"}
         ${refsHtml ? `<br><br><strong>References:</strong><ul style="margin-top:0.3em; padding-left:1.2em;">${refsHtml}</ul>` : ""}
        </div>`;
 
-      // Copy text
+      // Copy text (plain text — no escaping needed)
       const copyText = [
         `CVE: ${data.cve}`,
         `Date: ${data.date}`,
@@ -178,7 +220,7 @@
       ].join("\n");
 
       document.getElementById("result").innerHTML = `
-        <h3 style="margin-bottom: 0.8em;">Results — ${data.cve}</h3>
+        <h3 style="margin-bottom: 0.8em;">Results — ${esc(data.cve)}</h3>
         ${epssHtml}${cvssHtml}${kevHtml}${detailsHtml}
         <button id="copyBtn">📋 Copy Results</button>
       `;
@@ -209,6 +251,12 @@
 
       // Render saved recent lookups
       renderChips();
+
+      // SEC-01: event delegation for chip clicks (no inline onclick)
+      document.getElementById("recentChips").addEventListener("click", (e) => {
+        const chip = e.target.closest("[data-cve]");
+        if (chip) epssQuickLookup(chip.dataset.cve);
+      });
 
       // Reset button
       document.getElementById("resetBtn").addEventListener("click", () => {
@@ -260,17 +308,21 @@
           getKevData(),
         ])
           .then(([, workerData, trendResp, kevData]) => {
-            if (workerData.error) {
-              resultDiv.innerHTML = `<p style="color:red;">Error: ${workerData.error}</p>`;
+            // SEC-03: validate worker response shape before rendering
+            if (workerData.error || typeof workerData.epss !== "number" || typeof workerData.cve !== "string") {
+              resultDiv.innerHTML = `<p style="color:red;">Error: ${esc(workerData.error || "Unexpected response from API")}</p>`;
               return;
             }
-            const kevEntry = kevData ? kevData.vulnerabilities.find((v) => v.cveID === cve) || null : null;
+            // SEC-03: validate KEV data shape before accessing .vulnerabilities
+            const kevEntry = Array.isArray(kevData?.vulnerabilities)
+              ? kevData.vulnerabilities.find((v) => v.cveID === cve) || null
+              : null;
             renderResults(workerData, kevEntry);
             renderChart(trendResp?.data?.[0]?.["time-series"] || null);
             addRecent(cve);
           })
           .catch((err) => {
-            resultDiv.innerHTML = `<p style="color:red;">An error occurred: ${err.message}</p>`;
+            resultDiv.innerHTML = `<p style="color:red;">An error occurred: ${esc(err.message)}</p>`;
           })
           .finally(() => {
             submitBtn.disabled = false;
