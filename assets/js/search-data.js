@@ -25,7 +25,7 @@ ninja.data = [{
           },
         },{id: "nav-epss",
           title: "EPSS",
-          description: "🔍 EPSS &amp; Shodan CVE Lookup Tool",
+          description: "Look up EPSS scores, CISA KEV status, and CVSS severity for any CVE.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/epss/";
@@ -39,7 +39,7 @@ ninja.data = [{
           },
         },{id: "nav-repos",
           title: "repos",
-          description: "",
+          description: "GitHub repositories and projects from DJBSec.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/repositories/";
