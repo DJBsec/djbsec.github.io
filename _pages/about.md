@@ -6,8 +6,8 @@ subtitle:
 
 profile:
   align: right
-  image: #djbsec.png
-  image_circular: false # crops the image to make it circular
+  image: djbsec.png
+  image_circular: true # crops the image to make it circular
   more_info:
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
@@ -35,7 +35,7 @@ latest_posts:
   </div>
   <div>
     <div style="font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--global-text-color-light); margin-bottom: 0.2rem;">Publishing cadence</div>
-    <div style="font-size: 1.1rem; font-weight: 700; color: var(--global-theme-color); font-family: 'Courier New', monospace;">Daily</div>
+    <div style="font-size: 1.1rem; font-weight: 700; color: var(--global-theme-color); font-family: 'Courier New', monospace;">Daily if Possible</div>
   </div>
   <div>
     <div style="font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--global-text-color-light); margin-bottom: 0.2rem;">Network certs</div>
