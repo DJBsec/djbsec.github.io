@@ -234,18 +234,19 @@ ul.task-list input[type="checkbox"] {
   }
 
   @media (max-width: 575px) {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
 
     .about-profile-img {
-      width: 65%;
-      max-width: 260px;
-      align-self: center;
-      order: 1;
+      width: 120px;
+      flex-shrink: 0;
+      order: 2;
     }
 
     .about-profile-content {
-      width: 100%;
-      order: 2;
+      flex: 1;
+      min-width: 0;
+      order: 1;
     }
   }
 }
