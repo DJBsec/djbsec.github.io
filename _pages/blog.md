@@ -144,6 +144,7 @@ pagination:
 
 <a class="news-card" href="{{ post_url }}"{% if post.redirect contains '://' %} target="\_blank" rel="noopener"{% endif %}>
 {% if post.thumbnail %}
+
 <div class="news-card-img">
 <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}">
 </div>
