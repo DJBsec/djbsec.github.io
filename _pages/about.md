@@ -34,7 +34,7 @@ latest_posts:
   </div>
   <div>
     <div style="font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--global-text-color-light); margin-bottom: 0.2rem;">Certification</div>
-    <div style="font-size: 1.1rem; font-weight: 700; color: var(--global-theme-color); font-family: 'Courier New', monospace;">CISSP &rsquo;24</div>
+    <div style="font-size: 1.1rem; font-weight: 700; color: var(--global-theme-color); font-family: 'Courier New', monospace;">CISSP</div>
   </div>
   <div>
     <div style="font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--global-text-color-light); margin-bottom: 0.2rem;">Publishing cadence</div>
