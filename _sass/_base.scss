@@ -208,6 +208,13 @@ ul.task-list input[type="checkbox"] {
     flex-shrink: 0;
     order: 2;
 
+    figure,
+    picture {
+      display: block;
+      width: 100%;
+      margin: 0;
+    }
+
     img {
       max-width: 100%;
       height: auto;
