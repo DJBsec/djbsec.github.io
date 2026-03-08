@@ -3,4 +3,20 @@ module.exports = {
   css: ["_site/assets/css/*.css"],
   output: "_site/assets/css/",
   skippedContentGlobs: ["_site/assets/**/*.html"],
+  safelist: [
+    // Bootstrap image & layout utilities used dynamically via Liquid includes
+    "img-fluid",
+    "img-thumbnail",
+    "rounded",
+    "rounded-circle",
+    "z-depth-1",
+    "z-depth-2",
+    "float-left",
+    "float-right",
+    "float-none",
+    // Bootstrap responsive utilities that may be dynamically applied
+    /^float-/,
+    /^rounded/,
+    /^z-depth-/,
+  ],
 };
