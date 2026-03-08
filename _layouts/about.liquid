@@ -16,6 +16,8 @@ layout: default
 
   <article>
     <div class="about-profile-wrap{% if page.profile.align == 'left' %} about-profile-wrap--left{% endif %}">
+      <div class="about-profile-content">{{ content }}</div>
+
       {% if page.profile %}
         <div class="about-profile-img">
           {% if page.profile.image %}
@@ -36,8 +38,6 @@ layout: default
           {% endif %}
         </div>
       {% endif %}
-
-      <div class="about-profile-content">{{ content }}</div>
     </div>
 
     <!-- News -->
