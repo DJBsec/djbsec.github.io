@@ -205,8 +205,8 @@ ul.task-list input[type="checkbox"] {
 
   .about-profile-img {
     width: 30%;
+    max-width: 300px;
     flex-shrink: 0;
-    order: 2;
 
     figure,
     picture {
@@ -235,15 +235,10 @@ ul.task-list input[type="checkbox"] {
   .about-profile-content {
     flex: 1;
     min-width: 0;
-    order: 1;
   }
 
   &--left .about-profile-img {
-    order: 1;
-  }
-
-  &--left .about-profile-content {
-    order: 2;
+    order: -1;
   }
 
   @media (max-width: 575px) {
@@ -252,14 +247,13 @@ ul.task-list input[type="checkbox"] {
 
     .about-profile-img {
       width: 120px;
+      max-width: 120px;
       flex-shrink: 0;
-      order: 2;
     }
 
     .about-profile-content {
       flex: 1;
       min-width: 0;
-      order: 1;
     }
   }
 }
