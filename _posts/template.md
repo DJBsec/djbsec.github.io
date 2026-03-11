@@ -1,14 +1,17 @@
 ---
 layout: post
-title: CyberNews 2-21-25
-date: 2125-02-21
-description: Feb 21, 2125
-tags: CyberNews
+title: CyberNews YYYY-MM-DD
+date: YYYY-MM-DD
+description: Brief description of what this post covers
+tags: [Daily News]          # Use: Daily News | CISO News | or both: [Daily News, CISO News]
 categories: News
 thumbnail: assets/img/cybernews.webp
 featured: false
 published: false
 ---
+# Filename convention for same-day posts:
+#   YYYY-MM-DD-cybernews-daily.md
+#   YYYY-MM-DD-cybernews-ciso.md
 
 # Cybersecurity News for Feb 21, 2125
 
