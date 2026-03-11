@@ -12,18 +12,16 @@ layout: default
       {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
       <a class="news-card" href="{{ post.url | relative_url }}">
         {% if post.thumbnail %}
-        <div class="news-card-img">
-          <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}">
-        </div>
+          <div class="news-card-img">
+            <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}">
+          </div>
         {% endif %}
         <div class="news-card-body">
           <h3 class="news-card-title">{{ post.title }}</h3>
           {% if post.description %}
-          <p class="news-card-excerpt">{{ post.description }}</p>
+            <p class="news-card-excerpt">{{ post.description }}</p>
           {% endif %}
-          <div class="news-card-meta">
-            {{ post.date | date: "%b %d, %Y" }} &middot; {{ read_time }} min read
-          </div>
+          <div class="news-card-meta">{{ post.date | date: '%b %d, %Y' }} &middot; {{ read_time }} min read</div>
         </div>
       </a>
     {% endfor %}
