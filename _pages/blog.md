@@ -154,6 +154,11 @@ pagination:
 {% if post_categories != "" %}
 <span class="news-badge news-badge--cat">{{ post.categories[0] }}</span>
 {% endif %}
+{% if post.tags and post.tags.size > 0 %}
+  {% for tag in post.tags %}
+    <a class="news-badge news-badge--tag" href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}" onclick="event.stopPropagation()"><i class="fa-solid fa-hashtag fa-xs"></i> {{ tag }}</a>
+  {% endfor %}
+{% endif %}
 <h3 class="news-card-title">{{ post.title }}</h3>
 {% if post.description %}
 <p class="news-card-excerpt">{{ post.description }}</p>

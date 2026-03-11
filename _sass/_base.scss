@@ -693,6 +693,16 @@ footer.sticky-bottom {
     background: rgba($red-color, 0.15);
     color: $red-color;
   }
+
+  &--tag {
+    background-color: rgba(var(--global-theme-color-rgb), 0.15);
+    color: var(--global-theme-color);
+    text-decoration: none;
+    &:hover {
+      background-color: rgba(var(--global-theme-color-rgb), 0.3);
+      color: var(--global-theme-color);
+    }
+  }
 }
 
 // ── Featured Hero Section ────────────────────────────
