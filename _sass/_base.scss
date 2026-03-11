@@ -901,10 +901,10 @@ footer.sticky-bottom {
 .news-card {
   display: flex;
   flex-direction: column;
+  position: relative;
   border: 1px solid var(--global-divider-color);
   border-radius: 8px;
   background: var(--global-card-bg-color);
-  text-decoration: none;
   overflow: hidden;
   transition:
     box-shadow 0.2s ease,

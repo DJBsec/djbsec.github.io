@@ -142,13 +142,8 @@ pagination:
 {% assign post_url = post.redirect | relative_url %}
 {% endif %}
 
-<a class="news-card" href="{{ post_url }}"{% if post.redirect contains '://' %} target="\_blank" rel="noopener"{% endif %}>
-{% if post.thumbnail %}
-
-<div class="news-card-img">
-<img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}">
-</div>
-{% endif %}
+<div class="news-card">
+{% if post.thumbnail %}<div class="news-card-img"><img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}"></div>{% endif %}
 <div class="news-card-body">
 {% assign post_categories = post.categories | join: "" %}
 {% if post_categories != "" %}
@@ -166,8 +161,9 @@ pagination:
 <div class="news-card-meta">
 {{ post.date | date: "%b %d, %Y" }} &middot; {{ read_time }} min read
 </div>
+<a class="stretched-link" href="{{ post_url }}"{% if post.redirect contains '://' %} target="_blank" rel="noopener"{% endif %}></a>
 </div>
-</a>
+</div>
 
 {% endfor %}
 
