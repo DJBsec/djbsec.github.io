@@ -18,5 +18,7 @@ module.exports = {
     /^float-/,
     /^rounded/,
     /^z-depth-/,
+    // Cybersecurity Explained directory — classes applied via Liquid/JS at runtime
+    /^explained-/,
   ],
 };
