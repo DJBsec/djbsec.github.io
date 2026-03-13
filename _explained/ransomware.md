@@ -4,6 +4,8 @@ title: Ransomware
 description: What is ransomware?
 img: assets/img/projects/ransomware.png
 category: explained
+topic_type: threat
+icon: lock-exclamation
 ---
 
 ## 💰 What Is Ransomware?

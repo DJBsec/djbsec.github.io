@@ -116,3 +116,267 @@ html[data-theme="dark"] .profile img {
     transform: translateX(3px);
   }
 }
+
+// ── Cybersecurity Explained — Directory Layout ──────────────────────────────
+
+.explained-directory {
+  margin-top: 1.5rem;
+}
+
+// Toolbar — filter bar + sort button in one row
+.explained-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+// Filter bar
+.explained-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+// Sort toggle button
+.explained-sort-btn {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 4px;
+  border: 1px solid var(--global-divider-color);
+  background: transparent;
+  color: var(--global-text-color-light);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+
+  &:hover {
+    border-color: var(--global-theme-color);
+    color: var(--global-theme-color);
+  }
+
+  &.active {
+    background: var(--global-theme-color);
+    border-color: var(--global-theme-color);
+    color: var(--global-hover-text-color);
+  }
+}
+
+.explained-filter-btn {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 4px;
+  border: 1px solid var(--global-divider-color);
+  background: transparent;
+  color: var(--global-text-color-light);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  &:hover:not(.active) {
+    border-color: var(--global-text-color-light);
+    color: var(--global-text-color);
+    background: var(--global-card-bg-color);
+  }
+
+  &.active {
+    background: var(--global-theme-color);
+    border-color: var(--global-theme-color);
+    color: var(--global-hover-text-color);
+  }
+
+  // Threat filter active — use red
+  &.threat.active    { background: $red-color;    border-color: $red-color;    color: #fff; }
+  // Defense filter active — use blue
+  &.defense.active   { background: $blue-color;   border-color: $blue-color;   color: #fff; }
+  // Tools filter active — use orange
+  &.tools.active     { background: $orange-color; border-color: $orange-color; color: #fff; }
+  // Concepts filter active — use green
+  &.concepts.active  { background: $green-color;  border-color: $green-color;  color: #fff; }
+}
+
+.explained-filter-count {
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+// Results count line
+.explained-results-meta {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--global-text-color-light);
+  margin-bottom: 12px;
+
+  strong {
+    color: var(--global-theme-color);
+    font-weight: 600;
+  }
+}
+
+// Topic list container
+.explained-list {
+  display: flex;
+  flex-direction: column;
+}
+
+// Individual topic row
+.explained-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--global-card-bg-color);
+  border-left: 3px solid transparent;
+  border-bottom: 1px solid var(--global-divider-color);
+  text-decoration: none;
+  color: var(--global-text-color);
+  transition: background 0.18s ease, transform 0.18s ease;
+
+  // Entry animation
+  @media (prefers-reduced-motion: no-preference) {
+    animation: explainedFadeUp 0.4s ease both;
+
+    @for $i from 1 through 12 {
+      &:nth-child(#{$i}) { animation-delay: #{$i * 0.06}s; }
+    }
+  }
+
+  &:first-child { border-radius: 8px 8px 0 0; }
+  &:last-child  { border-radius: 0 0 8px 8px; border-bottom: none; }
+  &:only-child  { border-radius: 8px; }
+
+  &:hover {
+    background: var(--global-bg-color);
+    transform: translateX(3px);
+    text-decoration: none;
+    color: var(--global-text-color);
+  }
+
+  &.explained-hidden { display: none; }
+
+  // Left border color by category
+  &[data-cat="threat"]    { border-left-color: $red-color; }
+  &[data-cat="defense"]   { border-left-color: $blue-color; }
+  &[data-cat="tools"]     { border-left-color: $orange-color; }
+  &[data-cat="concepts"]  { border-left-color: $green-color; }
+}
+
+// Icon circle
+.explained-icon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+
+  .explained-item[data-cat="threat"]    & { background: rgba($red-color,    0.12); color: $red-color; }
+  .explained-item[data-cat="defense"]  & { background: rgba($blue-color,   0.12); color: $blue-color; }
+  .explained-item[data-cat="tools"]    & { background: rgba($orange-color, 0.12); color: $orange-color; }
+  .explained-item[data-cat="concepts"] & { background: rgba($green-color,  0.12); color: $green-color; }
+}
+
+// Text content
+.explained-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.explained-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--global-text-color);
+  margin-bottom: 3px;
+  transition: color 0.15s ease;
+
+  .explained-item:hover & { color: var(--global-hover-color); }
+}
+
+.explained-desc {
+  font-size: 12.5px;
+  color: var(--global-text-color-light);
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Badge + arrow
+.explained-meta {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.explained-badge {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
+
+  .explained-item[data-cat="threat"]    & { background: rgba($red-color,    0.14); color: $red-color; }
+  .explained-item[data-cat="defense"]  & { background: rgba($blue-color,   0.14); color: $blue-color; }
+  .explained-item[data-cat="tools"]    & { background: rgba($orange-color, 0.14); color: $orange-color; }
+  .explained-item[data-cat="concepts"] & { background: rgba($green-color,  0.14); color: $green-color; }
+}
+
+.explained-arrow {
+  color: var(--global-text-color-light);
+  font-size: 16px;
+  transition: transform 0.2s ease, color 0.2s ease;
+
+  .explained-item:hover & {
+    transform: translateX(4px);
+    color: var(--global-hover-color);
+  }
+}
+
+// Back button on individual explained article pages
+.explained-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--global-theme-color);
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+  transition: gap 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    color: var(--global-hover-color);
+    text-decoration: none;
+    gap: 10px;
+  }
+
+  i { font-size: 15px; }
+}
+
+@keyframes explainedFadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

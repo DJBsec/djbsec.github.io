@@ -4,6 +4,8 @@ title: Social Engineering
 description: What is social engineering?
 img: assets/img/projects/social-engineering.png
 category: explained
+topic_type: threat
+icon: user-question
 ---
 
 ## 🎭 What Is Social Engineering?

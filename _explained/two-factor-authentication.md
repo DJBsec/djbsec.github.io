@@ -4,6 +4,8 @@ title: Two-Factor Authentication
 description: What is 2FA?
 img: assets/img/projects/2fa.png
 category: explained
+topic_type: defense
+icon: shield-check
 ---
 
 ## 🔐 What Is Two-Factor Authentication (2FA)?

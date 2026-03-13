@@ -5,6 +5,8 @@ description: what is phishing?
 img: assets/img/projects/phishing.webp
 #importance: 1
 category: phishing
+topic_type: threat
+icon: mail-exclamation
 related_publications: true
 ---
 

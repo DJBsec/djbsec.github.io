@@ -4,6 +4,8 @@ title: Email Spoofing
 description: What is email spoofing?
 img: assets/img/projects/emailspoofing.png
 category: explained
+topic_type: threat
+icon: mail-off
 ---
 
 ## ✉️ What Is Email Spoofing?

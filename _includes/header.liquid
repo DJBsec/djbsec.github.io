@@ -115,11 +115,13 @@
                 </li>
               {% else %}
                 {% assign parent_link = p.permalink | remove: 'index.html' %}
-                <li class="nav-item {% if page.url contains parent_link %}active{% endif %}">
+                {% assign url_prefix = page.url | slice: 0, parent_link.size %}
+                <li class="nav-item {% if url_prefix == parent_link %}active{% endif %}">
                   {%- assign url = p.permalink contains '://' ? p.permalink : p.url -%}
                   <a class="nav-link" href="{{ url | relative_url }}">
                     {{- p.title }}
-                    {% if page.url contains p.url %}
+                    {% assign p_url_prefix = page.url | slice: 0, p.url.size %}
+                    {% if p_url_prefix == p.url %}
                       <span class="sr-only">(current)</span>
                     {% endif %}
                   </a>
