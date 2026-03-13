@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersecurity Explained — Design Preview</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.x/dist/tabler-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Exact site palette — dark mode (_variables.scss + _themes.scss) */
+      --bg:           #1c1c1d;   /* $grey-color-dark  */
+      --surface:      #212529;   /* $grey-900 / --global-card-bg-color */
+      --surface-hover:#272b30;
+      --border:       #424246;   /* --global-divider-color dark */
+      --text:         #c8c8c8;   /* $grey-color-light ≈ #c8c8c8 */
+      --muted:        #828282;   /* $grey-color */
+      --threat:       #ff3636;   /* $red-color */
+      --defense:      #0076df;   /* $blue-color */
+      --tools:        #f29105;   /* $orange-color */
+      --accent:       #2698ba;   /* $cyan-color — dark mode --global-theme-color */
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: var(--bg);
+      background-image: radial-gradient(circle, #2e2e30 1px, transparent 1px);
+      background-size: 28px 28px;
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      min-height: 100vh;
+      padding: 64px 24px 80px;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* ── Header ── */
+    .page-header {
+      margin-bottom: 52px;
+    }
+
+    .page-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+      opacity: 0;
+      animation: fadeUp 0.5s ease 0.05s forwards;
+    }
+
+    .page-title {
+      font-size: clamp(34px, 6vw, 58px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      opacity: 0;
+      animation: fadeUp 0.5s ease 0.1s forwards;
+    }
+
+    .page-title em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .page-description {
+      margin-top: 18px;
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 520px;
+      font-weight: 400;
+      opacity: 0;
+      animation: fadeUp 0.5s ease 0.15s forwards;
+    }
+
+    /* ── Filter bar ── */
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      opacity: 0;
+      animation: fadeUp 0.5s ease 0.2s forwards;
+    }
+
+    .filter-btn {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border-radius: 3px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .filter-btn:hover:not(.active) {
+      border-color: #2e3644;
+      color: var(--text);
+      background: var(--surface);
+    }
+
+    .filter-btn.active           { background: var(--accent);  border-color: var(--accent);  color: #000; }
+    .filter-btn.threat.active    { background: var(--threat);  border-color: var(--threat);  color: #fff; }
+    .filter-btn.defense.active   { background: var(--defense); border-color: var(--defense); color: #000; }
+    .filter-btn.tools.active     { background: var(--tools);   border-color: var(--tools);   color: #fff; }
+
+    .filter-count {
+      font-size: 9px;
+      opacity: 0.65;
+    }
+
+    /* ── Results count ── */
+    .results-meta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      margin-bottom: 14px;
+      opacity: 0;
+      animation: fadeUp 0.5s ease 0.25s forwards;
+    }
+
+    .results-meta strong {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* ── Topic list ── */
+    .topic-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topic-item {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 18px 22px;
+      background: var(--surface);
+      border-left: 3px solid transparent;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.18s ease, transform 0.18s ease;
+      opacity: 0;
+      animation: fadeUp 0.4s ease forwards;
+    }
+
+    /* stagger each row */
+    .topic-item:nth-child(1)  { animation-delay: 0.30s; }
+    .topic-item:nth-child(2)  { animation-delay: 0.36s; }
+    .topic-item:nth-child(3)  { animation-delay: 0.42s; }
+    .topic-item:nth-child(4)  { animation-delay: 0.48s; }
+    .topic-item:nth-child(5)  { animation-delay: 0.54s; }
+    .topic-item:nth-child(6)  { animation-delay: 0.60s; }
+    .topic-item:nth-child(7)  { animation-delay: 0.66s; }
+    .topic-item:nth-child(8)  { animation-delay: 0.72s; }
+    .topic-item:nth-child(9)  { animation-delay: 0.78s; }
+
+    .topic-list .topic-item:first-child  { border-radius: 8px 8px 0 0; }
+    .topic-list .topic-item:last-child   { border-radius: 0 0 8px 8px; border-bottom: none; }
+    .topic-list .topic-item:only-child   { border-radius: 8px; }
+
+    .topic-item[data-cat="threat"]  { border-left-color: var(--threat); }
+    .topic-item[data-cat="defense"] { border-left-color: var(--defense); }
+    .topic-item[data-cat="tools"]   { border-left-color: var(--tools); }
+
+    .topic-item:hover {
+      background: var(--surface-hover);
+      transform: translateX(3px);
+    }
+
+    .topic-item.hidden { display: none; }
+
+    /* ── Icon ── */
+    .topic-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 21px;
+    }
+
+    .topic-item[data-cat="threat"]  .topic-icon { background: rgba(240, 82, 82,  0.12); color: var(--threat); }
+    .topic-item[data-cat="defense"] .topic-icon { background: rgba(0,  200, 150, 0.12); color: var(--defense); }
+    .topic-item[data-cat="tools"]   .topic-icon { background: rgba(77, 159, 255, 0.12); color: var(--tools); }
+
+    /* ── Content ── */
+    .topic-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .topic-title {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-bottom: 3px;
+      transition: color 0.15s ease;
+    }
+
+    .topic-item:hover .topic-title { color: #fff; }
+
+    .topic-desc {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.45;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* ── Meta (badge + arrow) ── */
+    .topic-meta {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .topic-badge {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 2px;
+    }
+
+    .topic-item[data-cat="threat"]  .topic-badge { background: rgba(240, 82, 82,  0.14); color: var(--threat); }
+    .topic-item[data-cat="defense"] .topic-badge { background: rgba(0,  200, 150, 0.14); color: var(--defense); }
+    .topic-item[data-cat="tools"]   .topic-badge { background: rgba(77, 159, 255, 0.14); color: var(--tools); }
+
+    .topic-arrow {
+      color: var(--muted);
+      font-size: 17px;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .topic-item:hover .topic-arrow {
+      transform: translateX(4px);
+      color: var(--text);
+    }
+
+    /* ── Keyframes ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Preview banner ── */
+    .preview-banner {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 40px;
+      text-transform: uppercase;
+    }
+
+    .preview-banner span {
+      border: 1px solid var(--border);
+      padding: 4px 14px;
+      border-radius: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="preview-banner"><span>Design Preview — Option 1: Directory Layout</span></div>
+
+    <!-- Header -->
+    <header class="page-header">
+      <p class="page-eyebrow">// knowledge base</p>
+      <h1 class="page-title">Cybersecurity<br><em>Explained</em></h1>
+      <p class="page-description">
+        Breaking down complex security topics into plain language —
+        no technical background required.
+      </p>
+    </header>
+
+    <!-- Filter buttons -->
+    <div class="filter-bar">
+      <button class="filter-btn active"   data-filter="all"     onclick="filter('all',     this)">All     <span class="filter-count">9</span></button>
+      <button class="filter-btn threat"   data-filter="threat"  onclick="filter('threat',  this)">Threats <span class="filter-count">4</span></button>
+      <button class="filter-btn defense"  data-filter="defense" onclick="filter('defense', this)">Defense <span class="filter-count">4</span></button>
+      <button class="filter-btn tools"    data-filter="tools"   onclick="filter('tools',   this)">Tools   <span class="filter-count">1</span></button>
+    </div>
+
+    <p class="results-meta" id="meta"><strong>9</strong> topics</p>
+
+    <!-- Topic list -->
+    <div class="topic-list" id="list">
+
+      <a class="topic-item" data-cat="threat" href="#">
+        <div class="topic-icon"><i class="ti ti-mail-exclamation"></i></div>
+        <div class="topic-content">
+          <div class="topic-title">Phishing</div>
+          <div class="topic-desc">How attackers use fake emails and messages to steal credentials, money, and personal data</div>
+        </div>
+        <div class="topic-meta">
+          <span class="topic-badge">Threat</span>
+          <i class="ti ti-arrow-right topic-arrow"></i>
+        </div>
+      </a>
+
+      <a class="topic-item" data-cat="threat" href="#">
+        <div class="topic-icon"><i class="ti ti-mail-off"></i></div>
+        <div class="topic-content">
+          <div class="topic-title">Email Spoofing</div>
+          <div class="topic-desc">When attackers forge sender addresses to impersonate trusted organizations or contacts</div>
+        </div>
+        <div class="topic-meta">
+          <span class="topic-badge">Threat</span>
+          <i class="ti ti-arrow-right topic-arrow"></i>
+        </div>
+      </a>
+
+      <a class="topic-item" data-cat="threat" href="#">
+        <div class="topic-icon"><i class="ti ti-lock-exclamation"></i></div>
+        <div class="topic-content">
+          <div class="topic-title">Ransomware</div>
+          <div class="topic-desc">Malicious software that encrypts your files and demands payment to restore access</div>
+        </div>
+        <div class="topic-meta">
+          <span class="topic-badge">Threat</span>
+          <i class="ti ti-arrow-right topic-arrow"></i>
+        </div>
+      </a>
+
+      <a class="topic-item" data-cat="threat" href="#">
+        <div class="topic-icon"><i class="ti ti-user-question"></i></div>
+        <div class="topic-content">
+          <div class="topic-title">Social Engineering</div>
+          <div class="topic-desc">Psychological manipulation tactics used to trick people into revealing sensitive information</div>
+        </div>
+        <div class="topic-meta">
+          <span class="topic-badge">Threat</span>
+          <i class="ti ti-arrow-right topic-arrow"></i>
+        </div>
+      </a>
+
+      <a class="topic-item" data-cat="defense" href="#">
+        <div class="topic-icon"><i class="ti ti-wall"></i></div>
+        <div class="topic-content">
+          <div class="topic-title">Firewalls</div>
+          <div class="topic-desc">Network gatekeepers that filter traffic based on security rules to block unauthorized access</div>
+        </div>
+        <div class="topic-meta">
+          <span class="topic-badge">Defense</span>
+          <i class="ti ti-arrow-right topic-arrow"></i>
+        </div>
+      </a>
+
+      <a class="topic-item" data-cat="defense" href="#">
+        <div class="topic-icon"><i class="ti ti-key"></i></div>
+        <div class="topic-content">
+          <div class="topic-title">Strong Passwords</div>
+          <div class="topic-desc">Why password length and uniqueness matter, and how to manage them without losing your mind</div>
+        </div>
+        <div class="topic-meta">
+          <span class="topic-badge">Defense</span>
+          <i class="ti ti-arrow-right topic-arrow"></i>
+        </div>
+      </a>
+
+      <a class="topic-item" data-cat="defense" href="#">
+        <div class="topic-icon"><i class="ti ti-shield-check"></i></div>
+        <div class="topic-content">
+          <div class="topic-title">Two-Factor Authentication</div>
+          <div class="topic-desc">A second verification step that stops attackers even when your password is compromised</div>
+        </div>
+        <div class="topic-meta">
+          <span class="topic-badge">Defense</span>
+          <i class="ti ti-arrow-right topic-arrow"></i>
+        </div>
+      </a>
+
+      <a class="topic-item" data-cat="defense" href="#">
+        <div class="topic-icon"><i class="ti ti-eye-off"></i></div>
+        <div class="topic-content">
+          <div class="topic-title">Zero Trust</div>
+          <div class="topic-desc">The security model that verifies every user and device continuously — never assume, always verify</div>
+        </div>
+        <div class="topic-meta">
+          <span class="topic-badge">Defense</span>
+          <i class="ti ti-arrow-right topic-arrow"></i>
+        </div>
+      </a>
+
+      <a class="topic-item" data-cat="tools" href="#">
+        <div class="topic-icon"><i class="ti ti-network"></i></div>
+        <div class="topic-content">
+          <div class="topic-title">VPN</div>
+          <div class="topic-desc">How Virtual Private Networks encrypt your connection and protect your privacy online</div>
+        </div>
+        <div class="topic-meta">
+          <span class="topic-badge">Tools</span>
+          <i class="ti ti-arrow-right topic-arrow"></i>
+        </div>
+      </a>
+
+    </div><!-- /topic-list -->
+  </div><!-- /container -->
+
+  <script>
+    function filter(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const items = [...document.querySelectorAll('.topic-item')];
+      let count = 0;
+
+      items.forEach(item => {
+        const show = cat === 'all' || item.dataset.cat === cat;
+        item.classList.toggle('hidden', !show);
+        if (show) count++;
+      });
+
+      document.getElementById('meta').innerHTML =
+        `<strong>${count}</strong> topic${count !== 1 ? 's' : ''}`;
+
+      // Re-apply border-radius to visible items so corners stay rounded
+      const visible = items.filter(i => !i.classList.contains('hidden'));
+      visible.forEach(i => {
+        i.style.borderTopLeftRadius = '';
+        i.style.borderTopRightRadius = '';
+        i.style.borderBottomLeftRadius = '';
+        i.style.borderBottomRightRadius = '';
+        i.style.borderBottom = '';
+      });
+      if (visible.length === 0) return;
+      const r = '8px';
+      visible[0].style.borderTopLeftRadius = r;
+      visible[0].style.borderTopRightRadius = r;
+      if (visible.length === 1) {
+        visible[0].style.borderBottomLeftRadius = r;
+        visible[0].style.borderBottomRightRadius = r;
+      } else {
+        visible[visible.length - 1].style.borderBottomLeftRadius = r;
+        visible[visible.length - 1].style.borderBottomRightRadius = r;
+        visible[visible.length - 1].style.borderBottom = 'none';
+      }
+    }
+  </script>
+</body>
+</html>

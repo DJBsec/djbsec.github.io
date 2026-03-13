@@ -4,6 +4,8 @@ title: Firewalls
 description: What is a firewall?
 img: assets/img/projects/firewall.png
 category: explained
+topic_type: defense
+icon: wall
 ---
 
 ## 🔥 What Is a Firewall?

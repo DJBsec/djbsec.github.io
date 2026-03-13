@@ -4,6 +4,8 @@ title: VPN
 description: What is a VPN?
 img: assets/img/projects/vpn.png
 category: explained
+topic_type: tools
+icon: network
 ---
 
 ## 🌐 What Is a VPN?

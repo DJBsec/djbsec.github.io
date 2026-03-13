@@ -14,6 +14,12 @@ layout: default
     <p class="post-description">{{ page.description }}</p>
   </header>
 
+  {% if page.collection == 'explained' %}
+    <a href="{{ '/explained/' | relative_url }}" class="explained-back-btn">
+      <i class="ti ti-arrow-left"></i> Back to Cybersecurity Explained
+    </a>
+  {% endif %}
+
   <article>
     {{ content }}
   </article>

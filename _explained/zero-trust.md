@@ -4,6 +4,8 @@ title: Zero Trust
 description: What is Zero Trust security?
 img: assets/img/projects/zero-trust.png
 category: explained
+topic_type: defense
+icon: eye-off
 ---
 
 ## 🚫 What Is Zero Trust?
