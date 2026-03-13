@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-cybersecurity-explained",
           title: "Cybersecurity Explained",
-          description: "Understanding Cybersecurity by DJBSEC",
+          description: "Breaking down complex security topics into plain language — no technical background required.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/explained/";
@@ -165,21 +165,131 @@ ninja.data = [{
           description: "what is phishing?",
           section: "Explained",handler: () => {
               window.location.href = "/explained/1_project/";
+            },},{id: "explained-antivirus-vs-edr",
+          title: 'Antivirus vs EDR',
+          description: "What is the difference between antivirus and EDR?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/antivirus-edr/";
+            },},{id: "explained-attack-surface",
+          title: 'Attack Surface',
+          description: "What is an attack surface?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/attack-surface/";
+            },},{id: "explained-backups-amp-the-3-2-1-rule",
+          title: 'Backups &amp;amp; the 3-2-1 Rule',
+          description: "What is the 3-2-1 backup rule?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/backups/";
+            },},{id: "explained-business-email-compromise",
+          title: 'Business Email Compromise',
+          description: "What is business email compromise?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/business-email-compromise/";
+            },},{id: "explained-the-cia-triad",
+          title: 'The CIA Triad',
+          description: "What is the CIA Triad in cybersecurity?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/cia-triad/";
+            },},{id: "explained-credential-stuffing",
+          title: 'Credential Stuffing',
+          description: "What is credential stuffing?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/credential-stuffing/";
+            },},{id: "explained-cve-amp-cvss-scoring",
+          title: 'CVE &amp;amp; CVSS Scoring',
+          description: "What are CVEs and CVSS scores?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/cve-cvss/";
+            },},{id: "explained-dark-web-monitoring",
+          title: 'Dark Web Monitoring',
+          description: "What is dark web monitoring?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/dark-web-monitoring/";
+            },},{id: "explained-deepfakes-amp-ai-driven-attacks",
+          title: 'Deepfakes &amp;amp; AI-Driven Attacks',
+          description: "What are deepfakes and AI-driven attacks?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/deepfakes/";
             },},{id: "explained-email-spoofing",
           title: 'Email Spoofing',
           description: "What is email spoofing?",
           section: "Explained",handler: () => {
               window.location.href = "/explained/emailspoofing/";
+            },},{id: "explained-encryption",
+          title: 'Encryption',
+          description: "What is encryption?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/encryption/";
+            },},{id: "explained-epss",
+          title: 'EPSS',
+          description: "What is the Exploit Prediction Scoring System?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/epss/";
             },},{id: "explained-firewalls",
           title: 'Firewalls',
           description: "What is a firewall?",
           section: "Explained",handler: () => {
               window.location.href = "/explained/firewalls/";
+            },},{id: "explained-incident-response",
+          title: 'Incident Response',
+          description: "What is incident response?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/incident-response/";
+            },},{id: "explained-insider-threats",
+          title: 'Insider Threats',
+          description: "What is an insider threat?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/insider-threats/";
+            },},{id: "explained-principle-of-least-privilege",
+          title: 'Principle of Least Privilege',
+          description: "What is the principle of least privilege?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/least-privilege/";
+            },},{id: "explained-malware",
+          title: 'Malware',
+          description: "What is malware?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/malware/";
+            },},{id: "explained-man-in-the-middle-attacks",
+          title: 'Man-in-the-Middle Attacks',
+          description: "What is a man-in-the-middle attack?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/man-in-the-middle/";
+            },},{id: "explained-mfa-apps",
+          title: 'MFA Apps',
+          description: "What are MFA authenticator apps?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/mfa-apps/";
+            },},{id: "explained-network-segmentation",
+          title: 'Network Segmentation',
+          description: "What is network segmentation?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/network-segmentation/";
+            },},{id: "explained-osint",
+          title: 'OSINT',
+          description: "What is OSINT (Open Source Intelligence)?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/osint/";
+            },},{id: "explained-password-managers",
+          title: 'Password Managers',
+          description: "What is a password manager?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/password-managers/";
+            },},{id: "explained-patch-management",
+          title: 'Patch Management',
+          description: "What is patch management?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/patch-management/";
             },},{id: "explained-ransomware",
           title: 'Ransomware',
           description: "What is ransomware?",
           section: "Explained",handler: () => {
               window.location.href = "/explained/ransomware/";
+            },},{id: "explained-red-team-vs-blue-team",
+          title: 'Red Team vs Blue Team',
+          description: "What are red teams and blue teams?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/red-blue-team/";
             },},{id: "explained-social-engineering",
           title: 'Social Engineering',
           description: "What is social engineering?",
@@ -190,6 +300,11 @@ ninja.data = [{
           description: "What is a strong password?",
           section: "Explained",handler: () => {
               window.location.href = "/explained/strong-passwords/";
+            },},{id: "explained-supply-chain-attacks",
+          title: 'Supply Chain Attacks',
+          description: "What is a supply chain attack?",
+          section: "Explained",handler: () => {
+              window.location.href = "/explained/supply-chain-attacks/";
             },},{id: "explained-two-factor-authentication",
           title: 'Two-Factor Authentication',
           description: "What is 2FA?",
