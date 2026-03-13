@@ -39,6 +39,7 @@ nav_order: 2
       <i class="ti ti-arrows-sort"></i>
       <span id="explained-sort-label">A–Z</span>
     </button>
+
   </div>
 
   <p class="explained-results-meta" id="explained-meta">

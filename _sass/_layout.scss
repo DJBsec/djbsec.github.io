@@ -144,7 +144,7 @@ html[data-theme="dark"] .profile img {
 
 // Sort toggle button
 .explained-sort-btn {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -174,7 +174,7 @@ html[data-theme="dark"] .profile img {
 }
 
 .explained-filter-btn {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -203,13 +203,29 @@ html[data-theme="dark"] .profile img {
   }
 
   // Threat filter active — use red
-  &.threat.active    { background: $red-color;    border-color: $red-color;    color: #fff; }
+  &.threat.active {
+    background: $red-color;
+    border-color: $red-color;
+    color: #fff;
+  }
   // Defense filter active — use blue
-  &.defense.active   { background: $blue-color;   border-color: $blue-color;   color: #fff; }
+  &.defense.active {
+    background: $blue-color;
+    border-color: $blue-color;
+    color: #fff;
+  }
   // Tools filter active — use orange
-  &.tools.active     { background: $orange-color; border-color: $orange-color; color: #fff; }
+  &.tools.active {
+    background: $orange-color;
+    border-color: $orange-color;
+    color: #fff;
+  }
   // Concepts filter active — use green
-  &.concepts.active  { background: $green-color;  border-color: $green-color;  color: #fff; }
+  &.concepts.active {
+    background: $green-color;
+    border-color: $green-color;
+    color: #fff;
+  }
 }
 
 .explained-filter-count {
@@ -219,7 +235,7 @@ html[data-theme="dark"] .profile img {
 
 // Results count line
 .explained-results-meta {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-size: 11px;
   letter-spacing: 0.06em;
   color: var(--global-text-color-light);
@@ -248,20 +264,31 @@ html[data-theme="dark"] .profile img {
   border-bottom: 1px solid var(--global-divider-color);
   text-decoration: none;
   color: var(--global-text-color);
-  transition: background 0.18s ease, transform 0.18s ease;
+  transition:
+    background 0.18s ease,
+    transform 0.18s ease;
 
   // Entry animation
   @media (prefers-reduced-motion: no-preference) {
     animation: explainedFadeUp 0.4s ease both;
 
     @for $i from 1 through 12 {
-      &:nth-child(#{$i}) { animation-delay: #{$i * 0.06}s; }
+      &:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.06}s;
+      }
     }
   }
 
-  &:first-child { border-radius: 8px 8px 0 0; }
-  &:last-child  { border-radius: 0 0 8px 8px; border-bottom: none; }
-  &:only-child  { border-radius: 8px; }
+  &:first-child {
+    border-radius: 8px 8px 0 0;
+  }
+  &:last-child {
+    border-radius: 0 0 8px 8px;
+    border-bottom: none;
+  }
+  &:only-child {
+    border-radius: 8px;
+  }
 
   &:hover {
     background: var(--global-bg-color);
@@ -270,13 +297,23 @@ html[data-theme="dark"] .profile img {
     color: var(--global-text-color);
   }
 
-  &.explained-hidden { display: none; }
+  &.explained-hidden {
+    display: none;
+  }
 
   // Left border color by category
-  &[data-cat="threat"]    { border-left-color: $red-color; }
-  &[data-cat="defense"]   { border-left-color: $blue-color; }
-  &[data-cat="tools"]     { border-left-color: $orange-color; }
-  &[data-cat="concepts"]  { border-left-color: $green-color; }
+  &[data-cat="threat"] {
+    border-left-color: $red-color;
+  }
+  &[data-cat="defense"] {
+    border-left-color: $blue-color;
+  }
+  &[data-cat="tools"] {
+    border-left-color: $orange-color;
+  }
+  &[data-cat="concepts"] {
+    border-left-color: $green-color;
+  }
 }
 
 // Icon circle
@@ -290,10 +327,22 @@ html[data-theme="dark"] .profile img {
   justify-content: center;
   font-size: 20px;
 
-  .explained-item[data-cat="threat"]    & { background: rgba($red-color,    0.12); color: $red-color; }
-  .explained-item[data-cat="defense"]  & { background: rgba($blue-color,   0.12); color: $blue-color; }
-  .explained-item[data-cat="tools"]    & { background: rgba($orange-color, 0.12); color: $orange-color; }
-  .explained-item[data-cat="concepts"] & { background: rgba($green-color,  0.12); color: $green-color; }
+  .explained-item[data-cat="threat"] & {
+    background: rgba($red-color, 0.12);
+    color: $red-color;
+  }
+  .explained-item[data-cat="defense"] & {
+    background: rgba($blue-color, 0.12);
+    color: $blue-color;
+  }
+  .explained-item[data-cat="tools"] & {
+    background: rgba($orange-color, 0.12);
+    color: $orange-color;
+  }
+  .explained-item[data-cat="concepts"] & {
+    background: rgba($green-color, 0.12);
+    color: $green-color;
+  }
 }
 
 // Text content
@@ -309,7 +358,9 @@ html[data-theme="dark"] .profile img {
   margin-bottom: 3px;
   transition: color 0.15s ease;
 
-  .explained-item:hover & { color: var(--global-hover-color); }
+  .explained-item:hover & {
+    color: var(--global-hover-color);
+  }
 }
 
 .explained-desc {
@@ -330,7 +381,7 @@ html[data-theme="dark"] .profile img {
 }
 
 .explained-badge {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -338,16 +389,30 @@ html[data-theme="dark"] .profile img {
   padding: 3px 8px;
   border-radius: 3px;
 
-  .explained-item[data-cat="threat"]    & { background: rgba($red-color,    0.14); color: $red-color; }
-  .explained-item[data-cat="defense"]  & { background: rgba($blue-color,   0.14); color: $blue-color; }
-  .explained-item[data-cat="tools"]    & { background: rgba($orange-color, 0.14); color: $orange-color; }
-  .explained-item[data-cat="concepts"] & { background: rgba($green-color,  0.14); color: $green-color; }
+  .explained-item[data-cat="threat"] & {
+    background: rgba($red-color, 0.14);
+    color: $red-color;
+  }
+  .explained-item[data-cat="defense"] & {
+    background: rgba($blue-color, 0.14);
+    color: $blue-color;
+  }
+  .explained-item[data-cat="tools"] & {
+    background: rgba($orange-color, 0.14);
+    color: $orange-color;
+  }
+  .explained-item[data-cat="concepts"] & {
+    background: rgba($green-color, 0.14);
+    color: $green-color;
+  }
 }
 
 .explained-arrow {
   color: var(--global-text-color-light);
   font-size: 16px;
-  transition: transform 0.2s ease, color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
 
   .explained-item:hover & {
     transform: translateX(4px);
@@ -365,7 +430,9 @@ html[data-theme="dark"] .profile img {
   color: var(--global-theme-color);
   text-decoration: none;
   margin-bottom: 1.5rem;
-  transition: gap 0.15s ease, color 0.15s ease;
+  transition:
+    gap 0.15s ease,
+    color 0.15s ease;
 
   &:hover {
     color: var(--global-hover-color);
@@ -373,10 +440,18 @@ html[data-theme="dark"] .profile img {
     gap: 10px;
   }
 
-  i { font-size: 15px; }
+  i {
+    font-size: 15px;
+  }
 }
 
 @keyframes explainedFadeUp {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

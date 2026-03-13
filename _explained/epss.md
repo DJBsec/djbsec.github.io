@@ -12,7 +12,7 @@ icon: chart-bar
 
 The **Exploit Prediction Scoring System (EPSS)** is a free, data-driven model that estimates the probability a published CVE will be exploited in the wild **within the next 30 days**. Scores range from 0 to 1 (0% – 100%) and are refreshed daily for every known CVE.
 
-Where **CVSS** measures the *severity* of a vulnerability based on its characteristics, EPSS measures *likelihood of exploitation* based on real-world signals. A vulnerability can be critical by CVSS but have a near-zero EPSS score — meaning attackers are not actively targeting it.
+Where **CVSS** measures the _severity_ of a vulnerability based on its characteristics, EPSS measures _likelihood of exploitation_ based on real-world signals. A vulnerability can be critical by CVSS but have a near-zero EPSS score — meaning attackers are not actively targeting it.
 
 EPSS is maintained by [FIRST](https://www.first.org/epss/) and powered by a machine-learning model trained on inputs including CVSS metrics, CWE weakness type, exploit code availability (Exploit-DB, GitHub, Metasploit), presence on CISA KEV, and live exploitation telemetry from honeypots and IDS/IPS sensors.
 
