@@ -1,0 +1,97 @@
+<!-- Conference Quick-View Modal — populated by cybersecurity-calendar.js via .textContent only -->
+<div class="modal fade" id="conferenceModal" tabindex="-1" role="dialog"
+     aria-labelledby="conferenceModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content cal-modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="conferenceModalLabel">
+          <span id="modal-name"></span>
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <p class="text-muted mb-3"><span id="modal-description"></span></p>
+
+        <!-- Airport selector -->
+        <div class="cal-airport-selector mb-2">
+          <span class="cal-airport-label">✈️ Travel from:</span>
+          <select id="modal-airport-select" class="cal-select" aria-label="Origin airport">
+            <!-- populated by JS -->
+          </select>
+          <input id="modal-airport-custom" type="text" class="cal-search-input"
+                 placeholder="e.g. LAX" maxlength="3"
+                 aria-label="Enter airport IATA code"
+                 style="display:none;width:5rem;text-transform:uppercase" />
+        </div>
+
+        <!-- Estimates disclaimer -->
+        <div class="cal-estimate-notice mb-3">
+          ℹ️ <strong>Quick estimates for reference only.</strong>
+          Airfare and hotel costs vary — check current prices before booking.
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <table class="table table-sm">
+              <tbody>
+                <tr>
+                  <th>Dates</th>
+                  <td><span id="modal-dates"></span></td>
+                </tr>
+                <tr>
+                  <th>Location</th>
+                  <td><span id="modal-location"></span></td>
+                </tr>
+                <tr>
+                  <th>Venue</th>
+                  <td><span id="modal-venue"></span></td>
+                </tr>
+                <tr>
+                  <th>Categories</th>
+                  <td><span id="modal-tags"></span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-sm-6">
+            <table class="table table-sm">
+              <tbody>
+                <tr>
+                  <th>Registration</th>
+                  <td><span id="modal-reg-cost"></span></td>
+                </tr>
+                <tr>
+                  <th id="modal-airfare-label">Airfare (HOU)</th>
+                  <td><span id="modal-airfare"></span></td>
+                </tr>
+                <tr>
+                  <th>Hotel</th>
+                  <td><span id="modal-hotel"></span></td>
+                </tr>
+                <tr>
+                  <th><strong>Total Est.</strong></th>
+                  <td><strong><span id="modal-total"></span></strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a id="modal-detail-link" href="#" class="btn btn-primary">
+          <i class="ti ti-external-link"></i> Full Details
+        </a>
+        <a id="modal-website-link" href="#" target="_blank" rel="noopener" class="btn btn-outline-secondary">
+          <i class="ti ti-world"></i> Official Site
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
