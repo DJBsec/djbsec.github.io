@@ -150,6 +150,9 @@ collections:
   explained:
     output: true
     permalink: /explained/:title/
+  conferences:
+    output: true
+    permalink: /cybersecurity-calendar/:title/
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
@@ -221,6 +224,11 @@ defaults:
       path: "assets"
     values:
       sitemap: false
+  - scope:
+      path: ""
+      type: "conferences"
+    values:
+      layout: conference-detail
 
 sass:
   style: compressed

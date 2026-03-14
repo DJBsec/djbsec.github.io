@@ -1,0 +1,25 @@
+<!-- conference-card.html — reference partial for agenda view.
+     Note: The JS builds identical DOM via createElement for XSS safety.
+     This file documents the expected markup structure.
+
+  <div class="cal-conf-card" data-id="{{conf.id}}" tabindex="0" role="button"
+       aria-label="{{conf.name}} — {{conf.city}}, {{conf.state}} — click for details">
+    <div class="cal-conf-card-header">
+      <span class="cal-conf-card-name">{{conf.name}}</span>
+      <span class="cal-conf-card-date">{{formatted_date_range}}</span>
+    </div>
+    <div class="cal-conf-card-body">
+      <span class="cal-conf-card-location">
+        <i class="ti ti-map-pin"></i> {{conf.city}}, {{conf.state}}
+      </span>
+      <span class="cal-conf-card-cost">
+        ${{conf.total_cost_min}}–${{conf.total_cost_max}} est. total
+      </span>
+    </div>
+    <div class="cal-conf-card-tags">
+      {{#each conf.category_tags}}
+        <span class="badge cal-tag-badge" data-cat="{{this}}">{{this}}</span>
+      {{/each}}
+    </div>
+  </div>
+-->

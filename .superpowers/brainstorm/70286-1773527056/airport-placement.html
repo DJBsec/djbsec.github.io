@@ -1,0 +1,77 @@
+<h2>Where should the "Travel from" airport selector live?</h2>
+<p class="subtitle">One airport setting applies to all conferences sitewide. Pick the placement that feels right.</p>
+
+<div class="options">
+
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Second row in the filter bar</h3>
+      <p>Right below the search/category filters. Always visible on the calendar page. Simple and discoverable.</p>
+      <div class="mockup" style="margin-top:10px">
+        <div class="mockup-header">Filter bar</div>
+        <div class="mockup-body" style="padding:10px;font-size:12px">
+          <div style="display:flex;gap:8px;margin-bottom:8px">
+            <div class="mock-input" style="flex:2">🔍 Search conferences…</div>
+            <div class="mock-input" style="flex:1">All States ▾</div>
+            <div class="mock-input" style="flex:1">All Categories ▾</div>
+            <div style="display:flex;gap:4px"><div class="mock-button">⊞ Grid</div><div class="mock-button">☰ Agenda</div></div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;border-top:1px solid #444;padding-top:8px">
+            <span style="color:#aaa;font-size:11px">✈️ Travel from:</span>
+            <div class="mock-input" style="width:220px">HOU — Houston Hobby, TX</div>
+            <span style="color:#888;font-size:11px">Estimates updated ✓</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Collapsible "Travel Settings" panel</h3>
+      <p>A collapsed button above the calendar. Click to expand and change airport. Keeps the UI clean by default.</p>
+      <div class="mockup" style="margin-top:10px">
+        <div class="mockup-header">Calendar page</div>
+        <div class="mockup-body" style="padding:10px;font-size:12px">
+          <div style="display:flex;gap:8px;margin-bottom:8px">
+            <div class="mock-input" style="flex:2">🔍 Search…</div>
+            <div class="mock-input" style="flex:1">State ▾</div>
+            <div class="mock-input" style="flex:1">Category ▾</div>
+            <div style="display:flex;gap:4px"><div class="mock-button">⊞</div><div class="mock-button">☰</div></div>
+          </div>
+          <div style="background:#2a2a3a;border:1px solid #555;border-radius:6px;padding:8px;display:flex;justify-content:space-between;align-items:center">
+            <span style="color:#ccc;font-size:11px">✈️ Travel estimates from <strong>HOU (Houston Hobby)</strong> — economy class</span>
+            <div class="mock-button" style="font-size:10px">Change ▾</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Inside the modal + detail page only</h3>
+      <p>Airport selector appears only when you open a conference's detail or modal view. Per-conference feel rather than global setting.</p>
+      <div class="mockup" style="margin-top:10px">
+        <div class="mockup-header">Conference modal</div>
+        <div class="mockup-body" style="padding:10px;font-size:12px">
+          <div style="font-weight:bold;margin-bottom:6px">DEF CON 34 — Las Vegas, NV</div>
+          <div style="display:flex;gap:8px;align-items:center;background:#1a2a1a;border:1px solid #3a3;border-radius:4px;padding:6px;margin-bottom:8px">
+            <span style="color:#aaa;font-size:11px">✈️ Your origin:</span>
+            <div class="mock-input" style="width:180px;font-size:11px">HOU — Houston Hobby, TX</div>
+          </div>
+          <table style="font-size:11px;width:100%;border-collapse:collapse">
+            <tr><td style="color:#aaa;padding:2px 4px">Registration</td><td style="padding:2px 4px">$440</td></tr>
+            <tr><td style="color:#aaa;padding:2px 4px">Airfare</td><td style="padding:2px 4px">$180–$350</td></tr>
+            <tr><td style="color:#aaa;padding:2px 4px">Hotel (3 nights)</td><td style="padding:2px 4px">$990–$2475</td></tr>
+            <tr style="font-weight:bold"><td style="color:#aaa;padding:2px 4px">Total est.</td><td style="padding:2px 4px">$1,610–$3,265</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

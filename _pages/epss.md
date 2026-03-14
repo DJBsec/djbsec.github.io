@@ -4,8 +4,7 @@ title: EPSS
 permalink: /epss/
 subtitle:
 description: Look up EPSS scores, CISA KEV status, and CVSS severity for any CVE.
-nav: true
-nav_order: 3
+nav: false
 #profile:
 #  align: right
 #  image: djbsec.png

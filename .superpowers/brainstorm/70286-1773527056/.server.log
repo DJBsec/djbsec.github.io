@@ -1,0 +1,7 @@
+{"type":"server-started","port":61341,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:61341","screen_dir":"/Users/ben/Documents/GitHub/djbsec.github.io/.superpowers/brainstorm/70286-1773527056"}
+{"type":"screen-added","file":"/Users/ben/Documents/GitHub/djbsec.github.io/.superpowers/brainstorm/70286-1773527056/airport-placement.html"}
+{"source":"user-event","type":"click","text":"C\n    \n      Inside the modal + detail page only\n      Airport selector appears only when you open a conference's detail or modal view. Per-conference feel rather than global setting.\n      \n        Conference modal\n        \n          DEF CON 34 — Las Vegas, NV\n          \n            ✈️ Your origin:\n            HOU — Houston Hobby, TX\n          \n          \n            Registration$440\n            Airfare$180–$350\n            Hotel (3 nights)$990–$2475\n            Total est.$1,610–$3,265","choice":"c","id":null,"timestamp":1773527133285}
+{"type":"screen-added","file":"/Users/ben/Documents/GitHub/djbsec.github.io/.superpowers/brainstorm/70286-1773527056/waiting-1.html"}
+{"type":"screen-added","file":"/Users/ben/Documents/GitHub/djbsec.github.io/.superpowers/brainstorm/70286-1773527056/airport-input.html"}
+{"type":"screen-added","file":"/Users/ben/Documents/GitHub/djbsec.github.io/.superpowers/brainstorm/70286-1773527056/modal-design.html"}
+{"type":"screen-added","file":"/Users/ben/Documents/GitHub/djbsec.github.io/.superpowers/brainstorm/70286-1773527056/modal-design-v2.html"}

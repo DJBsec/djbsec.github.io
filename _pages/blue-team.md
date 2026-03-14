@@ -3,8 +3,7 @@ layout: page
 title: Blue Team
 description: Defensive cybersecurity tools and resources for Blue Team professionals, including vulnerability management, web security analysis, and threat intelligence.
 permalink: /blue-team/
-nav: true
-nav_order: 6
+nav: false
 ---
 
 <div class="row justify-content-center">

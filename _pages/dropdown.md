@@ -1,17 +1,19 @@
 ---
 layout: page
-title: misc
+title: Learn
 nav: true
-nav_order: 8
+nav_order: 4
 dropdown: true
 children:
+  - title: Cybersecurity Explained
+    permalink: /explained/
+  - title: Repositories
+    permalink: /repositories/
   - title: divider
-  - title: books
+  - title: Books
     permalink: /books/
-  - title: divider
-  - title: learning
+  - title: Learning Platforms
     permalink: /platforms/
-  - title: divider
-  - title: podcasts
+  - title: Podcasts
     permalink: /podcasts/
 ---
