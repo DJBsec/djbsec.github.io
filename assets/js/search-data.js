@@ -9,64 +9,71 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-cybernews",
-          title: "CyberNews",
+  },{id: "nav-news",
+          title: "News",
           description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "nav-cybersecurity-explained",
-          title: "Cybersecurity Explained",
-          description: "Breaking down complex security topics into plain language — no technical background required.",
+        },{id: "nav-calendar",
+          title: "Calendar",
+          description: "US cybersecurity conferences for 2026 — dates, locations, and travel cost estimates from Houston (HOU).",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/explained/";
+            window.location.href = "/cybersecurity-calendar/";
           },
-        },{id: "nav-epss",
-          title: "EPSS",
-          description: "Look up EPSS scores, CISA KEV status, and CVSS severity for any CVE.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/epss/";
-          },
-        },{id: "nav-ai-tools-amp-prompts",
-          title: "AI Tools &amp; Prompts",
-          description: "Learn how to use AI effectively with curated prompt repositories and resources to get better results from tools like ChatGPT, Claude, Copilot, and more.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/ai-tools-prompts/";
-          },
-        },{id: "nav-repos",
-          title: "repos",
-          description: "GitHub repositories and projects from DJBSec.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/repositories/";
-          },
-        },{id: "nav-blue-team",
-          title: "Blue Team",
-          description: "Defensive cybersecurity tools and resources for Blue Team professionals, including vulnerability management, web security analysis, and threat intelligence.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/blue-team/";
-          },
-        },{id: "dropdown-books",
-              title: "books",
+        },{id: "dropdown-epss-scanner",
+              title: "EPSS Scanner",
               description: "",
               section: "Dropdown",
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "dropdown-learning",
-              title: "learning",
+            },{id: "dropdown-blue-team",
+              title: "Blue Team",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "";
+              },
+            },{id: "dropdown-ai-tools-amp-prompts",
+              title: "AI Tools &amp; Prompts",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "";
+              },
+            },{id: "dropdown-cybersecurity-explained",
+              title: "Cybersecurity Explained",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "";
+              },
+            },{id: "dropdown-repositories",
+              title: "Repositories",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "";
+              },
+            },{id: "dropdown-books",
+              title: "Books",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "";
+              },
+            },{id: "dropdown-learning-platforms",
+              title: "Learning Platforms",
               description: "",
               section: "Dropdown",
               handler: () => {
                 window.location.href = "";
               },
             },{id: "dropdown-podcasts",
-              title: "podcasts",
+              title: "Podcasts",
               description: "",
               section: "Dropdown",
               handler: () => {
@@ -171,7 +178,142 @@ ninja.data = [{
           window.location.href = "/blog/2026/cybernews0121/";
         
       },
-    },{id: "explained-phishing",
+    },{id: "conferences-appsec-usa-2026-owasp",
+          title: 'AppSec USA 2026 (OWASP)',
+          description: "OWASP&#39;s flagship North American application security conference.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/appsec-usa-2026/";
+            },},{id: "conferences-black-hat-usa-2026",
+          title: 'Black Hat USA 2026',
+          description: "Premier enterprise security conference featuring cutting-edge research and training.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/black-hat-usa-2026/";
+            },},{id: "conferences-bsides-las-vegas-2026",
+          title: 'BSides Las Vegas 2026',
+          description: "Community-driven security event running alongside Black Hat and DEF CON.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/bsides-lv-2026/";
+            },},{id: "conferences-bsides-san-francisco-2026",
+          title: 'BSides San Francisco 2026',
+          description: "Community-organized security conference held alongside RSA.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/bsides-sf-2026/";
+            },},{id: "conferences-cactuscon-14",
+          title: 'CactusCon 14',
+          description: "Community-focused security conference in the Phoenix metro area.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/cactuscon-14/";
+            },},{id: "conferences-central-ohio-infosec-summit-2026",
+          title: 'Central Ohio InfoSec Summit 2026',
+          description: "Regional security summit serving the Central Ohio infosec community.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/central-ohio-infosec-2026/";
+            },},{id: "conferences-circle-city-con-2026",
+          title: 'Circle City Con 2026',
+          description: "Hacker and security community conference in Indianapolis.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/circlecitycon-2026/";
+            },},{id: "conferences-converge-detroit-2026",
+          title: 'Converge Detroit 2026',
+          description: "Midwest infosec conference focused on community and collaboration.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/converge-detroit-2026/";
+            },},{id: "conferences-cybersecurity-summit-minneapolis-2026",
+          title: 'Cybersecurity Summit Minneapolis 2026',
+          description: "Regional summit connecting cybersecurity leaders in the Twin Cities.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/cybersecurity-summit-msp-2026/";
+            },},{id: "conferences-def-con-34",
+          title: 'DEF CON 34',
+          description: "The world&#39;s largest underground hacking conference.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/defcon-34/";
+            },},{id: "conferences-grrcon-2026",
+          title: 'GrrCon 2026',
+          description: "Midwest hacker and security community conference in Grand Rapids.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/grrcon-2026/";
+            },},{id: "conferences-hacknyc-2026",
+          title: 'HACKNYC 2026',
+          description: "New York City security conference covering offensive and defensive topics.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/hacknyc-2026/";
+            },},{id: "conferences-ics-security-summit-sans",
+          title: 'ICS Security Summit (SANS)',
+          description: "SANS summit focused on industrial control systems and OT/ICS security.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/ics-security-summit-2026/";
+            },},{id: "conferences-infiltrate-2026",
+          title: 'Infiltrate 2026',
+          description: "Deeply technical offensive security conference in Miami.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/infiltrate-2026/";
+            },},{id: "conferences-layerone-2026",
+          title: 'LayerOne 2026',
+          description: "Hacker-focused security conference in Los Angeles.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/layerone-2026/";
+            },},{id: "conferences-nolacon-2026",
+          title: 'NOLACon 2026',
+          description: "New Orleans hacker and security community conference.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/nolacon-2026/";
+            },},{id: "conferences-ringzer0-2026",
+          title: 'RingZer0 2026',
+          description: "Technical training and talks during pre-DEF CON week in Las Vegas.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/ringzer0-2026/";
+            },},{id: "conferences-rsa-conference-2026",
+          title: 'RSA Conference 2026',
+          description: "The world&#39;s leading information security conference and expo.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/rsa-conference-2026/";
+            },},{id: "conferences-sans-cyber-defense-forum-2026",
+          title: 'SANS Cyber Defense Forum 2026',
+          description: "SANS summit focused on defensive security, blue team operations, and SOC.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/sans-cyber-defense-2026/";
+            },},{id: "conferences-sans-dfir-summit-2026",
+          title: 'SANS DFIR Summit 2026',
+          description: "SANS summit focused on digital forensics and incident response.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/sans-dfir-2026/";
+            },},{id: "conferences-secureworld-atlanta-2026",
+          title: 'SecureWorld Atlanta 2026',
+          description: "Regional enterprise security conference with CPE-eligible sessions.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/secureworld-atlanta-2026/";
+            },},{id: "conferences-secureworld-chicago-2026",
+          title: 'SecureWorld Chicago 2026',
+          description: "Regional enterprise security conference with CPE-eligible sessions.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/secureworld-chicago-2026/";
+            },},{id: "conferences-secureworld-dallas-2026",
+          title: 'SecureWorld Dallas 2026',
+          description: "Regional enterprise security conference with CPE-eligible sessions.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/secureworld-dallas-2026/";
+            },},{id: "conferences-secureworld-philadelphia-2026",
+          title: 'SecureWorld Philadelphia 2026',
+          description: "Regional enterprise security conference with CPE-eligible sessions.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/secureworld-philadelphia-2026/";
+            },},{id: "conferences-shmoocon-2026",
+          title: 'ShmooCon 2026',
+          description: "East Coast hacker convention focused on offensive/defensive topics.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/shmoocon-2026/";
+            },},{id: "conferences-toorcon-2026",
+          title: 'ToorCon 2026',
+          description: "San Diego hacker conference focused on technical research and community.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/toorcon-2026/";
+            },},{id: "conferences-wild-west-hackin-39-fest-2026",
+          title: 'Wild West Hackin&amp;#39; Fest 2026',
+          description: "Unique security conference in Deadwood, South Dakota with a Western theme.",
+          section: "Conferences",handler: () => {
+              window.location.href = "/cybersecurity-calendar/wild-west-hackin-fest-2026/";
+            },},{id: "explained-phishing",
           title: 'Phishing',
           description: "what is phishing?",
           section: "Explained",handler: () => {
