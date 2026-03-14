@@ -44,6 +44,13 @@ This page provides a curated set of **Blue Team tools** to support these defensi
     </tr>
 
     <tr>
+      <td><strong>🎯 MITRE ATT&CK</strong></td>
+      <td>Globally accessible knowledge base of adversary tactics, techniques, and procedures (TTPs) based on real-world observations — the standard framework for understanding and mapping attacker behavior</td>
+      <td><span class="badge bg-warning text-dark">Intel</span></td>
+      <td><a href="https://attack.mitre.org/" class="btn btn-sm btn-outline-warning" target="_blank" rel="noopener noreferrer">Open</a></td>
+    </tr>
+
+    <tr>
       <td><strong>🛡️ Header Analyzer</strong></td>
       <td>Inspect HTTP security headers to detect missing protections and recommend security improvements</td>
       <td><span class="badge bg-success">Web Security</span></td>
@@ -121,10 +128,11 @@ This page provides a curated set of **Blue Team tools** to support these defensi
       <div class="card-body text-center">
         <h5 class="card-title">🕵️ Threat Intelligence</h5>
         <p class="card-text">OSINT tools and threat data aggregation for security research</p>
-        <span class="badge bg-warning text-dark">2 Active</span>
+        <span class="badge bg-warning text-dark">3 Active</span>
         <ul class="list-unstyled mt-2">
           <li>• OSINT Search</li>
           <li>• Threat Maps</li>
+          <li>• MITRE ATT&CK</li>
         </ul>
       </div>
     </div>
