@@ -15,6 +15,7 @@
 ## Chunk 1: Data layer — `airfare-data.js`
 
 **Files:**
+
 - Create: `assets/js/airfare-data.js`
 
 - [ ] **Step 1: Create `assets/js/airfare-data.js`** with the full airport data, region matrix, and estimate function:
@@ -25,89 +26,126 @@ window.AIRFARE_DATA = (function () {
 
   var AIRPORTS = {
     // South/Southwest
-    HOU: { name: "Houston Hobby",           city: "Houston",      state: "TX", region: "south" },
-    IAH: { name: "Houston Intercontinental", city: "Houston",      state: "TX", region: "south" },
-    DAL: { name: "Dallas Love Field",        city: "Dallas",       state: "TX", region: "south" },
-    DFW: { name: "Dallas Fort Worth",        city: "Dallas",       state: "TX", region: "south" },
-    AUS: { name: "Austin-Bergstrom",         city: "Austin",       state: "TX", region: "south" },
-    SAT: { name: "San Antonio Intl",         city: "San Antonio",  state: "TX", region: "south" },
+    HOU: { name: "Houston Hobby", city: "Houston", state: "TX", region: "south" },
+    IAH: { name: "Houston Intercontinental", city: "Houston", state: "TX", region: "south" },
+    DAL: { name: "Dallas Love Field", city: "Dallas", state: "TX", region: "south" },
+    DFW: { name: "Dallas Fort Worth", city: "Dallas", state: "TX", region: "south" },
+    AUS: { name: "Austin-Bergstrom", city: "Austin", state: "TX", region: "south" },
+    SAT: { name: "San Antonio Intl", city: "San Antonio", state: "TX", region: "south" },
     MSY: { name: "Louis Armstrong New Orleans", city: "New Orleans", state: "LA", region: "south" },
-    OKC: { name: "Will Rogers World",        city: "Oklahoma City", state: "OK", region: "south" },
-    TUL: { name: "Tulsa Intl",               city: "Tulsa",        state: "OK", region: "south" },
-    ABQ: { name: "Albuquerque Intl",         city: "Albuquerque",  state: "NM", region: "south" },
-    PHX: { name: "Phoenix Sky Harbor",       city: "Phoenix",      state: "AZ", region: "south" },
-    TUS: { name: "Tucson Intl",              city: "Tucson",       state: "AZ", region: "south" },
+    OKC: { name: "Will Rogers World", city: "Oklahoma City", state: "OK", region: "south" },
+    TUL: { name: "Tulsa Intl", city: "Tulsa", state: "OK", region: "south" },
+    ABQ: { name: "Albuquerque Intl", city: "Albuquerque", state: "NM", region: "south" },
+    PHX: { name: "Phoenix Sky Harbor", city: "Phoenix", state: "AZ", region: "south" },
+    TUS: { name: "Tucson Intl", city: "Tucson", state: "AZ", region: "south" },
     // Northeast
-    BOS: { name: "Boston Logan",             city: "Boston",       state: "MA", region: "northeast" },
-    JFK: { name: "New York JFK",             city: "New York",     state: "NY", region: "northeast" },
-    LGA: { name: "New York LaGuardia",       city: "New York",     state: "NY", region: "northeast" },
-    EWR: { name: "Newark Liberty",           city: "Newark",       state: "NJ", region: "northeast" },
-    PHL: { name: "Philadelphia Intl",        city: "Philadelphia", state: "PA", region: "northeast" },
-    BWI: { name: "Baltimore-Washington",     city: "Baltimore",    state: "MD", region: "northeast" },
-    DCA: { name: "Washington Reagan",        city: "Washington",   state: "DC", region: "northeast" },
-    IAD: { name: "Washington Dulles",        city: "Washington",   state: "DC", region: "northeast" },
-    RDU: { name: "Raleigh-Durham",           city: "Raleigh",      state: "NC", region: "northeast" },
-    CLT: { name: "Charlotte Douglas",        city: "Charlotte",    state: "NC", region: "northeast" },
+    BOS: { name: "Boston Logan", city: "Boston", state: "MA", region: "northeast" },
+    JFK: { name: "New York JFK", city: "New York", state: "NY", region: "northeast" },
+    LGA: { name: "New York LaGuardia", city: "New York", state: "NY", region: "northeast" },
+    EWR: { name: "Newark Liberty", city: "Newark", state: "NJ", region: "northeast" },
+    PHL: { name: "Philadelphia Intl", city: "Philadelphia", state: "PA", region: "northeast" },
+    BWI: { name: "Baltimore-Washington", city: "Baltimore", state: "MD", region: "northeast" },
+    DCA: { name: "Washington Reagan", city: "Washington", state: "DC", region: "northeast" },
+    IAD: { name: "Washington Dulles", city: "Washington", state: "DC", region: "northeast" },
+    RDU: { name: "Raleigh-Durham", city: "Raleigh", state: "NC", region: "northeast" },
+    CLT: { name: "Charlotte Douglas", city: "Charlotte", state: "NC", region: "northeast" },
     // Southeast
-    ATL: { name: "Atlanta Hartsfield-Jackson", city: "Atlanta",   state: "GA", region: "southeast" },
-    MCO: { name: "Orlando Intl",             city: "Orlando",      state: "FL", region: "southeast" },
-    MIA: { name: "Miami Intl",               city: "Miami",        state: "FL", region: "southeast" },
+    ATL: { name: "Atlanta Hartsfield-Jackson", city: "Atlanta", state: "GA", region: "southeast" },
+    MCO: { name: "Orlando Intl", city: "Orlando", state: "FL", region: "southeast" },
+    MIA: { name: "Miami Intl", city: "Miami", state: "FL", region: "southeast" },
     FLL: { name: "Fort Lauderdale-Hollywood", city: "Fort Lauderdale", state: "FL", region: "southeast" },
-    TPA: { name: "Tampa Intl",               city: "Tampa",        state: "FL", region: "southeast" },
-    BNA: { name: "Nashville Intl",           city: "Nashville",    state: "TN", region: "southeast" },
-    MEM: { name: "Memphis Intl",             city: "Memphis",      state: "TN", region: "southeast" },
-    SDF: { name: "Louisville Intl",          city: "Louisville",   state: "KY", region: "southeast" },
+    TPA: { name: "Tampa Intl", city: "Tampa", state: "FL", region: "southeast" },
+    BNA: { name: "Nashville Intl", city: "Nashville", state: "TN", region: "southeast" },
+    MEM: { name: "Memphis Intl", city: "Memphis", state: "TN", region: "southeast" },
+    SDF: { name: "Louisville Intl", city: "Louisville", state: "KY", region: "southeast" },
     // Midwest
-    ORD: { name: "Chicago O'Hare",           city: "Chicago",      state: "IL", region: "midwest" },
-    MDW: { name: "Chicago Midway",           city: "Chicago",      state: "IL", region: "midwest" },
-    DTW: { name: "Detroit Metro",            city: "Detroit",      state: "MI", region: "midwest" },
-    MSP: { name: "Minneapolis-St Paul",      city: "Minneapolis",  state: "MN", region: "midwest" },
-    STL: { name: "St. Louis Lambert",        city: "St. Louis",    state: "MO", region: "midwest" },
-    MCI: { name: "Kansas City Intl",         city: "Kansas City",  state: "MO", region: "midwest" },
-    IND: { name: "Indianapolis Intl",        city: "Indianapolis", state: "IN", region: "midwest" },
-    CMH: { name: "Columbus Intl",            city: "Columbus",     state: "OH", region: "midwest" },
-    CLE: { name: "Cleveland Hopkins",        city: "Cleveland",    state: "OH", region: "midwest" },
-    MKE: { name: "Milwaukee Mitchell",       city: "Milwaukee",    state: "WI", region: "midwest" },
-    CVG: { name: "Cincinnati/N. Kentucky",   city: "Cincinnati",   state: "OH", region: "midwest" },
-    OMA: { name: "Eppley Airfield",          city: "Omaha",        state: "NE", region: "midwest" },
+    ORD: { name: "Chicago O'Hare", city: "Chicago", state: "IL", region: "midwest" },
+    MDW: { name: "Chicago Midway", city: "Chicago", state: "IL", region: "midwest" },
+    DTW: { name: "Detroit Metro", city: "Detroit", state: "MI", region: "midwest" },
+    MSP: { name: "Minneapolis-St Paul", city: "Minneapolis", state: "MN", region: "midwest" },
+    STL: { name: "St. Louis Lambert", city: "St. Louis", state: "MO", region: "midwest" },
+    MCI: { name: "Kansas City Intl", city: "Kansas City", state: "MO", region: "midwest" },
+    IND: { name: "Indianapolis Intl", city: "Indianapolis", state: "IN", region: "midwest" },
+    CMH: { name: "Columbus Intl", city: "Columbus", state: "OH", region: "midwest" },
+    CLE: { name: "Cleveland Hopkins", city: "Cleveland", state: "OH", region: "midwest" },
+    MKE: { name: "Milwaukee Mitchell", city: "Milwaukee", state: "WI", region: "midwest" },
+    CVG: { name: "Cincinnati/N. Kentucky", city: "Cincinnati", state: "OH", region: "midwest" },
+    OMA: { name: "Eppley Airfield", city: "Omaha", state: "NE", region: "midwest" },
     // Mountain
-    DEN: { name: "Denver Intl",              city: "Denver",       state: "CO", region: "mountain" },
-    SLC: { name: "Salt Lake City Intl",      city: "Salt Lake City", state: "UT", region: "mountain" },
-    LAS: { name: "Las Vegas Harry Reid",     city: "Las Vegas",    state: "NV", region: "mountain" },
-    BOI: { name: "Boise Airport",            city: "Boise",        state: "ID", region: "mountain" },
-    RNO: { name: "Reno-Tahoe Intl",          city: "Reno",         state: "NV", region: "mountain" },
+    DEN: { name: "Denver Intl", city: "Denver", state: "CO", region: "mountain" },
+    SLC: { name: "Salt Lake City Intl", city: "Salt Lake City", state: "UT", region: "mountain" },
+    LAS: { name: "Las Vegas Harry Reid", city: "Las Vegas", state: "NV", region: "mountain" },
+    BOI: { name: "Boise Airport", city: "Boise", state: "ID", region: "mountain" },
+    RNO: { name: "Reno-Tahoe Intl", city: "Reno", state: "NV", region: "mountain" },
     // Pacific
-    LAX: { name: "Los Angeles Intl",         city: "Los Angeles",  state: "CA", region: "pacific" },
-    SFO: { name: "San Francisco Intl",       city: "San Francisco", state: "CA", region: "pacific" },
-    SJC: { name: "San Jose Mineta",          city: "San Jose",     state: "CA", region: "pacific" },
-    SEA: { name: "Seattle-Tacoma",           city: "Seattle",      state: "WA", region: "pacific" },
-    PDX: { name: "Portland Intl",            city: "Portland",     state: "OR", region: "pacific" },
-    SAN: { name: "San Diego Intl",           city: "San Diego",    state: "CA", region: "pacific" },
-    SMF: { name: "Sacramento Intl",          city: "Sacramento",   state: "CA", region: "pacific" },
-    OAK: { name: "Oakland Intl",             city: "Oakland",      state: "CA", region: "pacific" },
+    LAX: { name: "Los Angeles Intl", city: "Los Angeles", state: "CA", region: "pacific" },
+    SFO: { name: "San Francisco Intl", city: "San Francisco", state: "CA", region: "pacific" },
+    SJC: { name: "San Jose Mineta", city: "San Jose", state: "CA", region: "pacific" },
+    SEA: { name: "Seattle-Tacoma", city: "Seattle", state: "WA", region: "pacific" },
+    PDX: { name: "Portland Intl", city: "Portland", state: "OR", region: "pacific" },
+    SAN: { name: "San Diego Intl", city: "San Diego", state: "CA", region: "pacific" },
+    SMF: { name: "Sacramento Intl", city: "Sacramento", state: "CA", region: "pacific" },
+    OAK: { name: "Oakland Intl", city: "Oakland", state: "CA", region: "pacific" },
   };
 
   var STATE_TO_REGION = {
     // Northeast
-    CT: "northeast", DC: "northeast", DE: "northeast", MA: "northeast",
-    MD: "northeast", ME: "northeast", NH: "northeast", NJ: "northeast",
-    NY: "northeast", PA: "northeast", RI: "northeast", VA: "northeast",
-    VT: "northeast", WV: "northeast",
+    CT: "northeast",
+    DC: "northeast",
+    DE: "northeast",
+    MA: "northeast",
+    MD: "northeast",
+    ME: "northeast",
+    NH: "northeast",
+    NJ: "northeast",
+    NY: "northeast",
+    PA: "northeast",
+    RI: "northeast",
+    VA: "northeast",
+    VT: "northeast",
+    WV: "northeast",
     // Southeast
-    AL: "southeast", AR: "southeast", FL: "southeast", GA: "southeast",
-    KY: "southeast", MS: "southeast", NC: "southeast", SC: "southeast",
+    AL: "southeast",
+    AR: "southeast",
+    FL: "southeast",
+    GA: "southeast",
+    KY: "southeast",
+    MS: "southeast",
+    NC: "southeast",
+    SC: "southeast",
     TN: "southeast",
     // Midwest
-    IA: "midwest", IL: "midwest", IN: "midwest", KS: "midwest",
-    MI: "midwest", MN: "midwest", MO: "midwest", ND: "midwest",
-    NE: "midwest", OH: "midwest", SD: "midwest", WI: "midwest",
+    IA: "midwest",
+    IL: "midwest",
+    IN: "midwest",
+    KS: "midwest",
+    MI: "midwest",
+    MN: "midwest",
+    MO: "midwest",
+    ND: "midwest",
+    NE: "midwest",
+    OH: "midwest",
+    SD: "midwest",
+    WI: "midwest",
     // South/Southwest
-    AZ: "south", LA: "south", NM: "south", OK: "south", TX: "south",
+    AZ: "south",
+    LA: "south",
+    NM: "south",
+    OK: "south",
+    TX: "south",
     // Mountain
-    CO: "mountain", ID: "mountain", MT: "mountain", NV: "mountain",
-    UT: "mountain", WY: "mountain",
+    CO: "mountain",
+    ID: "mountain",
+    MT: "mountain",
+    NV: "mountain",
+    UT: "mountain",
+    WY: "mountain",
     // Pacific
-    AK: "pacific", CA: "pacific", HI: "pacific", OR: "pacific", WA: "pacific",
+    AK: "pacific",
+    CA: "pacific",
+    HI: "pacific",
+    OR: "pacific",
+    WA: "pacific",
   };
 
   // 6x6 matrix: origin region -> destination region -> { min, max } round-trip economy USD
@@ -115,55 +153,57 @@ window.AIRFARE_DATA = (function () {
     northeast: {
       northeast: { min: 100, max: 220 },
       southeast: { min: 150, max: 320 },
-      midwest:   { min: 150, max: 300 },
-      south:     { min: 200, max: 400 },
-      mountain:  { min: 220, max: 420 },
-      pacific:   { min: 280, max: 520 },
+      midwest: { min: 150, max: 300 },
+      south: { min: 200, max: 400 },
+      mountain: { min: 220, max: 420 },
+      pacific: { min: 280, max: 520 },
     },
     southeast: {
       northeast: { min: 150, max: 320 },
-      southeast: { min: 80,  max: 200 },
-      midwest:   { min: 160, max: 300 },
-      south:     { min: 150, max: 280 },
-      mountain:  { min: 200, max: 380 },
-      pacific:   { min: 240, max: 440 },
+      southeast: { min: 80, max: 200 },
+      midwest: { min: 160, max: 300 },
+      south: { min: 150, max: 280 },
+      mountain: { min: 200, max: 380 },
+      pacific: { min: 240, max: 440 },
     },
     midwest: {
       northeast: { min: 150, max: 300 },
       southeast: { min: 160, max: 300 },
-      midwest:   { min: 80,  max: 200 },
-      south:     { min: 160, max: 320 },
-      mountain:  { min: 180, max: 350 },
-      pacific:   { min: 230, max: 420 },
+      midwest: { min: 80, max: 200 },
+      south: { min: 160, max: 320 },
+      mountain: { min: 180, max: 350 },
+      pacific: { min: 230, max: 420 },
     },
     south: {
       northeast: { min: 200, max: 400 },
       southeast: { min: 120, max: 280 },
-      midwest:   { min: 150, max: 300 },
-      south:     { min: 80,  max: 200 },
-      mountain:  { min: 170, max: 350 },
-      pacific:   { min: 200, max: 400 },
+      midwest: { min: 150, max: 300 },
+      south: { min: 80, max: 200 },
+      mountain: { min: 170, max: 350 },
+      pacific: { min: 200, max: 400 },
     },
     mountain: {
       northeast: { min: 220, max: 420 },
       southeast: { min: 200, max: 380 },
-      midwest:   { min: 180, max: 350 },
-      south:     { min: 160, max: 320 },
-      mountain:  { min: 80,  max: 220 },
-      pacific:   { min: 130, max: 280 },
+      midwest: { min: 180, max: 350 },
+      south: { min: 160, max: 320 },
+      mountain: { min: 80, max: 220 },
+      pacific: { min: 130, max: 280 },
     },
     pacific: {
       northeast: { min: 280, max: 520 },
       southeast: { min: 240, max: 440 },
-      midwest:   { min: 230, max: 420 },
-      south:     { min: 200, max: 400 },
-      mountain:  { min: 130, max: 280 },
-      pacific:   { min: 80,  max: 220 },
+      midwest: { min: 230, max: 420 },
+      south: { min: 200, max: 400 },
+      mountain: { min: 130, max: 280 },
+      pacific: { min: 80, max: 220 },
     },
   };
 
   function estimate(originIATA, destState) {
-    var iata = String(originIATA || "").toUpperCase().trim();
+    var iata = String(originIATA || "")
+      .toUpperCase()
+      .trim();
     var airport = AIRPORTS[iata];
     if (!airport) return null;
     var destRegion = STATE_TO_REGION[destState] || "midwest";
@@ -185,6 +225,7 @@ window.AIRFARE_DATA = (function () {
 node -e "require('./assets/js/airfare-data.js'); console.log('OK')" 2>/dev/null || \
   node -e "eval(require('fs').readFileSync('assets/js/airfare-data.js','utf8')); console.log(Object.keys(AIRFARE_DATA))"
 ```
+
 Expected output: `[ 'airports', 'stateToRegion', 'matrix', 'estimate' ]`
 
 - [ ] **Step 3: Spot-check the estimate function manually**
@@ -200,6 +241,7 @@ var r3 = AIRFARE_DATA.estimate('XXX','TX');
 console.log('XXX->TX (should be null):', r3);
 "
 ```
+
 Expected: HOU→NV returns `{ min:170, max:350, notes:'...' }`, JFK→CA returns `{ min:280, max:520 }`, XXX returns `null`.
 
 - [ ] **Step 4: Commit**
@@ -214,6 +256,7 @@ git commit -m "feat: add airfare-data.js with region-based airport cost matrix"
 ## Chunk 2: Modal HTML — selector widget + disclaimer
 
 **Files:**
+
 - Modify: `_includes/conference-modal.html`
 
 - [ ] **Step 1: Add the airport selector and disclaimer banner to the modal body**
@@ -221,74 +264,81 @@ git commit -m "feat: add airfare-data.js with region-based airport cost matrix"
 In `_includes/conference-modal.html`, replace the opening `<div class="modal-body">` section so it reads:
 
 ```html
-      <div class="modal-body">
-        <p class="text-muted mb-3"><span id="modal-description"></span></p>
+<div class="modal-body">
+  <p class="text-muted mb-3"><span id="modal-description"></span></p>
 
-        <!-- Airport selector -->
-        <div class="cal-airport-selector mb-2">
-          <span class="cal-airport-label">✈️ Travel from:</span>
-          <select id="modal-airport-select" class="cal-select" aria-label="Origin airport">
-            <!-- populated by JS -->
-          </select>
-          <input id="modal-airport-custom" type="text" class="cal-search-input"
-                 placeholder="e.g. LAX" maxlength="3"
-                 aria-label="Enter airport IATA code"
-                 style="display:none;width:5rem;text-transform:uppercase" />
-        </div>
+  <!-- Airport selector -->
+  <div class="cal-airport-selector mb-2">
+    <span class="cal-airport-label">✈️ Travel from:</span>
+    <select id="modal-airport-select" class="cal-select" aria-label="Origin airport">
+      <!-- populated by JS -->
+    </select>
+    <input
+      id="modal-airport-custom"
+      type="text"
+      class="cal-search-input"
+      placeholder="e.g. LAX"
+      maxlength="3"
+      aria-label="Enter airport IATA code"
+      style="display:none;width:5rem;text-transform:uppercase"
+    />
+  </div>
 
-        <!-- Estimates disclaimer -->
-        <div class="cal-estimate-notice mb-3">
-          ℹ️ <strong>Quick estimates for reference only.</strong>
-          Airfare and hotel costs vary — check current prices before booking.
-        </div>
+  <!-- Estimates disclaimer -->
+  <div class="cal-estimate-notice mb-3">
+    ℹ️ <strong>Quick estimates for reference only.</strong>
+    Airfare and hotel costs vary — check current prices before booking.
+  </div>
 
-        <div class="row">
-          <div class="col-sm-6">
-            <table class="table table-sm">
-              <tbody>
-                <tr>
-                  <th>Dates</th>
-                  <td><span id="modal-dates"></span></td>
-                </tr>
-                <tr>
-                  <th>Location</th>
-                  <td><span id="modal-location"></span></td>
-                </tr>
-                <tr>
-                  <th>Venue</th>
-                  <td><span id="modal-venue"></span></td>
-                </tr>
-                <tr>
-                  <th>Categories</th>
-                  <td><span id="modal-tags"></span></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="col-sm-6">
-            <table class="table table-sm">
-              <tbody>
-                <tr>
-                  <th>Registration</th>
-                  <td><span id="modal-reg-cost"></span></td>
-                </tr>
-                <tr>
-                  <th id="modal-airfare-label">Airfare (HOU)</th>
-                  <td><span id="modal-airfare"></span></td>
-                </tr>
-                <tr>
-                  <th>Hotel</th>
-                  <td><span id="modal-hotel"></span></td>
-                </tr>
-                <tr>
-                  <th><strong>Total Est.</strong></th>
-                  <td><strong><span id="modal-total"></span></strong></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <table class="table table-sm">
+        <tbody>
+          <tr>
+            <th>Dates</th>
+            <td><span id="modal-dates"></span></td>
+          </tr>
+          <tr>
+            <th>Location</th>
+            <td><span id="modal-location"></span></td>
+          </tr>
+          <tr>
+            <th>Venue</th>
+            <td><span id="modal-venue"></span></td>
+          </tr>
+          <tr>
+            <th>Categories</th>
+            <td><span id="modal-tags"></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-6">
+      <table class="table table-sm">
+        <tbody>
+          <tr>
+            <th>Registration</th>
+            <td><span id="modal-reg-cost"></span></td>
+          </tr>
+          <tr>
+            <th id="modal-airfare-label">Airfare (HOU)</th>
+            <td><span id="modal-airfare"></span></td>
+          </tr>
+          <tr>
+            <th>Hotel</th>
+            <td><span id="modal-hotel"></span></td>
+          </tr>
+          <tr>
+            <th><strong>Total Est.</strong></th>
+            <td>
+              <strong><span id="modal-total"></span></strong>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 ```
 
 - [ ] **Step 2: Build and confirm modal HTML renders without Jekyll errors**
@@ -296,6 +346,7 @@ In `_includes/conference-modal.html`, replace the opening `<div class="modal-bod
 ```bash
 bundle exec jekyll build 2>&1 | grep -iE "error|done in" | tail -5
 ```
+
 Expected: `done in X seconds` with no errors.
 
 - [ ] **Step 3: Commit**
@@ -310,12 +361,14 @@ git commit -m "feat: add airport selector and estimates disclaimer to conference
 ## Chunk 3: Calendar JS — modal airport binding
 
 **Files:**
+
 - Modify: `assets/js/cybersecurity-calendar.js`
 - Modify: `_pages/cybersecurity-calendar.md`
 
 - [ ] **Step 1: Add `airfare-data.js` script tag to `_pages/cybersecurity-calendar.md`**
 
 Find the two `<script>` tags at the bottom of `_pages/cybersecurity-calendar.md`:
+
 ```html
 <script>
   window.calendarBasePath = ...
@@ -324,6 +377,7 @@ Find the two `<script>` tags at the bottom of `_pages/cybersecurity-calendar.md`
 ```
 
 Add `airfare-data.js` between them:
+
 ```html
 <script>
   window.calendarBasePath = "{{ '/cybersecurity-calendar/' | relative_url }}";
@@ -337,76 +391,78 @@ Add `airfare-data.js` between them:
 Add this function directly before `populateModal`:
 
 ```js
-  var dropdownPopulated = false;
+var dropdownPopulated = false;
 
-  function populateAirportDropdown() {
-    if (dropdownPopulated) return;
-    var select = document.getElementById("modal-airport-select");
-    if (!select || !window.AIRFARE_DATA) return;
+function populateAirportDropdown() {
+  if (dropdownPopulated) return;
+  var select = document.getElementById("modal-airport-select");
+  if (!select || !window.AIRFARE_DATA) return;
 
-    var regionLabels = {
-      south:     "South / Southwest",
-      northeast: "Northeast",
-      southeast: "Southeast",
-      midwest:   "Midwest",
-      mountain:  "Mountain",
-      pacific:   "Pacific",
-    };
-    var groups = {};
-    var airports = window.AIRFARE_DATA.airports;
-    Object.keys(airports).forEach(function (iata) {
-      var ap = airports[iata];
-      if (!groups[ap.region]) groups[ap.region] = [];
-      groups[ap.region].push({ iata: iata, ap: ap });
+  var regionLabels = {
+    south: "South / Southwest",
+    northeast: "Northeast",
+    southeast: "Southeast",
+    midwest: "Midwest",
+    mountain: "Mountain",
+    pacific: "Pacific",
+  };
+  var groups = {};
+  var airports = window.AIRFARE_DATA.airports;
+  Object.keys(airports).forEach(function (iata) {
+    var ap = airports[iata];
+    if (!groups[ap.region]) groups[ap.region] = [];
+    groups[ap.region].push({ iata: iata, ap: ap });
+  });
+
+  // Sort regions in display order
+  var regionOrder = ["south", "northeast", "southeast", "midwest", "mountain", "pacific"];
+  regionOrder.forEach(function (region) {
+    if (!groups[region]) return;
+    var optgroup = document.createElement("optgroup");
+    optgroup.label = regionLabels[region] || region;
+    groups[region].sort(function (a, b) {
+      return a.iata < b.iata ? -1 : 1;
     });
-
-    // Sort regions in display order
-    var regionOrder = ["south","northeast","southeast","midwest","mountain","pacific"];
-    regionOrder.forEach(function (region) {
-      if (!groups[region]) return;
-      var optgroup = document.createElement("optgroup");
-      optgroup.label = regionLabels[region] || region;
-      groups[region].sort(function (a, b) { return a.iata < b.iata ? -1 : 1; });
-      groups[region].forEach(function (item) {
-        var opt = document.createElement("option");
-        opt.value = item.iata;
-        opt.textContent = item.iata + " \u2014 " + item.ap.name + ", " + item.ap.state;
-        optgroup.appendChild(opt);
-      });
-      select.appendChild(optgroup);
+    groups[region].forEach(function (item) {
+      var opt = document.createElement("option");
+      opt.value = item.iata;
+      opt.textContent = item.iata + " \u2014 " + item.ap.name + ", " + item.ap.state;
+      optgroup.appendChild(opt);
     });
+    select.appendChild(optgroup);
+  });
 
-    // "Other" optgroup at end
-    var otherGroup = document.createElement("optgroup");
-    otherGroup.label = "Other";
-    var otherOpt = document.createElement("option");
-    otherOpt.value = "__other__";
-    otherOpt.textContent = "\u270f\ufe0f Enter my airport code\u2026";
-    otherGroup.appendChild(otherOpt);
-    select.appendChild(otherGroup);
+  // "Other" optgroup at end
+  var otherGroup = document.createElement("optgroup");
+  otherGroup.label = "Other";
+  var otherOpt = document.createElement("option");
+  otherOpt.value = "__other__";
+  otherOpt.textContent = "\u270f\ufe0f Enter my airport code\u2026";
+  otherGroup.appendChild(otherOpt);
+  select.appendChild(otherGroup);
 
-    dropdownPopulated = true;
+  dropdownPopulated = true;
+}
+
+function getModalCosts(conf, iata) {
+  var airfare = null;
+  if (window.AIRFARE_DATA) {
+    airfare = window.AIRFARE_DATA.estimate(iata, conf.state);
   }
+  var airMin = airfare ? airfare.min : conf.airfare_cost_min || 0;
+  var airMax = airfare ? airfare.max : conf.airfare_cost_max || 0;
+  var totalMin = (conf.registration_cost_min || 0) + airMin + (conf.hotel_cost_min || 0);
+  var totalMax = (conf.registration_cost_max || 0) + airMax + (conf.hotel_cost_max || 0);
 
-  function getModalCosts(conf, iata) {
-    var airfare = null;
-    if (window.AIRFARE_DATA) {
-      airfare = window.AIRFARE_DATA.estimate(iata, conf.state);
-    }
-    var airMin = airfare ? airfare.min : (conf.airfare_cost_min || 0);
-    var airMax = airfare ? airfare.max : (conf.airfare_cost_max || 0);
-    var totalMin = (conf.registration_cost_min || 0) + airMin + (conf.hotel_cost_min || 0);
-    var totalMax = (conf.registration_cost_max || 0) + airMax + (conf.hotel_cost_max || 0);
+  var airLabel = document.getElementById("modal-airfare-label");
+  if (airLabel) airLabel.textContent = "Airfare (" + (airfare ? iata : "HOU") + ")";
 
-    var airLabel = document.getElementById("modal-airfare-label");
-    if (airLabel) airLabel.textContent = "Airfare (" + (airfare ? iata : "HOU") + ")";
+  var airEl = document.getElementById("modal-airfare");
+  if (airEl) airEl.textContent = formatCostRange(airMin, airMax);
 
-    var airEl = document.getElementById("modal-airfare");
-    if (airEl) airEl.textContent = formatCostRange(airMin, airMax);
-
-    var totalEl = document.getElementById("modal-total");
-    if (totalEl) totalEl.textContent = formatCostRange(totalMin, totalMax) + " est.";
-  }
+  var totalEl = document.getElementById("modal-total");
+  if (totalEl) totalEl.textContent = formatCostRange(totalMin, totalMax) + " est.";
+}
 ```
 
 - [ ] **Step 3: Update `populateModal(conf)` to call the new functions**
@@ -414,56 +470,67 @@ Add this function directly before `populateModal`:
 At the end of the existing `populateModal` function, before the closing `}`, add:
 
 ```js
-    // Airport selector setup
-    populateAirportDropdown();
+// Airport selector setup
+populateAirportDropdown();
 
-    var airportSelect = document.getElementById("modal-airport-select");
-    var airportCustom = document.getElementById("modal-airport-custom");
+var airportSelect = document.getElementById("modal-airport-select");
+var airportCustom = document.getElementById("modal-airport-custom");
 
-    // Reset to HOU each time modal opens
-    if (airportSelect) airportSelect.value = "HOU";
-    if (airportCustom) { airportCustom.style.display = "none"; airportCustom.value = ""; }
+// Reset to HOU each time modal opens
+if (airportSelect) airportSelect.value = "HOU";
+if (airportCustom) {
+  airportCustom.style.display = "none";
+  airportCustom.value = "";
+}
 
-    // Initial costs with HOU
-    getModalCosts(conf, "HOU");
+// Initial costs with HOU
+getModalCosts(conf, "HOU");
 
-    // Bind change — must rebind each open to capture current conf
-    if (airportSelect) {
-      airportSelect.onchange = function () {
-        var val = airportSelect.value;
-        if (val === "__other__") {
-          if (airportCustom) { airportCustom.style.display = ""; airportCustom.focus(); }
+// Bind change — must rebind each open to capture current conf
+if (airportSelect) {
+  airportSelect.onchange = function () {
+    var val = airportSelect.value;
+    if (val === "__other__") {
+      if (airportCustom) {
+        airportCustom.style.display = "";
+        airportCustom.focus();
+      }
+    } else {
+      if (airportCustom) {
+        airportCustom.style.display = "none";
+        airportCustom.value = "";
+      }
+      // Clear any unknown-airport note
+      var airEl = document.getElementById("modal-airfare");
+      if (airEl && airEl.dataset.unknownNote) {
+        airEl.dataset.unknownNote = "";
+      }
+      getModalCosts(conf, val);
+    }
+  };
+}
+
+var customTimer = null;
+if (airportCustom) {
+  airportCustom.oninput = function () {
+    clearTimeout(customTimer);
+    var typed = airportCustom.value.toUpperCase().trim().slice(0, 3);
+    airportCustom.value = typed;
+    customTimer = setTimeout(function () {
+      if (typed.length === 3) {
+        var result = window.AIRFARE_DATA ? window.AIRFARE_DATA.estimate(typed, conf.state) : null;
+        if (!result) {
+          // Unknown airport — fall back to HOU, show note
+          getModalCosts(conf, "HOU");
+          var airLabel = document.getElementById("modal-airfare-label");
+          if (airLabel) airLabel.textContent = "Airfare (unknown \u2014 using HOU)";
         } else {
-          if (airportCustom) { airportCustom.style.display = "none"; airportCustom.value = ""; }
-          // Clear any unknown-airport note
-          var airEl = document.getElementById("modal-airfare");
-          if (airEl && airEl.dataset.unknownNote) { airEl.dataset.unknownNote = ""; }
-          getModalCosts(conf, val);
+          getModalCosts(conf, typed);
         }
-      };
-    }
-
-    var customTimer = null;
-    if (airportCustom) {
-      airportCustom.oninput = function () {
-        clearTimeout(customTimer);
-        var typed = airportCustom.value.toUpperCase().trim().slice(0, 3);
-        airportCustom.value = typed;
-        customTimer = setTimeout(function () {
-          if (typed.length === 3) {
-            var result = window.AIRFARE_DATA ? window.AIRFARE_DATA.estimate(typed, conf.state) : null;
-            if (!result) {
-              // Unknown airport — fall back to HOU, show note
-              getModalCosts(conf, "HOU");
-              var airLabel = document.getElementById("modal-airfare-label");
-              if (airLabel) airLabel.textContent = "Airfare (unknown \u2014 using HOU)";
-            } else {
-              getModalCosts(conf, typed);
-            }
-          }
-        }, 400);
-      };
-    }
+      }
+    }, 400);
+  };
+}
 ```
 
 - [ ] **Step 4: Build and verify no JS errors**
@@ -471,6 +538,7 @@ At the end of the existing `populateModal` function, before the closing `}`, add
 ```bash
 bundle exec jekyll build 2>&1 | grep -iE "error|done in" | tail -5
 ```
+
 Expected: `done in X seconds`.
 
 - [ ] **Step 5: Smoke-test in browser**
@@ -478,7 +546,9 @@ Expected: `done in X seconds`.
 ```bash
 bundle exec jekyll serve &
 ```
+
 Open `http://localhost:4000/cybersecurity-calendar/`, open any conference modal, verify:
+
 - Dropdown shows airports grouped by region
 - Changing airport updates the "Airfare (XXX)" label and Total row
 - Selecting "Other" reveals the text input
@@ -497,6 +567,7 @@ git commit -m "feat: dynamic airport selector in conference modal with live cost
 ## Chunk 4: Detail page — selector + scripts
 
 **Files:**
+
 - Modify: `_layouts/conference-detail.liquid`
 - Create: `assets/js/conference-detail-airport.js`
 
@@ -514,9 +585,12 @@ git commit -m "feat: dynamic airport selector in conference modal with live cost
     if (!select || !window.AIRFARE_DATA) return;
 
     var regionLabels = {
-      south: "South / Southwest", northeast: "Northeast",
-      southeast: "Southeast",     midwest: "Midwest",
-      mountain: "Mountain",       pacific: "Pacific",
+      south: "South / Southwest",
+      northeast: "Northeast",
+      southeast: "Southeast",
+      midwest: "Midwest",
+      mountain: "Mountain",
+      pacific: "Pacific",
     };
     var groups = {};
     var airports = window.AIRFARE_DATA.airports;
@@ -526,12 +600,14 @@ git commit -m "feat: dynamic airport selector in conference modal with live cost
       groups[ap.region].push({ iata: iata, ap: ap });
     });
 
-    var regionOrder = ["south","northeast","southeast","midwest","mountain","pacific"];
+    var regionOrder = ["south", "northeast", "southeast", "midwest", "mountain", "pacific"];
     regionOrder.forEach(function (region) {
       if (!groups[region]) return;
       var og = document.createElement("optgroup");
       og.label = regionLabels[region] || region;
-      groups[region].sort(function (a, b) { return a.iata < b.iata ? -1 : 1; });
+      groups[region].sort(function (a, b) {
+        return a.iata < b.iata ? -1 : 1;
+      });
       groups[region].forEach(function (item) {
         var opt = document.createElement("option");
         opt.value = item.iata;
@@ -574,11 +650,11 @@ git commit -m "feat: dynamic airport selector in conference modal with live cost
     if (labelEl) labelEl.textContent = "Airfare (" + (airfare ? iata : "HOU") + ")";
 
     // Detail page renders each cell separately — update all airfare/total cells
-    ["detail-airfare-min","detail-airfare-max"].forEach(function (id, i) {
+    ["detail-airfare-min", "detail-airfare-max"].forEach(function (id, i) {
       var el = document.getElementById(id);
       if (el) el.textContent = "$" + (i === 0 ? airMin : airMax);
     });
-    ["detail-total-min","detail-total-max"].forEach(function (id, i) {
+    ["detail-total-min", "detail-total-max"].forEach(function (id, i) {
       var el = document.getElementById(id);
       if (el) el.textContent = "$" + (i === 0 ? totalMin : totalMax);
     });
@@ -599,9 +675,15 @@ git commit -m "feat: dynamic airport selector in conference modal with live cost
       select.addEventListener("change", function () {
         var val = select.value;
         if (val === "__other__") {
-          if (custom) { custom.style.display = ""; custom.focus(); }
+          if (custom) {
+            custom.style.display = "";
+            custom.focus();
+          }
         } else {
-          if (custom) { custom.style.display = "none"; custom.value = ""; }
+          if (custom) {
+            custom.style.display = "none";
+            custom.value = "";
+          }
           getDetailCosts(val);
         }
       });
@@ -634,11 +716,14 @@ git commit -m "feat: dynamic airport selector in conference modal with live cost
 - [ ] **Step 2: Modify `_layouts/conference-detail.liquid` — update cost card header**
 
 Change line:
+
 ```liquid
         <div class="card-header bg-success text-white">
           <i class="ti ti-coin"></i> Travel Cost Estimates from Houston (HOU)
 ```
+
 To:
+
 ```liquid
         <div class="card-header bg-success text-white">
           <i class="ti ti-coin"></i> Travel Cost Estimates
@@ -649,23 +734,28 @@ To:
 In `_layouts/conference-detail.liquid`, inside the cost card's `<div class="card-body">`, add before the `<table>`:
 
 ```html
-          <!-- Airport selector -->
-          <div class="cal-airport-selector mb-2">
-            <span class="cal-airport-label">✈️ Travel from:</span>
-            <select id="detail-airport-select" class="cal-select" aria-label="Origin airport">
-              <!-- populated by conference-detail-airport.js -->
-            </select>
-            <input id="detail-airport-custom" type="text" class="cal-search-input"
-                   placeholder="e.g. LAX" maxlength="3"
-                   aria-label="Enter airport IATA code"
-                   style="display:none;width:5rem;text-transform:uppercase" />
-          </div>
+<!-- Airport selector -->
+<div class="cal-airport-selector mb-2">
+  <span class="cal-airport-label">✈️ Travel from:</span>
+  <select id="detail-airport-select" class="cal-select" aria-label="Origin airport">
+    <!-- populated by conference-detail-airport.js -->
+  </select>
+  <input
+    id="detail-airport-custom"
+    type="text"
+    class="cal-search-input"
+    placeholder="e.g. LAX"
+    maxlength="3"
+    aria-label="Enter airport IATA code"
+    style="display:none;width:5rem;text-transform:uppercase"
+  />
+</div>
 
-          <!-- Estimates disclaimer -->
-          <div class="cal-estimate-notice mb-3">
-            ℹ️ <strong>Quick estimates for reference only.</strong>
-            Airfare and hotel costs vary — check current prices before booking.
-          </div>
+<!-- Estimates disclaimer -->
+<div class="cal-estimate-notice mb-3">
+  ℹ️ <strong>Quick estimates for reference only.</strong>
+  Airfare and hotel costs vary — check current prices before booking.
+</div>
 ```
 
 - [ ] **Step 4: Add `id` attributes to the dynamic cost cells in the detail page cost table**
@@ -673,26 +763,27 @@ In `_layouts/conference-detail.liquid`, inside the cost card's `<div class="card
 In `_layouts/conference-detail.liquid`, update the airfare and total rows in the cost table:
 
 ```liquid
-              <tr>
-                <td>
-                  Airfare <span class="badge cal-est-badge">Est.</span>
-                </td>
-                <td id="detail-airfare-min">${{ conf.airfare_cost_min }}</td>
-                <td id="detail-airfare-max">${{ conf.airfare_cost_max }}</td>
-                <td><small>{{ conf.airfare_cost_notes }}</small></td>
-              </tr>
-              ...
-              <tr class="table-active fw-bold">
-                <td>Total <span class="badge cal-est-badge">Est.</span></td>
-                <td id="detail-total-min">${{ conf.total_cost_min }}</td>
-                <td id="detail-total-max">${{ conf.total_cost_max }}</td>
-                <td><small>All estimates from HOU</small></td>
-              </tr>
+<tr>
+  <td>Airfare <span class="badge cal-est-badge">Est.</span></td>
+  <td id="detail-airfare-min">${{ conf.airfare_cost_min }}</td>
+  <td id="detail-airfare-max">${{ conf.airfare_cost_max }}</td>
+  <td>
+    <small>{{ conf.airfare_cost_notes }}</small>
+  </td>
+</tr>
+...
+<tr class="table-active fw-bold">
+  <td>Total <span class="badge cal-est-badge">Est.</span></td>
+  <td id="detail-total-min">${{ conf.total_cost_min }}</td>
+  <td id="detail-total-max">${{ conf.total_cost_max }}</td>
+  <td><small>All estimates from HOU</small></td>
+</tr>
 ```
 
 Also add `id="detail-airfare-label"` to the `<th>` of the Airfare row (it's inside the `<thead>`):
+
 ```html
-                <th id="detail-airfare-label">Airfare</th>
+<th id="detail-airfare-label">Airfare</th>
 ```
 
 - [ ] **Step 5: Add script tags to the bottom of `_layouts/conference-detail.liquid`**
@@ -700,17 +791,17 @@ Also add `id="detail-airfare-label"` to the `<th>` of the Airfare row (it's insi
 Before the closing `</div>` of the post, add:
 
 ```liquid
-  <script src="{{ '/assets/js/airfare-data.js' | relative_url }}"></script>
-  <script>
-    window.DETAIL_CONF = {
-      state: {{ conf.state | jsonify }},
-      registration_cost_min: {{ conf.registration_cost_min | default: 0 }},
-      registration_cost_max: {{ conf.registration_cost_max | default: 0 }},
-      hotel_cost_min: {{ conf.hotel_cost_min | default: 0 }},
-      hotel_cost_max: {{ conf.hotel_cost_max | default: 0 }}
-    };
-  </script>
-  <script src="{{ '/assets/js/conference-detail-airport.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/airfare-data.js' | relative_url }}"></script>
+<script>
+  window.DETAIL_CONF = {
+    state: {{ conf.state | jsonify }},
+    registration_cost_min: {{ conf.registration_cost_min | default: 0 }},
+    registration_cost_max: {{ conf.registration_cost_max | default: 0 }},
+    hotel_cost_min: {{ conf.hotel_cost_min | default: 0 }},
+    hotel_cost_max: {{ conf.hotel_cost_max | default: 0 }}
+  };
+</script>
+<script src="{{ '/assets/js/conference-detail-airport.js' | relative_url }}"></script>
 ```
 
 - [ ] **Step 6: Build**
@@ -718,11 +809,13 @@ Before the closing `</div>` of the post, add:
 ```bash
 bundle exec jekyll build 2>&1 | grep -iE "error|done in" | tail -5
 ```
+
 Expected: `done in X seconds`.
 
 - [ ] **Step 7: Smoke-test detail page**
 
 Open `http://localhost:4000/cybersecurity-calendar/defcon-34/`, verify:
+
 - Cost card header reads "Travel Cost Estimates" (no HOU mention)
 - Airport selector dropdown is populated and defaults to HOU
 - Changing to JFK updates Airfare and Total cells
@@ -740,6 +833,7 @@ git commit -m "feat: dynamic airport selector on conference detail page"
 ## Chunk 5: SCSS — styles for new components
 
 **Files:**
+
 - Modify: `_sass/_cybersecurity-calendar.scss`
 
 - [ ] **Step 1: Add `.cal-airport-selector` and `.cal-estimate-notice` to the SCSS file**
@@ -810,11 +904,13 @@ Append to `_sass/_cybersecurity-calendar.scss` before the `// Responsive` sectio
 ```bash
 bundle exec jekyll build 2>&1 | grep -iE "error|scss|done in" | tail -10
 ```
+
 Expected: `done in X seconds`, no SCSS errors.
 
 - [ ] **Step 3: Visually verify dark mode**
 
 Open `http://localhost:4000/cybersecurity-calendar/`, toggle dark mode, confirm:
+
 - `.cal-airport-selector` background and input colors adapt correctly
 - `.cal-estimate-notice` yellow tint is visible but not harsh in both modes
 
@@ -823,6 +919,7 @@ Open `http://localhost:4000/cybersecurity-calendar/`, toggle dark mode, confirm:
 ```bash
 JEKYLL_ENV=production bundle exec jekyll build 2>&1 | grep -iE "error|done in" | tail -5
 ```
+
 Expected: `done in X seconds`, no errors.
 
 - [ ] **Step 5: Commit**

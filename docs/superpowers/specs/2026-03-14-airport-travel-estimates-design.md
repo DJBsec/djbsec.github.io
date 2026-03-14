@@ -1,4 +1,5 @@
 # Airport Travel Estimates — Design Spec
+
 **Date:** 2026-03-14
 **Feature:** Dynamic airfare estimates based on user's origin airport
 **Status:** Approved for implementation
@@ -17,13 +18,13 @@ Let any user enter their nearest airport and instantly see updated airfare + tot
 
 ## Design Decisions
 
-| Question | Decision |
-|---|---|
-| Where does the selector appear? | Inside the modal cost section AND the detail page cost card only |
-| Does the setting persist? | No — resets to HOU on each page load |
-| Input type | Grouped dropdown (~50 airports) + "Other" option that reveals an IATA text field |
-| Estimation method | Region-based matrix: 6 US regions × 6 regions = 36 airfare bands |
-| Disclaimer | Info banner (yellow tint) above the cost table: "Quick estimates for reference only. Airfare and hotel costs vary — check current prices before booking." |
+| Question                        | Decision                                                                                                                                                  |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Where does the selector appear? | Inside the modal cost section AND the detail page cost card only                                                                                          |
+| Does the setting persist?       | No — resets to HOU on each page load                                                                                                                      |
+| Input type                      | Grouped dropdown (~50 airports) + "Other" option that reveals an IATA text field                                                                          |
+| Estimation method               | Region-based matrix: 6 US regions × 6 regions = 36 airfare bands                                                                                          |
+| Disclaimer                      | Info banner (yellow tint) above the cost table: "Quick estimates for reference only. Airfare and hotel costs vary — check current prices before booking." |
 
 ---
 
@@ -46,27 +47,28 @@ window.AIRFARE_DATA = {
 
 **Airport coverage (~50 airports, grouped by region for the dropdown):**
 
-| Region | Airports |
-|---|---|
+| Region          | Airports                                                   |
+| --------------- | ---------------------------------------------------------- |
 | South/Southwest | HOU, IAH, DAL, DFW, AUS, SAT, MSY, OKC, TUL, ABQ, PHX, TUS |
-| Northeast | BOS, JFK, LGA, EWR, PHL, BWI, DCA, IAD, RDU, CLT |
-| Southeast | ATL, MCO, MIA, FLL, TPA, BNA, MEM, SDF |
-| Midwest | ORD, MDW, DTW, MSP, STL, MCI, IND, CMH, CLE, MKE, CVG, OMA |
-| Mountain | DEN, SLC, LAS, BOI, RNO |
-| Pacific | LAX, SFO, SJC, SEA, PDX, SAN, SMF, OAK |
+| Northeast       | BOS, JFK, LGA, EWR, PHL, BWI, DCA, IAD, RDU, CLT           |
+| Southeast       | ATL, MCO, MIA, FLL, TPA, BNA, MEM, SDF                     |
+| Midwest         | ORD, MDW, DTW, MSP, STL, MCI, IND, CMH, CLE, MKE, CVG, OMA |
+| Mountain        | DEN, SLC, LAS, BOI, RNO                                    |
+| Pacific         | LAX, SFO, SJC, SEA, PDX, SAN, SMF, OAK                     |
 
 **6×6 airfare matrix (round-trip economy, USD):**
 
-| From ↓ To → | Northeast | Southeast | Midwest | South | Mountain | Pacific |
-|---|---|---|---|---|---|---|
-| **Northeast** | 100–220 | 150–320 | 150–300 | 200–400 | 220–420 | 280–520 |
-| **Southeast** | 150–320 | 80–200 | 160–300 | 150–280 | 200–380 | 240–440 |
-| **Midwest** | 150–300 | 160–300 | 80–200 | 160–320 | 180–350 | 230–420 |
-| **South** | 200–400 | 120–280 | 150–300 | 80–200 | 170–350 | 200–400 |
-| **Mountain** | 220–420 | 200–380 | 180–350 | 160–320 | 80–220 | 130–280 |
-| **Pacific** | 280–520 | 240–440 | 230–420 | 200–400 | 130–280 | 80–220 |
+| From ↓ To →   | Northeast | Southeast | Midwest | South   | Mountain | Pacific |
+| ------------- | --------- | --------- | ------- | ------- | -------- | ------- |
+| **Northeast** | 100–220   | 150–320   | 150–300 | 200–400 | 220–420  | 280–520 |
+| **Southeast** | 150–320   | 80–200    | 160–300 | 150–280 | 200–380  | 240–440 |
+| **Midwest**   | 150–300   | 160–300   | 80–200  | 160–320 | 180–350  | 230–420 |
+| **South**     | 200–400   | 120–280   | 150–300 | 80–200  | 170–350  | 200–400 |
+| **Mountain**  | 220–420   | 200–380   | 180–350 | 160–320 | 80–220   | 130–280 |
+| **Pacific**   | 280–520   | 240–440   | 230–420 | 200–400 | 130–280  | 80–220  |
 
 **`estimate(originIATA, destState)`:**
+
 1. Normalize `originIATA` to uppercase
 2. Look up `originIATA` in `airports` → get `region`; return `null` if not found
 3. Look up `destState` in `stateToRegion` → get `destRegion`; use `midwest` as default if not found
@@ -79,16 +81,24 @@ window.AIRFARE_DATA = {
 Both pages must load scripts in this exact order:
 
 **`_pages/cybersecurity-calendar.md`** (at bottom of page body):
+
 ```html
-<script>window.calendarBasePath = "...";</script>
-<script src=".../airfare-data.js"></script>       <!-- FIRST -->
+<script>
+  window.calendarBasePath = "...";
+</script>
+<script src=".../airfare-data.js"></script>
+<!-- FIRST -->
 <script src=".../cybersecurity-calendar.js"></script>
 ```
 
 **`_layouts/conference-detail.liquid`** (at bottom of layout body):
+
 ```html
-<script src=".../airfare-data.js"></script>       <!-- FIRST -->
-<script>var DETAIL_CONF = { ... };</script>
+<script src=".../airfare-data.js"></script>
+<!-- FIRST -->
+<script>
+  var DETAIL_CONF = { ... };
+</script>
 <script src=".../conference-detail-airport.js"></script>
 ```
 
@@ -101,6 +111,7 @@ Because `cybersecurity-calendar.js` runs inside `DOMContentLoaded`, `AIRFARE_DAT
 Add to the modal body, **above** the cost table:
 
 1. **Airport selector widget:**
+
    ```html
    <div class="cal-airport-selector">
      <span>✈️ Travel from:</span>
@@ -110,12 +121,12 @@ Add to the modal body, **above** the cost table:
          <option value="__other__">✏️ Enter my airport code…</option>
        </optgroup>
      </select>
-     <input id="modal-airport-custom" type="text" placeholder="e.g. LAX"
-            maxlength="3" style="display:none" />
+     <input id="modal-airport-custom" type="text" placeholder="e.g. LAX" maxlength="3" style="display:none" />
    </div>
    ```
 
 2. **Disclaimer banner** (always visible):
+
    ```html
    <div class="cal-estimate-notice">
      ℹ️ <strong>Quick estimates for reference only.</strong>
@@ -132,6 +143,7 @@ Add to the modal body, **above** the cost table:
 ### Modified: `assets/js/cybersecurity-calendar.js`
 
 **`populateModal(conf)`** — after setting all static text content:
+
 - Populate the airport dropdown from `window.AIRFARE_DATA.airports` grouped by region (run once on first modal open via a `dropdownPopulated` flag, then skip)
 - Reset dropdown to `HOU` and hide the custom input on each modal open
 - Reset the airfare label: `#modal-airfare-label` → `"Airfare (HOU)"`
@@ -146,6 +158,7 @@ Add to the modal body, **above** the cost table:
   - When user switches dropdown away from `__other__`: hide custom input, clear the unknown-airport note
 
 **`getModalCosts(conf, iata)`:**
+
 ```
 if window.AIRFARE_DATA:
   result = AIRFARE_DATA.estimate(iata, conf.state)
@@ -174,6 +187,7 @@ totalMax = conf.registration_cost_max + airMax + conf.hotel_cost_max
 ### Modified: `_layouts/conference-detail.liquid`
 
 **In the cost card**, above the cost table, add:
+
 1. Same airport selector widget (IDs: `detail-airport-select`, `detail-airport-custom`)
 2. Same disclaimer banner (`.cal-estimate-notice`)
 3. Change `<th>Airfare <span...>Est.</span></th>` to include an `id="detail-airfare-label"` so JS can update it to `"Airfare (XXX)"` on airport change.
@@ -181,6 +195,7 @@ totalMax = conf.registration_cost_max + airMax + conf.hotel_cost_max
 5. Update the cost card header from `"Travel Cost Estimates from Houston (HOU)"` to `"Travel Cost Estimates"` — the airport selector widget makes the origin self-evident.
 
 **At bottom of layout**, in this order:
+
 ```liquid
 <script src="{{ '/assets/js/airfare-data.js' | relative_url }}"></script>
 <script>
@@ -204,6 +219,7 @@ Runs inside `DOMContentLoaded`. Mirrors the modal airport logic but targets deta
 ### Modified: `_sass/_cybersecurity-calendar.scss`
 
 **`.cal-airport-selector`** — flex row with `$green-color`-tinted border (`border: 1px solid rgba($green-color, 0.4)`), `border-radius: 0.5rem`, `padding: 0.5rem 0.75rem`. The `<select>` and `<input>` inside apply the exact same property values as `.cal-select`:
+
 - `background: var(--global-bg-color)`
 - `color: var(--global-text-color)`
 - `border: 1px solid var(--global-divider-color)`
@@ -215,6 +231,7 @@ Runs inside `DOMContentLoaded`. Mirrors the modal airport logic but targets deta
 The `<input>` inside also gets `width: 5rem` and `text-transform: uppercase`.
 
 **`.cal-estimate-notice`** — info banner:
+
 - `background: rgba($yellow-color, 0.12)`
 - `border: 1px solid rgba($yellow-color, 0.35)`
 - `border-radius: 0.375rem`
@@ -234,15 +251,15 @@ Add `airfare-data.js` script tag before `cybersecurity-calendar.js` at the botto
 
 ## Files Summary
 
-| File | Action |
-|---|---|
-| `assets/js/airfare-data.js` | **Create** — airport data + region matrix + estimate() |
-| `assets/js/conference-detail-airport.js` | **Create** — detail page airport selector binding |
-| `assets/js/cybersecurity-calendar.js` | **Modify** — populateModal() + getModalCosts() + dropdown population |
-| `_includes/conference-modal.html` | **Modify** — add selector widget + disclaimer banner + id on airfare label |
-| `_layouts/conference-detail.liquid` | **Modify** — add selector widget + disclaimer + update card header + script includes |
-| `_sass/_cybersecurity-calendar.scss` | **Modify** — add .cal-airport-selector + .cal-estimate-notice |
-| `_pages/cybersecurity-calendar.md` | **Modify** — add airfare-data.js script tag before cybersecurity-calendar.js |
+| File                                     | Action                                                                               |
+| ---------------------------------------- | ------------------------------------------------------------------------------------ |
+| `assets/js/airfare-data.js`              | **Create** — airport data + region matrix + estimate()                               |
+| `assets/js/conference-detail-airport.js` | **Create** — detail page airport selector binding                                    |
+| `assets/js/cybersecurity-calendar.js`    | **Modify** — populateModal() + getModalCosts() + dropdown population                 |
+| `_includes/conference-modal.html`        | **Modify** — add selector widget + disclaimer banner + id on airfare label           |
+| `_layouts/conference-detail.liquid`      | **Modify** — add selector widget + disclaimer + update card header + script includes |
+| `_sass/_cybersecurity-calendar.scss`     | **Modify** — add .cal-airport-selector + .cal-estimate-notice                        |
+| `_pages/cybersecurity-calendar.md`       | **Modify** — add airfare-data.js script tag before cybersecurity-calendar.js         |
 
 ---
 
