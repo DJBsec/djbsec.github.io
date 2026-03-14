@@ -1,0 +1,213 @@
+---
+layout: default
+---
+{%- assign conf = site.data.cybersecurity_calendar | where: "id", page.conference_id | first -%}
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ conf.name }}</h1>
+    <p class="post-description">{{ conf.short_description }}</p>
+  </header>
+
+  <a href="{{ '/cybersecurity-calendar/' | relative_url }}" class="explained-back-btn">
+    <i class="ti ti-arrow-left"></i> Back to Calendar
+  </a>
+
+  {% if conf %}
+
+  {%- comment -%}Schema.org Event JSON-LD{%- endcomment -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": {{ conf.name | jsonify }},
+    "description": {{ conf.short_description | jsonify }},
+    "startDate": {{ conf.start_date | jsonify }},
+    "endDate": {{ conf.end_date | jsonify }},
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": {{ conf.venue | default: conf.city | jsonify }},
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": {{ conf.city | jsonify }},
+        "addressRegion": {{ conf.state | jsonify }},
+        "addressCountry": "US"
+      }
+    }{% if conf.website_url and conf.website_url != "" %},
+    "url": {{ conf.website_url | jsonify }}{% endif %}
+  }
+  </script>
+
+  <div class="row mt-4">
+    <!-- Event Details Card -->
+    <div class="col-lg-6 mb-4">
+      <div class="card h-100">
+        <div class="card-header bg-primary text-white">
+          <i class="ti ti-calendar-event"></i> Event Details
+        </div>
+        <div class="card-body">
+          <table class="table table-sm mb-0">
+            <tbody>
+              <tr>
+                <th style="width:40%">Dates</th>
+                <td>
+                  {% assign s = conf.start_date | date: "%b %-d" %}
+                  {% assign e = conf.end_date | date: "%b %-d, %Y" %}
+                  {{ s }}–{{ e }}
+                </td>
+              </tr>
+              <tr>
+                <th>Location</th>
+                <td>{{ conf.city }}, {{ conf.state }}</td>
+              </tr>
+              {% if conf.venue and conf.venue != "" and conf.venue != "TBD" %}
+              <tr>
+                <th>Venue</th>
+                <td>{{ conf.venue }}</td>
+              </tr>
+              {% endif %}
+              {% if conf.website_url and conf.website_url != "" %}
+              <tr>
+                <th>Website</th>
+                <td><a href="{{ conf.website_url }}" target="_blank" rel="noopener">Official Site <i class="ti ti-external-link"></i></a></td>
+              </tr>
+              {% endif %}
+              {% if conf.cfp_url and conf.cfp_url != "" %}
+              <tr>
+                <th>CFP</th>
+                <td><a href="{{ conf.cfp_url }}" target="_blank" rel="noopener">Submit a Talk <i class="ti ti-external-link"></i></a></td>
+              </tr>
+              {% endif %}
+              <tr>
+                <th>Category</th>
+                <td>
+                  {% for tag in conf.category_tags %}
+                    {% if tag == "hacking" %}<span class="badge bg-danger">{{ tag }}</span>
+                    {% elsif tag == "enterprise" %}<span class="badge bg-primary">{{ tag }}</span>
+                    {% elsif tag == "training" %}<span class="badge bg-warning text-dark">{{ tag }}</span>
+                    {% elsif tag == "community" %}<span class="badge bg-success">{{ tag }}</span>
+                    {% else %}<span class="badge bg-secondary">{{ tag }}</span>
+                    {% endif %}
+                  {% endfor %}
+                </td>
+              </tr>
+              <tr>
+                <th>Data Quality</th>
+                <td>
+                  {% if conf.data_confidence == "high" %}<span class="badge bg-success">High confidence</span>
+                  {% elsif conf.data_confidence == "medium" %}<span class="badge bg-warning text-dark">Medium confidence</span>
+                  {% else %}<span class="badge bg-secondary">Low confidence</span>
+                  {% endif %}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cost Estimates Card -->
+    <div class="col-lg-6 mb-4">
+      <div class="card h-100">
+        <div class="card-header bg-success text-white">
+          <i class="ti ti-coin"></i> Travel Cost Estimates
+        </div>
+        <div class="card-body">
+          <!-- Airport selector -->
+          <div class="cal-airport-selector mb-2">
+            <span class="cal-airport-label">✈️ Travel from:</span>
+            <select id="detail-airport-select" class="cal-select" aria-label="Origin airport">
+              <!-- populated by conference-detail-airport.js -->
+            </select>
+            <input id="detail-airport-custom" type="text" class="cal-search-input"
+                   placeholder="e.g. LAX" maxlength="3"
+                   aria-label="Enter airport IATA code"
+                   style="display:none;width:5rem;text-transform:uppercase" />
+          </div>
+
+          <!-- Estimates disclaimer -->
+          <div class="cal-estimate-notice mb-3">
+            ℹ️ <strong>Quick estimates for reference only.</strong>
+            Airfare and hotel costs vary — check current prices before booking.
+          </div>
+
+          <table class="table table-sm mb-0">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Low</th>
+                <th>High</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Registration
+                  {% if conf.is_estimated_pricing %}
+                    <span class="badge cal-est-badge">Est.</span>
+                  {% else %}
+                    <span class="badge bg-success">Exact</span>
+                  {% endif %}
+                </td>
+                <td>${{ conf.registration_cost_min }}</td>
+                <td>${{ conf.registration_cost_max }}</td>
+                <td><small>{{ conf.registration_cost_notes }}</small></td>
+              </tr>
+              <tr>
+                <td>
+                  <span id="detail-airfare-label">Airfare</span>
+                  <span class="badge cal-est-badge">Est.</span>
+                </td>
+                <td id="detail-airfare-min">${{ conf.airfare_cost_min }}</td>
+                <td id="detail-airfare-max">${{ conf.airfare_cost_max }}</td>
+                <td><small>{{ conf.airfare_cost_notes }}</small></td>
+              </tr>
+              <tr>
+                <td>Hotel <span class="badge cal-est-badge">Est.</span></td>
+                <td>${{ conf.hotel_cost_min }}</td>
+                <td>${{ conf.hotel_cost_max }}</td>
+                <td><small>{{ conf.hotel_cost_notes }}</small></td>
+              </tr>
+              <tr class="table-active fw-bold">
+                <td>Total <span class="badge cal-est-badge">Est.</span></td>
+                <td id="detail-total-min">${{ conf.total_cost_min }}</td>
+                <td id="detail-total-max">${{ conf.total_cost_max }}</td>
+                <td><small>All estimates</small></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="text-muted mt-2" style="font-size:0.75rem;">
+            <i class="ti ti-info-circle"></i>
+            Airfare estimated from Houston Hobby (HOU), economy class.
+            Hotel based on {{ conf.conference_nights }} nights near venue.
+            Prices vary — book early for best rates.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="text-muted mt-2" style="font-size:0.8rem;">
+    Last updated: {{ page.last_modified_at | date: "%B %-d, %Y" }}.
+    Conference data may change — verify dates and pricing at the official site.
+  </p>
+
+  {% else %}
+  <div class="alert alert-warning">Conference data not found for ID: <code>{{ page.conference_id }}</code></div>
+  {% endif %}
+
+  <script src="{{ '/assets/js/airfare-data.js' | relative_url }}"></script>
+  <script>
+    window.DETAIL_CONF = {
+      state: {{ conf.state | jsonify }},
+      registration_cost_min: {{ conf.registration_cost_min | default: 0 }},
+      registration_cost_max: {{ conf.registration_cost_max | default: 0 }},
+      hotel_cost_min: {{ conf.hotel_cost_min | default: 0 }},
+      hotel_cost_max: {{ conf.hotel_cost_max | default: 0 }}
+    };
+  </script>
+  <script src="{{ '/assets/js/conference-detail-airport.js' | relative_url }}"></script>
+</div>
