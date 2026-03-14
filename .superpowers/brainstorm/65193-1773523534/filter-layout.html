@@ -1,0 +1,108 @@
+<h2>Where should filters &amp; search live?</h2>
+<p class="subtitle">Controls how users narrow down conferences by category, state, month, etc.</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Top Bar (Horizontal)</h3>
+      <p>Filters sit in a single row above the calendar/list. Search box on the left, dropdowns for State, Category, Month on the right. Clean and compact.</p>
+      <div class="mockup" style="margin-top:0.75rem">
+        <div class="mockup-header">Page Layout – Top Bar Filters</div>
+        <div class="mockup-body" style="padding:0.75rem;font-size:0.75rem">
+          <div style="display:flex;gap:6px;align-items:center;background:#1a1a2e;padding:8px;border-radius:6px;margin-bottom:8px;flex-wrap:wrap">
+            <input class="mock-input" placeholder="🔍 Search conferences..." style="flex:1;min-width:140px;font-size:0.72rem">
+            <select style="background:#252540;color:#aaa;border:1px solid #444;border-radius:4px;padding:4px 8px;font-size:0.72rem"><option>All States</option></select>
+            <select style="background:#252540;color:#aaa;border:1px solid #444;border-radius:4px;padding:4px 8px;font-size:0.72rem"><option>All Categories</option></select>
+            <select style="background:#252540;color:#aaa;border:1px solid #444;border-radius:4px;padding:4px 8px;font-size:0.72rem"><option>All Months</option></select>
+            <span style="background:#252540;color:#aaa;border:1px solid #444;border-radius:4px;padding:4px 8px;font-size:0.72rem">Grid | Agenda</span>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px">
+            <div style="padding:3px;background:#1a1a2e;border-radius:3px;min-height:36px;font-size:0.65rem"><span style="color:#aaa">4</span><br><span style="background:#0d6efd;color:#fff;border-radius:2px;padding:1px 3px;font-size:0.6rem">BSidesLV</span></div>
+            <div style="padding:3px;background:#1a1a2e;border-radius:3px;min-height:36px;font-size:0.65rem"><span style="color:#aaa">5</span></div>
+            <div style="padding:3px;background:#1a1a2e;border-radius:3px;min-height:36px;font-size:0.65rem"><span style="color:#aaa">6</span><br><span style="background:#dc3545;color:#fff;border-radius:2px;padding:1px 3px;font-size:0.6rem">DEF CON</span></div>
+            <div style="padding:3px;background:#1a1a2e;border-radius:3px;min-height:36px;font-size:0.65rem"><span style="color:#aaa">7</span></div>
+            <div style="padding:3px;background:#1a1a2e;border-radius:3px;min-height:36px;font-size:0.65rem"><span style="color:#aaa">8</span></div>
+            <div style="padding:3px;background:#1a1a2e;border-radius:3px;min-height:36px;font-size:0.65rem"><span style="color:#aaa">9</span><br><span style="background:#198754;color:#fff;border-radius:2px;padding:1px 3px;font-size:0.6rem">SANS</span></div>
+            <div style="padding:3px;background:#1a1a2e;border-radius:3px;min-height:36px;font-size:0.65rem"><span style="color:#aaa">10</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Left Sidebar Filters</h3>
+      <p>Filters panel on the left. Calendar/list takes up the remaining width. More space for filters — good for tag clouds, checkboxes, cost range slider.</p>
+      <div class="mockup" style="margin-top:0.75rem">
+        <div class="mockup-header">Page Layout – Sidebar Filters</div>
+        <div class="mockup-body" style="padding:0.75rem;font-size:0.72rem">
+          <div style="display:flex;gap:8px">
+            <div style="width:130px;flex-shrink:0;background:#1a1a2e;border-radius:6px;padding:8px">
+              <input class="mock-input" placeholder="🔍 Search..." style="width:100%;font-size:0.68rem;margin-bottom:6px">
+              <div style="color:#00bfff;font-size:0.65rem;font-weight:bold;margin-bottom:3px">STATE</div>
+              <div style="color:#aaa;font-size:0.67rem">☐ Nevada (8)</div>
+              <div style="color:#aaa;font-size:0.67rem">☐ California (5)</div>
+              <div style="color:#aaa;font-size:0.67rem">☐ Florida (3)</div>
+              <div style="color:#00bfff;font-size:0.65rem;font-weight:bold;margin:6px 0 3px">CATEGORY</div>
+              <div style="color:#aaa;font-size:0.67rem">☐ Hacking (12)</div>
+              <div style="color:#aaa;font-size:0.67rem">☐ Blue Team (7)</div>
+              <div style="color:#aaa;font-size:0.67rem">☐ Training (9)</div>
+              <div style="color:#00bfff;font-size:0.65rem;font-weight:bold;margin:6px 0 3px">COST RANGE</div>
+              <div style="color:#aaa;font-size:0.67rem">$0 ──●────── $5k+</div>
+            </div>
+            <div style="flex:1;background:#1a1a2e;border-radius:6px;padding:8px">
+              <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:1px">
+                <div style="padding:2px;background:#16162a;border-radius:2px;min-height:32px;font-size:0.6rem"><span style="color:#aaa">4</span><br><span style="background:#0d6efd;color:#fff;border-radius:2px;padding:0 2px">BSides</span></div>
+                <div style="padding:2px;background:#16162a;border-radius:2px;min-height:32px;font-size:0.6rem"><span style="color:#aaa">5</span></div>
+                <div style="padding:2px;background:#16162a;border-radius:2px;min-height:32px;font-size:0.6rem"><span style="color:#aaa">6</span><br><span style="background:#dc3545;color:#fff;border-radius:2px;padding:0 2px">DEF CON</span></div>
+                <div style="padding:2px;background:#16162a;border-radius:2px;min-height:32px;font-size:0.6rem"><span style="color:#aaa">7</span></div>
+                <div style="padding:2px;background:#16162a;border-radius:2px;min-height:32px;font-size:0.6rem"><span style="color:#aaa">8</span></div>
+                <div style="padding:2px;background:#16162a;border-radius:2px;min-height:32px;font-size:0.6rem"><span style="color:#aaa">9</span><br><span style="background:#198754;color:#fff;border-radius:2px;padding:0 2px">SANS</span></div>
+                <div style="padding:2px;background:#16162a;border-radius:2px;min-height:32px;font-size:0.6rem"><span style="color:#aaa">10</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Top Bar + Collapsible Advanced (Recommended)</h3>
+      <p>Primary search + 2–3 quick dropdowns always visible in top bar. An "Advanced Filters" toggle reveals a second row with more options (cost range, tags, CFP status). Mobile-friendly and uncluttered.</p>
+      <div class="mockup" style="margin-top:0.75rem">
+        <div class="mockup-header">Page Layout – Top Bar + Advanced</div>
+        <div class="mockup-body" style="padding:0.75rem;font-size:0.72rem">
+          <div style="background:#1a1a2e;border-radius:6px;padding:8px;margin-bottom:6px">
+            <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap">
+              <input class="mock-input" placeholder="🔍 Search..." style="flex:1;min-width:120px;font-size:0.68rem">
+              <select style="background:#252540;color:#aaa;border:1px solid #444;border-radius:4px;padding:3px 6px;font-size:0.68rem"><option>All States</option></select>
+              <select style="background:#252540;color:#aaa;border:1px solid #444;border-radius:4px;padding:3px 6px;font-size:0.68rem"><option>All Categories</option></select>
+              <span style="color:#00bfff;font-size:0.68rem;cursor:pointer">+ Filters ▾</span>
+              <span style="background:#252540;color:#aaa;border:1px solid #444;border-radius:4px;padding:3px 6px;font-size:0.68rem">⊞ Grid | ≡ Agenda</span>
+            </div>
+            <div style="margin-top:6px;padding-top:6px;border-top:1px solid #333;display:flex;gap:5px;flex-wrap:wrap">
+              <span style="background:#0d6efd;color:#fff;border-radius:12px;padding:2px 8px;font-size:0.65rem">Cost: Under $2k ✕</span>
+              <span style="background:#198754;color:#fff;border-radius:12px;padding:2px 8px;font-size:0.65rem">CFP Open ✕</span>
+              <span style="color:#555;font-size:0.65rem">Mar–Nov 2026 &nbsp; 22 events</span>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px">
+            <div style="padding:2px;background:#1a1a2e;border-radius:3px;min-height:32px;font-size:0.6rem"><span style="color:#aaa">4</span><br><span style="background:#0d6efd;color:#fff;border-radius:2px;padding:0 3px">BSides</span></div>
+            <div style="padding:2px;background:#1a1a2e;border-radius:3px;min-height:32px;font-size:0.6rem"><span style="color:#aaa">5</span></div>
+            <div style="padding:2px;background:#1a1a2e;border-radius:3px;min-height:32px;font-size:0.6rem"><span style="color:#aaa">6</span><br><span style="background:#dc3545;color:#fff;border-radius:2px;padding:0 3px">DEF CON</span></div>
+            <div style="padding:2px;background:#1a1a2e;border-radius:3px;min-height:32px;font-size:0.6rem"><span style="color:#aaa">7</span></div>
+            <div style="padding:2px;background:#1a1a2e;border-radius:3px;min-height:32px;font-size:0.6rem"><span style="color:#aaa">8</span></div>
+            <div style="padding:2px;background:#1a1a2e;border-radius:3px;min-height:32px;font-size:0.6rem"><span style="color:#aaa">9</span><br><span style="background:#198754;color:#fff;border-radius:2px;padding:0 3px">SANS</span></div>
+            <div style="padding:2px;background:#1a1a2e;border-radius:3px;min-height:32px;font-size:0.6rem"><span style="color:#aaa">10</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

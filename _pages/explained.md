@@ -3,8 +3,7 @@ layout: page
 title: Cybersecurity Explained
 permalink: /explained/
 description: Breaking down complex security topics into plain language — no technical background required.
-nav: true
-nav_order: 2
+nav: false
 ---
 
 {% assign sorted_topics = site.explained | sort: "title" %}

@@ -1,0 +1,110 @@
+<h2>Airport selector design — modal & detail page</h2>
+<p class="subtitle">Does this layout feel right? Costs update instantly when the airport changes.</p>
+
+<div class="split">
+
+  <div class="mockup">
+    <div class="mockup-header">Quick-view modal (existing + new ✈️ row)</div>
+    <div class="mockup-body" style="padding:14px;font-size:12px">
+      <div style="font-weight:bold;font-size:14px;margin-bottom:4px">DEF CON 34</div>
+      <div style="color:#aaa;margin-bottom:12px">Las Vegas, NV · Aug 6–9, 2026</div>
+
+      <!-- NEW: Airport selector -->
+      <div style="background:#1a2a1a;border:1px solid #2d4a2d;border-radius:5px;padding:8px 10px;margin-bottom:12px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+        <span style="font-size:13px">✈️</span>
+        <span style="color:#aaa;font-size:11px;white-space:nowrap">Travel from:</span>
+        <select style="background:#0d1a0d;border:1px solid #3a5a3a;color:#eee;border-radius:4px;padding:3px 7px;font-size:11px;flex:1;min-width:180px">
+          <optgroup label="South / Southwest">
+            <option selected>HOU — Houston Hobby, TX</option>
+            <option>IAH — Houston Intercontinental, TX</option>
+            <option>DFW — Dallas Fort Worth, TX</option>
+            <option>AUS — Austin-Bergstrom, TX</option>
+          </optgroup>
+          <optgroup label="Northeast">
+            <option>JFK — New York JFK, NY</option>
+            <option>BOS — Boston Logan, MA</option>
+          </optgroup>
+          <optgroup label="Other">
+            <option>✏️ Enter my airport code…</option>
+          </optgroup>
+        </select>
+        <input style="background:#0d1a0d;border:1px solid #555;color:#eee;border-radius:4px;padding:3px 7px;font-size:11px;width:70px;display:none" placeholder="e.g. LAX" />
+      </div>
+
+      <!-- Cost table -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <table style="font-size:11px;width:100%;border-collapse:collapse">
+          <tr><th style="text-align:left;color:#aaa;font-weight:normal;padding:3px 4px">Dates</th><td style="padding:3px 4px">Aug 6–9, 2026</td></tr>
+          <tr><th style="text-align:left;color:#aaa;font-weight:normal;padding:3px 4px">Location</th><td style="padding:3px 4px">Las Vegas, NV</td></tr>
+          <tr><th style="text-align:left;color:#aaa;font-weight:normal;padding:3px 4px">Venue</th><td style="padding:3px 4px">LVCC</td></tr>
+        </table>
+        <table style="font-size:11px;width:100%;border-collapse:collapse">
+          <tr><th style="text-align:left;color:#aaa;font-weight:normal;padding:3px 4px">Registration</th><td style="padding:3px 4px">$440</td></tr>
+          <tr><th style="text-align:left;color:#aaa;font-weight:normal;padding:3px 4px">Airfare ✦</th><td style="padding:3px 4px;color:#7fc97f">$180–$350</td></tr>
+          <tr><th style="text-align:left;color:#aaa;font-weight:normal;padding:3px 4px">Hotel (3 nights) ✦</th><td style="padding:3px 4px">$990–$2,475</td></tr>
+          <tr><th style="text-align:left;color:#888;font-weight:bold;padding:3px 4px">Total est. ✦</th><td style="padding:3px 4px;font-weight:bold">$1,610–$3,265</td></tr>
+        </table>
+      </div>
+      <div style="color:#666;font-size:10px;margin-top:8px">✦ Updates when you change origin airport above</div>
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-header">Detail page (same widget, same live update)</div>
+    <div class="mockup-body" style="padding:14px;font-size:12px">
+      <div style="font-weight:bold;font-size:14px;margin-bottom:2px">DEF CON 34</div>
+      <div style="color:#aaa;margin-bottom:12px;font-size:11px">World's largest underground hacking conference</div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <!-- Event Details card -->
+        <div style="border:1px solid #444;border-radius:5px;overflow:hidden">
+          <div style="background:#1a3a5a;padding:7px 10px;font-size:11px;font-weight:bold">📅 Event Details</div>
+          <div style="padding:8px;font-size:11px">
+            <div style="color:#aaa;margin-bottom:3px">Aug 6–9 · Las Vegas, NV</div>
+            <div style="color:#aaa">LVCC · <a style="color:#5a9">defcon.org ↗</a></div>
+          </div>
+        </div>
+
+        <!-- Cost card with airport selector -->
+        <div style="border:1px solid #444;border-radius:5px;overflow:hidden">
+          <div style="background:#1a4a2a;padding:7px 10px;font-size:11px;font-weight:bold">💰 Cost Estimates</div>
+          <div style="padding:8px">
+            <!-- NEW: same airport selector widget -->
+            <div style="background:#1a2a1a;border:1px solid #2d4a2d;border-radius:4px;padding:5px 8px;margin-bottom:8px;display:flex;align-items:center;gap:6px">
+              <span style="font-size:11px">✈️</span>
+              <select style="background:#0d1a0d;border:1px solid #3a5a3a;color:#eee;border-radius:3px;padding:2px 5px;font-size:10px;flex:1">
+                <option>HOU — Houston Hobby, TX</option>
+              </select>
+            </div>
+            <table style="font-size:11px;width:100%;border-collapse:collapse">
+              <tr><td style="color:#aaa;padding:2px">Registration</td><td style="padding:2px">$440</td></tr>
+              <tr><td style="color:#7fc97f;padding:2px">Airfare ✦</td><td style="padding:2px;color:#7fc97f">$180–$350</td></tr>
+              <tr><td style="color:#aaa;padding:2px">Hotel ✦</td><td style="padding:2px">$990–$2,475</td></tr>
+              <tr style="font-weight:bold"><td style="color:#aaa;padding:2px">Total ✦</td><td style="padding:2px">$1,610–$3,265</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top:20px">
+  <h3>Under the hood</h3>
+  <p class="subtitle">How the estimates work</p>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;font-size:12px">
+    <div style="background:#1a1a2a;border:1px solid #444;border-radius:5px;padding:10px">
+      <div style="color:#7a9;font-weight:bold;margin-bottom:4px">6 US Regions</div>
+      Northeast · Southeast · Midwest · South · Mountain · Pacific
+    </div>
+    <div style="background:#1a1a2a;border:1px solid #444;border-radius:5px;padding:10px">
+      <div style="color:#7a9;font-weight:bold;margin-bottom:4px">~50 airports</div>
+      Grouped dropdown. "Other" reveals an IATA text field.
+    </div>
+    <div style="background:#1a1a2a;border:1px solid #444;border-radius:5px;padding:10px">
+      <div style="color:#7a9;font-weight:bold;margin-bottom:4px">6×6 matrix</div>
+      Region → Region gives a min/max airfare band. Instantly applied.
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+# cybersecurity_calendar_manual.yml
+# Hand-editable layer — NEVER overwritten by build scripts.
+#
+# To add a conference not in the auto-generated list, add an entry under "additions".
+# To correct a field in an auto-generated entry, add it under "overrides".
+#
+# After editing, re-run: python scripts/build_cybersecurity_calendar.py
+# Then rebuild Jekyll: bundle exec jekyll build
+
+# ---------------------------------------------------------------------------
+# Section 1: Full custom entries (same schema as cybersecurity_calendar.yml)
+# ---------------------------------------------------------------------------
+additions: []
+
+# Example:
+# additions:
+#   - id: my-local-con-2026
+#     name: "MyLocalCon 2026"
+#     slug: my-local-con-2026
+#     short_description: "Local security meetup"
+#     start_date: "2026-07-10"
+#     end_date: "2026-07-11"
+#     city: Houston
+#     state: TX
+#     venue: "TBD"
+#     website_url: ""
+#     cfp_url: ""
+#     registration_cost_min: 0
+#     registration_cost_max: 50
+#     registration_cost_notes: "Estimated"
+#     is_estimated_pricing: true
+#     category_tags: [community]
+#     data_confidence: low
+#     last_verified: "2026-03-14"
+
+# ---------------------------------------------------------------------------
+# Section 2: Field-level overrides (keyed by conference id)
+# ---------------------------------------------------------------------------
+overrides: {}
+
+# Example:
+# overrides:
+#   defcon-34:
+#     registration_cost_min: 460
+#     registration_cost_max: 460
+#     registration_cost_notes: "Exact — badge price confirmed for 2026"
+#     is_estimated_pricing: false
