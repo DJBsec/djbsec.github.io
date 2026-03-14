@@ -6,10 +6,10 @@
 // Category color map
 // ---------------------------------------------------------------------------
 $cat-colors: (
-  "hacking":    $red-color,
+  "hacking": $red-color,
   "enterprise": $blue-color,
-  "training":   $orange-color,
-  "community":  $green-color,
+  "training": $orange-color,
+  "community": $green-color,
 );
 
 // ---------------------------------------------------------------------------
@@ -79,7 +79,9 @@ $cat-colors: (
     padding: 0.375rem 0.75rem;
     font-size: 0.85rem;
     cursor: pointer;
-    transition: background 0.15s, color 0.15s;
+    transition:
+      background 0.15s,
+      color 0.15s;
 
     &:hover {
       background: var(--global-hover-color);
@@ -295,7 +297,9 @@ $cat-colors: (
   border-radius: 0.375rem;
   padding: 0.6rem 0.9rem;
   cursor: pointer;
-  transition: transform 0.1s, border-color 0.15s;
+  transition:
+    transform 0.1s,
+    border-color 0.15s;
 
   &:hover {
     transform: translateX(2px);

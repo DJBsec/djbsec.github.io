@@ -6,10 +6,27 @@
     <div class="letter">A</div>
     <div class="content">
       <h3>Single Page + Modals</h3>
-      <p>All conference data lives in <code>_data/cybersecurity_calendar.yml</code>. One page at <code>/cybersecurity-calendar/</code> loads everything. Clicking a conference opens a modal with details.</p>
-      <div class="pros-cons" style="margin-top:0.75rem">
-        <div class="pros"><h4>Pros</h4><ul><li>Simple to build &amp; maintain</li><li>Fast (one page)</li><li>Easy data refresh</li></ul></div>
-        <div class="cons"><h4>Cons</h4><ul><li>No individual conference URLs</li><li>Weaker SEO for individual events</li><li>All JS must load upfront</li></ul></div>
+      <p>
+        All conference data lives in <code>_data/cybersecurity_calendar.yml</code>. One page at <code>/cybersecurity-calendar/</code> loads
+        everything. Clicking a conference opens a modal with details.
+      </p>
+      <div class="pros-cons" style="margin-top: 0.75rem">
+        <div class="pros">
+          <h4>Pros</h4>
+          <ul>
+            <li>Simple to build &amp; maintain</li>
+            <li>Fast (one page)</li>
+            <li>Easy data refresh</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Cons</h4>
+          <ul>
+            <li>No individual conference URLs</li>
+            <li>Weaker SEO for individual events</li>
+            <li>All JS must load upfront</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -18,10 +35,27 @@
     <div class="letter">B</div>
     <div class="content">
       <h3>Collection + Detail Pages</h3>
-      <p>Each conference is a file in <code>_conferences/</code>. Jekyll generates <code>/cybersecurity-calendar/defcon-2026/</code> etc. Calendar page links out to detail pages.</p>
-      <div class="pros-cons" style="margin-top:0.75rem">
-        <div class="pros"><h4>Pros</h4><ul><li>Clean SEO-friendly URLs per event</li><li>Schema.org markup per page</li><li>Shareable deep links</li></ul></div>
-        <div class="cons"><h4>Cons</h4><ul><li>50+ individual files to manage</li><li>Script must generate collection files</li><li>Slower build time</li></ul></div>
+      <p>
+        Each conference is a file in <code>_conferences/</code>. Jekyll generates <code>/cybersecurity-calendar/defcon-2026/</code> etc. Calendar page
+        links out to detail pages.
+      </p>
+      <div class="pros-cons" style="margin-top: 0.75rem">
+        <div class="pros">
+          <h4>Pros</h4>
+          <ul>
+            <li>Clean SEO-friendly URLs per event</li>
+            <li>Schema.org markup per page</li>
+            <li>Shareable deep links</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Cons</h4>
+          <ul>
+            <li>50+ individual files to manage</li>
+            <li>Script must generate collection files</li>
+            <li>Slower build time</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -30,10 +64,27 @@
     <div class="letter">C</div>
     <div class="content">
       <h3>Hybrid (Recommended)</h3>
-      <p>Single <code>_data/cybersecurity_calendar.yml</code> as source of truth. Calendar page with quick-view modals <em>and</em> a "Full Details" link per event that goes to a generated detail page at <code>/cybersecurity-calendar/[slug]/</code>.</p>
-      <div class="pros-cons" style="margin-top:0.75rem">
-        <div class="pros"><h4>Pros</h4><ul><li>Best SEO (individual URLs)</li><li>Single data source (easy to update)</li><li>Fast preview via modal</li><li>Deep linking &amp; sharing</li></ul></div>
-        <div class="cons"><h4>Cons</h4><ul><li>Most complex to build</li><li>Requires a layout for detail pages</li></ul></div>
+      <p>
+        Single <code>_data/cybersecurity_calendar.yml</code> as source of truth. Calendar page with quick-view modals <em>and</em> a "Full Details"
+        link per event that goes to a generated detail page at <code>/cybersecurity-calendar/[slug]/</code>.
+      </p>
+      <div class="pros-cons" style="margin-top: 0.75rem">
+        <div class="pros">
+          <h4>Pros</h4>
+          <ul>
+            <li>Best SEO (individual URLs)</li>
+            <li>Single data source (easy to update)</li>
+            <li>Fast preview via modal</li>
+            <li>Deep linking &amp; sharing</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Cons</h4>
+          <ul>
+            <li>Most complex to build</li>
+            <li>Requires a layout for detail pages</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

@@ -9,9 +9,12 @@
     if (!select || !window.AIRFARE_DATA) return;
 
     var regionLabels = {
-      south: "South / Southwest", northeast: "Northeast",
-      southeast: "Southeast",     midwest: "Midwest",
-      mountain: "Mountain",       pacific: "Pacific",
+      south: "South / Southwest",
+      northeast: "Northeast",
+      southeast: "Southeast",
+      midwest: "Midwest",
+      mountain: "Mountain",
+      pacific: "Pacific",
     };
     var groups = {};
     var airports = window.AIRFARE_DATA.airports;
@@ -21,12 +24,14 @@
       groups[ap.region].push({ iata: iata, ap: ap });
     });
 
-    var regionOrder = ["south","northeast","southeast","midwest","mountain","pacific"];
+    var regionOrder = ["south", "northeast", "southeast", "midwest", "mountain", "pacific"];
     regionOrder.forEach(function (region) {
       if (!groups[region]) return;
       var og = document.createElement("optgroup");
       og.label = regionLabels[region] || region;
-      groups[region].sort(function (a, b) { return a.iata < b.iata ? -1 : 1; });
+      groups[region].sort(function (a, b) {
+        return a.iata < b.iata ? -1 : 1;
+      });
       groups[region].forEach(function (item) {
         var opt = document.createElement("option");
         opt.value = item.iata;
@@ -69,11 +74,11 @@
     if (labelEl) labelEl.textContent = "Airfare (" + (airfare ? iata : "HOU") + ")";
 
     // Detail page renders each cell separately — update all airfare/total cells
-    ["detail-airfare-min","detail-airfare-max"].forEach(function (id, i) {
+    ["detail-airfare-min", "detail-airfare-max"].forEach(function (id, i) {
       var el = document.getElementById(id);
       if (el) el.textContent = "$" + (i === 0 ? airMin : airMax);
     });
-    ["detail-total-min","detail-total-max"].forEach(function (id, i) {
+    ["detail-total-min", "detail-total-max"].forEach(function (id, i) {
       var el = document.getElementById(id);
       if (el) el.textContent = "$" + (i === 0 ? totalMin : totalMax);
     });
@@ -94,9 +99,15 @@
       select.addEventListener("change", function () {
         var val = select.value;
         if (val === "__other__") {
-          if (custom) { custom.style.display = ""; custom.focus(); }
+          if (custom) {
+            custom.style.display = "";
+            custom.focus();
+          }
         } else {
-          if (custom) { custom.style.display = "none"; custom.value = ""; }
+          if (custom) {
+            custom.style.display = "none";
+            custom.value = "";
+          }
           getDetailCosts(val);
         }
       });

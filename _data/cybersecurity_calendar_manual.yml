@@ -37,7 +37,6 @@ additions: []
 # Section 2: Field-level overrides (keyed by conference id)
 # ---------------------------------------------------------------------------
 overrides: {}
-
 # Example:
 # overrides:
 #   defcon-34:

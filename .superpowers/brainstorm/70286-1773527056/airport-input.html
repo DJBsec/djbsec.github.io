@@ -2,25 +2,49 @@
 <p class="subtitle">Shown inside the modal cost section. Pick the input style.</p>
 
 <div class="options">
-
   <div class="option" data-choice="a" onclick="toggleSelect(this)">
     <div class="letter">A</div>
     <div class="content">
       <h3>Autocomplete text field</h3>
       <p>User types a city name or IATA code — matching airports appear as suggestions. Familiar, fast for frequent flyers.</p>
-      <div class="mockup" style="margin-top:10px">
+      <div class="mockup" style="margin-top: 10px">
         <div class="mockup-header">Cost section in modal</div>
-        <div class="mockup-body" style="padding:12px;font-size:12px">
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;background:#1e2e1e;border:1px solid #3a5a3a;border-radius:5px;padding:7px 10px">
-            <span style="font-size:14px">✈️</span>
-            <span style="color:#aaa">From:</span>
-            <input style="background:#111;border:1px solid #555;color:#eee;border-radius:4px;padding:3px 8px;font-size:12px;width:200px" value="HOU" placeholder="Type city or code…" />
-            <span style="color:#777;font-size:10px">Houston Hobby, TX</span>
+        <div class="mockup-body" style="padding: 12px; font-size: 12px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 10px;
+              background: #1e2e1e;
+              border: 1px solid #3a5a3a;
+              border-radius: 5px;
+              padding: 7px 10px;
+            "
+          >
+            <span style="font-size: 14px">✈️</span>
+            <span style="color: #aaa">From:</span>
+            <input
+              style="background: #111; border: 1px solid #555; color: #eee; border-radius: 4px; padding: 3px 8px; font-size: 12px; width: 200px"
+              value="HOU"
+              placeholder="Type city or code…"
+            />
+            <span style="color: #777; font-size: 10px">Houston Hobby, TX</span>
           </div>
-          <table style="font-size:11px;width:100%">
-            <tr><td style="color:#aaa;padding:2px 4px">Airfare</td><td>$180–$350</td><td style="color:#777;font-size:10px">est. HOU → NV</td></tr>
-            <tr><td style="color:#aaa;padding:2px 4px">Hotel (3 nights)</td><td>$990–$2,475</td></tr>
-            <tr style="font-weight:bold"><td style="color:#aaa;padding:2px 4px">Total est.</td><td>$1,610–$3,265</td></tr>
+          <table style="font-size: 11px; width: 100%">
+            <tr>
+              <td style="color: #aaa; padding: 2px 4px">Airfare</td>
+              <td>$180–$350</td>
+              <td style="color: #777; font-size: 10px">est. HOU → NV</td>
+            </tr>
+            <tr>
+              <td style="color: #aaa; padding: 2px 4px">Hotel (3 nights)</td>
+              <td>$990–$2,475</td>
+            </tr>
+            <tr style="font-weight: bold">
+              <td style="color: #aaa; padding: 2px 4px">Total est.</td>
+              <td>$1,610–$3,265</td>
+            </tr>
           </table>
         </div>
       </div>
@@ -32,13 +56,24 @@
     <div class="content">
       <h3>Dropdown — major US airports grouped by region</h3>
       <p>~50 airports in a select grouped by region (Northeast, Southeast, Midwest…). No typing needed. Best for casual users.</p>
-      <div class="mockup" style="margin-top:10px">
+      <div class="mockup" style="margin-top: 10px">
         <div class="mockup-header">Cost section in modal</div>
-        <div class="mockup-body" style="padding:12px;font-size:12px">
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;background:#1e2e1e;border:1px solid #3a5a3a;border-radius:5px;padding:7px 10px">
-            <span style="font-size:14px">✈️</span>
-            <span style="color:#aaa">From:</span>
-            <select style="background:#111;border:1px solid #555;color:#eee;border-radius:4px;padding:3px 8px;font-size:12px;flex:1">
+        <div class="mockup-body" style="padding: 12px; font-size: 12px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 10px;
+              background: #1e2e1e;
+              border: 1px solid #3a5a3a;
+              border-radius: 5px;
+              padding: 7px 10px;
+            "
+          >
+            <span style="font-size: 14px">✈️</span>
+            <span style="color: #aaa">From:</span>
+            <select style="background: #111; border: 1px solid #555; color: #eee; border-radius: 4px; padding: 3px 8px; font-size: 12px; flex: 1">
               <option>── South/Southwest ──</option>
               <option selected>HOU — Houston Hobby, TX</option>
               <option>IAH — Houston Intercontinental, TX</option>
@@ -48,10 +83,20 @@
               <option>BOS — Boston Logan, MA</option>
             </select>
           </div>
-          <table style="font-size:11px;width:100%">
-            <tr><td style="color:#aaa;padding:2px 4px">Airfare</td><td>$180–$350</td><td style="color:#777;font-size:10px">est. HOU → NV</td></tr>
-            <tr><td style="color:#aaa;padding:2px 4px">Hotel (3 nights)</td><td>$990–$2,475</td></tr>
-            <tr style="font-weight:bold"><td style="color:#aaa;padding:2px 4px">Total est.</td><td>$1,610–$3,265</td></tr>
+          <table style="font-size: 11px; width: 100%">
+            <tr>
+              <td style="color: #aaa; padding: 2px 4px">Airfare</td>
+              <td>$180–$350</td>
+              <td style="color: #777; font-size: 10px">est. HOU → NV</td>
+            </tr>
+            <tr>
+              <td style="color: #aaa; padding: 2px 4px">Hotel (3 nights)</td>
+              <td>$990–$2,475</td>
+            </tr>
+            <tr style="font-weight: bold">
+              <td style="color: #aaa; padding: 2px 4px">Total est.</td>
+              <td>$1,610–$3,265</td>
+            </tr>
           </table>
         </div>
       </div>
@@ -63,13 +108,24 @@
     <div class="content">
       <h3>Both — dropdown with a "type your own" fallback</h3>
       <p>Dropdown of major airports + an "Other (type IATA code)" option that reveals a text input. Maximum flexibility.</p>
-      <div class="mockup" style="margin-top:10px">
+      <div class="mockup" style="margin-top: 10px">
         <div class="mockup-header">Cost section in modal</div>
-        <div class="mockup-body" style="padding:12px;font-size:12px">
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;background:#1e2e1e;border:1px solid #3a5a3a;border-radius:5px;padding:7px 10px">
-            <span style="font-size:14px">✈️</span>
-            <span style="color:#aaa">From:</span>
-            <select style="background:#111;border:1px solid #555;color:#eee;border-radius:4px;padding:3px 8px;font-size:12px;flex:1">
+        <div class="mockup-body" style="padding: 12px; font-size: 12px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 6px;
+              background: #1e2e1e;
+              border: 1px solid #3a5a3a;
+              border-radius: 5px;
+              padding: 7px 10px;
+            "
+          >
+            <span style="font-size: 14px">✈️</span>
+            <span style="color: #aaa">From:</span>
+            <select style="background: #111; border: 1px solid #555; color: #eee; border-radius: 4px; padding: 3px 8px; font-size: 12px; flex: 1">
               <option selected>HOU — Houston Hobby, TX</option>
               <option>DFW — Dallas Fort Worth, TX</option>
               <option>JFK — New York JFK, NY</option>
@@ -77,17 +133,25 @@
               <option>✏️ Type my own airport code…</option>
             </select>
           </div>
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;padding:0 10px">
-            <span style="color:#777;font-size:10px">Or enter IATA code:</span>
-            <input style="background:#111;border:1px solid #444;color:#eee;border-radius:4px;padding:2px 6px;font-size:12px;width:80px" placeholder="e.g. LAX" />
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px; padding: 0 10px">
+            <span style="color: #777; font-size: 10px">Or enter IATA code:</span>
+            <input
+              style="background: #111; border: 1px solid #444; color: #eee; border-radius: 4px; padding: 2px 6px; font-size: 12px; width: 80px"
+              placeholder="e.g. LAX"
+            />
           </div>
-          <table style="font-size:11px;width:100%">
-            <tr><td style="color:#aaa;padding:2px 4px">Airfare</td><td>$180–$350</td></tr>
-            <tr style="font-weight:bold"><td style="color:#aaa;padding:2px 4px">Total est.</td><td>$1,610–$3,265</td></tr>
+          <table style="font-size: 11px; width: 100%">
+            <tr>
+              <td style="color: #aaa; padding: 2px 4px">Airfare</td>
+              <td>$180–$350</td>
+            </tr>
+            <tr style="font-weight: bold">
+              <td style="color: #aaa; padding: 2px 4px">Total est.</td>
+              <td>$1,610–$3,265</td>
+            </tr>
           </table>
         </div>
       </div>
     </div>
   </div>
-
 </div>

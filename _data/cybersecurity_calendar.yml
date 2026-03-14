@@ -6,22 +6,22 @@
   name: CactusCon 14
   slug: cactuscon-14
   short_description: Community-focused security conference in the Phoenix metro area.
-  start_date: '2026-03-13'
-  end_date: '2026-03-14'
+  start_date: "2026-03-13"
+  end_date: "2026-03-14"
   city: Mesa
   state: AZ
   venue: Mesa Convention Center
   website_url: https://www.cactuscon.com/
-  cfp_url: ''
+  cfp_url: ""
   registration_cost_min: 0
   registration_cost_max: 0
   registration_cost_notes: Free community event
   is_estimated_pricing: false
   category_tags:
-  - community
-  - hacking
+    - community
+    - hacking
   data_confidence: medium
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 1
   airfare_cost_min: 140
   airfare_cost_max: 260
@@ -35,22 +35,22 @@
   name: ShmooCon 2026
   slug: shmoocon-2026
   short_description: East Coast hacker convention focused on offensive/defensive topics.
-  start_date: '2026-03-13'
-  end_date: '2026-03-15'
+  start_date: "2026-03-13"
+  end_date: "2026-03-15"
   city: Washington
   state: DC
   venue: Marriott Wardman Park
   website_url: https://www.shmoocon.org/
-  cfp_url: ''
+  cfp_url: ""
   registration_cost_min: 150
   registration_cost_max: 200
   registration_cost_notes: Estimated — lottery ticket system
   is_estimated_pricing: true
   category_tags:
-  - hacking
-  - community
+    - hacking
+    - community
   data_confidence: medium
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 2
   airfare_cost_min: 180
   airfare_cost_max: 340
@@ -65,22 +65,22 @@
   slug: ics-security-summit-2026
   short_description: SANS summit focused on industrial control systems and OT/ICS
     security.
-  start_date: '2026-03-23'
-  end_date: '2026-03-24'
+  start_date: "2026-03-23"
+  end_date: "2026-03-24"
   city: Orlando
   state: FL
   venue: TBD
   website_url: https://www.sans.org/cyber-security-summit/ics/
-  cfp_url: ''
+  cfp_url: ""
   registration_cost_min: 595
   registration_cost_max: 995
   registration_cost_notes: Estimated — SANS summit pricing
   is_estimated_pricing: true
   category_tags:
-  - enterprise
-  - training
+    - enterprise
+    - training
   data_confidence: low
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 1
   airfare_cost_min: 150
   airfare_cost_max: 280
@@ -94,22 +94,22 @@
   name: SecureWorld Dallas 2026
   slug: secureworld-dallas-2026
   short_description: Regional enterprise security conference with CPE-eligible sessions.
-  start_date: '2026-03-25'
-  end_date: '2026-03-26'
+  start_date: "2026-03-25"
+  end_date: "2026-03-26"
   city: Dallas
   state: TX
   venue: Irving Convention Center
   website_url: https://www.secureworldexpo.com/events/dallas
-  cfp_url: ''
+  cfp_url: ""
   registration_cost_min: 195
   registration_cost_max: 395
   registration_cost_notes: Estimated — full conference pass
   is_estimated_pricing: true
   category_tags:
-  - enterprise
-  - training
+    - enterprise
+    - training
   data_confidence: medium
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 1
   airfare_cost_min: 80
   airfare_cost_max: 180
@@ -124,21 +124,21 @@
   slug: cybersecurity-summit-msp-2026
   short_description: Regional summit connecting cybersecurity leaders in the Twin
     Cities.
-  start_date: '2026-04-01'
-  end_date: '2026-04-01'
+  start_date: "2026-04-01"
+  end_date: "2026-04-01"
   city: Minneapolis
   state: MN
   venue: TBD
   website_url: https://cybersecuritysummit.com/summit/minneapolis/
-  cfp_url: ''
+  cfp_url: ""
   registration_cost_min: 295
   registration_cost_max: 495
   registration_cost_notes: Estimated
   is_estimated_pricing: true
   category_tags:
-  - enterprise
+    - enterprise
   data_confidence: low
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 1
   airfare_cost_min: 170
   airfare_cost_max: 300
@@ -153,22 +153,22 @@
   slug: hacknyc-2026
   short_description: New York City security conference covering offensive and defensive
     topics.
-  start_date: '2026-04-15'
-  end_date: '2026-04-16'
+  start_date: "2026-04-15"
+  end_date: "2026-04-16"
   city: New York
   state: NY
   venue: TBD
   website_url: https://www.hacknyc.com/
-  cfp_url: ''
+  cfp_url: ""
   registration_cost_min: 100
   registration_cost_max: 250
   registration_cost_notes: Estimated
   is_estimated_pricing: true
   category_tags:
-  - hacking
-  - community
+    - hacking
+    - community
   data_confidence: low
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 1
   airfare_cost_min: 200
   airfare_cost_max: 380
@@ -182,22 +182,22 @@
   name: SecureWorld Atlanta 2026
   slug: secureworld-atlanta-2026
   short_description: Regional enterprise security conference with CPE-eligible sessions.
-  start_date: '2026-04-22'
-  end_date: '2026-04-23'
+  start_date: "2026-04-22"
+  end_date: "2026-04-23"
   city: Atlanta
   state: GA
   venue: Cobb Galleria Centre
   website_url: https://www.secureworldexpo.com/events/atlanta
-  cfp_url: ''
+  cfp_url: ""
   registration_cost_min: 195
   registration_cost_max: 395
   registration_cost_notes: Estimated — full conference pass
   is_estimated_pricing: true
   category_tags:
-  - enterprise
-  - training
+    - enterprise
+    - training
   data_confidence: medium
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 1
   airfare_cost_min: 150
   airfare_cost_max: 270
@@ -211,22 +211,22 @@
   name: BSides San Francisco 2026
   slug: bsides-sf-2026
   short_description: Community-organized security conference held alongside RSA.
-  start_date: '2026-04-26'
-  end_date: '2026-04-27'
+  start_date: "2026-04-26"
+  end_date: "2026-04-27"
   city: San Francisco
   state: CA
   venue: City View at Metreon
   website_url: https://bsidessf.org/
-  cfp_url: ''
+  cfp_url: ""
   registration_cost_min: 25
   registration_cost_max: 75
   registration_cost_notes: Estimated — low-cost community event
   is_estimated_pricing: true
   category_tags:
-  - community
-  - hacking
+    - community
+    - hacking
   data_confidence: medium
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 1
   airfare_cost_min: 200
   airfare_cost_max: 380
@@ -240,8 +240,8 @@
   name: RSA Conference 2026
   slug: rsa-conference-2026
   short_description: The world's leading information security conference and expo.
-  start_date: '2026-04-28'
-  end_date: '2026-05-01'
+  start_date: "2026-04-28"
+  end_date: "2026-05-01"
   city: San Francisco
   state: CA
   venue: Moscone Center
@@ -252,10 +252,10 @@
   registration_cost_notes: Estimated — expo pass to full conference pass
   is_estimated_pricing: true
   category_tags:
-  - enterprise
-  - training
+    - enterprise
+    - training
   data_confidence: medium
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 3
   airfare_cost_min: 200
   airfare_cost_max: 380
@@ -269,22 +269,22 @@
   name: Infiltrate 2026
   slug: infiltrate-2026
   short_description: Deeply technical offensive security conference in Miami.
-  start_date: '2026-05-07'
-  end_date: '2026-05-08'
+  start_date: "2026-05-07"
+  end_date: "2026-05-08"
   city: Miami
   state: FL
   venue: Loews Miami Beach Hotel
   website_url: https://infiltratecon.com/
-  cfp_url: ''
+  cfp_url: ""
   registration_cost_min: 1500
   registration_cost_max: 2500
   registration_cost_notes: Estimated — premium offensive security conference
   is_estimated_pricing: true
   category_tags:
-  - hacking
-  - training
+    - hacking
+    - training
   data_confidence: low
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 1
   airfare_cost_min: 150
   airfare_cost_max: 280
@@ -298,22 +298,22 @@
   name: Converge Detroit 2026
   slug: converge-detroit-2026
   short_description: Midwest infosec conference focused on community and collaboration.
-  start_date: '2026-05-14'
-  end_date: '2026-05-15'
+  start_date: "2026-05-14"
+  end_date: "2026-05-15"
   city: Detroit
   state: MI
   venue: TBD
   website_url: https://www.convergeconference.org/
-  cfp_url: ''
+  cfp_url: ""
   registration_cost_min: 50
   registration_cost_max: 150
   registration_cost_notes: Estimated
   is_estimated_pricing: true
   category_tags:
-  - community
-  - hacking
+    - community
+    - hacking
   data_confidence: low
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 1
   airfare_cost_min: 180
   airfare_cost_max: 320
@@ -327,22 +327,22 @@
   name: SecureWorld Chicago 2026
   slug: secureworld-chicago-2026
   short_description: Regional enterprise security conference with CPE-eligible sessions.
-  start_date: '2026-05-20'
-  end_date: '2026-05-21'
+  start_date: "2026-05-20"
+  end_date: "2026-05-21"
   city: Chicago
   state: IL
   venue: Hyatt Regency O'Hare
   website_url: https://www.secureworldexpo.com/events/chicago
-  cfp_url: ''
+  cfp_url: ""
   registration_cost_min: 195
   registration_cost_max: 395
   registration_cost_notes: Estimated — full conference pass
   is_estimated_pricing: true
   category_tags:
-  - enterprise
-  - training
+    - enterprise
+    - training
   data_confidence: medium
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 1
   airfare_cost_min: 160
   airfare_cost_max: 300
@@ -356,22 +356,22 @@
   name: LayerOne 2026
   slug: layerone-2026
   short_description: Hacker-focused security conference in Los Angeles.
-  start_date: '2026-05-22'
-  end_date: '2026-05-23'
+  start_date: "2026-05-22"
+  end_date: "2026-05-23"
   city: Los Angeles
   state: CA
   venue: TBD
   website_url: https://www.layerone.org/
-  cfp_url: ''
+  cfp_url: ""
   registration_cost_min: 75
   registration_cost_max: 150
   registration_cost_notes: Estimated
   is_estimated_pricing: true
   category_tags:
-  - hacking
-  - community
+    - hacking
+    - community
   data_confidence: low
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 1
   airfare_cost_min: 200
   airfare_cost_max: 380
@@ -385,22 +385,22 @@
   name: Circle City Con 2026
   slug: circlecitycon-2026
   short_description: Hacker and security community conference in Indianapolis.
-  start_date: '2026-06-05'
-  end_date: '2026-06-07'
+  start_date: "2026-06-05"
+  end_date: "2026-06-07"
   city: Indianapolis
   state: IN
   venue: TBD
   website_url: https://circlecitycon.org/
-  cfp_url: ''
+  cfp_url: ""
   registration_cost_min: 75
   registration_cost_max: 175
   registration_cost_notes: Estimated
   is_estimated_pricing: true
   category_tags:
-  - hacking
-  - community
+    - hacking
+    - community
   data_confidence: low
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 2
   airfare_cost_min: 180
   airfare_cost_max: 320
@@ -414,22 +414,22 @@
   name: NOLACon 2026
   slug: nolacon-2026
   short_description: New Orleans hacker and security community conference.
-  start_date: '2026-06-12'
-  end_date: '2026-06-14'
+  start_date: "2026-06-12"
+  end_date: "2026-06-14"
   city: New Orleans
   state: LA
   venue: TBD
   website_url: https://nolacon.com/
-  cfp_url: ''
+  cfp_url: ""
   registration_cost_min: 50
   registration_cost_max: 150
   registration_cost_notes: Estimated
   is_estimated_pricing: true
   category_tags:
-  - hacking
-  - community
+    - hacking
+    - community
   data_confidence: low
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 2
   airfare_cost_min: 80
   airfare_cost_max: 160
@@ -443,22 +443,22 @@
   name: Central Ohio InfoSec Summit 2026
   slug: central-ohio-infosec-2026
   short_description: Regional security summit serving the Central Ohio infosec community.
-  start_date: '2026-06-19'
-  end_date: '2026-06-19'
+  start_date: "2026-06-19"
+  end_date: "2026-06-19"
   city: Columbus
   state: OH
   venue: TBD
   website_url: https://www.centralohioissa.org/
-  cfp_url: ''
+  cfp_url: ""
   registration_cost_min: 0
   registration_cost_max: 50
   registration_cost_notes: Estimated — low-cost regional event
   is_estimated_pricing: true
   category_tags:
-  - community
-  - enterprise
+    - community
+    - enterprise
   data_confidence: low
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 1
   airfare_cost_min: 170
   airfare_cost_max: 310
@@ -472,22 +472,22 @@
   name: SANS DFIR Summit 2026
   slug: sans-dfir-2026
   short_description: SANS summit focused on digital forensics and incident response.
-  start_date: '2026-06-25'
-  end_date: '2026-06-26'
+  start_date: "2026-06-25"
+  end_date: "2026-06-26"
   city: Austin
   state: TX
   venue: TBD
   website_url: https://www.sans.org/cyber-security-summit/dfir/
-  cfp_url: ''
+  cfp_url: ""
   registration_cost_min: 595
   registration_cost_max: 995
   registration_cost_notes: Estimated — SANS summit pricing
   is_estimated_pricing: true
   category_tags:
-  - enterprise
-  - training
+    - enterprise
+    - training
   data_confidence: low
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 1
   airfare_cost_min: 80
   airfare_cost_max: 180
@@ -501,22 +501,22 @@
   name: RingZer0 2026
   slug: ringzer0-2026
   short_description: Technical training and talks during pre-DEF CON week in Las Vegas.
-  start_date: '2026-07-31'
-  end_date: '2026-08-01'
+  start_date: "2026-07-31"
+  end_date: "2026-08-01"
   city: Las Vegas
   state: NV
   venue: TBD
   website_url: https://ringzer0.training/
-  cfp_url: ''
+  cfp_url: ""
   registration_cost_min: 500
   registration_cost_max: 1200
   registration_cost_notes: Estimated — training-heavy event
   is_estimated_pricing: true
   category_tags:
-  - hacking
-  - training
+    - hacking
+    - training
   data_confidence: low
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 1
   airfare_cost_min: 180
   airfare_cost_max: 350
@@ -531,8 +531,8 @@
   slug: black-hat-usa-2026
   short_description: Premier enterprise security conference featuring cutting-edge
     research and training.
-  start_date: '2026-08-01'
-  end_date: '2026-08-06'
+  start_date: "2026-08-01"
+  end_date: "2026-08-06"
   city: Las Vegas
   state: NV
   venue: Mandalay Bay Convention Center
@@ -543,11 +543,11 @@
   registration_cost_notes: Estimated — briefings + training combo
   is_estimated_pricing: true
   category_tags:
-  - enterprise
-  - hacking
-  - training
+    - enterprise
+    - hacking
+    - training
   data_confidence: medium
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 5
   airfare_cost_min: 180
   airfare_cost_max: 350
@@ -562,22 +562,22 @@
   slug: bsides-lv-2026
   short_description: Community-driven security event running alongside Black Hat and
     DEF CON.
-  start_date: '2026-08-04'
-  end_date: '2026-08-05'
+  start_date: "2026-08-04"
+  end_date: "2026-08-05"
   city: Las Vegas
   state: NV
   venue: Tuscany Suites & Casino
   website_url: https://www.bsidesLV.org/
-  cfp_url: ''
+  cfp_url: ""
   registration_cost_min: 0
   registration_cost_max: 50
   registration_cost_notes: Estimated — donation-based community event
   is_estimated_pricing: true
   category_tags:
-  - community
-  - hacking
+    - community
+    - hacking
   data_confidence: medium
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 1
   airfare_cost_min: 180
   airfare_cost_max: 350
@@ -591,8 +591,8 @@
   name: DEF CON 34
   slug: defcon-34
   short_description: The world's largest underground hacking conference.
-  start_date: '2026-08-06'
-  end_date: '2026-08-09'
+  start_date: "2026-08-06"
+  end_date: "2026-08-09"
   city: Las Vegas
   state: NV
   venue: Las Vegas Convention Center
@@ -603,10 +603,10 @@
   registration_cost_notes: Estimated ~$440 cash at the door — exact price TBA
   is_estimated_pricing: true
   category_tags:
-  - hacking
-  - community
+    - hacking
+    - community
   data_confidence: medium
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 3
   airfare_cost_min: 180
   airfare_cost_max: 350
@@ -620,22 +620,22 @@
   name: AppSec USA 2026 (OWASP)
   slug: appsec-usa-2026
   short_description: OWASP's flagship North American application security conference.
-  start_date: '2026-09-14'
-  end_date: '2026-09-17'
+  start_date: "2026-09-14"
+  end_date: "2026-09-17"
   city: San Jose
   state: CA
   venue: TBD
   website_url: https://owasp.org/events/
-  cfp_url: ''
+  cfp_url: ""
   registration_cost_min: 495
   registration_cost_max: 1295
   registration_cost_notes: Estimated — community to full pass
   is_estimated_pricing: true
   category_tags:
-  - enterprise
-  - training
+    - enterprise
+    - training
   data_confidence: low
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 3
   airfare_cost_min: 200
   airfare_cost_max: 380
@@ -650,22 +650,22 @@
   slug: toorcon-2026
   short_description: San Diego hacker conference focused on technical research and
     community.
-  start_date: '2026-09-18'
-  end_date: '2026-09-20'
+  start_date: "2026-09-18"
+  end_date: "2026-09-20"
   city: San Diego
   state: CA
   venue: TBD
   website_url: https://toorcon.net/
-  cfp_url: ''
+  cfp_url: ""
   registration_cost_min: 75
   registration_cost_max: 175
   registration_cost_notes: Estimated
   is_estimated_pricing: true
   category_tags:
-  - hacking
-  - community
+    - hacking
+    - community
   data_confidence: low
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 2
   airfare_cost_min: 200
   airfare_cost_max: 380
@@ -679,22 +679,22 @@
   name: SecureWorld Philadelphia 2026
   slug: secureworld-philadelphia-2026
   short_description: Regional enterprise security conference with CPE-eligible sessions.
-  start_date: '2026-09-24'
-  end_date: '2026-09-25'
+  start_date: "2026-09-24"
+  end_date: "2026-09-25"
   city: Philadelphia
   state: PA
   venue: Greater Philadelphia Expo Center
   website_url: https://www.secureworldexpo.com/events/philadelphia
-  cfp_url: ''
+  cfp_url: ""
   registration_cost_min: 195
   registration_cost_max: 395
   registration_cost_notes: Estimated — full conference pass
   is_estimated_pricing: true
   category_tags:
-  - enterprise
-  - training
+    - enterprise
+    - training
   data_confidence: medium
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 1
   airfare_cost_min: 190
   airfare_cost_max: 350
@@ -708,22 +708,22 @@
   name: GrrCon 2026
   slug: grrcon-2026
   short_description: Midwest hacker and security community conference in Grand Rapids.
-  start_date: '2026-10-08'
-  end_date: '2026-10-09'
+  start_date: "2026-10-08"
+  end_date: "2026-10-09"
   city: Grand Rapids
   state: MI
   venue: DeVos Place Convention Center
   website_url: https://grrcon.com/
-  cfp_url: ''
+  cfp_url: ""
   registration_cost_min: 50
   registration_cost_max: 150
   registration_cost_notes: Estimated
   is_estimated_pricing: true
   category_tags:
-  - hacking
-  - community
+    - hacking
+    - community
   data_confidence: medium
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 1
   airfare_cost_min: 180
   airfare_cost_max: 320
@@ -738,23 +738,23 @@
   slug: wild-west-hackin-fest-2026
   short_description: Unique security conference in Deadwood, South Dakota with a Western
     theme.
-  start_date: '2026-10-20'
-  end_date: '2026-10-23'
+  start_date: "2026-10-20"
+  end_date: "2026-10-23"
   city: Deadwood
   state: SD
   venue: Deadwood Mountain Grand Hotel
   website_url: https://wildwesthackinfest.com/
-  cfp_url: ''
+  cfp_url: ""
   registration_cost_min: 349
   registration_cost_max: 499
   registration_cost_notes: Estimated — all-inclusive event
   is_estimated_pricing: true
   category_tags:
-  - hacking
-  - community
-  - training
+    - hacking
+    - community
+    - training
   data_confidence: medium
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 3
   airfare_cost_min: 250
   airfare_cost_max: 450
@@ -769,22 +769,22 @@
   slug: sans-cyber-defense-2026
   short_description: SANS summit focused on defensive security, blue team operations,
     and SOC.
-  start_date: '2026-11-09'
-  end_date: '2026-11-10'
+  start_date: "2026-11-09"
+  end_date: "2026-11-10"
   city: Washington
   state: DC
   venue: TBD
   website_url: https://www.sans.org/cyber-security-summit/cyber-defense/
-  cfp_url: ''
+  cfp_url: ""
   registration_cost_min: 595
   registration_cost_max: 995
   registration_cost_notes: Estimated — SANS summit pricing
   is_estimated_pricing: true
   category_tags:
-  - enterprise
-  - training
+    - enterprise
+    - training
   data_confidence: low
-  last_verified: '2026-03-14'
+  last_verified: "2026-03-14"
   conference_nights: 1
   airfare_cost_min: 180
   airfare_cost_max: 340

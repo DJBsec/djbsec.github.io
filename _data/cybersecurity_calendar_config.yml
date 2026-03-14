@@ -2,32 +2,32 @@ origin_airport: HOU
 origin_city: "Houston, TX"
 
 airfare_bands:
-  TX: { min: 80,  max: 180,  notes: "In-state" }
-  NV: { min: 180, max: 350,  notes: "Desert Southwest (LAS)" }
-  CA: { min: 200, max: 380,  notes: "West Coast" }
-  FL: { min: 150, max: 280,  notes: "Southeast" }
-  GA: { min: 150, max: 270,  notes: "Southeast (ATL)" }
-  NY: { min: 200, max: 380,  notes: "Northeast (JFK/LGA/EWR)" }
-  DC: { min: 180, max: 340,  notes: "Mid-Atlantic (DCA/IAD/BWI)" }
-  MA: { min: 210, max: 390,  notes: "Northeast (BOS)" }
-  IL: { min: 160, max: 300,  notes: "Midwest (ORD/MDW)" }
-  MI: { min: 180, max: 320,  notes: "Midwest (DTW)" }
-  OH: { min: 170, max: 310,  notes: "Midwest (CMH/CLE)" }
-  IN: { min: 180, max: 320,  notes: "Midwest (IND)" }
-  MN: { min: 170, max: 300,  notes: "Midwest (MSP)" }
-  WA: { min: 220, max: 400,  notes: "Pacific Northwest (SEA)" }
-  PA: { min: 190, max: 350,  notes: "Mid-Atlantic (PHL/PIT)" }
-  AZ: { min: 140, max: 260,  notes: "Desert Southwest (PHX)" }
-  LA: { min: 80,  max: 160,  notes: "Near-Gulf (MSY)" }
-  SD: { min: 250, max: 450,  notes: "Northern Plains (RAP/BIS)" }
-  CO: { min: 160, max: 290,  notes: "Mountain West (DEN)" }
-  OR: { min: 220, max: 390,  notes: "Pacific Northwest (PDX)" }
-  MD: { min: 180, max: 340,  notes: "Mid-Atlantic (BWI)" }
-  VA: { min: 180, max: 330,  notes: "Mid-Atlantic (DCA/IAD)" }
-  NC: { min: 160, max: 290,  notes: "Southeast (CLT/RDU)" }
-  SC: { min: 160, max: 290,  notes: "Southeast (CHS/GSP)" }
-  TN: { min: 150, max: 270,  notes: "Southeast (BNA/MEM)" }
-  MO: { min: 150, max: 270,  notes: "Midwest (STL/MCI)" }
+  TX: { min: 80, max: 180, notes: "In-state" }
+  NV: { min: 180, max: 350, notes: "Desert Southwest (LAS)" }
+  CA: { min: 200, max: 380, notes: "West Coast" }
+  FL: { min: 150, max: 280, notes: "Southeast" }
+  GA: { min: 150, max: 270, notes: "Southeast (ATL)" }
+  NY: { min: 200, max: 380, notes: "Northeast (JFK/LGA/EWR)" }
+  DC: { min: 180, max: 340, notes: "Mid-Atlantic (DCA/IAD/BWI)" }
+  MA: { min: 210, max: 390, notes: "Northeast (BOS)" }
+  IL: { min: 160, max: 300, notes: "Midwest (ORD/MDW)" }
+  MI: { min: 180, max: 320, notes: "Midwest (DTW)" }
+  OH: { min: 170, max: 310, notes: "Midwest (CMH/CLE)" }
+  IN: { min: 180, max: 320, notes: "Midwest (IND)" }
+  MN: { min: 170, max: 300, notes: "Midwest (MSP)" }
+  WA: { min: 220, max: 400, notes: "Pacific Northwest (SEA)" }
+  PA: { min: 190, max: 350, notes: "Mid-Atlantic (PHL/PIT)" }
+  AZ: { min: 140, max: 260, notes: "Desert Southwest (PHX)" }
+  LA: { min: 80, max: 160, notes: "Near-Gulf (MSY)" }
+  SD: { min: 250, max: 450, notes: "Northern Plains (RAP/BIS)" }
+  CO: { min: 160, max: 290, notes: "Mountain West (DEN)" }
+  OR: { min: 220, max: 390, notes: "Pacific Northwest (PDX)" }
+  MD: { min: 180, max: 340, notes: "Mid-Atlantic (BWI)" }
+  VA: { min: 180, max: 330, notes: "Mid-Atlantic (DCA/IAD)" }
+  NC: { min: 160, max: 290, notes: "Southeast (CLT/RDU)" }
+  SC: { min: 160, max: 290, notes: "Southeast (CHS/GSP)" }
+  TN: { min: 150, max: 270, notes: "Southeast (BNA/MEM)" }
+  MO: { min: 150, max: 270, notes: "Midwest (STL/MCI)" }
   DEFAULT: { min: 200, max: 400, notes: "Estimated domestic" }
 
 hotel_tiers:
@@ -42,7 +42,22 @@ hotel_tiers:
     nightly_max: 250
     notes: "Tier 2 — major metro"
   tier3:
-    cities: ["Dallas", "Austin", "Phoenix", "Denver", "Portland", "Nashville", "Charlotte", "Baltimore", "Orlando", "Detroit", "Indianapolis", "Columbus", "Grand Rapids"]
+    cities:
+      [
+        "Dallas",
+        "Austin",
+        "Phoenix",
+        "Denver",
+        "Portland",
+        "Nashville",
+        "Charlotte",
+        "Baltimore",
+        "Orlando",
+        "Detroit",
+        "Indianapolis",
+        "Columbus",
+        "Grand Rapids",
+      ]
     nightly_min: 100
     nightly_max: 200
     notes: "Tier 3 — secondary metro"

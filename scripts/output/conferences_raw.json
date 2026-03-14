@@ -15,10 +15,7 @@
     "registration_cost_max": 0,
     "registration_cost_notes": "Free community event",
     "is_estimated_pricing": false,
-    "category_tags": [
-      "community",
-      "hacking"
-    ],
+    "category_tags": ["community", "hacking"],
     "data_confidence": "medium",
     "last_verified": "2026-03-14"
   },
@@ -38,10 +35,7 @@
     "registration_cost_max": 200,
     "registration_cost_notes": "Estimated \u2014 lottery ticket system",
     "is_estimated_pricing": true,
-    "category_tags": [
-      "hacking",
-      "community"
-    ],
+    "category_tags": ["hacking", "community"],
     "data_confidence": "medium",
     "last_verified": "2026-03-14"
   },
@@ -61,10 +55,7 @@
     "registration_cost_max": 395,
     "registration_cost_notes": "Estimated \u2014 full conference pass",
     "is_estimated_pricing": true,
-    "category_tags": [
-      "enterprise",
-      "training"
-    ],
+    "category_tags": ["enterprise", "training"],
     "data_confidence": "medium",
     "last_verified": "2026-03-14"
   },
@@ -84,10 +75,7 @@
     "registration_cost_max": 995,
     "registration_cost_notes": "Estimated \u2014 SANS summit pricing",
     "is_estimated_pricing": true,
-    "category_tags": [
-      "enterprise",
-      "training"
-    ],
+    "category_tags": ["enterprise", "training"],
     "data_confidence": "low",
     "last_verified": "2026-03-14"
   },
@@ -107,10 +95,7 @@
     "registration_cost_max": 75,
     "registration_cost_notes": "Estimated \u2014 low-cost community event",
     "is_estimated_pricing": true,
-    "category_tags": [
-      "community",
-      "hacking"
-    ],
+    "category_tags": ["community", "hacking"],
     "data_confidence": "medium",
     "last_verified": "2026-03-14"
   },
@@ -130,10 +115,7 @@
     "registration_cost_max": 395,
     "registration_cost_notes": "Estimated \u2014 full conference pass",
     "is_estimated_pricing": true,
-    "category_tags": [
-      "enterprise",
-      "training"
-    ],
+    "category_tags": ["enterprise", "training"],
     "data_confidence": "medium",
     "last_verified": "2026-03-14"
   },
@@ -153,10 +135,7 @@
     "registration_cost_max": 2995,
     "registration_cost_notes": "Estimated \u2014 expo pass to full conference pass",
     "is_estimated_pricing": true,
-    "category_tags": [
-      "enterprise",
-      "training"
-    ],
+    "category_tags": ["enterprise", "training"],
     "data_confidence": "medium",
     "last_verified": "2026-03-14"
   },
@@ -176,9 +155,7 @@
     "registration_cost_max": 495,
     "registration_cost_notes": "Estimated",
     "is_estimated_pricing": true,
-    "category_tags": [
-      "enterprise"
-    ],
+    "category_tags": ["enterprise"],
     "data_confidence": "low",
     "last_verified": "2026-03-14"
   },
@@ -198,10 +175,7 @@
     "registration_cost_max": 250,
     "registration_cost_notes": "Estimated",
     "is_estimated_pricing": true,
-    "category_tags": [
-      "hacking",
-      "community"
-    ],
+    "category_tags": ["hacking", "community"],
     "data_confidence": "low",
     "last_verified": "2026-03-14"
   },
@@ -221,10 +195,7 @@
     "registration_cost_max": 150,
     "registration_cost_notes": "Estimated",
     "is_estimated_pricing": true,
-    "category_tags": [
-      "hacking",
-      "community"
-    ],
+    "category_tags": ["hacking", "community"],
     "data_confidence": "low",
     "last_verified": "2026-03-14"
   },
@@ -244,10 +215,7 @@
     "registration_cost_max": 150,
     "registration_cost_notes": "Estimated",
     "is_estimated_pricing": true,
-    "category_tags": [
-      "community",
-      "hacking"
-    ],
+    "category_tags": ["community", "hacking"],
     "data_confidence": "low",
     "last_verified": "2026-03-14"
   },
@@ -267,10 +235,7 @@
     "registration_cost_max": 395,
     "registration_cost_notes": "Estimated \u2014 full conference pass",
     "is_estimated_pricing": true,
-    "category_tags": [
-      "enterprise",
-      "training"
-    ],
+    "category_tags": ["enterprise", "training"],
     "data_confidence": "medium",
     "last_verified": "2026-03-14"
   },
@@ -290,10 +255,7 @@
     "registration_cost_max": 2500,
     "registration_cost_notes": "Estimated \u2014 premium offensive security conference",
     "is_estimated_pricing": true,
-    "category_tags": [
-      "hacking",
-      "training"
-    ],
+    "category_tags": ["hacking", "training"],
     "data_confidence": "low",
     "last_verified": "2026-03-14"
   },
@@ -313,10 +275,7 @@
     "registration_cost_max": 995,
     "registration_cost_notes": "Estimated \u2014 SANS summit pricing",
     "is_estimated_pricing": true,
-    "category_tags": [
-      "enterprise",
-      "training"
-    ],
+    "category_tags": ["enterprise", "training"],
     "data_confidence": "low",
     "last_verified": "2026-03-14"
   },
@@ -336,10 +295,7 @@
     "registration_cost_max": 175,
     "registration_cost_notes": "Estimated",
     "is_estimated_pricing": true,
-    "category_tags": [
-      "hacking",
-      "community"
-    ],
+    "category_tags": ["hacking", "community"],
     "data_confidence": "low",
     "last_verified": "2026-03-14"
   },
@@ -359,10 +315,7 @@
     "registration_cost_max": 150,
     "registration_cost_notes": "Estimated",
     "is_estimated_pricing": true,
-    "category_tags": [
-      "hacking",
-      "community"
-    ],
+    "category_tags": ["hacking", "community"],
     "data_confidence": "low",
     "last_verified": "2026-03-14"
   },
@@ -382,10 +335,7 @@
     "registration_cost_max": 50,
     "registration_cost_notes": "Estimated \u2014 low-cost regional event",
     "is_estimated_pricing": true,
-    "category_tags": [
-      "community",
-      "enterprise"
-    ],
+    "category_tags": ["community", "enterprise"],
     "data_confidence": "low",
     "last_verified": "2026-03-14"
   },
@@ -405,10 +355,7 @@
     "registration_cost_max": 1200,
     "registration_cost_notes": "Estimated \u2014 training-heavy event",
     "is_estimated_pricing": true,
-    "category_tags": [
-      "hacking",
-      "training"
-    ],
+    "category_tags": ["hacking", "training"],
     "data_confidence": "low",
     "last_verified": "2026-03-14"
   },
@@ -428,11 +375,7 @@
     "registration_cost_max": 5595,
     "registration_cost_notes": "Estimated \u2014 briefings + training combo",
     "is_estimated_pricing": true,
-    "category_tags": [
-      "enterprise",
-      "hacking",
-      "training"
-    ],
+    "category_tags": ["enterprise", "hacking", "training"],
     "data_confidence": "medium",
     "last_verified": "2026-03-14"
   },
@@ -452,10 +395,7 @@
     "registration_cost_max": 50,
     "registration_cost_notes": "Estimated \u2014 donation-based community event",
     "is_estimated_pricing": true,
-    "category_tags": [
-      "community",
-      "hacking"
-    ],
+    "category_tags": ["community", "hacking"],
     "data_confidence": "medium",
     "last_verified": "2026-03-14"
   },
@@ -475,10 +415,7 @@
     "registration_cost_max": 440,
     "registration_cost_notes": "Estimated ~$440 cash at the door \u2014 exact price TBA",
     "is_estimated_pricing": true,
-    "category_tags": [
-      "hacking",
-      "community"
-    ],
+    "category_tags": ["hacking", "community"],
     "data_confidence": "medium",
     "last_verified": "2026-03-14"
   },
@@ -498,10 +435,7 @@
     "registration_cost_max": 1295,
     "registration_cost_notes": "Estimated \u2014 community to full pass",
     "is_estimated_pricing": true,
-    "category_tags": [
-      "enterprise",
-      "training"
-    ],
+    "category_tags": ["enterprise", "training"],
     "data_confidence": "low",
     "last_verified": "2026-03-14"
   },
@@ -521,10 +455,7 @@
     "registration_cost_max": 175,
     "registration_cost_notes": "Estimated",
     "is_estimated_pricing": true,
-    "category_tags": [
-      "hacking",
-      "community"
-    ],
+    "category_tags": ["hacking", "community"],
     "data_confidence": "low",
     "last_verified": "2026-03-14"
   },
@@ -544,10 +475,7 @@
     "registration_cost_max": 395,
     "registration_cost_notes": "Estimated \u2014 full conference pass",
     "is_estimated_pricing": true,
-    "category_tags": [
-      "enterprise",
-      "training"
-    ],
+    "category_tags": ["enterprise", "training"],
     "data_confidence": "medium",
     "last_verified": "2026-03-14"
   },
@@ -567,10 +495,7 @@
     "registration_cost_max": 150,
     "registration_cost_notes": "Estimated",
     "is_estimated_pricing": true,
-    "category_tags": [
-      "hacking",
-      "community"
-    ],
+    "category_tags": ["hacking", "community"],
     "data_confidence": "medium",
     "last_verified": "2026-03-14"
   },
@@ -590,11 +515,7 @@
     "registration_cost_max": 499,
     "registration_cost_notes": "Estimated \u2014 all-inclusive event",
     "is_estimated_pricing": true,
-    "category_tags": [
-      "hacking",
-      "community",
-      "training"
-    ],
+    "category_tags": ["hacking", "community", "training"],
     "data_confidence": "medium",
     "last_verified": "2026-03-14"
   },
@@ -614,10 +535,7 @@
     "registration_cost_max": 995,
     "registration_cost_notes": "Estimated \u2014 SANS summit pricing",
     "is_estimated_pricing": true,
-    "category_tags": [
-      "enterprise",
-      "training"
-    ],
+    "category_tags": ["enterprise", "training"],
     "data_confidence": "low",
     "last_verified": "2026-03-14"
   }

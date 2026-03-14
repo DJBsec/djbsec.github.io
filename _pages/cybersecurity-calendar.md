@@ -46,6 +46,7 @@ nav_order: 2
 <div id="cal-output"></div>
 
 <!-- Conference quick-view modal -->
+
 {% include conference-modal.html %}
 
 <!-- Conference data injected via Liquid (XSS-safe via jsonify) -->

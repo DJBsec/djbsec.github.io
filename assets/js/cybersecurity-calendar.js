@@ -7,29 +7,17 @@
 
   function esc(s) {
     if (s == null) return "";
-    return String(s)
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#39;");
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
   }
 
   function parseDate(str) {
     if (!str) return null;
     var parts = str.split("-");
     if (parts.length !== 3) return null;
-    return new Date(
-      parseInt(parts[0], 10),
-      parseInt(parts[1], 10) - 1,
-      parseInt(parts[2], 10)
-    );
+    return new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
   }
 
-  var MONTH_NAMES = [
-    "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December",
-  ];
+  var MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   var DAY_ABBR = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   function formatDateRange(startStr, endStr) {
@@ -72,16 +60,16 @@
   // State
   // ---------------------------------------------------------------------------
   var state = {
-    view: "grid",           // "grid" | "agenda"
+    view: "grid", // "grid" | "agenda"
     currentYear: 2026,
-    currentMonth: 2,        // 0-indexed; clamped to 2–11 (Mar–Dec)
+    currentMonth: 2, // 0-indexed; clamped to 2–11 (Mar–Dec)
     search: "",
     filterState: "",
     filterCategory: "",
     conferences: [],
   };
 
-  var MIN_MONTH = 2;  // March
+  var MIN_MONTH = 2; // March
   var MAX_MONTH = 11; // December
 
   // ---------------------------------------------------------------------------
@@ -117,12 +105,12 @@
     if (!select || !window.AIRFARE_DATA) return;
 
     var regionLabels = {
-      south:     "South / Southwest",
+      south: "South / Southwest",
       northeast: "Northeast",
       southeast: "Southeast",
-      midwest:   "Midwest",
-      mountain:  "Mountain",
-      pacific:   "Pacific",
+      midwest: "Midwest",
+      mountain: "Mountain",
+      pacific: "Pacific",
     };
     var groups = {};
     var airports = window.AIRFARE_DATA.airports;
@@ -133,12 +121,14 @@
     });
 
     // Sort regions in display order
-    var regionOrder = ["south","northeast","southeast","midwest","mountain","pacific"];
+    var regionOrder = ["south", "northeast", "southeast", "midwest", "mountain", "pacific"];
     regionOrder.forEach(function (region) {
       if (!groups[region]) return;
       var optgroup = document.createElement("optgroup");
       optgroup.label = regionLabels[region] || region;
-      groups[region].sort(function (a, b) { return a.iata < b.iata ? -1 : 1; });
+      groups[region].sort(function (a, b) {
+        return a.iata < b.iata ? -1 : 1;
+      });
       groups[region].forEach(function (item) {
         var opt = document.createElement("option");
         opt.value = item.iata;
@@ -165,8 +155,8 @@
     if (window.AIRFARE_DATA) {
       airfare = window.AIRFARE_DATA.estimate(iata, conf.state);
     }
-    var airMin = airfare ? airfare.min : (conf.airfare_cost_min || 0);
-    var airMax = airfare ? airfare.max : (conf.airfare_cost_max || 0);
+    var airMin = airfare ? airfare.min : conf.airfare_cost_min || 0;
+    var airMax = airfare ? airfare.max : conf.airfare_cost_max || 0;
     var totalMin = (conf.registration_cost_min || 0) + airMin + (conf.hotel_cost_min || 0);
     var totalMax = (conf.registration_cost_max || 0) + airMax + (conf.hotel_cost_max || 0);
 
@@ -235,7 +225,10 @@
 
     // Reset to HOU each time modal opens
     if (airportSelect) airportSelect.value = "HOU";
-    if (airportCustom) { airportCustom.style.display = "none"; airportCustom.value = ""; }
+    if (airportCustom) {
+      airportCustom.style.display = "none";
+      airportCustom.value = "";
+    }
 
     // Initial costs with HOU
     getModalCosts(conf, "HOU");
@@ -245,9 +238,15 @@
       airportSelect.onchange = function () {
         var val = airportSelect.value;
         if (val === "__other__") {
-          if (airportCustom) { airportCustom.style.display = ""; airportCustom.focus(); }
+          if (airportCustom) {
+            airportCustom.style.display = "";
+            airportCustom.focus();
+          }
         } else {
-          if (airportCustom) { airportCustom.style.display = "none"; airportCustom.value = ""; }
+          if (airportCustom) {
+            airportCustom.style.display = "none";
+            airportCustom.value = "";
+          }
           getModalCosts(conf, val);
         }
       };
