@@ -794,3 +794,31 @@
   hotel_cost_notes: Estimated — Tier 1 — high-demand metro, 1 nights
   total_cost_min: 955
   total_cost_max: 1755
+- id: simplycybercon-2026
+  name: SimplyCyberCon 2026
+  slug: simplycybercon-2026
+  short_description: Community-focused cybersecurity conference at the beach — two tracks, hands-on sessions, and breakfast and lunch included. Both in-person and virtual options available.
+  start_date: "2026-11-08"
+  end_date: "2026-11-09"
+  city: Folly Beach
+  state: SC
+  venue: Tides Folly Beach
+  website_url: https://simplycybercon.org/
+  cfp_url: https://simplycybercon.org/
+  registration_cost_min: 40
+  registration_cost_max: 50
+  registration_cost_notes: "$40 early bird (until July 31), $50 general admission — meals included"
+  is_estimated_pricing: false
+  category_tags:
+    - community
+  data_confidence: high
+  last_verified: "2026-03-14"
+  conference_nights: 2
+  airfare_cost_min: 160
+  airfare_cost_max: 290
+  airfare_cost_notes: Estimated from HOU to CHS, economy
+  hotel_cost_min: 180
+  hotel_cost_max: 320
+  hotel_cost_notes: Estimated — Tier 4 — default, 2 nights
+  total_cost_min: 380
+  total_cost_max: 660
