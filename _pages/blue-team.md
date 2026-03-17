@@ -46,7 +46,7 @@ This page provides a curated set of **Blue Team tools** to support these defensi
     <tr>
       <td><strong>🎯 MITRE ATT&CK</strong></td>
       <td>Globally accessible knowledge base of adversary tactics, techniques, and procedures (TTPs) based on real-world observations — the standard framework for understanding and mapping attacker behavior</td>
-      <td><span class="badge bg-warning text-dark">Intel</span></td>
+      <td><span class="badge" style="background-color: #6c757d;">Intel</span></td>
       <td><a href="https://attack.mitre.org/" class="btn btn-sm btn-outline-warning" target="_blank" rel="noopener noreferrer">Open</a></td>
     </tr>
 
@@ -60,14 +60,14 @@ This page provides a curated set of **Blue Team tools** to support these defensi
     <tr>
       <td><strong>📡 IP Reputation</strong></td>
       <td>Query suspicious IPs against multiple threat intelligence sources (AbuseIPDB, VirusTotal, etc.)</td>
-      <td><span class="badge bg-warning text-dark">Intel</span></td>
+      <td><span class="badge" style="background-color: #6c757d;">Intel</span></td>
       <td><a href="/tools/ip-reputation" class="btn btn-sm btn-outline-warning">Open</a></td>
     </tr>
 
     <tr>
       <td><strong>🧭 OSINT Search</strong></td>
       <td>Quickly access OSINT and cybersecurity-focused search engines for threat intelligence gathering</td>
-      <td><span class="badge bg-warning text-dark">Intel</span></td>
+      <td><span class="badge" style="background-color: #6c757d;">Intel</span></td>
       <td><a href="/cybersearch/" class="btn btn-sm btn-outline-warning">Open</a></td>
     </tr>
 
@@ -128,7 +128,7 @@ This page provides a curated set of **Blue Team tools** to support these defensi
       <div class="card-body text-center">
         <h5 class="card-title">🕵️ Threat Intelligence</h5>
         <p class="card-text">OSINT tools and threat data aggregation for security research</p>
-        <span class="badge bg-warning text-dark">3 Active</span>
+        <span class="badge" style="background-color: #6c757d;">3 Active</span>
         <ul class="list-unstyled mt-2">
           <li>• OSINT Search</li>
           <li>• Threat Maps</li>
