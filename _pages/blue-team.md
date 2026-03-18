@@ -74,8 +74,8 @@ This page provides a curated set of **Blue Team tools** to support these defensi
     <tr>
       <td><strong>🗺️ Threat Maps</strong></td>
       <td>Visualize real-time threat activity and global attack telemetry from multiple security vendors</td>
-      <td><span class="badge bg-info">Visualization</span></td>
-      <td><a href="/maps/" class="btn btn-sm btn-outline-info">Open</a></td>
+      <td><span class="badge bg-primary">Visualization</span></td>
+      <td><a href="/maps/" class="btn btn-sm btn-outline-primary">Open</a></td>
     </tr>
 
 
