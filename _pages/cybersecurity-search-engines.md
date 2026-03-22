@@ -8,48 +8,105 @@ nav: false
 nav_order: 2
 ---
 
-## 🌐 Cybersecurity Search Engines
+<p class="page-description">Internet-wide scan platforms, threat intelligence engines, and OSINT databases.</p>
 
-Explore internet-wide scan platforms, threat intelligence engines, and OSINT databases:
+<div class="learn-grid">
+  <div class="djb-card">
+    <span class="chip chip--secondary">OSINT</span>
+    <p class="djb-card__title">Shodan</p>
+    <p class="djb-card__desc">Search exposed devices connected to the internet — the de facto standard for attack surface discovery.</p>
+    <a href="https://www.shodan.io/" class="home-section-header__link" target="_blank" rel="noopener noreferrer">Visit &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">OSINT</span>
+    <p class="djb-card__title">Censys</p>
+    <p class="djb-card__desc">Assess attack surfaces of internet-connected devices and services.</p>
+    <a href="https://censys.io/" class="home-section-header__link" target="_blank" rel="noopener noreferrer">Visit &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">Threat Intel</span>
+    <p class="djb-card__title">GreyNoise</p>
+    <p class="djb-card__desc">Contextualizes background noise from internet-wide scanning — filters signal from the noise.</p>
+    <a href="https://www.greynoise.io/" class="home-section-header__link" target="_blank" rel="noopener noreferrer">Visit &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">Vuln</span>
+    <p class="djb-card__title">Vulners</p>
+    <p class="djb-card__desc">Vulnerability search engine with CVE indexing and exploit tracking.</p>
+    <a href="https://vulners.com/" class="home-section-header__link" target="_blank" rel="noopener noreferrer">Visit &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">Threat Intel</span>
+    <p class="djb-card__title">Pulsedive</p>
+    <p class="djb-card__desc">Threat intelligence feeds, enrichment, and community-sourced IOC searches.</p>
+    <a href="https://pulsedive.com/" class="home-section-header__link" target="_blank" rel="noopener noreferrer">Visit &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">OSINT</span>
+    <p class="djb-card__title">IntelligenceX</p>
+    <p class="djb-card__desc">Search Tor, data leaks, domains, emails, and historical internet records.</p>
+    <a href="https://intelx.io/" class="home-section-header__link" target="_blank" rel="noopener noreferrer">Visit &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">OSINT</span>
+    <p class="djb-card__title">Hunter</p>
+    <p class="djb-card__desc">Find and verify email addresses associated with any domain.</p>
+    <a href="https://hunter.io/" class="home-section-header__link" target="_blank" rel="noopener noreferrer">Visit &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">OSINT</span>
+    <p class="djb-card__title">URLScan</p>
+    <p class="djb-card__desc">Scan and analyze websites — inspect behavior, resources, and outbound connections.</p>
+    <a href="https://urlscan.io/" class="home-section-header__link" target="_blank" rel="noopener noreferrer">Visit &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">OSINT</span>
+    <p class="djb-card__title">GrayHatWarfare</p>
+    <p class="djb-card__desc">Search publicly exposed Amazon S3 buckets for accidental data exposure.</p>
+    <a href="https://grayhatwarfare.com/" class="home-section-header__link" target="_blank" rel="noopener noreferrer">Visit &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">Threat Intel</span>
+    <p class="djb-card__title">LeakIX</p>
+    <p class="djb-card__desc">Search exposed services and publicly indexed sensitive data.</p>
+    <a href="https://leakix.net/" class="home-section-header__link" target="_blank" rel="noopener noreferrer">Visit &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">OSINT</span>
+    <p class="djb-card__title">crt.sh</p>
+    <p class="djb-card__desc">Search certificates logged by Certificate Transparency — great for subdomain discovery.</p>
+    <a href="https://crt.sh/" class="home-section-header__link" target="_blank" rel="noopener noreferrer">Visit &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">OSINT</span>
+    <p class="djb-card__title">Netlas</p>
+    <p class="djb-card__desc">Search and monitor external internet-facing assets and attack surfaces.</p>
+    <a href="https://netlas.io/" class="home-section-header__link" target="_blank" rel="noopener noreferrer">Visit &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">Threat Intel</span>
+    <p class="djb-card__title">Binary Edge</p>
+    <p class="djb-card__desc">Scans the internet for threat intelligence and exposes attack surface data.</p>
+    <a href="https://www.binaryedge.io/" class="home-section-header__link" target="_blank" rel="noopener noreferrer">Visit &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">Code</span>
+    <p class="djb-card__title">Grep App</p>
+    <p class="djb-card__desc">Search across open-source GitHub repositories for code patterns and secrets.</p>
+    <a href="https://grep.app/" class="home-section-header__link" target="_blank" rel="noopener noreferrer">Visit &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">OSINT</span>
+    <p class="djb-card__title">PublicWWW</p>
+    <p class="djb-card__desc">Search websites by HTML, JavaScript, and CSS source code fingerprints.</p>
+    <a href="https://publicwww.com/" class="home-section-header__link" target="_blank" rel="noopener noreferrer">Visit &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">OSINT</span>
+    <p class="djb-card__title">ZoomEye</p>
+    <p class="djb-card__desc">Internet-wide scanner for threat research and device fingerprinting.</p>
+    <a href="https://www.zoomeye.org/" class="home-section-header__link" target="_blank" rel="noopener noreferrer">Visit &rarr;</a>
+  </div>
+</div>
 
-<table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
-  <thead>
-    <tr style="background-color: #222; color: white;">
-      <th style="padding: 0.5rem;">🔍 Tool</th>
-      <th style="padding: 0.5rem;">📝 Description</th>
-      <th style="padding: 0.5rem;">🚀 Launch</th>
-    </tr>
-  </thead>
-  <tbody>
-
-    <tr><td>Binary Edge</td><td>Scans the internet for threat intelligence</td><td><a href="https://www.binaryedge.io/" target="_blank">Visit</a></td></tr>
-    <tr><td>Censys</td><td>Assess attack surfaces of internet-connected devices</td><td><a href="https://censys.io/" target="_blank">Visit</a></td></tr>
-    <tr><td>crt.sh</td><td>Search for certs logged by Certificate Transparency</td><td><a href="https://crt.sh/" target="_blank">Visit</a></td></tr>
-    <tr><td>Extension Total</td><td>Analyze browser extensions for risk and compliance</td><td><a href="https://www.extensiontotal.com/" target="_blank">Visit</a></td></tr>
-    <tr><td>Fofa</td><td>Search for global threat intelligence (Chinese platform)</td><td><a href="https://en.fofa.info/" target="_blank">Visit</a></td></tr>
-    <tr><td>FullHunt</td><td>Search and discover attack surfaces and exposures</td><td><a href="https://fullhunt.io/" target="_blank">Visit</a></td></tr>
-    <tr><td>GrayHatWarfare</td><td>Search publicly exposed Amazon S3 buckets</td><td><a href="https://grayhatwarfare.com/" target="_blank">Visit</a></td></tr>
-    <tr><td>Grep App</td><td>Search across open-source GitHub repositories</td><td><a href="https://grep.app/" target="_blank">Visit</a></td></tr>
-    <tr><td>GreyNoise</td><td>Contextualizes background noise from internet scans</td><td><a href="https://www.greynoise.io/" target="_blank">Visit</a></td></tr>
-    <tr><td>Hunter</td><td>Find email addresses associated with domains</td><td><a href="https://hunter.io/" target="_blank">Visit</a></td></tr>
-    <tr><td>IntelligenceX</td><td>Search Tor, leaks, domains, and historical records</td><td><a href="https://intelx.io/" target="_blank">Visit</a></td></tr>
-    <tr><td>LeakIX</td><td>Search exposed services and publicly indexed data</td><td><a href="https://leakix.net/" target="_blank">Visit</a></td></tr>
-    <tr><td>Netlas</td><td>Search and monitor external internet-facing assets</td><td><a href="https://netlas.io/" target="_blank">Visit</a></td></tr>
-    <tr><td>ONYPHE</td><td>Cyber threat intelligence & data exposure search</td><td><a href="https://www.onyphe.io/" target="_blank">Visit</a></td></tr>
-    <tr><td>Packet Storm Security</td><td>Browse security tools, exploits, and advisories</td><td><a href="https://packetstormsecurity.com/" target="_blank">Visit</a></td></tr>
-    <tr><td>PublicWWW</td><td>Search websites by HTML, JS, CSS fingerprints</td><td><a href="https://publicwww.com/" target="_blank">Visit</a></td></tr>
-    <tr><td>Pulsedive</td><td>Threat intelligence feeds, enrichment, and searches</td><td><a href="https://pulsedive.com/" target="_blank">Visit</a></td></tr>
-    <tr><td>Shodan</td><td>Search exposed devices connected to the internet</td><td><a href="https://www.shodan.io/" target="_blank">Visit</a></td></tr>
-    <tr><td>URLScan</td><td>Scan websites to analyze behavior and resources</td><td><a href="https://urlscan.io/" target="_blank">Visit</a></td></tr>
-    <tr><td>Vulners</td><td>Vulnerability search engine with CVE indexing</td><td><a href="https://vulners.com/" target="_blank">Visit</a></td></tr>
-    <tr><td>Wigle</td><td>Database of wireless networks and geolocation</td><td><a href="https://www.wigle.net/" target="_blank">Visit</a></td></tr>
-    <tr><td>ZoomEye</td><td>Internet-wide scanner for threat research</td><td><a href="https://www.zoomeye.org/" target="_blank">Visit</a></td></tr>
-
-  </tbody>
-</table>
-
----
-
-<p style="margin-top: 2rem;">
-  🔙 <a href="/blue-team/">Back to Blue Team Tools</a>
-</p>
+<p style="margin-top: 2rem;"><a href="/blue-team/" class="home-section-header__link">&larr; Back to Blue Team Tools</a></p>
