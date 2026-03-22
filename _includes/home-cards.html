@@ -55,7 +55,7 @@
   <div class="djb-card">
     <span class="chip chip--calendar">Calendar</span>
     <p class="djb-card__title">{{ next_conf.name }}</p>
-    <p class="djb-card__desc">{{ next_conf.city }}, {{ next_conf.state }} &middot; {{ next_conf.start_date | date: "%b %-d" }}–{{ next_conf.end_date | date: "%-d" }} &middot; Est. ${{ next_conf.total_cost_min | ceil }}–${{ next_conf.total_cost_max | ceil }} from Houston</p>
+    <p class="djb-card__desc">{{ next_conf.city }}, {{ next_conf.state }} &middot; {{ next_conf.start_date | date: "%b %-d" }}–{{ next_conf.end_date | date: "%-d" }} &middot; Est. ${{ next_conf.total_cost_min | ceil }}–${{ next_conf.total_cost_max | ceil }}</p>
     <a href="{{ '/cybersecurity-calendar/' | relative_url }}" class="home-section-header__link" style="display:inline-block; margin-top: 10px; font-size: 0.78rem;">Full calendar &rarr;</a>
   </div>
   {% endif %}

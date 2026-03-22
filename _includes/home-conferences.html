@@ -18,7 +18,7 @@
     <span class="conf-card__badge">{{ conf.start_date | date: "%b %-d" }}–{{ conf.end_date | date: "%-d" }}</span>
     <p class="conf-card__name">{{ conf.name }}</p>
     <p class="conf-card__location">{{ conf.city }}, {{ conf.state }}</p>
-    <p class="conf-card__cost">~${{ conf.total_cost_min | ceil }}–${{ conf.total_cost_max | ceil }} from HOU &middot; {{ conf.category_tags | first | capitalize }}</p>
+    <p class="conf-card__cost">~${{ conf.total_cost_min | ceil }}–${{ conf.total_cost_max | ceil }} &middot; {{ conf.category_tags | first | capitalize }}</p>
   </div>
   {% endfor %}
 </div>
