@@ -44,7 +44,7 @@ rss_icon: true
 # -----------------------------------------------------------------------------
 
 navbar_fixed: true
-footer_fixed: true
+footer_fixed: false
 search_enabled: true
 socials_in_search: true
 bib_search: true
@@ -345,7 +345,7 @@ enable_publication_thumbnails: true
 # These are the defaults
 external_links:
   enabled: true
-  rel: external nofollow noopener
+  rel: external nofollow noopener noreferrer
   target: _blank
   exclude:
 
@@ -449,7 +449,7 @@ third_party_libraries:
     version: "5.5.0"
   google_fonts:
     url:
-      fonts: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&display=swap"
+      fonts: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Material+Icons&display=swap"
   highlightjs:
     integrity:
       css:

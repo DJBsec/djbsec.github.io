@@ -73,6 +73,16 @@
     width: $back-to-top-width;
     z-index: $back-to-top-z-index;
   }
+
+  // Token aliases — new components use --color-* directly;
+  // existing components continue using --global-* which points here.
+  --global-bg-color: var(--color-surface);
+  --global-text-color: var(--color-ink);
+  --global-text-color-light: var(--color-ink-muted);
+  --global-theme-color: var(--color-accent);
+  --global-hover-color: var(--color-accent);
+  --global-card-bg-color: var(--color-surface-raised);
+  --global-divider-color: var(--color-surface-border);
 }
 
 html[data-theme="dark"] {
@@ -119,6 +129,14 @@ html[data-theme="dark"] {
   .only-dark {
     display: block;
   }
+
+  --global-bg-color: var(--color-surface);
+  --global-text-color: var(--color-ink);
+  --global-text-color-light: var(--color-ink-muted);
+  --global-theme-color: var(--color-accent);
+  --global-hover-color: var(--color-accent);
+  --global-card-bg-color: var(--color-surface-raised);
+  --global-divider-color: var(--color-surface-border);
 }
 
 html[data-theme-setting="dark"] {

@@ -1,0 +1,63 @@
+{% assign latest_post = site.posts | first %}
+{% assign explained_posts = site.explained | sort: 'date' | reverse %}
+{% assign explained_post = explained_posts | first %}
+{% assign next_conf = site.data.cybersecurity_calendar | sort: 'start_date' | first %}
+
+<div class="home-section-header">
+  <span class="home-section-header__title">Latest Briefing</span>
+  <a href="{{ '/blog/' | relative_url }}" class="home-section-header__link">All posts &rarr;</a>
+</div>
+
+<div class="home-priority-grid">
+
+  <!-- Featured card -->
+  <div class="home-priority-grid__featured">
+    <div class="djb-card djb-card--featured">
+      <div class="djb-card--featured-inner">
+        <div>
+          <span class="chip chip--news">CyberNews</span>
+          <p class="djb-card__date mono">{{ latest_post.date | date: "%Y-%m-%d" }}</p>
+          <p class="djb-card__title">{{ latest_post.title }}</p>
+          <p class="djb-card__desc">{{ latest_post.description | default: latest_post.content | strip_html | truncatewords: 28 }}</p>
+          <a href="{{ latest_post.url | relative_url }}" class="btn-djb-primary" style="margin-top: 14px; font-size: 0.78rem; padding: 7px 14px;">Read briefing &rarr;</a>
+        </div>
+        <div>
+          <!-- Phase A: static CVE placeholder. Phase B: pull from post front matter. -->
+          <div class="cve-row">
+            <div>Ivanti Connect Secure — RCE</div>
+            <div class="cve-row__meta">EPSS 0.94 &middot; CVSS 9.8 &middot; KEV</div>
+          </div>
+          <div class="cve-row">
+            <div>Fortinet FortiOS — Auth Bypass</div>
+            <div class="cve-row__meta">EPSS 0.87 &middot; CVSS 9.1 &middot; KEV</div>
+          </div>
+          <div class="cve-row">
+            <div>Palo Alto PAN-OS — DoS</div>
+            <div class="cve-row__meta">EPSS 0.61 &middot; CVSS 7.5 &middot; KEV</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Secondary card: Explained -->
+  {% if explained_post %}
+  <div class="djb-card">
+    <span class="chip chip--learn">Explained</span>
+    <p class="djb-card__title">{{ explained_post.title }}</p>
+    <p class="djb-card__desc">{{ explained_post.description | default: explained_post.content | strip_html | truncatewords: 20 }}</p>
+    <a href="{{ explained_post.url | relative_url }}" class="home-section-header__link" style="display:inline-block; margin-top: 10px; font-size: 0.78rem;">Read more &rarr;</a>
+  </div>
+  {% endif %}
+
+  <!-- Secondary card: Calendar -->
+  {% if next_conf %}
+  <div class="djb-card">
+    <span class="chip chip--calendar">Calendar</span>
+    <p class="djb-card__title">{{ next_conf.name }}</p>
+    <p class="djb-card__desc">{{ next_conf.city }}, {{ next_conf.state }} &middot; {{ next_conf.start_date | date: "%b %-d" }}–{{ next_conf.end_date | date: "%-d" }} &middot; Est. ${{ next_conf.total_cost_min | ceil }}–${{ next_conf.total_cost_max | ceil }}</p>
+    <a href="{{ '/cybersecurity-calendar/' | relative_url }}" class="home-section-header__link" style="display:inline-block; margin-top: 10px; font-size: 0.78rem;">Full calendar &rarr;</a>
+  </div>
+  {% endif %}
+
+</div>

@@ -1,0 +1,25 @@
+---
+layout: default
+---
+{% include home-hero.html %}
+{% include home-cards.html %}
+{% include home-conferences.html %}
+
+<footer class="home-footer" role="contentinfo">
+  <div class="home-footer__inner">
+    <div>
+      <p class="home-footer__brand">DJBSec</p>
+      <p class="home-footer__tagline">Security intelligence, daily.</p>
+    </div>
+    <ul class="home-footer__links">
+      <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+      <li><a href="{{ '/cybersecurity-explained/' | relative_url }}">Explained</a></li>
+      <li><a href="{{ '/blue-team/' | relative_url }}">Blue Team</a></li>
+      <li><a href="{{ '/cybersecurity-calendar/' | relative_url }}">Calendar</a></li>
+    </ul>
+    <div class="home-footer__meta">
+      CISSP &middot; 25+ yrs<br>
+      &copy; {{ site.time | date: '%Y' }} {{ site.first_name }} {{ site.last_name }}
+    </div>
+  </div>
+</footer>

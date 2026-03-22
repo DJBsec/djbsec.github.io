@@ -1,0 +1,27 @@
+// _sass/_tokens.scss
+// Single source of truth for all design tokens.
+// Light values in :root, dark overrides in html[data-theme="dark"].
+
+:root {
+  --color-surface: #ffffff;
+  --color-surface-raised: #f8f8fb;
+  --color-surface-border: #e4e6ed;
+  --color-ink: #1a1a2e;
+  --color-ink-muted: #6b7280;
+  --color-accent: #0057ff;
+  --color-accent-subtle: #eff4ff;
+  --color-severity-critical: #dc2626;
+  --color-severity-high: #d97706;
+}
+
+html[data-theme="dark"] {
+  --color-surface: #0f1117;
+  --color-surface-raised: #1a1f2e;
+  --color-surface-border: #2a3040;
+  --color-ink: #e2e8f0;
+  --color-ink-muted: #94a3b8;
+  --color-accent: #3b82f6;
+  --color-accent-subtle: #1e2a4a;
+  --color-severity-critical: #ef4444;
+  --color-severity-high: #f59e0b;
+}
