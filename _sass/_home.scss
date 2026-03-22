@@ -1,1 +1,219 @@
-// placeholder — styles added in subsequent tasks
+// _sass/_home.scss
+// Layout styles for the homepage only: hero, section headers, grids, footer.
+
+// ── Hero ────────────────────────────────────────────────────────────────────
+.home-hero {
+  border-bottom: 1px solid var(--color-surface-border);
+  padding: 56px 0 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    padding: 36px 0 32px;
+  }
+}
+
+.home-hero__headline {
+  h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 18px;
+
+    @media (max-width: 768px) { font-size: 2rem; }
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: var(--color-ink-muted);
+    line-height: 1.7;
+    margin-bottom: 28px;
+    max-width: 420px;
+  }
+}
+
+.home-hero__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+// Bio panel (right column of hero)
+.home-bio-panel {
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-surface-border);
+  border-radius: 6px;
+  padding: 24px;
+
+  &__label {
+    font-family: $font-mono;
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-accent);
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-surface-border);
+  }
+
+  &__text {
+    font-size: 0.85rem;
+    color: var(--color-ink-muted);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+}
+
+.home-cred-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.home-cred-tile {
+  background: var(--color-surface);
+  border: 1px solid var(--color-surface-border);
+  border-left: 3px solid var(--color-accent);
+  padding: 10px 12px;
+
+  &__label { font-family: $font-mono; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-ink-muted); margin-bottom: 2px; }
+  &__value { font-family: $font-display; font-size: 0.95rem; font-weight: 700; color: var(--color-ink); }
+}
+
+// ── Section header ───────────────────────────────────────────────────────────
+.home-section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--color-ink);
+  padding-bottom: 8px;
+  margin-bottom: 24px;
+  margin-top: 48px;
+
+  &__title { font-family: $font-display; font-size: 1.3rem; font-weight: 700; color: var(--color-ink); letter-spacing: -0.02em; }
+  &__link  { font-size: 0.75rem; font-weight: 600; color: var(--color-accent); text-decoration: none; &:hover { text-decoration: underline; } }
+}
+
+// ── Priority grid ────────────────────────────────────────────────────────────
+.home-priority-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 0;
+
+  @media (max-width: 640px) { grid-template-columns: 1fr; }
+}
+
+.home-priority-grid__featured {
+  grid-column: 1 / -1;
+}
+
+// ── Conference row ───────────────────────────────────────────────────────────
+.home-conf-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+
+  @media (max-width: 640px) { grid-template-columns: 1fr; }
+}
+
+// ── CTA buttons ──────────────────────────────────────────────────────────────
+.btn-djb-primary {
+  display: inline-block;
+  background: var(--color-accent);
+  color: #fff !important;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none !important;
+  border: none;
+  cursor: pointer;
+  min-height: 44px;
+  line-height: 24px;
+
+  &:hover { opacity: 0.9; }
+}
+
+.btn-djb-secondary {
+  display: inline-block;
+  color: var(--color-accent) !important;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: 1px solid var(--color-accent);
+  text-decoration: none !important;
+  background: transparent;
+  cursor: pointer;
+  min-height: 44px;
+  line-height: 24px;
+
+  &:hover { background: var(--color-accent-subtle); }
+}
+
+// ── Footer ───────────────────────────────────────────────────────────────────
+// The home footer lives inside default.liquid's .container wrapper, so we use
+// a negative-margin breakout to make it full-bleed across the viewport.
+.home-footer {
+  border-top: 2px solid var(--color-ink);
+  background: var(--color-ink);
+  padding: 32px 24px;
+  margin-top: 56px;
+  // Break out of default.liquid's .container to span full width:
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  width: 100vw;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  &__brand {
+    font-family: $font-display;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  &__tagline {
+    font-family: $font-mono;
+    font-size: 0.62rem;
+    color: rgba(255, 255, 255, 0.35);
+    margin-top: 2px;
+  }
+
+  &__links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    a { font-size: 0.75rem; color: rgba(255, 255, 255, 0.5); text-decoration: none; &:hover { color: #fff; } }
+  }
+
+  &__meta {
+    font-family: $font-mono;
+    font-size: 0.62rem;
+    color: rgba(255, 255, 255, 0.3);
+    text-align: right;
+  }
+}
+
+// Nav brand — Playfair Display
+.djb-nav-brand {
+  font-family: $font-display !important;
+  font-size: 1.1rem !important;
+  letter-spacing: -0.02em;
+}
