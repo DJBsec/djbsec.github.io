@@ -7,108 +7,40 @@ nav: false
 nav_order: 2
 ---
 
-<style>
-  .podcast-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-  }
-
-  .podcast-card {
-    background: #f9f9f9;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .podcast-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-  }
-
-  .podcast-card img {
-    max-width: 80px;
-    margin-bottom: 10px;
-  }
-
-  .podcast-card h3 {
-    margin: 10px 0 5px 0;
-    font-size: 1.1em;
-    color: #0077b6;
-  }
-
-  .podcast-card p {
-    font-size: 0.95em;
-    color: #333;
-  }
-
-  .podcast-card a {
-    text-decoration: none;
-    color: inherit;
-  }
-</style>
-
-## 🎧 Cybersecurity Podcasts
-
-Here are some of the **best cybersecurity podcasts** I recommend to stay sharp, aware, and inspired in the security field.
-
-<div class="podcast-grid">
-
-<!-- 🔽 Replace placeholder image URLs with actual podcast logos or your brand icons if desired -->
-
+<div class="learn-grid">
 {% assign podcasts = "
-401 Access Denied|https://www.itpro.tv/podcast/401-access-denied|IT security topics explained
-7 Minute Security|https://7ms.us|Short practical security lessons
-8th Layer Insights|https://8thlayerinsights.com|Human side of cybersecurity
-Absolute AppSec|https://absoluteappsec.com|Application security topics
-Breaking Down Security|https://brakeingsecurity.com|Security concepts and news
-Click Here|https://clickhereshow.com|Deep dives into security breaches
-Crypto-Gram Security Podcast|https://www.schneier.com/crypto-gram|Bruce Schneier's monthly digest
-Cyber Insecurity|https://www.cyberinsecurity.tv/|Candid security conversations
-Cyber Security Headlines|https://cisoseries.com/cyber-security-headlines|Daily news briefings
-Cyber Security Sauna|https://blog.f-secure.com/podcast|Interviews with security experts
-Cyber Work|https://www.infosecinstitute.com/podcast|Career development in security
-Cyberside Chats|https://cybersidechats.podbean.com|General security topics
-Darknet Diaries|https://darknetdiaries.com|Real stories from the dark side of the Internet
-Defrag This|https://www.ipswitch.com/podcasts|IT and security topics
-H4unt3d Hacker|https://h4unt3dhacker.podbean.com|Interviews with hackers and experts
-Hacker Valley Studio|https://hackervalley.com|Cybersecurity leadership and life
-Hacking Humans|https://thecyberwire.com/podcasts/hacking-humans|Social engineering and scams
-Identity at the Center|https://identityatthecenter.com|Identity and access management
-Malicious Life|https://malicious.life|History of cybersecurity
-Naked Security Podcast|https://nakedsecurity.sophos.com/category/podcast|Sophos security news
-Open Source Security Podcast|https://opensourcesecuritypodcast.com|Open source security topics
-Risky Business|https://risky.biz|Weekly security news and analysis
-Security Now|https://twit.tv/shows/security-now|Deep dives into security with Steve Gibson
-Security Weekly|https://www.securityweekly.com|Industry news and interviews
-Simply Cyber|https://www.simplycyber.io|Cyber career and skill development
-Smashing Security|https://www.smashingsecurity.com|Lighthearted take on security news
-Task Force 7|https://taskforce7radio.com|Enterprise cybersecurity topics
-The Cyberlaw Podcast|https://www.lawfareblog.com/topic/cyberlaw-podcast|Lawfare's cyberlaw analysis
-The Hacker Mind|https://thehackermind.com|Hacker stories and interviews
-The Privacy, Security, & OSINT Show|https://inteltechniques.com/podcast.html|Privacy and OSINT topics
-The Shared Security Show|https://sharedsecurity.net|Security and privacy for all
-The Shellsharks Podcast|https://shellsharks.com|General cybersecurity podcast
-The Social-Engineer Podcast|https://www.social-engineer.org/podcast|Social engineering insights
-The Virtual CISO Moment|https://anchor.fm/virtualcisomoment|CISO leadership discussions
-Unsupervised Learning|https://danielmiessler.com/podcast|Weekly curated security topics
-What The Shell|https://whattheshellpod.com|General infosec discussions
+401 Access Denied|https://www.itpro.tv/podcast/401-access-denied|IT security topics explained for practitioners
+7 Minute Security|https://7ms.us|Short practical security lessons — great for commutes
+8th Layer Insights|https://8thlayerinsights.com|The human side of cybersecurity
+Absolute AppSec|https://absoluteappsec.com|Application security deep dives
+Breaking Down Security|https://brakeingsecurity.com|Security concepts and current news
+Click Here|https://clickhereshow.com|Investigative journalism on major security breaches
+Crypto-Gram Security Podcast|https://www.schneier.com/crypto-gram|Bruce Schneier's monthly security digest
+Cyber Security Headlines|https://cisoseries.com/cyber-security-headlines|Daily briefings from the CISO Series
+Darknet Diaries|https://darknetdiaries.com|True crime stories from the dark side of the internet
+Hacker Valley Studio|https://hackervalley.com|Cybersecurity leadership and career development
+Hacking Humans|https://thecyberwire.com/podcasts/hacking-humans|Social engineering and phishing awareness
+Malicious Life|https://malicious.life|The untold history of cybersecurity
+Risky Business|https://risky.biz|Weekly news and analysis with Patrick Gray
+Security Now|https://twit.tv/shows/security-now|Deep technical security dives with Steve Gibson
+Security Weekly|https://www.securityweekly.com|Industry news and practitioner interviews
+Simply Cyber|https://www.simplycyber.io|Cyber career development and skill building
+Smashing Security|https://www.smashingsecurity.com|A lighthearted take on security news
+The Cyberlaw Podcast|https://www.lawfareblog.com/topic/cyberlaw-podcast|Lawfare's analysis of cyberlaw and policy
+The Hacker Mind|https://thehackermind.com|Stories and interviews from the hacker community
+The Privacy, Security, & OSINT Show|https://inteltechniques.com/podcast.html|Privacy, security, and OSINT techniques
+Unsupervised Learning|https://danielmiessler.com/podcast|Daniel Miessler's weekly curated security insights
 " | split: "
 " %}
-
 {% for line in podcasts %}
 {% assign parts = line | split: "|" %}
-
-  <div class="podcast-card">
-    <a href="{{ parts[1] }}" target="_blank">
-     <!-- <img src="https://via.placeholder.com/80?text=🎧" alt="{{ parts[0] }} Logo"> -->
-      <h3>{{ parts[0] }}</h3>
-      <p>{{ parts[2] }}</p>
-    </a>
+{% if parts[0] != "" %}
+  <div class="djb-card">
+    <span class="chip chip--secondary">Podcast</span>
+    <p class="djb-card__title">{{ parts[0] }}</p>
+    <p class="djb-card__desc">{{ parts[2] }}</p>
+    <a href="{{ parts[1] }}" class="home-section-header__link" target="_blank" rel="noopener noreferrer">Listen &rarr;</a>
   </div>
+{% endif %}
 {% endfor %}
-
 </div>
