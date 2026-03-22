@@ -668,7 +668,8 @@ footer.sticky-bottom {
       border-color: rgba($red-color, 0.4);
       color: $red-color;
 
-      &:hover {
+      &:hover,
+      &.active {
         background: rgba($red-color, 0.08);
         border-color: $red-color;
         color: $red-color;

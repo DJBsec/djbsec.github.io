@@ -109,4 +109,4 @@ nav_order: 2
   </div>
 </div>
 
-<p style="margin-top: 2rem;"><a href="/blue-team/" class="home-section-header__link">&larr; Back to Blue Team Tools</a></p>
+<p class="mt-4"><a href="/blue-team/" class="home-section-header__link">&larr; Back to Blue Team Tools</a></p>
