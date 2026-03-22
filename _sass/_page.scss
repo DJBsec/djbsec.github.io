@@ -1,0 +1,112 @@
+// _sass/_page.scss
+// Shared styles for all layout: page inner pages.
+
+// ── Page header ──────────────────────────────────────────────────────────────
+.post-title {
+  font-family: $font-display;
+  font-weight: 800;
+  color: var(--color-ink);
+  letter-spacing: -0.02em;
+}
+
+.page-eyebrow {
+  font-family: $font-mono;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-accent);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.page-description {
+  color: var(--color-ink-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.page-divider {
+  border: none;
+  border-top: 1px solid var(--color-surface-border);
+  margin: 24px 0 40px;
+}
+
+// ── Section header (matches .home-section-header pattern) ────────────────────
+.page-section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--color-ink);
+  padding-bottom: 8px;
+  margin-bottom: 24px;
+  margin-top: 48px;
+
+  &__title {
+    font-family: $font-display;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-ink);
+    letter-spacing: -0.02em;
+  }
+}
+
+// ── Token table (replaces Bootstrap .table-dark header) ──────────────────────
+.page-token-table {
+  width: 100%;
+
+  thead tr {
+    background: var(--color-surface-raised);
+    color: var(--color-ink);
+  }
+
+  th, td {
+    border-color: var(--color-surface-border) !important;
+    color: var(--color-ink);
+  }
+
+  .badge {
+    font-family: $font-mono;
+    font-size: 0.6rem;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+  }
+}
+
+// ── Chip secondary (neutral, for Learn sub-pages) ────────────────────────────
+// Used on Books, Podcasts, Maps, Platforms, Search Engines pages.
+.chip--secondary {
+  background: var(--color-surface-raised);
+  color: var(--color-ink-muted);
+  border: 1px solid var(--color-surface-border);
+}
+
+// ── Learn grid (2-col responsive card grid) ──────────────────────────────────
+// Used by all 5 Learn sub-pages. Class name must appear in rebuilt HTML.
+.learn-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 40px;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ── Repo card wrapper ─────────────────────────────────────────────────────────
+.repo-card {
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-surface-border);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: border-color 0.15s ease;
+
+  &:hover {
+    border-color: var(--color-accent);
+  }
+
+  img {
+    width: 100%;
+    display: block;
+  }
+}

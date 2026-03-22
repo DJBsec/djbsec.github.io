@@ -10,9 +10,11 @@ layout: default
 
 <div class="post">
   <header class="post-header">
+    {% if page.eyebrow %}<span class="page-eyebrow">{{ page.eyebrow }}</span>{% endif %}
     <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-description">{{ page.description }}</p>
+    {% if page.description %}<p class="page-description">{{ page.description }}</p>{% endif %}
   </header>
+  <hr class="page-divider">
 
   {% if page.collection == 'explained' %}
     <a href="{{ '/explained/' | relative_url }}" class="explained-back-btn"> <i class="ti ti-arrow-left"></i> Back to Cybersecurity Explained </a>
