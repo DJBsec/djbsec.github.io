@@ -1,1 +1,66 @@
-// placeholder — styles added in subsequent tasks
+// _sass/_typography.scss
+// Playfair Display for headings, IBM Plex Mono for metadata/labels.
+
+// Heading font — applied globally
+h1, h2, h3 {
+  font-family: $font-display;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+
+h1 { font-weight: 800; }
+h2 { font-weight: 700; }
+h3 { font-weight: 700; }
+
+// Metadata utility class — dates, tags, badges, EPSS scores
+.mono {
+  font-family: $font-mono;
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+}
+
+// Eyebrow label — uppercase mono with accent color
+.eyebrow {
+  font-family: $font-mono;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-accent);
+}
+
+// Section line — decorative rule with inline text
+.section-line {
+  font-family: $font-mono;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-ink-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-accent);
+    flex-shrink: 0;
+  }
+}
+
+// Chip — category pill for cards
+.chip {
+  font-family: $font-mono;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 2px 7px;
+  border-radius: 2px;
+  display: inline-block;
+
+  &--news    { background: var(--color-accent); color: #fff; }
+  &--learn   { background: #e8f5e9; color: #1b5e20; }
+  &--tool    { background: #fff3e0; color: #e65100; }
+  &--calendar{ background: #f3e5f5; color: #4a148c; }
+}
