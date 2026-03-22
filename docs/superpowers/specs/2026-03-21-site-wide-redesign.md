@@ -19,17 +19,20 @@
 ## Foundation (pre-agent, sequential)
 
 **Files:**
+
 - New: `_sass/_page.scss`
 - New (stub): `_sass/_learn.scss` — create as an empty file with a comment placeholder so the `main.scss` import does not break the build before Agent C fills it
 - Modify: `_layouts/page.liquid`
 - Modify: `assets/css/main.scss` — add `"learn"` to the `@import` list
 
 **`page.liquid` changes:**
+
 - Wrap the description line in a guard: `{% if page.description %}<p class="page-description">{{ page.description }}</p>{% endif %}` — prevents an empty `<p>` tag on pages with no `description` front matter (e.g., tools sub-pages)
 - Add `.page-eyebrow` span above the `h1` if `page.eyebrow` front matter is set (optional — not required by every page)
 - Add `<hr class="page-divider">` below the header block
 
 **`_page.scss` styles:**
+
 - `.post-title` — Playfair Display, weight 800, `--color-ink`, letter-spacing -0.02em
 - `.page-eyebrow` — IBM Plex Mono, `--color-accent`, 0.68rem, uppercase, 0.14em tracking
 - `.page-description` — `--color-ink-muted`, 0.95rem, line-height 1.6
@@ -109,6 +112,7 @@
 **`_sass/_learn.scss`** — Agent C fills this file. The stub was created by the pre-work step. All new class names defined here must appear literally in at least one of the five rebuilt page files (PurgeCSS requirement).
 
 **Shared template pattern for all five pages:**
+
 - Page header via `_page.scss` foundation (already handled by `page.liquid` + `_page.scss`)
 - Resources grouped into sections using `.page-section-header` divider titles (matching the existing categories/headings in the current page)
 - Each resource: `.djb-card` with Playfair title (`djb-card__title`), `--color-ink-muted` description (`djb-card__desc`), `.chip.chip--secondary` for type, link styled as `.home-section-header__link`
@@ -117,13 +121,13 @@
 
 **Per-page chip labels aligned to actual current content:**
 
-| Page | Actual section headings (use these) | Chip label |
-|---|---|---|
-| **Books** (`cyber-books.md`) | Leadership Books / Story Books with Technical Backgrounds / Technical Books / Business Books | Leadership / Story / Technical / Business |
-| **Podcasts** (`cyber-podcasts-.md`) | Read page to determine actual categories | Use `.chip--secondary` for format type |
-| **Maps** (`cyber-maps.md`) | Read page to determine actual categories | Use `.chip--secondary` for map type |
-| **Learning Platforms** (`cyber-learning-platforms.md`) | Read page to determine actual categories | Free / Paid / Freemium |
-| **Search Engines** (`cybersecurity-search-engines.md`) | Read page to determine actual categories | OSINT / Vuln / Threat / Code |
+| Page                                                   | Actual section headings (use these)                                                          | Chip label                                |
+| ------------------------------------------------------ | -------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| **Books** (`cyber-books.md`)                           | Leadership Books / Story Books with Technical Backgrounds / Technical Books / Business Books | Leadership / Story / Technical / Business |
+| **Podcasts** (`cyber-podcasts-.md`)                    | Read page to determine actual categories                                                     | Use `.chip--secondary` for format type    |
+| **Maps** (`cyber-maps.md`)                             | Read page to determine actual categories                                                     | Use `.chip--secondary` for map type       |
+| **Learning Platforms** (`cyber-learning-platforms.md`) | Read page to determine actual categories                                                     | Free / Paid / Freemium                    |
+| **Search Engines** (`cybersecurity-search-engines.md`) | Read page to determine actual categories                                                     | OSINT / Vuln / Threat / Code              |
 
 **Agent C instruction:** Read each page fully before rebuilding. Preserve all existing links and content. Do not re-categorize content — map existing section headings to chip labels that fit naturally.
 
@@ -163,6 +167,7 @@
 ## Execution Plan
 
 **Step 0 — Pre-work (sequential, before agents launch):**
+
 1. Create `_sass/_learn.scss` stub (comment only)
 2. Add `"learn"` to `@import` list in `assets/css/main.scss`
 3. Create `_sass/_page.scss` with ALL styles it will ever need — including `.chip--secondary`, `.page-section-header`, `.learn-grid`, `.page-token-table`, `.page-divider`, and `.repo-card`. No agent writes to `_page.scss` after this point.
@@ -172,14 +177,15 @@
 
 **Step 1 — Parallel (4 sub-agents simultaneously after Step 0 commits):**
 
-| Agent | Pages | SCSS files touched |
-|---|---|---|
-| A | `blog.md`, `explained.md` | existing `.news-*` rules, existing `.explained-*` rules only |
-| B | `blue-team.md`, `red-team.md`, `ai-tools-prompts.md` | HTML only — all needed CSS already in `_page.scss` from Step 0 |
-| C | `cyber-books.md`, `cyber-podcasts-.md`, `cyber-maps.md`, `cyber-learning-platforms.md`, `cybersecurity-search-engines.md` | `_learn.scss` only |
-| D | `epss.md`, `cve_lookup.html`, `cybersecurity-calendar.md`, `_cybersecurity-calendar.scss`, `repositories.md`, `repo.liquid`, `repo_user.liquid` | `_cybersecurity-calendar.scss` only — all other CSS already in `_page.scss` from Step 0 |
+| Agent | Pages                                                                                                                                           | SCSS files touched                                                                      |
+| ----- | ----------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| A     | `blog.md`, `explained.md`                                                                                                                       | existing `.news-*` rules, existing `.explained-*` rules only                            |
+| B     | `blue-team.md`, `red-team.md`, `ai-tools-prompts.md`                                                                                            | HTML only — all needed CSS already in `_page.scss` from Step 0                          |
+| C     | `cyber-books.md`, `cyber-podcasts-.md`, `cyber-maps.md`, `cyber-learning-platforms.md`, `cybersecurity-search-engines.md`                       | `_learn.scss` only                                                                      |
+| D     | `epss.md`, `cve_lookup.html`, `cybersecurity-calendar.md`, `_cybersecurity-calendar.scss`, `repositories.md`, `repo.liquid`, `repo_user.liquid` | `_cybersecurity-calendar.scss` only — all other CSS already in `_page.scss` from Step 0 |
 
 **Each agent:**
+
 1. Read assigned files fully before making changes
 2. Make changes
 3. Run `JEKYLL_ENV=production bundle exec jekyll build 2>&1 | tail -5` — must show `done in X seconds` with no errors
@@ -191,24 +197,24 @@
 
 ## Files Changed Summary
 
-| File | Step | Change type |
-|---|---|---|
-| `_sass/_page.scss` | 0 only | New (complete — no agents write to this file) |
-| `_sass/_learn.scss` | 0 stub, C fills | New |
-| `_layouts/page.liquid` | 0 | Modify |
-| `assets/css/main.scss` | 0 | Add `_learn` import |
-| `_pages/blog.md` | A | CSS token align (SCSS only) |
-| `_pages/explained.md` | A | SCSS + minimal class additions |
-| `_pages/blue-team.md` | B | Selective HTML refactor |
-| `_pages/red-team.md` | B | Inline style removal only |
-| `_pages/ai-tools-prompts.md` | B | Selective HTML refactor (4 cards) |
-| `_pages/cyber-books.md` | C | Full HTML rebuild |
-| `_pages/cyber-podcasts-.md` | C | Full HTML rebuild |
-| `_pages/cyber-maps.md` | C | Full HTML rebuild |
-| `_pages/cyber-learning-platforms.md` | C | Full HTML rebuild |
-| `_pages/cybersecurity-search-engines.md` | C | Full HTML rebuild |
-| `_pages/epss.md` + `_includes/cve_lookup.html` | D | Token align |
-| `_pages/cybersecurity-calendar.md` | D | Token align |
-| `_sass/_cybersecurity-calendar.scss` | D | Token align (literals only) |
-| `_pages/repositories.md` | D | Token align |
-| `_includes/repository/repo.liquid` + `repo_user.liquid` | D | Add `repo-card` wrapper div |
+| File                                                    | Step            | Change type                                   |
+| ------------------------------------------------------- | --------------- | --------------------------------------------- |
+| `_sass/_page.scss`                                      | 0 only          | New (complete — no agents write to this file) |
+| `_sass/_learn.scss`                                     | 0 stub, C fills | New                                           |
+| `_layouts/page.liquid`                                  | 0               | Modify                                        |
+| `assets/css/main.scss`                                  | 0               | Add `_learn` import                           |
+| `_pages/blog.md`                                        | A               | CSS token align (SCSS only)                   |
+| `_pages/explained.md`                                   | A               | SCSS + minimal class additions                |
+| `_pages/blue-team.md`                                   | B               | Selective HTML refactor                       |
+| `_pages/red-team.md`                                    | B               | Inline style removal only                     |
+| `_pages/ai-tools-prompts.md`                            | B               | Selective HTML refactor (4 cards)             |
+| `_pages/cyber-books.md`                                 | C               | Full HTML rebuild                             |
+| `_pages/cyber-podcasts-.md`                             | C               | Full HTML rebuild                             |
+| `_pages/cyber-maps.md`                                  | C               | Full HTML rebuild                             |
+| `_pages/cyber-learning-platforms.md`                    | C               | Full HTML rebuild                             |
+| `_pages/cybersecurity-search-engines.md`                | C               | Full HTML rebuild                             |
+| `_pages/epss.md` + `_includes/cve_lookup.html`          | D               | Token align                                   |
+| `_pages/cybersecurity-calendar.md`                      | D               | Token align                                   |
+| `_sass/_cybersecurity-calendar.scss`                    | D               | Token align (literals only)                   |
+| `_pages/repositories.md`                                | D               | Token align                                   |
+| `_includes/repository/repo.liquid` + `repo_user.liquid` | D               | Add `repo-card` wrapper div                   |

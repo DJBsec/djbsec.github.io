@@ -16,29 +16,29 @@
 
 ## File Map
 
-| File | Task | Change |
-|---|---|---|
-| `_sass/_page.scss` | 0 | **Create** — all inner page shared styles |
-| `_sass/_learn.scss` | 0 | **Create stub** — empty, filled by Task C |
-| `_layouts/page.liquid` | 0 | Modify — guard description, add divider |
-| `assets/css/main.scss` | 0 | Modify — add `"page"` and `"learn"` imports |
-| `_pages/blog.md` | A1 | Modify — token-align `.news-*` SCSS |
-| `_pages/explained.md` | A2 | Modify — token-align `.explained-*` SCSS |
-| `_pages/blue-team.md` | B1 | Modify — HTML refactor |
-| `_pages/red-team.md` | B2 | Modify — remove inline styles |
-| `_pages/ai-tools-prompts.md` | B3 | Modify — HTML refactor (4 cards) |
-| `_pages/cyber-books.md` | C1 | Full rebuild |
-| `_pages/cyber-podcasts-.md` | C2 | Full rebuild |
-| `_pages/cyber-maps.md` | C3 | Full rebuild |
-| `_pages/cyber-learning-platforms.md` | C4 | Full rebuild |
-| `_pages/cybersecurity-search-engines.md` | C5 | Full rebuild |
-| `_pages/epss.md` | D1 | Token align — button classes |
-| `_includes/cve_lookup.html` | D1 | Token align — colors and buttons |
-| `_pages/cybersecurity-calendar.md` | D2 | Token align — filter bar inline styles |
-| `_sass/_cybersecurity-calendar.scss` | D2 | Token align (literals only) |
-| `_pages/repositories.md` | D3 | Token align — grid gap |
-| `_includes/repository/repo.liquid` | D3 | Add `repo-card` wrapper |
-| `_includes/repository/repo_user.liquid` | D3 | Add `repo-card` wrapper |
+| File                                     | Task | Change                                      |
+| ---------------------------------------- | ---- | ------------------------------------------- |
+| `_sass/_page.scss`                       | 0    | **Create** — all inner page shared styles   |
+| `_sass/_learn.scss`                      | 0    | **Create stub** — empty, filled by Task C   |
+| `_layouts/page.liquid`                   | 0    | Modify — guard description, add divider     |
+| `assets/css/main.scss`                   | 0    | Modify — add `"page"` and `"learn"` imports |
+| `_pages/blog.md`                         | A1   | Modify — token-align `.news-*` SCSS         |
+| `_pages/explained.md`                    | A2   | Modify — token-align `.explained-*` SCSS    |
+| `_pages/blue-team.md`                    | B1   | Modify — HTML refactor                      |
+| `_pages/red-team.md`                     | B2   | Modify — remove inline styles               |
+| `_pages/ai-tools-prompts.md`             | B3   | Modify — HTML refactor (4 cards)            |
+| `_pages/cyber-books.md`                  | C1   | Full rebuild                                |
+| `_pages/cyber-podcasts-.md`              | C2   | Full rebuild                                |
+| `_pages/cyber-maps.md`                   | C3   | Full rebuild                                |
+| `_pages/cyber-learning-platforms.md`     | C4   | Full rebuild                                |
+| `_pages/cybersecurity-search-engines.md` | C5   | Full rebuild                                |
+| `_pages/epss.md`                         | D1   | Token align — button classes                |
+| `_includes/cve_lookup.html`              | D1   | Token align — colors and buttons            |
+| `_pages/cybersecurity-calendar.md`       | D2   | Token align — filter bar inline styles      |
+| `_sass/_cybersecurity-calendar.scss`     | D2   | Token align (literals only)                 |
+| `_pages/repositories.md`                 | D3   | Token align — grid gap                      |
+| `_includes/repository/repo.liquid`       | D3   | Add `repo-card` wrapper                     |
+| `_includes/repository/repo_user.liquid`  | D3   | Add `repo-card` wrapper                     |
 
 ---
 
@@ -47,6 +47,7 @@
 **⚠️ Run this before launching any parallel agents. All groups depend on this commit.**
 
 **Files:**
+
 - Create: `_sass/_page.scss`
 - Create: `_sass/_learn.scss`
 - Modify: `_layouts/page.liquid`
@@ -116,7 +117,8 @@
     color: var(--color-ink);
   }
 
-  th, td {
+  th,
+  td {
     border-color: var(--color-surface-border) !important;
     color: var(--color-ink);
   }
@@ -182,12 +184,16 @@
 Replace the existing `<header class="post-header">...</header>` section with:
 
 ```liquid
-  <header class="post-header">
-    {% if page.eyebrow %}<span class="page-eyebrow">{{ page.eyebrow }}</span>{% endif %}
-    <h1 class="post-title">{{ page.title }}</h1>
-    {% if page.description %}<p class="page-description">{{ page.description }}</p>{% endif %}
-  </header>
-  <hr class="page-divider">
+<header class="post-header">
+  {% if page.eyebrow -%}
+    <span class="page-eyebrow">{{ page.eyebrow }}</span>
+  {%- endif %}
+  <h1 class="post-title">{{ page.title }}</h1>
+  {% if page.description %}
+    <p class="page-description">{{ page.description }}</p>
+  {% endif %}
+</header>
+<hr class="page-divider">
 ```
 
 The `{% if page.eyebrow %}` guard is required so `.page-eyebrow` appears in rendered HTML and survives PurgeCSS. Pages without `eyebrow:` front matter render nothing extra.
@@ -226,6 +232,7 @@ git commit -m "feat: add page foundation styles, learn stub, and layout guard"
 **Approach:** SCSS only. Find the `.news-*` CSS rules (they live in `_pages/blog.md` inside `<style>` tags or in a separate SCSS partial — check first with `grep -r "news-hero-card\|news-filter" _sass/ _pages/`).
 
 **Files:**
+
 - Modify: wherever `.news-*` styles currently live (likely `_pages/blog.md` inline `<style>` or `_sass/_base.scss`)
 
 - [ ] **Step 1: Locate news styles**
@@ -240,11 +247,14 @@ Update the following in the news styles (wherever they live):
 
 ```scss
 // Masthead
-.news-masthead h1, .news-masthead__title {
+.news-masthead h1,
+.news-masthead__title {
   font-family: $font-display;
   color: var(--color-ink);
 }
-.news-masthead__tagline { color: var(--color-ink-muted); }
+.news-masthead__tagline {
+  color: var(--color-ink-muted);
+}
 
 // Filter pills
 .news-filter-btn {
@@ -253,7 +263,8 @@ Update the following in the news styles (wherever they live):
   background: transparent;
   font-family: $font-mono;
   font-size: 0.72rem;
-  &.active, &:hover {
+  &.active,
+  &:hover {
     background: var(--color-accent);
     color: #fff;
     border-color: var(--color-accent);
@@ -267,14 +278,16 @@ Update the following in the news styles (wherever they live):
 }
 
 // Card titles
-.news-card__title, .news-hero-card__title {
+.news-card__title,
+.news-hero-card__title {
   font-family: $font-display;
   font-weight: 700;
   color: var(--color-ink);
 }
 
 // Dates / read-time
-.news-card__meta, .news-hero-card__meta {
+.news-card__meta,
+.news-hero-card__meta {
   font-family: $font-mono;
   font-size: 0.68rem;
   color: var(--color-ink-muted);
@@ -301,6 +314,7 @@ git commit -m "feat: token-align blog/news listing styles"
 **⚠️ Critical constraint:** `.explained-item` MUST remain an `<a>` tag. The `fixCorners()` JS function sets inline `borderRadius` on it. Do NOT add `djb-card` as an HTML class — apply card-like styles directly to `.explained-item` in SCSS.
 
 **Files:**
+
 - Modify: `_pages/explained.md` (the `<style>` block at top, or wherever explained CSS lives — find with `grep -r "explained-item" _sass/`)
 
 - [ ] **Step 1: Locate explained styles**
@@ -327,7 +341,8 @@ Replace current `.explained-filter-btn` styles:
   cursor: pointer;
   transition: all 0.15s ease;
 
-  &.active, &:hover {
+  &.active,
+  &:hover {
     background: var(--color-accent);
     color: #fff;
     border-color: var(--color-accent);
@@ -343,7 +358,9 @@ Add/update in the explained styles:
 .explained-item {
   border: 1px solid var(--color-surface-border);
   border-radius: 6px;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
 
   &:hover {
     border-color: var(--color-accent);
@@ -365,12 +382,15 @@ Add/update in the explained styles:
 - [ ] **Step 4: Add `.eyebrow` class to results count in `_pages/explained.md`**
 
 Find the results meta paragraph:
+
 ```html
-<p class="explained-results-meta" id="explained-meta">
+<p class="explained-results-meta" id="explained-meta"></p>
 ```
+
 Add `eyebrow` class:
+
 ```html
-<p class="explained-results-meta eyebrow" id="explained-meta">
+<p class="explained-results-meta eyebrow" id="explained-meta"></p>
 ```
 
 - [ ] **Step 5: Verify build**
@@ -390,15 +410,19 @@ git commit -am "feat: token-align cybersecurity explained page styles"
 ## Task B1: Blue Team — HTML Refactor
 
 **Files:**
+
 - Modify: `_pages/blue-team.md`
 
 - [ ] **Step 1: Remove emoji from H2 headings, convert to eyebrow + clean H2**
 
 Replace:
+
 ```markdown
 ## 🛡️ What Is a Blue Teamer?
 ```
+
 With:
+
 ```html
 <p class="page-eyebrow">Overview</p>
 
@@ -406,10 +430,13 @@ With:
 ```
 
 Replace:
+
 ```markdown
 ## 🔵 Blue Team Toolset
 ```
+
 With:
+
 ```html
 <p class="page-eyebrow">Tools</p>
 
@@ -417,10 +444,13 @@ With:
 ```
 
 Replace:
+
 ```markdown
 ## 📊 Tools by Category
 ```
+
 With:
+
 ```html
 <p class="page-eyebrow">Categories</p>
 
@@ -428,10 +458,13 @@ With:
 ```
 
 Replace:
+
 ```markdown
 ## 🚀 Quick Start Guide
 ```
+
 With:
+
 ```html
 <p class="page-eyebrow">Getting Started</p>
 
@@ -441,6 +474,7 @@ With:
 - [ ] **Step 2: Update table — remove `.table-dark`, add `.page-token-table`, convert badges to `.chip`**
 
 Replace `<table class="table table-hover" ...>` and `<thead class="table-dark">`:
+
 ```html
 <table class="table table-hover page-token-table" style="margin-top: 1rem;">
   <thead>
@@ -451,15 +485,18 @@ Replace `<table class="table table-hover" ...>` and `<thead class="table-dark">`
       <th style="width: 15%;">Action</th>
     </tr>
   </thead>
+</table>
 ```
 
 Replace each `<span class="badge bg-primary">`, `<span class="badge bg-success">`, `<span class="badge bg-secondary">`, and `<span class="badge" style="background-color: #6c757d;">` with:
+
 ```html
 <span class="chip chip--secondary">Vuln Mgmt</span>
 <span class="chip chip--secondary">Web Security</span>
 <span class="chip chip--secondary">Intel</span>
 <span class="chip chip--secondary">Forensics</span>
 ```
+
 (Use the appropriate label for each row — Vuln Mgmt, Intel, Web Security, Forensics, Visualization, Analysis.)
 
 Remove emoji from `<th>` cells (Tool, Description, Category, Action — no emoji).
@@ -467,6 +504,7 @@ Remove emoji from `<th>` cells (Tool, Description, Category, Action — no emoji
 - [ ] **Step 3: Replace 4-column Bootstrap card grid with `.djb-card`**
 
 Replace each `<div class="card h-100">` block:
+
 ```html
 <div class="col-md-3 mb-3">
   <div class="card h-100">
@@ -478,7 +516,9 @@ Replace each `<div class="card h-100">` block:
   </div>
 </div>
 ```
+
 With:
+
 ```html
 <div class="col-md-3 mb-3">
   <div class="djb-card h-100">
@@ -488,6 +528,7 @@ With:
   </div>
 </div>
 ```
+
 Apply same pattern to all 4 category cards (Web Security, Threat Intelligence, Forensics & Analysis). Remove all emoji from card titles.
 
 - [ ] **Step 4: Remove emoji from Quick Start list items**
@@ -512,6 +553,7 @@ git commit -m "feat: refactor blue team page to design tokens and djb-card compo
 ## Task B2: Red Team — Inline Style Removal
 
 **Files:**
+
 - Modify: `_pages/red-team.md`
 
 - [ ] **Step 1: Read the current file**
@@ -523,6 +565,7 @@ cat /Users/ben/Documents/GitHub/djbsec.github.io/_pages/red-team.md
 - [ ] **Step 2: Remove inline styles from table, add `.page-token-table`**
 
 Find the `<table>` element and:
+
 - Remove `style="background-color: #300; color: white;"` from `<thead>` row
 - Remove `style="border-bottom: 1px solid #944;"` from data rows
 - Add `page-token-table` class to the `<table>` tag
@@ -548,6 +591,7 @@ git commit -m "feat: remove inline styles from red team page, apply token table"
 ## Task B3: AI Tools & Prompts — 4-Card HTML Refactor
 
 **Files:**
+
 - Modify: `_pages/ai-tools-prompts.md`
 
 The page has 4 Bootstrap cards: Security (danger), ChatGPT (primary), Copilot (info), Prompt Tips (warning). Each gets converted to `.djb-card` with left accent border.
@@ -555,6 +599,7 @@ The page has 4 Bootstrap cards: Security (danger), ChatGPT (primary), Copilot (i
 - [ ] **Step 1: Replace each Bootstrap card with `.djb-card`**
 
 Pattern — replace each card like:
+
 ```html
 <div class="card mb-5" style="border-left: 4px solid #dc3545; border-top: none; border-right: none; border-bottom: none;">
   <div class="card-header bg-danger text-white d-flex justify-content-between align-items-center py-3">
@@ -564,10 +609,12 @@ Pattern — replace each card like:
     </div>
     <a href="..." class="btn btn-light btn-sm" ...>📂 Browse Folder</a>
   </div>
-  <div class="card-body p-0">
+  <div class="card-body p-0"></div>
+</div>
 ```
 
 With:
+
 ```html
 <div class="djb-card mb-5" style="border-left: 3px solid var(--color-accent);">
   <div class="d-flex justify-content-between align-items-start mb-3">
@@ -576,9 +623,12 @@ With:
       <h3 class="djb-card__title" style="margin-bottom: 4px;">Security Prompts</h3>
       <p class="djb-card__desc">Prompts built for cybersecurity professionals — M365 hardening, roadmaps, and security advisory</p>
     </div>
-    <a href="..." class="btn-djb-secondary" style="white-space: nowrap; font-size: 0.75rem;" target="_blank" rel="noopener noreferrer">Browse Folder</a>
+    <a href="..." class="btn-djb-secondary" style="white-space: nowrap; font-size: 0.75rem;" target="_blank" rel="noopener noreferrer"
+      >Browse Folder</a
+    >
   </div>
-  <div>
+  <div></div>
+</div>
 ```
 
 Apply to all 4 cards. Use appropriate eyebrow labels: Security / ChatGPT / Copilot / Prompt Tips. Remove all emoji from headings and buttons.
@@ -609,6 +659,7 @@ git commit -m "feat: refactor ai tools page to djb-card components"
 ## Task C: Learn Sub-Pages — Full Rebuild
 
 **⚠️ Key rules:**
+
 - Every class defined in `_learn.scss` must appear literally in at least one page's HTML (PurgeCSS)
 - Use `.chip.chip--secondary` for all chips (defined in `_page.scss` from Task 0)
 - Use `.learn-grid` for card grids (defined in `_page.scss` from Task 0)
@@ -682,7 +733,13 @@ Replace all content after the front matter `---` with:
     <span class="chip chip--secondary">Story</span>
     <p class="djb-card__title">Fancy Bear Goes Phishing</p>
     <p class="djb-card__desc">The dark history of the information age, told through five extraordinary hacks.</p>
-    <a href="https://www.amazon.com/Fancy-Bear-Goes-Phishing-Extraordinary/dp/0374601178" class="home-section-header__link" target="_blank" rel="noopener noreferrer">View on Amazon &rarr;</a>
+    <a
+      href="https://www.amazon.com/Fancy-Bear-Goes-Phishing-Extraordinary/dp/0374601178"
+      class="home-section-header__link"
+      target="_blank"
+      rel="noopener noreferrer"
+      >View on Amazon &rarr;</a
+    >
   </div>
   <div class="djb-card">
     <span class="chip chip--secondary">Story</span>
@@ -786,41 +843,30 @@ Replace the entire page content after front matter with:
 
 ```html
 <div class="learn-grid">
-{% assign podcasts = "
-401 Access Denied|https://www.itpro.tv/podcast/401-access-denied|IT security topics explained for practitioners
-7 Minute Security|https://7ms.us|Short practical security lessons — great for commutes
-8th Layer Insights|https://8thlayerinsights.com|The human side of cybersecurity
-Absolute AppSec|https://absoluteappsec.com|Application security deep dives
-Breaking Down Security|https://brakeingsecurity.com|Security concepts and current news
-Click Here|https://clickhereshow.com|Investigative journalism on major security breaches
-Crypto-Gram Security Podcast|https://www.schneier.com/crypto-gram|Bruce Schneier's monthly security digest
-Cyber Security Headlines|https://cisoseries.com/cyber-security-headlines|Daily briefings from the CISO Series
-Darknet Diaries|https://darknetdiaries.com|True crime stories from the dark side of the internet
-Hacker Valley Studio|https://hackervalley.com|Cybersecurity leadership and career development
-Hacking Humans|https://thecyberwire.com/podcasts/hacking-humans|Social engineering and phishing awareness
-Malicious Life|https://malicious.life|The untold history of cybersecurity
-Risky Business|https://risky.biz|Weekly news and analysis with Patrick Gray
-Security Now|https://twit.tv/shows/security-now|Deep technical security dives with Steve Gibson
-Security Weekly|https://www.securityweekly.com|Industry news and practitioner interviews
-Simply Cyber|https://www.simplycyber.io|Cyber career development and skill building
-Smashing Security|https://www.smashingsecurity.com|A lighthearted take on security news
-The Cyberlaw Podcast|https://www.lawfareblog.com/topic/cyberlaw-podcast|Lawfare's analysis of cyberlaw and policy
-The Hacker Mind|https://thehackermind.com|Stories and interviews from the hacker community
-The Privacy, Security, & OSINT Show|https://inteltechniques.com/podcast.html|Privacy, security, and OSINT techniques
-Unsupervised Learning|https://danielmiessler.com/podcast|Daniel Miessler's weekly curated security insights
-" | split: "
-" %}
-{% for line in podcasts %}
-{% assign parts = line | split: "|" %}
-{% if parts[0] != "" %}
+  {% assign podcasts = " 401 Access Denied|https://www.itpro.tv/podcast/401-access-denied|IT security topics explained for practitioners 7 Minute
+  Security|https://7ms.us|Short practical security lessons — great for commutes 8th Layer Insights|https://8thlayerinsights.com|The human side of
+  cybersecurity Absolute AppSec|https://absoluteappsec.com|Application security deep dives Breaking Down
+  Security|https://brakeingsecurity.com|Security concepts and current news Click Here|https://clickhereshow.com|Investigative journalism on major
+  security breaches Crypto-Gram Security Podcast|https://www.schneier.com/crypto-gram|Bruce Schneier's monthly security digest Cyber Security
+  Headlines|https://cisoseries.com/cyber-security-headlines|Daily briefings from the CISO Series Darknet Diaries|https://darknetdiaries.com|True crime
+  stories from the dark side of the internet Hacker Valley Studio|https://hackervalley.com|Cybersecurity leadership and career development Hacking
+  Humans|https://thecyberwire.com/podcasts/hacking-humans|Social engineering and phishing awareness Malicious Life|https://malicious.life|The untold
+  history of cybersecurity Risky Business|https://risky.biz|Weekly news and analysis with Patrick Gray Security
+  Now|https://twit.tv/shows/security-now|Deep technical security dives with Steve Gibson Security Weekly|https://www.securityweekly.com|Industry news
+  and practitioner interviews Simply Cyber|https://www.simplycyber.io|Cyber career development and skill building Smashing
+  Security|https://www.smashingsecurity.com|A lighthearted take on security news The Cyberlaw
+  Podcast|https://www.lawfareblog.com/topic/cyberlaw-podcast|Lawfare's analysis of cyberlaw and policy The Hacker
+  Mind|https://thehackermind.com|Stories and interviews from the hacker community The Privacy, Security, & OSINT
+  Show|https://inteltechniques.com/podcast.html|Privacy, security, and OSINT techniques Unsupervised
+  Learning|https://danielmiessler.com/podcast|Daniel Miessler's weekly curated security insights " | split: " " %} {% for line in podcasts %} {%
+  assign parts = line | split: "|" %} {% if parts[0] != "" %}
   <div class="djb-card">
     <span class="chip chip--secondary">Podcast</span>
     <p class="djb-card__title">{{ parts[0] }}</p>
     <p class="djb-card__desc">{{ parts[2] }}</p>
     <a href="{{ parts[1] }}" class="home-section-header__link" target="_blank" rel="noopener noreferrer">Listen &rarr;</a>
   </div>
-{% endif %}
-{% endfor %}
+  {% endif %} {% endfor %}
 </div>
 ```
 
@@ -848,14 +894,22 @@ Current: inline-styled table with `style="background-color: #222; color: white;"
 Replace all content after front matter with:
 
 ```html
-<p class="page-description">Live threat visualizations from leading cybersecurity vendors — DDoS activity, global attack sources, botnet flows, and more.</p>
+<p class="page-description">
+  Live threat visualizations from leading cybersecurity vendors — DDoS activity, global attack sources, botnet flows, and more.
+</p>
 
 <div class="learn-grid">
   <div class="djb-card">
     <span class="chip chip--secondary">Threat Map</span>
     <p class="djb-card__title">Akamai Real-Time Web Monitor</p>
     <p class="djb-card__desc">Real-time internet conditions including web traffic and attack trends.</p>
-    <a href="https://www.akamai.com/us/en/resources/visualizing-akamai/real-time-web-monitor.jsp" class="home-section-header__link" target="_blank" rel="noopener noreferrer">Visit &rarr;</a>
+    <a
+      href="https://www.akamai.com/us/en/resources/visualizing-akamai/real-time-web-monitor.jsp"
+      class="home-section-header__link"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Visit &rarr;</a
+    >
   </div>
   <div class="djb-card">
     <span class="chip chip--secondary">Threat Map</span>
@@ -897,7 +951,13 @@ Replace all content after front matter with:
     <span class="chip chip--secondary">DDoS</span>
     <p class="djb-card__title">TrendMicro Botnet Map</p>
     <p class="djb-card__desc">Botnet command and control activity around the world.</p>
-    <a href="https://emea.trendmicro.com/us/security-intelligence/current-threat-activity/global-botnet-map/index.html" class="home-section-header__link" target="_blank" rel="noopener noreferrer">Visit &rarr;</a>
+    <a
+      href="https://emea.trendmicro.com/us/security-intelligence/current-threat-activity/global-botnet-map/index.html"
+      class="home-section-header__link"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Visit &rarr;</a
+    >
   </div>
 </div>
 
@@ -1171,6 +1231,7 @@ git commit -m "feat: finalize _learn.scss for learn sub-pages"
 ## Task D1: EPSS — Token Alignment
 
 **Files:**
+
 - Modify: `_pages/epss.md`
 - Modify: `_includes/cve_lookup.html`
 
@@ -1184,12 +1245,14 @@ head -100 /Users/ben/Documents/GitHub/djbsec.github.io/_includes/cve_lookup.html
 - [ ] **Step 2: Update `_pages/epss.md` — replace Bootstrap button classes**
 
 Find any `<button class="btn btn-primary">` or `<button class="btn btn-outline-*">` in the page file and replace:
+
 - `btn btn-primary` → `btn-djb-primary`
 - `btn btn-outline-primary` → `btn-djb-secondary`
 
 - [ ] **Step 3: Update `_includes/cve_lookup.html` — replace hardcoded colors**
 
 Find any `style="..."` attributes or `<style>` blocks with hardcoded hex colors (`#dc2626`, `#d97706`, etc.) and replace with:
+
 - Critical severity → `var(--color-severity-critical)`
 - High severity → `var(--color-severity-high)`
 - Accent/primary → `var(--color-accent)`
@@ -1220,6 +1283,7 @@ git commit -m "feat: token-align EPSS CVE lookup tool colors and buttons"
 **⚠️ Critical:** Only replace literal CSS hex values. Do NOT touch SASS variable references like `$red-color`, `$blue-color`, `$cat-colors` map, or `rgba($yellow-color, ...)` expressions.
 
 **Files:**
+
 - Modify: `_pages/cybersecurity-calendar.md`
 - Modify: `_sass/_cybersecurity-calendar.scss`
 
@@ -1269,6 +1333,7 @@ git commit -m "feat: token-align calendar SCSS literal colors"
 ## Task D3: Repositories — Token Align + `repo-card` Wrapper
 
 **Files:**
+
 - Modify: `_pages/repositories.md`
 - Modify: `_includes/repository/repo.liquid`
 - Modify: `_includes/repository/repo_user.liquid`
@@ -1316,11 +1381,11 @@ git commit -m "feat: add repo-card wrapper to repository includes"
 
 After Task 0 commits:
 
-| Agent | Tasks | Files touched |
-|---|---|---|
-| **A** | A1, A2 | `_pages/blog.md` SCSS, `_pages/explained.md` SCSS |
-| **B** | B1, B2, B3 | `_pages/blue-team.md`, `_pages/red-team.md`, `_pages/ai-tools-prompts.md` |
-| **C** | C1–C6 | 5 `_pages/cyber-*.md` files, `_sass/_learn.scss` |
+| Agent | Tasks      | Files touched                                                                                                                                                          |
+| ----- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **A** | A1, A2     | `_pages/blog.md` SCSS, `_pages/explained.md` SCSS                                                                                                                      |
+| **B** | B1, B2, B3 | `_pages/blue-team.md`, `_pages/red-team.md`, `_pages/ai-tools-prompts.md`                                                                                              |
+| **C** | C1–C6      | 5 `_pages/cyber-*.md` files, `_sass/_learn.scss`                                                                                                                       |
 | **D** | D1, D2, D3 | `_pages/epss.md`, `_includes/cve_lookup.html`, `_pages/cybersecurity-calendar.md`, `_sass/_cybersecurity-calendar.scss`, `_pages/repositories.md`, 2 repo liquid files |
 
 No agent writes to a file another agent writes to.
