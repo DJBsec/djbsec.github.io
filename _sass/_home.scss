@@ -157,17 +157,16 @@
 }
 
 // ── Footer ───────────────────────────────────────────────────────────────────
-// The home footer lives inside default.liquid's .container wrapper, so we use
-// a negative-margin breakout to make it full-bleed across the viewport.
+// Footer fills the container width. Negative-margin full-bleed was unreliable
+// due to scrollbar width causing 100vw overflow and content shift.
 .home-footer {
   border-top: 2px solid #1a1a2e;
   background: #1a1a2e;
   padding: 32px 24px;
   margin-top: 56px;
-  // Break out of default.liquid's .container to span full width:
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  width: 100vw;
+  // Cancel Bootstrap container's 15px side padding to fill edge-to-edge:
+  margin-left: -15px;
+  margin-right: -15px;
 
   &__inner {
     display: flex;
@@ -175,8 +174,6 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 16px;
-    max-width: 960px;
-    margin: 0 auto;
   }
 
   &__brand {
