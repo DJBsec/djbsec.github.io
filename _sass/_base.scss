@@ -657,7 +657,8 @@ footer.sticky-bottom {
     text-decoration: none;
     transition: all 0.15s ease;
 
-    &:hover {
+    &:hover,
+    &.active {
       background: var(--color-accent);
       color: #fff;
       border-color: var(--color-accent);
