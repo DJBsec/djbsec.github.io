@@ -41,7 +41,7 @@ nav: false
 
   </div>
 
-  <p class="explained-results-meta" id="explained-meta">
+  <p class="explained-results-meta eyebrow" id="explained-meta">
     <strong>{{ total_count }}</strong> topics
   </p>
 

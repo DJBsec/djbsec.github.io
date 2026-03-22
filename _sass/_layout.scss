@@ -144,16 +144,16 @@ html[data-theme="dark"] .profile img {
 
 // Sort toggle button
 .explained-sort-btn {
-  font-family: "Courier New", Courier, monospace;
+  font-family: $font-mono;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 6px 14px;
   border-radius: 4px;
-  border: 1px solid var(--global-divider-color);
+  border: 1px solid var(--color-surface-border);
   background: transparent;
-  color: var(--global-text-color-light);
+  color: var(--color-ink-muted);
   cursor: pointer;
   transition: all 0.15s ease;
   display: inline-flex;
@@ -162,28 +162,28 @@ html[data-theme="dark"] .profile img {
   white-space: nowrap;
 
   &:hover {
-    border-color: var(--global-theme-color);
-    color: var(--global-theme-color);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
   }
 
   &.active {
-    background: var(--global-theme-color);
-    border-color: var(--global-theme-color);
-    color: var(--global-hover-text-color);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #fff;
   }
 }
 
 .explained-filter-btn {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 11px;
+  font-family: $font-mono;
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 6px 14px;
+  padding: 5px 14px;
   border-radius: 4px;
-  border: 1px solid var(--global-divider-color);
+  border: 1px solid var(--color-surface-border);
   background: transparent;
-  color: var(--global-text-color-light);
+  color: var(--color-ink-muted);
   cursor: pointer;
   transition: all 0.15s ease;
   display: inline-flex;
@@ -191,15 +191,15 @@ html[data-theme="dark"] .profile img {
   gap: 8px;
 
   &:hover:not(.active) {
-    border-color: var(--global-text-color-light);
-    color: var(--global-text-color);
-    background: var(--global-card-bg-color);
+    background: var(--color-accent);
+    color: #fff;
+    border-color: var(--color-accent);
   }
 
   &.active {
-    background: var(--global-theme-color);
-    border-color: var(--global-theme-color);
-    color: var(--global-hover-text-color);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #fff;
   }
 
   // Threat filter active — use red
@@ -235,14 +235,14 @@ html[data-theme="dark"] .profile img {
 
 // Results count line
 .explained-results-meta {
-  font-family: "Courier New", Courier, monospace;
+  font-family: $font-mono;
   font-size: 11px;
   letter-spacing: 0.06em;
-  color: var(--global-text-color-light);
+  color: var(--color-ink-muted);
   margin-bottom: 12px;
 
   strong {
-    color: var(--global-theme-color);
+    color: var(--color-accent);
     font-weight: 600;
   }
 }
@@ -260,13 +260,16 @@ html[data-theme="dark"] .profile img {
   gap: 16px;
   padding: 16px 20px;
   background: var(--global-card-bg-color);
+  border: 1px solid var(--color-surface-border);
   border-left: 3px solid transparent;
-  border-bottom: 1px solid var(--global-divider-color);
+  border-radius: 6px;
   text-decoration: none;
   color: var(--global-text-color);
   transition:
     background 0.18s ease,
-    transform 0.18s ease;
+    transform 0.18s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
 
   // Entry animation
   @media (prefers-reduced-motion: no-preference) {
@@ -279,18 +282,9 @@ html[data-theme="dark"] .profile img {
     }
   }
 
-  &:first-child {
-    border-radius: 8px 8px 0 0;
-  }
-  &:last-child {
-    border-radius: 0 0 8px 8px;
-    border-bottom: none;
-  }
-  &:only-child {
-    border-radius: 8px;
-  }
-
   &:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 2px 12px rgba(0, 87, 255, 0.08);
     background: var(--global-bg-color);
     transform: translateX(3px);
     text-decoration: none;
@@ -352,20 +346,21 @@ html[data-theme="dark"] .profile img {
 }
 
 .explained-title {
+  font-family: $font-display;
   font-size: 15px;
-  font-weight: 600;
-  color: var(--global-text-color);
+  font-weight: 700;
+  color: var(--color-ink);
   margin-bottom: 3px;
   transition: color 0.15s ease;
 
   .explained-item:hover & {
-    color: var(--global-hover-color);
+    color: var(--color-accent);
   }
 }
 
 .explained-desc {
   font-size: 12.5px;
-  color: var(--global-text-color-light);
+  color: var(--color-ink-muted);
   line-height: 1.4;
   white-space: nowrap;
   overflow: hidden;
