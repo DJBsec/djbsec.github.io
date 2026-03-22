@@ -6,7 +6,7 @@ permalink: /ai-tools-prompts/
 nav: false
 ---
 
-## 🤖 AI Tools & Prompt Library
+## AI Tools & Prompt Library
 
 This page is a collection of **AI prompts I've written** — ready to copy and use with ChatGPT, Microsoft Copilot, and security-focused AI workflows.
 
@@ -14,29 +14,30 @@ This page is a collection of **AI prompts I've written** — ready to copy and u
 
 Prompts are organized into three sections based on the tool or use case:
 
-- 🔐 **Security** — cybersecurity roadmaps, M365 hardening, and security advisory
-- 💬 **ChatGPT** — learning, summarizing, and prompt writing fundamentals
-- 🪟 **Copilot** — Microsoft 365 productivity and executive communication
+- **Security** — cybersecurity roadmaps, M365 hardening, and security advisory
+- **ChatGPT** — learning, summarizing, and prompt writing fundamentals
+- **Copilot** — Microsoft 365 productivity and executive communication
 
 ---
 
 <!-- ===================== Security ===================== -->
-<div class="card mb-5" style="border-left: 4px solid #dc3545; border-top: none; border-right: none; border-bottom: none;">
-  <div class="card-header bg-danger text-white d-flex justify-content-between align-items-center py-3">
+<div class="djb-card mb-5" style="border-left: 3px solid var(--color-accent);">
+  <div class="d-flex justify-content-between align-items-start mb-3">
     <div>
-      <h3 class="mb-1">🔐 Security Prompts</h3>
-      <p class="mb-0" style="font-size: 0.9rem; opacity: 0.9;">Prompts built for cybersecurity professionals — M365 hardening, roadmaps, and security advisory</p>
+      <p class="eyebrow" style="margin-bottom: 4px;">Security</p>
+      <h3 class="djb-card__title" style="margin-bottom: 4px;">Security Prompts</h3>
+      <p class="djb-card__desc">Prompts built for cybersecurity professionals — M365 hardening, roadmaps, and security advisory</p>
     </div>
-    <a href="https://github.com/DJBsec/ai_prompts/tree/main/Security" class="btn btn-light btn-sm" target="_blank" rel="noopener noreferrer">📂 Browse Folder</a>
+    <a href="https://github.com/DJBsec/ai_prompts/tree/main/Security" class="btn-djb-secondary" style="white-space: nowrap; font-size: 0.75rem;" target="_blank" rel="noopener noreferrer">Browse Folder</a>
   </div>
-  <div class="card-body p-0">
+  <div>
     <div class="table-responsive">
-      <table class="table table-hover mb-0">
-        <thead class="table-secondary">
+      <table class="table table-hover page-token-table mb-0">
+        <thead>
           <tr>
-            <th style="width: 25%;">📄 Prompt File</th>
-            <th style="width: 60%;">📝 Description</th>
-            <th style="width: 15%;">🔗 Link</th>
+            <th style="width: 25%;">Prompt File</th>
+            <th style="width: 60%;">Description</th>
+            <th style="width: 15%;">Link</th>
           </tr>
         </thead>
         <tbody>
@@ -67,22 +68,23 @@ Prompts are organized into three sections based on the tool or use case:
 </div>
 
 <!-- ===================== ChatGPT ===================== -->
-<div class="card mb-5" style="border-left: 4px solid #007bff; border-top: none; border-right: none; border-bottom: none;">
-  <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center py-3">
+<div class="djb-card mb-5" style="border-left: 3px solid var(--color-accent);">
+  <div class="d-flex justify-content-between align-items-start mb-3">
     <div>
-      <h3 class="mb-1">💬 ChatGPT Prompts</h3>
-      <p class="mb-0" style="font-size: 0.9rem; opacity: 0.9;">Prompts and formulas designed for use with ChatGPT</p>
+      <p class="eyebrow" style="margin-bottom: 4px;">ChatGPT</p>
+      <h3 class="djb-card__title" style="margin-bottom: 4px;">ChatGPT Prompts</h3>
+      <p class="djb-card__desc">Prompts and formulas designed for use with ChatGPT</p>
     </div>
-    <a href="https://github.com/DJBsec/ai_prompts/tree/main/ChatGPT" class="btn btn-light btn-sm" target="_blank" rel="noopener noreferrer">📂 Browse Folder</a>
+    <a href="https://github.com/DJBsec/ai_prompts/tree/main/ChatGPT" class="btn-djb-secondary" style="white-space: nowrap; font-size: 0.75rem;" target="_blank" rel="noopener noreferrer">Browse Folder</a>
   </div>
-  <div class="card-body p-0">
+  <div>
     <div class="table-responsive">
-      <table class="table table-hover mb-0">
-        <thead class="table-secondary">
+      <table class="table table-hover page-token-table mb-0">
+        <thead>
           <tr>
-            <th style="width: 25%;">📄 Prompt File</th>
-            <th style="width: 60%;">📝 Description</th>
-            <th style="width: 15%;">🔗 Link</th>
+            <th style="width: 25%;">Prompt File</th>
+            <th style="width: 60%;">Description</th>
+            <th style="width: 15%;">Link</th>
           </tr>
         </thead>
         <tbody>
@@ -108,22 +110,23 @@ Prompts are organized into three sections based on the tool or use case:
 </div>
 
 <!-- ===================== Copilot ===================== -->
-<div class="card mb-5" style="border-left: 4px solid #17a2b8; border-top: none; border-right: none; border-bottom: none;">
-  <div class="card-header bg-info text-white d-flex justify-content-between align-items-center py-3">
+<div class="djb-card mb-5" style="border-left: 3px solid var(--color-accent);">
+  <div class="d-flex justify-content-between align-items-start mb-3">
     <div>
-      <h3 class="mb-1">🪟 Copilot Prompts</h3>
-      <p class="mb-0" style="font-size: 0.9rem; opacity: 0.9;">Prompts optimized for Microsoft Copilot in M365 environments</p>
+      <p class="eyebrow" style="margin-bottom: 4px;">Copilot</p>
+      <h3 class="djb-card__title" style="margin-bottom: 4px;">Copilot Prompts</h3>
+      <p class="djb-card__desc">Prompts optimized for Microsoft Copilot in M365 environments</p>
     </div>
-    <a href="https://github.com/DJBsec/ai_prompts/tree/main/Copilot" class="btn btn-light btn-sm" target="_blank" rel="noopener noreferrer">📂 Browse Folder</a>
+    <a href="https://github.com/DJBsec/ai_prompts/tree/main/Copilot" class="btn-djb-secondary" style="white-space: nowrap; font-size: 0.75rem;" target="_blank" rel="noopener noreferrer">Browse Folder</a>
   </div>
-  <div class="card-body p-0">
+  <div>
     <div class="table-responsive">
-      <table class="table table-hover mb-0">
-        <thead class="table-secondary">
+      <table class="table table-hover page-token-table mb-0">
+        <thead>
           <tr>
-            <th style="width: 25%;">📄 Prompt File</th>
-            <th style="width: 60%;">📝 Description</th>
-            <th style="width: 15%;">🔗 Link</th>
+            <th style="width: 25%;">Prompt File</th>
+            <th style="width: 60%;">Description</th>
+            <th style="width: 15%;">Link</th>
           </tr>
         </thead>
         <tbody>
@@ -135,40 +138,41 @@ Prompts are organized into three sections based on the tool or use case:
         </tbody>
       </table>
     </div>
-    <div class="card-footer text-muted" style="font-size: 0.85rem;">
+    <p style="font-size: 0.85rem; color: var(--color-ink-muted); margin-top: 12px; margin-bottom: 0;">
       More Copilot prompts are being added. <a href="https://github.com/DJBsec/ai_prompts/tree/main/Copilot" target="_blank" rel="noopener noreferrer">Watch the repo</a> for updates.
-    </div>
+    </p>
   </div>
 </div>
 
 ---
 
 <!-- ===================== Tips ===================== -->
-<div class="card mb-4" style="border-left: 4px solid #ffc107; border-top: none; border-right: none; border-bottom: none;">
-  <div class="card-header bg-warning text-dark py-3">
-    <h3 class="mb-1">💡 Prompt Writing Tips</h3>
-    <p class="mb-0" style="font-size: 0.9rem; opacity: 0.8;">Five principles for getting better results from any AI tool</p>
+<div class="djb-card mb-4" style="border-left: 3px solid var(--color-accent);">
+  <div class="mb-3">
+    <p class="eyebrow" style="margin-bottom: 4px;">Prompt Tips</p>
+    <h3 class="djb-card__title" style="margin-bottom: 4px;">Prompt Writing Tips</h3>
+    <p class="djb-card__desc">Five principles for getting better results from any AI tool</p>
   </div>
-  <div class="card-body">
+  <div>
     <ol class="mb-0">
       <li class="mb-3">
-        <strong>🎯 Be specific</strong><br>
+        <strong>Be specific</strong><br>
         Instead of <em>"explain firewalls"</em>, try <em>"explain how stateful firewalls differ from packet filtering firewalls, in plain language for a non-technical audience."</em>
       </li>
       <li class="mb-3">
-        <strong>🎭 Assign a role</strong><br>
+        <strong>Assign a role</strong><br>
         Start with <em>"You are a senior cybersecurity analyst…"</em> to prime the AI with the right perspective and vocabulary.
       </li>
       <li class="mb-3">
-        <strong>📋 Provide context</strong><br>
+        <strong>Provide context</strong><br>
         Tell the AI who the output is for, what format you need, and any constraints — the more context, the better the result.
       </li>
       <li class="mb-3">
-        <strong>🔄 Iterate</strong><br>
+        <strong>Iterate</strong><br>
         Treat your first response as a draft. Follow up with <em>"make it shorter"</em>, <em>"add more detail on X"</em>, or <em>"rewrite for a technical audience"</em>.
       </li>
       <li class="mb-0">
-        <strong>📌 Use examples</strong><br>
+        <strong>Use examples</strong><br>
         Show the AI what you want by including a sample in your prompt — this is called <em>few-shot prompting</em> and dramatically improves output quality.
       </li>
     </ol>
