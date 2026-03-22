@@ -52,6 +52,10 @@ $back-to-top-height: $back-to-top-diameter;
 $back-to-top-width: $back-to-top-diameter;
 
 // Font stacks — used by _typography.scss and _home.scss
-$font-display: 'Playfair Display', Georgia, serif;
-$font-body: Inter, system-ui, -apple-system, sans-serif;
-$font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+$font-display: "Playfair Display", Georgia, serif;
+$font-body:
+  Inter,
+  system-ui,
+  -apple-system,
+  sans-serif;
+$font-mono: "IBM Plex Mono", "Courier New", monospace;

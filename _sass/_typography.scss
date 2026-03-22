@@ -2,15 +2,23 @@
 // Playfair Display for headings, IBM Plex Mono for metadata/labels.
 
 // Heading font — applied globally
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: $font-display;
   letter-spacing: -0.02em;
   color: var(--color-ink);
 }
 
-h1 { font-weight: 800; }
-h2 { font-weight: 700; }
-h3 { font-weight: 700; }
+h1 {
+  font-weight: 800;
+}
+h2 {
+  font-weight: 700;
+}
+h3 {
+  font-weight: 700;
+}
 
 // Metadata utility class — dates, tags, badges, EPSS scores
 .mono {
@@ -40,7 +48,7 @@ h3 { font-weight: 700; }
   gap: 8px;
 
   &::before {
-    content: '';
+    content: "";
     display: inline-block;
     width: 24px;
     height: 2px;
@@ -59,8 +67,20 @@ h3 { font-weight: 700; }
   border-radius: 2px;
   display: inline-block;
 
-  &--news    { background: var(--color-accent); color: #fff; }
-  &--learn   { background: #e8f5e9; color: #1b5e20; }
-  &--tool    { background: #fff3e0; color: #e65100; }
-  &--calendar{ background: #f3e5f5; color: #4a148c; }
+  &--news {
+    background: var(--color-accent);
+    color: #fff;
+  }
+  &--learn {
+    background: #e8f5e9;
+    color: #1b5e20;
+  }
+  &--tool {
+    background: #fff3e0;
+    color: #e65100;
+  }
+  &--calendar {
+    background: #f3e5f5;
+    color: #4a148c;
+  }
 }

@@ -7,17 +7,38 @@
   border-radius: 6px;
   padding: 20px;
   background: var(--color-surface);
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
 
   &:hover {
     border-color: var(--color-accent);
     box-shadow: 0 2px 12px rgba(0, 87, 255, 0.08);
   }
 
-  &__chip    { margin-bottom: 10px; }
-  &__date    { font-family: $font-mono; font-size: 0.6rem; color: var(--color-ink-muted); margin-bottom: 6px; }
-  &__title   { font-family: $font-display; font-size: 1.05rem; font-weight: 700; color: var(--color-ink); margin-bottom: 6px; line-height: 1.25; letter-spacing: -0.01em; }
-  &__desc    { font-size: 0.82rem; color: var(--color-ink-muted); line-height: 1.65; }
+  &__chip {
+    margin-bottom: 10px;
+  }
+  &__date {
+    font-family: $font-mono;
+    font-size: 0.6rem;
+    color: var(--color-ink-muted);
+    margin-bottom: 6px;
+  }
+  &__title {
+    font-family: $font-display;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-bottom: 6px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+  &__desc {
+    font-size: 0.82rem;
+    color: var(--color-ink-muted);
+    line-height: 1.65;
+  }
 }
 
 // Featured card — full-width, accent background, two-column interior
@@ -25,7 +46,9 @@
   background: var(--color-accent-subtle);
   border-color: rgba(0, 87, 255, 0.2);
 
-  .djb-card__title { font-size: 1.35rem; }
+  .djb-card__title {
+    font-size: 1.35rem;
+  }
 }
 
 .djb-card--featured-inner {
@@ -80,7 +103,24 @@
     letter-spacing: 0.06em;
   }
 
-  &__name     { font-family: $font-display; font-size: 0.9rem; font-weight: 700; color: var(--color-ink); margin-bottom: 4px; }
-  &__location { font-size: 0.75rem; color: var(--color-ink-muted); margin-bottom: 8px; }
-  &__cost     { font-family: $font-mono; font-size: 0.68rem; color: var(--color-ink-muted); border-top: 1px solid var(--color-surface-border); padding-top: 8px; margin-top: 8px; }
+  &__name {
+    font-family: $font-display;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-bottom: 4px;
+  }
+  &__location {
+    font-size: 0.75rem;
+    color: var(--color-ink-muted);
+    margin-bottom: 8px;
+  }
+  &__cost {
+    font-family: $font-mono;
+    font-size: 0.68rem;
+    color: var(--color-ink-muted);
+    border-top: 1px solid var(--color-surface-border);
+    padding-top: 8px;
+    margin-top: 8px;
+  }
 }

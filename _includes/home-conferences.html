@@ -1,11 +1,6 @@
-{% assign upcoming = site.data.cybersecurity_calendar | sort: 'start_date' %}
-{% assign today = 'now' | date: '%Y-%m-%d' %}
-{% assign future_confs = "" | split: "" %}
-{% for conf in upcoming %}
-  {% if conf.start_date >= today %}
-    {% assign future_confs = future_confs | push: conf %}
-  {% endif %}
-{% endfor %}
+{% assign upcoming = site.data.cybersecurity_calendar | sort: 'start_date' %} {% assign today = 'now' | date: '%Y-%m-%d' %} {% assign future_confs =
+"" | split: "" %} {% for conf in upcoming %} {% if conf.start_date >= today %} {% assign future_confs = future_confs | push: conf %} {% endif %} {%
+endfor %}
 
 <div class="home-section-header">
   <span class="home-section-header__title">Upcoming Conferences</span>
@@ -18,7 +13,9 @@
     <span class="conf-card__badge">{{ conf.start_date | date: "%b %-d" }}–{{ conf.end_date | date: "%-d" }}</span>
     <p class="conf-card__name">{{ conf.name }}</p>
     <p class="conf-card__location">{{ conf.city }}, {{ conf.state }}</p>
-    <p class="conf-card__cost">~${{ conf.total_cost_min | ceil }}–${{ conf.total_cost_max | ceil }} &middot; {{ conf.category_tags | first | capitalize }}</p>
+    <p class="conf-card__cost">
+      ~${{ conf.total_cost_min | ceil }}–${{ conf.total_cost_max | ceil }} &middot; {{ conf.category_tags | first | capitalize }}
+    </p>
   </div>
   {% endfor %}
 </div>
