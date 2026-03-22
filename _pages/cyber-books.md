@@ -16,38 +16,139 @@ nav_order: 2
 #    <p></p>
 ---
 
-## Leadership Books
+<div class="page-section-header"><span class="page-section-header__title">Leadership</span></div>
+<div class="learn-grid">
+  <div class="djb-card">
+    <span class="chip chip--secondary">Leadership</span>
+    <p class="djb-card__title">Extreme Ownership</p>
+    <p class="djb-card__desc">Jocko Willink & Leif Babin on taking total ownership of outcomes — essential reading for security leaders.</p>
+    <a href="https://a.co/d/9Kf2jbM" class="home-section-header__link" target="_blank" rel="noopener noreferrer">View on Amazon &rarr;</a>
+  </div>
+</div>
 
-- [Extreme Ownership by Jocko Willink & Leif Babin](https://a.co/d/9Kf2jbM)
+<div class="page-section-header"><span class="page-section-header__title">Story Books</span></div>
+<p class="page-description" style="margin-bottom: 16px;">Recommended reading order:</p>
+<div class="learn-grid">
+  <div class="djb-card">
+    <span class="chip chip--secondary">Story</span>
+    <p class="djb-card__title">The Cuckoo's Egg</p>
+    <p class="djb-card__desc">Tracking a spy through the maze of computer espionage. The original cybersecurity thriller.</p>
+    <a href="https://a.co/d/gO9putQ" class="home-section-header__link" target="_blank" rel="noopener noreferrer">View on Amazon &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">Story</span>
+    <p class="djb-card__title">This Is How They Tell Me the World Ends</p>
+    <p class="djb-card__desc">The cyberweapons arms race — Nicole Perlroth's definitive account of zero-day exploits and nation-state hacking.</p>
+    <a href="https://a.co/d/0gfPwAO" class="home-section-header__link" target="_blank" rel="noopener noreferrer">View on Amazon &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">Story</span>
+    <p class="djb-card__title">Ghost in the Wires</p>
+    <p class="djb-card__desc">Kevin Mitnick's adventures as the world's most wanted hacker.</p>
+    <a href="https://a.co/d/4l73HPp" class="home-section-header__link" target="_blank" rel="noopener noreferrer">View on Amazon &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">Story</span>
+    <p class="djb-card__title">The Art of Invisibility</p>
+    <p class="djb-card__desc">How to be safe in the age of Big Brother and Big Data — from the world's most famous hacker.</p>
+    <a href="https://a.co/d/ckDUnlP" class="home-section-header__link" target="_blank" rel="noopener noreferrer">View on Amazon &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">Story</span>
+    <p class="djb-card__title">Tracers in the Dark</p>
+    <p class="djb-card__desc">The global hunt for the crime lords of cryptocurrency.</p>
+    <a href="https://a.co/d/ioaNEUT" class="home-section-header__link" target="_blank" rel="noopener noreferrer">View on Amazon &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">Story</span>
+    <p class="djb-card__title">Countdown to Zero Day</p>
+    <p class="djb-card__desc">Stuxnet and the launch of the world's first digital weapon.</p>
+    <a href="https://a.co/d/a9yDCpg" class="home-section-header__link" target="_blank" rel="noopener noreferrer">View on Amazon &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">Story</span>
+    <p class="djb-card__title">Sandworm</p>
+    <p class="djb-card__desc">A new era of cyberwar and the hunt for the Kremlin's most dangerous hackers.</p>
+    <a href="https://a.co/d/2nupHH4" class="home-section-header__link" target="_blank" rel="noopener noreferrer">View on Amazon &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">Story</span>
+    <p class="djb-card__title">Fancy Bear Goes Phishing</p>
+    <p class="djb-card__desc">The dark history of the information age, told through five extraordinary hacks.</p>
+    <a href="https://www.amazon.com/Fancy-Bear-Goes-Phishing-Extraordinary/dp/0374601178" class="home-section-header__link" target="_blank" rel="noopener noreferrer">View on Amazon &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">Story</span>
+    <p class="djb-card__title">Scary Smart</p>
+    <p class="djb-card__desc">The future of artificial intelligence and how you can save our world.</p>
+    <a href="https://a.co/d/7YUY7bE" class="home-section-header__link" target="_blank" rel="noopener noreferrer">View on Amazon &rarr;</a>
+  </div>
+</div>
 
-## Story Books with Technical Backgrounds
+<div class="page-section-header"><span class="page-section-header__title">Technical</span></div>
+<div class="learn-grid">
+  <div class="djb-card">
+    <span class="chip chip--secondary">Technical</span>
+    <p class="djb-card__title">Understand, Manage, and Measure Cyber Risk</p>
+    <p class="djb-card__desc">Ryan Leirvik's practical guide to creating a sustainable cyber program.</p>
+    <a href="https://a.co/d/9VDVLzP" class="home-section-header__link" target="_blank" rel="noopener noreferrer">View on Amazon &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">Technical</span>
+    <p class="djb-card__title">Building a Second Brain</p>
+    <p class="djb-card__desc">A proven method to organize your digital life and unlock your creative potential.</p>
+    <a href="https://a.co/d/2hD7l1K" class="home-section-header__link" target="_blank" rel="noopener noreferrer">View on Amazon &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">Technical</span>
+    <p class="djb-card__title">Alice and Bob Learn Application Security</p>
+    <p class="djb-card__desc">Approachable application security fundamentals for developers and security professionals.</p>
+    <a href="https://a.co/d/6Y9576j" class="home-section-header__link" target="_blank" rel="noopener noreferrer">View on Amazon &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">Technical</span>
+    <p class="djb-card__title">Cybersecurity Career Master Plan</p>
+    <p class="djb-card__desc">Proven techniques and tips to help you advance in your cybersecurity career.</p>
+    <a href="https://a.co/d/ime4jnr" class="home-section-header__link" target="_blank" rel="noopener noreferrer">View on Amazon &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">Technical</span>
+    <p class="djb-card__title">The Tao of Open Source Intelligence</p>
+    <p class="djb-card__desc">Comprehensive guide to OSINT techniques and methodologies.</p>
+    <a href="https://a.co/d/6r1fJvM" class="home-section-header__link" target="_blank" rel="noopener noreferrer">View on Amazon &rarr;</a>
+  </div>
+</div>
 
-_This is the order I would read them in._
-
-1. [The Cuckoo's Egg: Tracking a Spy Through the Maze of Computer Espionage](https://a.co/d/gO9putQ)
-2. [This Is How They Tell Me the World Ends: The Cyberweapons Arms Race](https://a.co/d/0gfPwAO)
-3. [Ghost in the Wires: My Adventures as the World’s Most Wanted Hacker](https://a.co/d/4l73HPp)
-4. [The Art of Invisibility: The World's Most Famous Hacker Teaches You How to Be Safe in the Age of Big Brother and Big Data](https://a.co/d/ckDUnlP)
-5. [Tracers in the Dark: The Global Hunt for the Crime Lords of Cryptocurrency](https://a.co/d/ioaNEUT)
-6. [Countdown to Zero Day: Stuxnet and the Launch of the World's First Digital Weapon](https://a.co/d/a9yDCpg)
-7. [Sandworm: A New Era of Cyberwar and the Hunt for the Kremlin's Most Dangerous Hackers](https://a.co/d/2nupHH4)
-8. [Fancy Bear Goes Phishing: The Dark History of the Information Age, in Five Extraordinary Hacks](https://www.amazon.com/Fancy-Bear-Goes-Phishing-Extraordinary/dp/0374601178)
-9. [Scary Smart: The Future of Artificial Intelligence and How You Can Save Our World](https://a.co/d/7YUY7bE)
-
-## Technical Books
-
-- [Understand, Manage, and Measure Cyber Risk: Practical Solutions for Creating a Sustainable Cyber Program by Ryan Leirvik](https://a.co/d/9VDVLzP)
-- [Building a Second Brain: A Proven Method to Organize Your Digital Life and Unlock Your Creative Potential](https://a.co/d/2hD7l1K)
-- [Computer Programming and Cyber Security for Beginners: This Book Includes: Python Machine Learning, SQL, Linux, Hacking with Kali Linux, Ethical Hacking. Coding and Cybersecurity Fundamentals](https://a.co/d/g1bM5Qw)
-- [Alice and Bob Learn Application Security](https://a.co/d/6Y9576j)
-- [Cybersecurity Career Master Plan: Proven Techniques and Effective Tips to Help You Advance in Your Cybersecurity Career](https://a.co/d/ime4jnr)
-- [NIST Cybersecurity & Privacy Program and Cyber Security, a Battle We Can't Lose: Start Protecting Your Personal and Business Data](https://a.co/d/j385cmN)
-- [The Tao of Open Source Intelligence](https://a.co/d/6r1fJvM)
-
-## Business Books
-
-- [The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win 5th Anniversary Edition](https://a.co/d/ebZ90xC)
-- [Beyond the Phoenix Project: The Origins and Evolution of DevOps](https://a.co/d/3G2i5PJ)
-- [The Unicorn Project: A Novel About Developers, Digital Disruption, and Thriving in the Age of Data](https://a.co/d/dkafgPm)
-- [The Advantage: Why Organizational Health Trumps Everything Else in Business](https://a.co/d/d3EYFZ9)
-- [The 7 Habits of Highly Effective People: Powerful Lessons in Personal Change](https://a.co/d/asvdDZz)
+<div class="page-section-header"><span class="page-section-header__title">Business</span></div>
+<div class="learn-grid">
+  <div class="djb-card">
+    <span class="chip chip--secondary">Business</span>
+    <p class="djb-card__title">The Phoenix Project</p>
+    <p class="djb-card__desc">A novel about IT, DevOps, and helping your business win — the foundational DevOps story.</p>
+    <a href="https://a.co/d/ebZ90xC" class="home-section-header__link" target="_blank" rel="noopener noreferrer">View on Amazon &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">Business</span>
+    <p class="djb-card__title">Beyond the Phoenix Project</p>
+    <p class="djb-card__desc">The origins and evolution of DevOps — the follow-up to The Phoenix Project.</p>
+    <a href="https://a.co/d/3G2i5PJ" class="home-section-header__link" target="_blank" rel="noopener noreferrer">View on Amazon &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">Business</span>
+    <p class="djb-card__title">The Unicorn Project</p>
+    <p class="djb-card__desc">A novel about developers, digital disruption, and thriving in the age of data.</p>
+    <a href="https://a.co/d/dkafgPm" class="home-section-header__link" target="_blank" rel="noopener noreferrer">View on Amazon &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">Business</span>
+    <p class="djb-card__title">The Advantage</p>
+    <p class="djb-card__desc">Why organizational health trumps everything else in business.</p>
+    <a href="https://a.co/d/d3EYFZ9" class="home-section-header__link" target="_blank" rel="noopener noreferrer">View on Amazon &rarr;</a>
+  </div>
+  <div class="djb-card">
+    <span class="chip chip--secondary">Business</span>
+    <p class="djb-card__title">The 7 Habits of Highly Effective People</p>
+    <p class="djb-card__desc">Powerful lessons in personal change — still the standard for personal effectiveness.</p>
+    <a href="https://a.co/d/asvdDZz" class="home-section-header__link" target="_blank" rel="noopener noreferrer">View on Amazon &rarr;</a>
+  </div>
+</div>
