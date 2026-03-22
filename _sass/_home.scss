@@ -160,8 +160,8 @@
 // The home footer lives inside default.liquid's .container wrapper, so we use
 // a negative-margin breakout to make it full-bleed across the viewport.
 .home-footer {
-  border-top: 2px solid var(--color-ink);
-  background: var(--color-ink);
+  border-top: 2px solid #1a1a2e;
+  background: #1a1a2e;
   padding: 32px 24px;
   margin-top: 56px;
   // Break out of default.liquid's .container to span full width:
