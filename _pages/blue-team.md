@@ -6,8 +6,8 @@ permalink: /blue-team/
 nav: false
 ---
 
-<div class="row justify-content-center">
-  <div class="col-lg-10">
+<div class="row justify-content-center" markdown="1">
+  <div class="col-lg-10" markdown="1">
 
 <p class="page-eyebrow">Overview</p>
 
@@ -44,42 +44,42 @@ This page provides a curated set of **Blue Team tools** to support these defensi
       <td><strong>EPSS Scanner</strong></td>
       <td>Determine the EPSS (Exploit Prediction Scoring System) score for CVEs to prioritize patching efforts</td>
       <td><span class="chip chip--secondary">Vuln Mgmt</span></td>
-      <td><a href="/epss/" class="btn btn-sm btn-outline-primary">Launch</a></td>
+      <td><a href="/epss/" class="btn btn-sm btn-djb-secondary">Launch</a></td>
     </tr>
 
     <tr>
       <td><strong>MITRE ATT&amp;CK</strong></td>
       <td>Globally accessible knowledge base of adversary tactics, techniques, and procedures (TTPs) based on real-world observations — the standard framework for understanding and mapping attacker behavior</td>
       <td><span class="chip chip--secondary">Intel</span></td>
-      <td><a href="https://attack.mitre.org/" class="btn btn-sm btn-outline-warning" target="_blank" rel="noopener noreferrer">Open</a></td>
+      <td><a href="https://attack.mitre.org/" class="btn btn-sm btn-djb-secondary" target="_blank" rel="noopener noreferrer">Open</a></td>
     </tr>
 
     <tr>
       <td><strong>Header Analyzer</strong></td>
       <td>Inspect HTTP security headers to detect missing protections and recommend security improvements</td>
       <td><span class="chip chip--secondary">Web Security</span></td>
-      <td><a href="/tools/header-analyzer/" class="btn btn-sm btn-outline-success">Launch</a></td>
+      <td><a href="/tools/header-analyzer/" class="btn btn-sm btn-djb-secondary">Launch</a></td>
     </tr>
 
     <tr>
       <td><strong>IP Reputation</strong></td>
       <td>Query suspicious IPs against multiple threat intelligence sources (AbuseIPDB, VirusTotal, etc.)</td>
       <td><span class="chip chip--secondary">Intel</span></td>
-      <td><a href="/tools/ip-reputation" class="btn btn-sm btn-outline-warning">Open</a></td>
+      <td><a href="/tools/ip-reputation" class="btn btn-sm btn-djb-secondary">Open</a></td>
     </tr>
 
     <tr>
       <td><strong>OSINT Search</strong></td>
       <td>Quickly access OSINT and cybersecurity-focused search engines for threat intelligence gathering</td>
       <td><span class="chip chip--secondary">Intel</span></td>
-      <td><a href="/cybersearch/" class="btn btn-sm btn-outline-warning">Open</a></td>
+      <td><a href="/cybersearch/" class="btn btn-sm btn-djb-secondary">Open</a></td>
     </tr>
 
     <tr>
       <td><strong>Threat Maps</strong></td>
       <td>Visualize real-time threat activity and global attack telemetry from multiple security vendors</td>
       <td><span class="chip chip--secondary">Visualization</span></td>
-      <td><a href="/maps/" class="btn btn-sm btn-outline-primary">Open</a></td>
+      <td><a href="/maps/" class="btn btn-sm btn-djb-secondary">Open</a></td>
     </tr>
 
 

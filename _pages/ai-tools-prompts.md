@@ -44,22 +44,22 @@ Prompts are organized into three sections based on the tool or use case:
           <tr>
             <td><strong>First 90 Days Roadmap</strong></td>
             <td>A prompt for generating a structured security roadmap for a new security role — covering priorities, quick wins, and long-term goals</td>
-            <td><a href="https://github.com/DJBsec/ai_prompts/blob/main/Security/First%2090%20Days%20Roadmap" class="btn btn-sm btn-outline-danger" target="_blank" rel="noopener noreferrer">View</a></td>
+            <td><a href="https://github.com/DJBsec/ai_prompts/blob/main/Security/First%2090%20Days%20Roadmap" class="btn btn-sm btn-djb-secondary" target="_blank" rel="noopener noreferrer">View</a></td>
           </tr>
           <tr>
             <td><strong>Getting Started Questions</strong></td>
             <td>Key questions to ask AI when starting a new security program or assessing an organization's current security posture</td>
-            <td><a href="https://github.com/DJBsec/ai_prompts/blob/main/Security/Getting%20Started%20Questions" class="btn btn-sm btn-outline-danger" target="_blank" rel="noopener noreferrer">View</a></td>
+            <td><a href="https://github.com/DJBsec/ai_prompts/blob/main/Security/Getting%20Started%20Questions" class="btn btn-sm btn-djb-secondary" target="_blank" rel="noopener noreferrer">View</a></td>
           </tr>
           <tr>
             <td><strong>M365 Hardening Playbook</strong></td>
             <td>Prompts for generating step-by-step Microsoft 365 hardening guidance — covering Defender, Entra ID, Conditional Access, and compliance settings</td>
-            <td><a href="https://github.com/DJBsec/ai_prompts/blob/main/Security/M365%20Hardening%20Playbook" class="btn btn-sm btn-outline-danger" target="_blank" rel="noopener noreferrer">View</a></td>
+            <td><a href="https://github.com/DJBsec/ai_prompts/blob/main/Security/M365%20Hardening%20Playbook" class="btn btn-sm btn-djb-secondary" target="_blank" rel="noopener noreferrer">View</a></td>
           </tr>
           <tr>
             <td><strong>M365 Security Advisor</strong></td>
             <td>A system prompt that configures AI as an M365 security advisor — providing tailored guidance on tenant security, policies, and best practices</td>
-            <td><a href="https://github.com/DJBsec/ai_prompts/blob/main/Security/M365_Security_Advisor.md" class="btn btn-sm btn-outline-danger" target="_blank" rel="noopener noreferrer">View</a></td>
+            <td><a href="https://github.com/DJBsec/ai_prompts/blob/main/Security/M365_Security_Advisor.md" class="btn btn-sm btn-djb-secondary" target="_blank" rel="noopener noreferrer">View</a></td>
           </tr>
         </tbody>
       </table>
@@ -91,17 +91,17 @@ Prompts are organized into three sections based on the tool or use case:
           <tr>
             <td><strong>Learning Prompts</strong></td>
             <td>Prompts for using ChatGPT as a learning assistant — study guides, concept explanations, and knowledge checks</td>
-            <td><a href="https://github.com/DJBsec/ai_prompts/blob/main/ChatGPT/learning%20prompts.md" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener noreferrer">View</a></td>
+            <td><a href="https://github.com/DJBsec/ai_prompts/blob/main/ChatGPT/learning%20prompts.md" class="btn btn-sm btn-djb-secondary" target="_blank" rel="noopener noreferrer">View</a></td>
           </tr>
           <tr>
             <td><strong>Prompt Formula</strong></td>
             <td>A structured formula for writing effective prompts — role, context, task, format, and constraints</td>
-            <td><a href="https://github.com/DJBsec/ai_prompts/blob/main/ChatGPT/prompt%20formula.md" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener noreferrer">View</a></td>
+            <td><a href="https://github.com/DJBsec/ai_prompts/blob/main/ChatGPT/prompt%20formula.md" class="btn btn-sm btn-djb-secondary" target="_blank" rel="noopener noreferrer">View</a></td>
           </tr>
           <tr>
             <td><strong>Summarize Prompts</strong></td>
             <td>Ready-to-use prompts for summarizing documents, articles, meeting notes, and reports with AI</td>
-            <td><a href="https://github.com/DJBsec/ai_prompts/blob/main/ChatGPT/summarize%20prompts.md" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener noreferrer">View</a></td>
+            <td><a href="https://github.com/DJBsec/ai_prompts/blob/main/ChatGPT/summarize%20prompts.md" class="btn btn-sm btn-djb-secondary" target="_blank" rel="noopener noreferrer">View</a></td>
           </tr>
         </tbody>
       </table>
@@ -133,7 +133,7 @@ Prompts are organized into three sections based on the tool or use case:
           <tr>
             <td><strong>Executive Briefing Analyst</strong></td>
             <td>A system prompt that configures Copilot as an executive briefing analyst — distilling complex information into concise leadership-ready summaries</td>
-            <td><a href="https://github.com/DJBsec/ai_prompts/blob/main/Copilot/Executive%20Briefing%20Analyst.md" class="btn btn-sm btn-outline-info" target="_blank" rel="noopener noreferrer">View</a></td>
+            <td><a href="https://github.com/DJBsec/ai_prompts/blob/main/Copilot/Executive%20Briefing%20Analyst.md" class="btn btn-sm btn-djb-secondary" target="_blank" rel="noopener noreferrer">View</a></td>
           </tr>
         </tbody>
       </table>
