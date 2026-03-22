@@ -88,14 +88,14 @@ This page provides a curated set of **Blue Team tools** to support these defensi
       <td><strong>Hash Lookup</strong></td>
       <td>Look up file hashes in malware databases and threat intelligence feeds to identify potential threats</td>
       <td><span class="chip chip--secondary">Forensics</span></td>
-      <td><em style="color: var(--global-text-color-light);">In development</em></td>
+      <td><em class="text-muted">In development</em></td>
     </tr>
 
     <tr>
       <td><strong>Log Analyzer</strong></td>
       <td>Parse and analyze common log formats to detect suspicious patterns and IOCs</td>
       <td><span class="chip chip--secondary">Analysis</span></td>
-      <td><em style="color: var(--global-text-color-light);">In development</em></td>
+      <td><em class="text-muted">In development</em></td>
     </tr>
 
   </tbody>
@@ -142,7 +142,7 @@ This page provides a curated set of **Blue Team tools** to support these defensi
     <div class="djb-card h-100">
       <p class="djb-card__title">Forensics &amp; Analysis</p>
       <p class="djb-card__desc">Incident response and digital forensics utilities</p>
-      <em style="color: var(--global-text-color-light); font-size: 0.85rem;">In development</em>
+      <em class="text-muted">In development</em>
     </div>
   </div>
 </div>

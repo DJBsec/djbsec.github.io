@@ -25,20 +25,20 @@ This page will serve as a launchpad for **Red Team tools**, attack simulations, 
 
 ## Red Team Toolset
 
-<table class="table table-hover page-token-table" style="margin-top: 1rem;">
+<table class="table table-hover page-token-table">
   <thead>
     <tr>
-      <th style="padding: 0.5rem;">Tool</th>
-      <th style="padding: 0.5rem;">Description</th>
-      <th style="padding: 0.5rem;">Launch</th>
+      <th>Tool</th>
+      <th>Description</th>
+      <th>Launch</th>
     </tr>
   </thead>
   <tbody>
 
     <tr>
-      <td style="padding: 0.5rem;">Coming Soon</td>
-      <td style="padding: 0.5rem;">This space will feature enumeration, exploitation, and simulation tools</td>
-      <td style="padding: 0.5rem;">—</td>
+      <td>Coming Soon</td>
+      <td>This space will feature enumeration, exploitation, and simulation tools</td>
+      <td>—</td>
     </tr>
 
   </tbody>
