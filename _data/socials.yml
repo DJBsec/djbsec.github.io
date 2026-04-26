@@ -36,6 +36,7 @@ linkedin_username: djbsec # your LinkedIn user name
 # spotify_id: # your spotify id
 # stackoverflow_id: # your stackoverflow id
 # telegram_username: # your Telegram user name
+tiktok_username: djbsec # your TikTok user name (tiktok.com/@<tiktok_username>)
 # unsplash_id: # your unsplash id
 # wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
 # whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
