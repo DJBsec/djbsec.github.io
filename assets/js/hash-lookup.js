@@ -37,12 +37,7 @@
   }
 
   function card(headerText, body) {
-    return el(
-      "div",
-      { class: "card mb-3" },
-      el("div", { class: "card-header", text: headerText }),
-      el("div", { class: "card-body" }, body),
-    );
+    return el("div", { class: "card mb-3" }, el("div", { class: "card-header", text: headerText }), el("div", { class: "card-body" }, body));
   }
 
   function pivotLinks(hash) {
@@ -56,16 +51,13 @@
     ];
     for (const t of targets) {
       body.appendChild(
-        el(
-          "a",
-          {
-            class: "btn btn-sm btn-outline-secondary me-2 mb-2",
-            href: t.url,
-            target: "_blank",
-            rel: "noopener noreferrer",
-            text: t.label,
-          },
-        ),
+        el("a", {
+          class: "btn btn-sm btn-outline-secondary me-2 mb-2",
+          href: t.url,
+          target: "_blank",
+          rel: "noopener noreferrer",
+          text: t.label,
+        })
       );
     }
     return card("Cross-Reference", body);
@@ -78,7 +70,7 @@
         el("strong", { text: "⚠️ Known malicious" }),
         " — this hash matches a known-bad sample (",
         el("code", { text: String(data.KnownMalicious) }),
-        ").",
+        ")."
       );
     }
     const trust = data["hashlookup:trust"];
@@ -86,11 +78,7 @@
       const t = Number(trust);
       if (!Number.isNaN(t)) {
         if (t >= 80) {
-          return alertBox(
-            "success",
-            el("strong", { text: "✅ Known clean" }),
-            ` — high trust (${t}/100). Found in NSRL or other reputable sources.`,
-          );
+          return alertBox("success", el("strong", { text: "✅ Known clean" }), ` — high trust (${t}/100). Found in NSRL or other reputable sources.`);
         }
         if (t >= 50) {
           return alertBox("info", el("strong", { text: "ℹ️ Known file" }), ` — medium trust (${t}/100).`);
@@ -150,10 +138,9 @@
           " in CIRCL Hashlookup.",
           el("br"),
           el("small", {
-            text:
-              "The hash is not in NSRL (known-good) or CIRCL's known-malicious sets. This does not mean the file is safe — check the cross-reference links below.",
-          }),
-        ),
+            text: "The hash is not in NSRL (known-good) or CIRCL's known-malicious sets. This does not mean the file is safe — check the cross-reference links below.",
+          })
+        )
       );
       resultsDiv.appendChild(pivotLinks(hash));
       return;
@@ -179,9 +166,7 @@
     const algo = detectAlgo(hash);
 
     if (!algo) {
-      resultsDiv.replaceChildren(
-        alertBox("danger", "Hash must be hexadecimal and 32 (MD5), 40 (SHA-1), or 64 (SHA-256) characters long."),
-      );
+      resultsDiv.replaceChildren(alertBox("danger", "Hash must be hexadecimal and 32 (MD5), 40 (SHA-1), or 64 (SHA-256) characters long."));
       return;
     }
 

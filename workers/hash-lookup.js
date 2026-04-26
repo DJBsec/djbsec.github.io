@@ -50,11 +50,7 @@ export default {
     else if (hash.length === 40) algo = "sha1";
     else if (hash.length === 64) algo = "sha256";
     else {
-      return jsonResponse(
-        { error: "Hash must be 32 (MD5), 40 (SHA-1), or 64 (SHA-256) hex characters" },
-        400,
-        cors,
-      );
+      return jsonResponse({ error: "Hash must be 32 (MD5), 40 (SHA-1), or 64 (SHA-256) hex characters" }, 400, cors);
     }
 
     try {
