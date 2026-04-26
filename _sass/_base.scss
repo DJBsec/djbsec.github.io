@@ -678,6 +678,50 @@ footer.sticky-bottom {
   }
 }
 
+// ── Category Counter ─────────────────────────────────
+.news-cat-counter {
+  margin: -0.5rem 0 2rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 6px;
+  background: var(--color-surface, transparent);
+
+  .news-cat-counter-label {
+    display: block;
+    font-family: $font-mono;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-ink-muted);
+    margin-bottom: 0.6rem;
+  }
+
+  .news-cat-counter-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .news-cat-pill {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.35rem 0.55rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    line-height: 1;
+  }
+
+  .news-cat-pill-count {
+    background: rgba(255, 255, 255, 0.25);
+    color: inherit;
+    padding: 0.15rem 0.4rem;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
 // ── News Badges ──────────────────────────────────────
 .news-badge {
   display: inline-block;

@@ -53,6 +53,38 @@ pagination:
 </div>
 {% endif %}
 
+{% comment %} ===== Category coverage counter ===== {% endcomment %}
+{% assign cat_defs = "Vulnerability|primary,Malware|danger,Ransomware|danger,Nation-State/APT|danger,Phishing|info,Threat Intelligence|info,Insider Threat|info,Policy & Legislation|secondary,Privacy|secondary,Data Breach|warning,Authentication|success" | split: "," %}
+
+<div class="news-cat-counter">
+  <span class="news-cat-counter-label"><i class="fa-solid fa-chart-simple fa-xs"></i> Category coverage across all news</span>
+  <div class="news-cat-counter-list">
+  {% for entry in cat_defs %}
+    {% assign parts = entry | split: "|" %}
+    {% assign cat = parts[0] %}
+    {% assign color = parts[1] %}
+    {% assign needle = ">" | append: cat | append: "</span>" %}
+    {% assign total = 0 %}
+    {% for post in site.posts %}
+      {% if post.content contains "Today's daily news covers" %}
+        {% assign hr_split = post.content | split: "<hr" %}
+        {% assign body = "" %}
+        {% for chunk in hr_split offset: 1 %}
+          {% assign body = body | append: chunk %}
+        {% endfor %}
+      {% else %}
+        {% assign body = post.content %}
+      {% endif %}
+      {% assign occurrences = body | split: needle | size | minus: 1 %}
+      {% assign total = total | plus: occurrences %}
+    {% endfor %}
+    {% if total > 0 %}
+    <span class="badge badge-{{ color }} news-cat-pill">{{ cat }} <span class="news-cat-pill-count">{{ total }}</span></span>
+    {% endif %}
+  {% endfor %}
+  </div>
+</div>
+
 {% assign sorted_posts = site.posts | sort: "date" | reverse %}
 {% assign hero_post = sorted_posts[0] %}
 {% assign secondary_posts = sorted_posts | slice: 1, 2 %}
