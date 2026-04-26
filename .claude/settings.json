@@ -18,6 +18,15 @@
             "command": "node .claude/hooks/gsd-context-monitor.js"
           }
         ]
+      },
+      {
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r --arg ts \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\" '\"\\($ts) [\\(.tool_name)] \\(.tool_input.file_path // .tool_input.notebook_path // \"?\")\"' >> \"${CLAUDE_PROJECT_DIR:-.}/claude-changes.log\" 2>/dev/null || true"
+          }
+        ]
       }
     ]
   }

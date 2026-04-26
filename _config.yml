@@ -177,6 +177,7 @@ exclude:
   - docs/
   - examples/
   - bin/
+  - workers/
   - CONTRIBUTING.md
   - CUSTOMIZE.md
   - Dockerfile
