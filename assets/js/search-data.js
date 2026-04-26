@@ -818,6 +818,13 @@ ninja.data = [{
           window.open("https://www.linkedin.com/in/djbsec", "_blank");
         },
       },{
+        id: 'social-tiktok_username',
+        title: 'Tiktok_username',
+        section: 'Socials',
+        handler: () => {
+          window.open("", "_blank");
+        },
+      },{
         id: 'social-youtube',
         title: 'YouTube',
         section: 'Socials',
