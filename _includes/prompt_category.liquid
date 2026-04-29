@@ -5,7 +5,14 @@
       <h3 class="djb-card__title" style="margin-bottom: 4px;">{{ include.category.title }}</h3>
       <p class="djb-card__desc">{{ include.category.description }}</p>
     </div>
-    <a href="{{ include.category.repo_url }}" class="btn-djb-secondary" style="white-space: nowrap; font-size: var(--text-xs);" target="_blank" rel="noopener noreferrer">Browse Folder</a>
+    <a
+      href="{{ include.category.repo_url }}"
+      class="btn-djb-secondary"
+      style="white-space: nowrap; font-size: var(--text-xs);"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Browse Folder</a
+    >
   </div>
   <div>
     <div class="table-responsive">
@@ -20,7 +27,9 @@
         <tbody>
           {% for prompt in include.category.prompts %}
             <tr>
-              <td><strong>{{ prompt.name }}</strong></td>
+              <td>
+                <strong>{{ prompt.name }}</strong>
+              </td>
               <td>{{ prompt.description }}</td>
               <td><a href="{{ prompt.url }}" class="btn btn-sm btn-djb-secondary" target="_blank" rel="noopener noreferrer">View</a></td>
             </tr>

@@ -21,7 +21,7 @@ Prompts are organized into three sections based on the tool or use case:
 ---
 
 {% for category in site.data.ai_prompts %}
-  {% include prompt_category.liquid category=category %}
+{% include prompt_category.liquid category=category %}
 {% endfor %}
 
 ---
