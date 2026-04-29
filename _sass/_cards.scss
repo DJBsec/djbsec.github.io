@@ -51,6 +51,12 @@
   }
 }
 
+// Accent-left card — single colored stripe on the leading edge.
+// Replaces inline `style="border-left: …"` on category/section cards.
+.djb-card--accent-left {
+  border-left: var(--accent-stripe-width) solid var(--color-accent);
+}
+
 .djb-card--featured-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -67,7 +73,7 @@
   font-size: 0.8rem;
   color: var(--color-ink);
   padding: 8px 10px;
-  border-left: 2px solid var(--color-accent);
+  border-left: var(--accent-stripe-width) solid var(--color-accent);
   background: rgba(255, 255, 255, 0.5);
   border-radius: 0 3px 3px 0;
   margin-bottom: 6px;

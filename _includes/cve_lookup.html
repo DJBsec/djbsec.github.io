@@ -9,9 +9,9 @@
     }
     .epss-tool input[type="text"],
     .epss-tool input[type="date"] {
-      background: #0d1117;
-      color: #00bfff;
-      border: 1px solid rgba(0, 191, 255, 0.3);
+      background: var(--color-surface-raised);
+      color: var(--color-ink);
+      border: 1px solid var(--color-surface-border);
       border-radius: 4px;
       font-family: "Courier New", monospace;
       letter-spacing: 0.04em;
@@ -26,11 +26,11 @@
     .epss-tool input[type="text"]:focus,
     .epss-tool input[type="date"]:focus {
       outline: none;
-      border-color: #00bfff;
-      box-shadow: 0 0 8px rgba(0, 191, 255, 0.35);
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px var(--color-accent-subtle);
     }
     .epss-tool input[type="text"]::placeholder {
-      color: rgba(0, 191, 255, 0.35);
+      color: var(--color-ink-muted);
     }
     .epss-tool button {
       padding: 0.5em;
@@ -38,8 +38,8 @@
       font-size: 1em;
     }
     .epss-tool .spinner {
-      border: 4px solid #f3f3f3;
-      border-top: 4px solid #ffc107;
+      border: 4px solid var(--color-surface-border);
+      border-top: 4px solid var(--color-warning);
       border-radius: 50%;
       width: 30px;
       height: 30px;
@@ -65,26 +65,26 @@
       margin: 0.25em 0;
     }
     .epss-tool .result-section {
-      border-left: 3px solid #00bfff;
-      border-top: 1px solid rgba(0, 191, 255, 0.15);
+      border-left: var(--accent-stripe-width) solid var(--color-accent);
+      border-top: 1px solid var(--color-surface-border);
       border-right: none;
       border-bottom: none;
       border-radius: 0 4px 4px 0;
-      background: rgba(0, 191, 255, 0.03);
+      background: var(--color-accent-subtle);
       padding: 1em 1.2em;
       margin-bottom: 1em;
     }
     .epss-tool .result-section h4 {
       margin-top: 0;
       padding-bottom: 0.4em;
-      border-bottom: 1px solid rgba(0, 191, 255, 0.15);
+      border-bottom: 1px solid var(--color-surface-border);
     }
     .epss-tool .kev-yes {
       display: inline-block;
       padding: 0.2em 0.7em;
       border-radius: 4px;
-      background: #dc3545;
-      color: white;
+      background: var(--color-severity-critical);
+      color: var(--color-surface);
       font-weight: bold;
       font-size: 0.9em;
     }
@@ -92,8 +92,8 @@
       display: inline-block;
       padding: 0.2em 0.7em;
       border-radius: 4px;
-      background: #198754;
-      color: white;
+      background: var(--color-severity-low);
+      color: var(--color-surface);
       font-weight: bold;
       font-size: 0.9em;
     }
@@ -101,37 +101,38 @@
       display: inline-block;
       padding: 0.2em 0.7em;
       border-radius: 12px;
-      background: #e9ecef;
-      border: 1px solid #dee2e6;
-      color: #212529;
+      background: var(--color-surface-raised);
+      border: 1px solid var(--color-surface-border);
+      color: var(--color-ink);
       font-size: 0.85em;
       cursor: pointer;
       transition: background 0.15s;
     }
     .epss-tool .chip:hover {
-      background: #ced4da;
+      background: var(--color-accent-subtle);
     }
     .epss-tool #copyBtn {
       padding: 0.4em 1em;
       font-size: 0.9em;
       cursor: pointer;
-      border: 1px solid #dee2e6;
+      border: 1px solid var(--color-surface-border);
       border-radius: 4px;
-      background: #f8f9fa;
+      background: var(--color-surface-raised);
+      color: var(--color-ink);
     }
     .epss-tool #copyBtn:hover {
-      background: #e9ecef;
+      background: var(--color-accent-subtle);
     }
     .epss-tool .chart-box {
       display: none;
       margin-top: 1.5em;
       padding: 1em 1.2em;
-      border-left: 3px solid #00bfff;
-      border-top: 1px solid rgba(0, 191, 255, 0.15);
+      border-left: var(--accent-stripe-width) solid var(--color-accent);
+      border-top: 1px solid var(--color-surface-border);
       border-right: none;
       border-bottom: none;
       border-radius: 0 4px 4px 0;
-      background: rgba(0, 191, 255, 0.03);
+      background: var(--color-accent-subtle);
     }
     .epss-tool .chart-box h4 {
       margin-top: 0;
@@ -298,8 +299,8 @@
             {
               label: "EPSS %",
               data: trendData.map((d) => +(parseFloat(d.epss) * 100).toFixed(4)),
-              borderColor: "#ffc107",
-              backgroundColor: "rgba(255,193,7,0.12)",
+              borderColor: getComputedStyle(document.documentElement).getPropertyValue("--color-warning").trim() || "#d97706",
+              backgroundColor: "rgba(217,119,6,0.12)",
               tension: 0.35,
               fill: true,
               pointRadius: 2,
@@ -330,7 +331,7 @@
 
       // KEV section
       const kevHtml = kevEntry
-        ? `<div class="result-section" style="border-color:#dc3545;">
+        ? `<div class="result-section" style="border-left-color: var(--color-severity-critical);">
             <h4>🚨 CISA Known Exploited Vulnerability (KEV)</h4>
             <strong>Status:</strong> <span class="kev-yes">⚠️ IN KEV LIST</span><br><br>
             <strong>Vulnerability Name:</strong> ${esc(kevEntry.vulnerabilityName)}<br>
@@ -338,7 +339,7 @@
             <strong>Remediation Due Date (FCEB):</strong> ${esc(kevEntry.dueDate) || "N/A"}<br>
             <strong>Required Action:</strong> ${esc(kevEntry.requiredAction)}
            </div>`
-        : `<div class="result-section" style="border-color:#198754;">
+        : `<div class="result-section" style="border-left-color: var(--color-severity-low);">
             <h4>✅ CISA KEV Status</h4>
             <span class="kev-no">NOT IN KEV LIST</span>
             <p style="margin:0.5em 0 0;">This CVE has not been added to the CISA Known Exploited Vulnerabilities catalog.</p>
@@ -349,7 +350,7 @@
         <h4>📊 EPSS Score <small style="font-weight:normal; font-size:0.8em;">(FIRST.org)</small></h4>
         <strong>EPSS Score:</strong> <span style="color:${ec}; font-weight:bold;">${dot(data.epss)} ${esc(data.epss)}%</span><br>
         <strong>EPSS Percentile:</strong> <span style="color:${pc}; font-weight:bold;">${esc(data.percentile)}%</span><br>
-        <em style="font-size:0.9em; color:#6c757d;">${esc(data.message)}</em>
+        <em style="font-size:0.9em; color: var(--color-ink-muted);">${esc(data.message)}</em>
        </div>`;
 
       // CVSS section

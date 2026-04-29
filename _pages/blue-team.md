@@ -104,54 +104,6 @@ This page provides a curated set of **Blue Team tools** to support these defensi
 
 ---
 
-<p class="page-eyebrow">Categories</p>
-
-## Tools by Category
-
-<div class="row mt-4">
-  <div class="col-md-3 mb-3">
-    <div class="djb-card h-100">
-      <p class="djb-card__title">Vulnerability Management</p>
-      <p class="djb-card__desc">Tools for identifying, scoring, and prioritizing security vulnerabilities</p>
-      <span class="chip chip--secondary">1 Active</span>
-    </div>
-  </div>
-
-  <div class="col-md-3 mb-3">
-    <div class="djb-card h-100">
-      <p class="djb-card__title">Web Security</p>
-      <p class="djb-card__desc">Analyze web applications and HTTP configurations for security issues</p>
-      <span class="chip chip--secondary">1 Active</span>
-    </div>
-  </div>
-
-  <div class="col-md-3 mb-3">
-    <div class="djb-card h-100">
-      <p class="djb-card__title">Threat Intelligence</p>
-      <p class="djb-card__desc">OSINT tools and threat data aggregation for security research</p>
-      <span class="chip chip--secondary">3 Active</span>
-      <ul class="list-unstyled mt-2">
-        <li>• OSINT Search</li>
-        <li>• Threat Maps</li>
-        <li>• MITRE ATT&amp;CK</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="col-md-3 mb-3">
-    <div class="djb-card h-100">
-      <p class="djb-card__title">Forensics &amp; Analysis</p>
-      <p class="djb-card__desc">Incident response and digital forensics utilities</p>
-      <span class="chip chip--secondary">1 Active</span>
-      <ul class="list-unstyled mt-2">
-        <li>• Hash Lookup</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
----
-
 <p class="page-eyebrow">Getting Started</p>
 
 ## Quick Start Guide

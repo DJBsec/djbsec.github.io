@@ -3,8 +3,8 @@
 // Light values in :root, dark overrides in html[data-theme="dark"].
 
 :root {
-  --color-surface: #ffffff;
-  --color-surface-raised: #f8f8fb;
+  --color-surface: #fbfbfd;
+  --color-surface-raised: #f4f5f9;
   --color-surface-border: #e4e6ed;
   --color-ink: #1a1a2e;
   --color-ink-muted: #6b7280;
@@ -12,6 +12,16 @@
   --color-accent-subtle: #eff4ff;
   --color-severity-critical: #dc2626;
   --color-severity-high: #d97706;
+  --color-severity-low: #16a34a;
+  --color-warning: #d97706;
+  --accent-stripe-width: 2px;
+
+  // Type scale — modular 1.25 ratio. Cap long-form body at 70ch.
+  --text-2xs: 0.625rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
 }
 
 html[data-theme="dark"] {
@@ -24,4 +34,6 @@ html[data-theme="dark"] {
   --color-accent-subtle: #1e2a4a;
   --color-severity-critical: #ef4444;
   --color-severity-high: #f59e0b;
+  --color-severity-low: #22c55e;
+  --color-warning: #f59e0b;
 }

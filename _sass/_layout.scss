@@ -229,14 +229,14 @@ html[data-theme="dark"] .profile img {
 }
 
 .explained-filter-count {
-  font-size: 10px;
+  font-size: var(--text-2xs);
   opacity: 0.7;
 }
 
 // Results count line
 .explained-results-meta {
   font-family: $font-mono;
-  font-size: 11px;
+  font-size: var(--text-2xs);
   letter-spacing: 0.06em;
   color: var(--color-ink-muted);
   margin-bottom: 12px;
@@ -261,7 +261,7 @@ html[data-theme="dark"] .profile img {
   padding: 16px 20px;
   background: var(--global-card-bg-color);
   border: 1px solid var(--color-surface-border);
-  border-left: 3px solid transparent;
+  border-left: var(--accent-stripe-width) solid transparent;
   border-radius: 6px;
   text-decoration: none;
   color: var(--global-text-color);
@@ -377,7 +377,7 @@ html[data-theme="dark"] .profile img {
 
 .explained-badge {
   font-family: "Courier New", Courier, monospace;
-  font-size: 9px;
+  font-size: var(--text-2xs);
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
