@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       ip:
-        description: 'IP Address to check'
+        description: "IP Address to check (IPv4 or IPv6)"
         required: true
 
 jobs:
@@ -13,20 +13,38 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6.0.2
+
+      - name: Validate IP input
+        env:
+          IP: ${{ github.event.inputs.ip }}
+        run: |
+          # Reject anything that is not a syntactically-valid IPv4 or IPv6
+          # address. Rejects shell metacharacters, path traversal, and any
+          # other non-IP string before it reaches downstream commands.
+          if ! [[ "$IP" =~ ^([0-9]{1,3}\.){3}[0-9]{1,3}$ ]] && \
+             ! [[ "$IP" =~ ^[0-9a-fA-F:]+$ ]]; then
+            echo "::error::Invalid IP address: $IP"
+            exit 1
+          fi
+          echo "IP=$IP" >> "$GITHUB_ENV"
 
       - name: Query AbuseIPDB
+        env:
+          ABUSEIPDB_API_KEY: ${{ secrets.ABUSEIPDB_API_KEY }}
         run: |
           mkdir -p assets/data/ipcache
-          curl -s "https://api.abuseipdb.com/api/v2/check?ipAddress=${{ github.event.inputs.ip }}&maxAgeInDays=90" \
-            -H "Key: ${{ secrets.ABUSEIPDB_API_KEY }}" \
+          curl -s --get "https://api.abuseipdb.com/api/v2/check" \
+            --data-urlencode "ipAddress=$IP" \
+            --data-urlencode "maxAgeInDays=90" \
+            -H "Key: $ABUSEIPDB_API_KEY" \
             -H "Accept: application/json" \
-            -o "assets/data/ipcache/${{ github.event.inputs.ip }}.json"
+            -o "assets/data/ipcache/${IP}.json"
 
       - name: Commit cache
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add assets/data/ipcache/
-          git commit -m "Update cache for ${{ github.event.inputs.ip }}" || echo "No changes"
+          git diff --staged --quiet || git commit -m "Update cache for $IP"
           git push
