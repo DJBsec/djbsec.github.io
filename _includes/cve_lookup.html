@@ -218,7 +218,10 @@
     /* ── CISA KEV ──────────────────────────────────────────────────── */
     function getKevData() {
       if (kevCache) return Promise.resolve(kevCache);
-      return fetch("https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json")
+      // CISA's own host (www.cisa.gov) returns no Access-Control-Allow-Origin,
+      // so the browser blocks the fetch and the page falsely reports "NOT IN KEV".
+      // cisagov mirrors the same JSON on GitHub with CORS * — use that.
+      return fetch("https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.json")
         .then((r) => r.json())
         .then((d) => {
           kevCache = d;
