@@ -28,7 +28,7 @@
   {% else %}
     {% capture title %}{{ site.title }}{% endcapture %}
   {% endif %}
-  {% if page.url == '/blog/index.html' %}
+  {% if page.url == '/blog/index.html' or page.url == '/cybernews/index.html' %}
     {{ page.title }} | {{ title }}
   {% elsif page.title != 'blank' and page.url != '/' %}
     {% if page.title == null or page.title == '' %}
@@ -47,10 +47,12 @@
 {% endif %}
 
 {% assign is_blog_post = false %}
-{% if page.url != '/blog/index.html' and page.url contains '/blog/' %}
-  {% unless page.url contains '/tag/' or page.url contains '/category/' %}
-    {% assign is_blog_post = true %}
-  {% endunless %}
+{% if page.url != '/blog/index.html' and page.url != '/cybernews/index.html' %}
+  {% if page.url contains '/blog/' or page.url contains '/cybernews/' %}
+    {% unless page.url contains '/tag/' or page.url contains '/category/' %}
+      {% assign is_blog_post = true %}
+    {% endunless %}
+  {% endif %}
 {% endif %}
 
 {% if site.serve_og_meta %}

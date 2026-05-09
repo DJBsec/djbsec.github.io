@@ -84,7 +84,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 
 blog_name: DJBSEC # blog_name will be displayed in your blog page
 blog_description: Your Daily Cyber News
-permalink: /blog/:year/:title/
+permalink: /cybernews/:year/:title/
 lsi: false # produce an index for related posts
 
 # Pagination
@@ -139,6 +139,9 @@ newsletter:
 # -----------------------------------------------------------------------------
 
 collections:
+  blog:
+    output: true
+    permalink: /blog/:title/
   news:
     defaults:
       layout: post
@@ -192,6 +195,7 @@ exclude:
   - package.json
   - package-lock.json
   - _pages/about_einstein.md
+  - _blog/template.md
   - purgecss.config.js
   - README.md
   - readme_preview/
@@ -211,6 +215,7 @@ plugins:
   - jekyll-link-attributes
   - jekyll-minifier
   - jekyll-paginate-v2
+  - jekyll-redirect-from
   - jekyll-regex-replace
   - jekyll/scholar
   - jekyll-sitemap
@@ -231,7 +236,6 @@ defaults:
       type: "conferences"
     values:
       layout: conference-detail
-
 sass:
   style: compressed
 
@@ -262,9 +266,9 @@ jekyll-archives:
     tag: archive-tag
     category: archive-category
   permalinks:
-    year: "/blog/:year/"
-    tag: "/blog/tag/:name/"
-    category: "/blog/category/:name/"
+    year: "/cybernews/:year/"
+    tag: "/cybernews/tag/:name/"
+    category: "/cybernews/category/:name/"
 
 display_tags: ["Daily News", "CISO News"] # these tags will be displayed on the front page of your blog
 #display_categories: ["external-services"] # these categories will be displayed on the front page of your blog
