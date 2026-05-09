@@ -9,9 +9,9 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-news",
-          title: "News",
-          description: "",
+  },{id: "nav-blog",
+          title: "Blog",
+          description: "Thoughts on cybersecurity, mentorship, and industry happenings.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/blog/";
@@ -22,6 +22,13 @@ ninja.data = [{
           section: "Navigation",
           handler: () => {
             window.location.href = "/cybersecurity-calendar/";
+          },
+        },{id: "nav-cybernews",
+          title: "CyberNews",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cybernews/index.html";
           },
         },{id: "dropdown-epss-scanner",
               title: "EPSS Scanner",
@@ -87,7 +94,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0508/";
+          window.location.href = "/cybernews/2026/cybernews0508/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-05-07",
@@ -98,7 +105,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0507/";
+          window.location.href = "/cybernews/2026/cybernews0507/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-05-06",
@@ -109,7 +116,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0506/";
+          window.location.href = "/cybernews/2026/cybernews0506/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-05-05",
@@ -120,7 +127,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0505/";
+          window.location.href = "/cybernews/2026/cybernews0505/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-05-04",
@@ -131,7 +138,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0504/";
+          window.location.href = "/cybernews/2026/cybernews0504/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-04-30",
@@ -142,7 +149,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0430/";
+          window.location.href = "/cybernews/2026/cybernews0430/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-04-29",
@@ -153,7 +160,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0429/";
+          window.location.href = "/cybernews/2026/cybernews0429/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-04-28",
@@ -164,7 +171,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0428/";
+          window.location.href = "/cybernews/2026/cybernews0428/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-04-27",
@@ -175,7 +182,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0427/";
+          window.location.href = "/cybernews/2026/cybernews0427/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-04-24",
@@ -186,7 +193,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0424/";
+          window.location.href = "/cybernews/2026/cybernews0424/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-04-23",
@@ -197,7 +204,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0423/";
+          window.location.href = "/cybernews/2026/cybernews0423/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-04-22",
@@ -208,7 +215,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0422/";
+          window.location.href = "/cybernews/2026/cybernews0422/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-04-21",
@@ -219,7 +226,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0421/";
+          window.location.href = "/cybernews/2026/cybernews0421/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-04-20",
@@ -230,7 +237,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0420/";
+          window.location.href = "/cybernews/2026/cybernews0420/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-04-17",
@@ -241,7 +248,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0417/";
+          window.location.href = "/cybernews/2026/cybernews0417/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-04-16",
@@ -252,7 +259,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0416/";
+          window.location.href = "/cybernews/2026/cybernews0416/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-04-15",
@@ -263,7 +270,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0415/";
+          window.location.href = "/cybernews/2026/cybernews0415/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-04-14",
@@ -274,7 +281,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0414/";
+          window.location.href = "/cybernews/2026/cybernews0414/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-04-13",
@@ -285,7 +292,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0413/";
+          window.location.href = "/cybernews/2026/cybernews0413/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-04-10",
@@ -296,7 +303,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0410/";
+          window.location.href = "/cybernews/2026/cybernews0410/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-04-09",
@@ -307,7 +314,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0409/";
+          window.location.href = "/cybernews/2026/cybernews0409/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-04-08",
@@ -318,7 +325,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0408/";
+          window.location.href = "/cybernews/2026/cybernews0408/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-04-07",
@@ -329,7 +336,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0407/";
+          window.location.href = "/cybernews/2026/cybernews0407/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-04-06",
@@ -340,7 +347,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0406/";
+          window.location.href = "/cybernews/2026/cybernews0406/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-04-03",
@@ -351,7 +358,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0403/";
+          window.location.href = "/cybernews/2026/cybernews0403/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-04-02",
@@ -362,7 +369,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0402/";
+          window.location.href = "/cybernews/2026/cybernews0402/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-04-01",
@@ -373,7 +380,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0401/";
+          window.location.href = "/cybernews/2026/cybernews0401/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-03-31",
@@ -384,7 +391,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0331/";
+          window.location.href = "/cybernews/2026/cybernews0331/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-03-30",
@@ -395,7 +402,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0330/";
+          window.location.href = "/cybernews/2026/cybernews0330/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-03-27",
@@ -406,7 +413,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0327/";
+          window.location.href = "/cybernews/2026/cybernews0327/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-03-26",
@@ -417,7 +424,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0326/";
+          window.location.href = "/cybernews/2026/cybernews0326/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-03-24",
@@ -428,7 +435,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0324/";
+          window.location.href = "/cybernews/2026/cybernews0324/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-03-23",
@@ -439,7 +446,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0323/";
+          window.location.href = "/cybernews/2026/cybernews0323/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-03-20",
@@ -450,7 +457,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0320/";
+          window.location.href = "/cybernews/2026/cybernews0320/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-03-19",
@@ -461,7 +468,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0319/";
+          window.location.href = "/cybernews/2026/cybernews0319/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-03-18",
@@ -472,7 +479,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0318/";
+          window.location.href = "/cybernews/2026/cybernews0318/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-03-17",
@@ -483,7 +490,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0317/";
+          window.location.href = "/cybernews/2026/cybernews0317/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-03-16",
@@ -494,7 +501,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0316/";
+          window.location.href = "/cybernews/2026/cybernews0316/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-03-13",
@@ -505,7 +512,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0313/";
+          window.location.href = "/cybernews/2026/cybernews0313/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-03-12",
@@ -516,7 +523,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0312/";
+          window.location.href = "/cybernews/2026/cybernews0312/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-03-11",
@@ -527,7 +534,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0311/";
+          window.location.href = "/cybernews/2026/cybernews0311/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-03-10",
@@ -538,7 +545,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0310/";
+          window.location.href = "/cybernews/2026/cybernews0310/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-03-07",
@@ -549,7 +556,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0307/";
+          window.location.href = "/cybernews/2026/cybernews0307/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-03-06",
@@ -560,7 +567,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0306/";
+          window.location.href = "/cybernews/2026/cybernews0306/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-03-05",
@@ -571,7 +578,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0305/";
+          window.location.href = "/cybernews/2026/cybernews0305/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-01-22",
@@ -582,7 +589,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0122/";
+          window.location.href = "/cybernews/2026/cybernews0122/";
         
       },
     },{id: "post-djbsec-39-s-cybernews-2026-01-21",
@@ -593,10 +600,15 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/cybernews0121/";
+          window.location.href = "/cybernews/2026/cybernews0121/";
         
       },
-    },{id: "conferences-appsec-usa-2026-owasp",
+    },{id: "blog-welcome-to-the-blog",
+          title: 'Welcome to the Blog',
+          description: "Why this blog exists and what to expect.",
+          section: "Blog",handler: () => {
+              window.location.href = "/blog/welcome/";
+            },},{id: "conferences-appsec-usa-2026-owasp",
           title: 'AppSec USA 2026 (OWASP)',
           description: "OWASP&#39;s flagship North American application security conference.",
           section: "Conferences",handler: () => {
