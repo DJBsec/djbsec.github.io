@@ -16,12 +16,12 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "nav-calendar",
-          title: "Calendar",
-          description: "US cybersecurity conferences for 2026 — dates, locations, and travel cost estimates from Houston (HOU).",
+        },{id: "nav-start-here",
+          title: "Start Here",
+          description: "Guided learning paths — pick the one that matches you and follow the steps in order.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/cybersecurity-calendar/";
+            window.location.href = "/start/";
           },
         },{id: "nav-cybernews",
           title: "CyberNews",
@@ -30,7 +30,14 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cybernews/index.html";
           },
-        },{id: "dropdown-epss-scanner",
+        },{id: "dropdown-all-tools",
+              title: "All Tools",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "";
+              },
+            },{id: "dropdown-epss-scanner",
               title: "EPSS Scanner",
               description: "",
               section: "Dropdown",
@@ -53,6 +60,13 @@ ninja.data = [{
               },
             },{id: "dropdown-cybersecurity-explained",
               title: "Cybersecurity Explained",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "";
+              },
+            },{id: "dropdown-templates",
+              title: "Templates",
               description: "",
               section: "Dropdown",
               handler: () => {
@@ -86,7 +100,47 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-djbsec-39-s-cybernews-2026-05-08",
+            },{id: "nav-calendar",
+          title: "Calendar",
+          description: "US cybersecurity conferences for 2026 — dates, locations, and travel cost estimates from Houston (HOU).",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cybersecurity-calendar/";
+          },
+        },{id: "post-field-notes-reading-epss-scores-in-practice",
+      
+        title: "Field Notes — Reading EPSS Scores in Practice",
+      
+      description: "Working examples of EPSS score interpretation — when to trust it, when to override it, and how it interacts with CVSS and CISA KEV.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/cybernews/2026/fn-reading-epss-scores-in-practice/";
+        
+      },
+    },{id: "post-field-notes-building-a-security-program-from-scratch",
+      
+        title: "Field Notes — Building a Security Program From Scratch",
+      
+      description: "A 90-day playbook for the first security hire at a small business. Identity, endpoints, email, backups, logging — in that order.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/cybernews/2026/fn-building-security-program-from-scratch/";
+        
+      },
+    },{id: "post-field-notes-prioritizing-vulnerabilities-in-a-small-team",
+      
+        title: "Field Notes — Prioritizing Vulnerabilities in a Small Team",
+      
+      description: "Practitioner notes on triaging a vulnerability backlog without a dedicated AppSec team. CVSS, EPSS, KEV, and the controls already in place.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/cybernews/2026/fn-prioritizing-vulnerabilities-small-team/";
+        
+      },
+    },{id: "post-djbsec-39-s-cybernews-2026-05-08",
       
         title: "DJBSEC&#39;s CyberNews 2026-05-08",
       
@@ -914,7 +968,32 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{
+          section: "News",},{id: "templates-executive-cyber-briefing",
+          title: 'Executive Cyber Briefing',
+          description: "Two-page monthly or quarterly cybersecurity briefing template for non-technical executives, board members, and business owners.",
+          section: "Templates",handler: () => {
+              window.location.href = "/templates/executive-cyber-briefing/";
+            },},{id: "templates-incident-response-checklist",
+          title: 'Incident Response Checklist',
+          description: "Working checklist for the SANS / NIST PICERL incident response lifecycle — preparation, identification, containment, eradication, recovery, lessons learned.",
+          section: "Templates",handler: () => {
+              window.location.href = "/templates/incident-response-checklist/";
+            },},{id: "templates-mfa-rollout-checklist",
+          title: 'MFA Rollout Checklist',
+          description: "Phased MFA rollout plan — privileged accounts, identity provider, VPN, SaaS, and customer-facing apps — with factor priorities, common pitfalls, and maintenance cadence.",
+          section: "Templates",handler: () => {
+              window.location.href = "/templates/mfa-rollout-checklist/";
+            },},{id: "templates-http-security-headers-checklist",
+          title: 'HTTP Security Headers Checklist',
+          description: "Production-ready checklist of HTTP security headers — HSTS, CSP, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, cookie flags, and headers to remove.",
+          section: "Templates",handler: () => {
+              window.location.href = "/templates/security-headers-checklist/";
+            },},{id: "templates-vulnerability-triage-worksheet",
+          title: 'Vulnerability Triage Worksheet',
+          description: "Worksheet for triaging a CVE — severity inputs, exposure questions, compensating controls, and a decision matrix that combines CVSS, EPSS, and CISA KEV.",
+          section: "Templates",handler: () => {
+              window.location.href = "/templates/vulnerability-triage-worksheet/";
+            },},{
         id: 'social-github',
         title: 'GitHub',
         section: 'Socials',
