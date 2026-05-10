@@ -93,6 +93,17 @@ jobs:
         run: |
           npm install -g purgecss@8.0.0
           purgecss -c purgecss.config.js
+      - name: Build template PDFs 📄
+        if: github.event_name != 'pull_request'
+        continue-on-error: true
+        run: |
+          npm install -g md-to-pdf@5.2.0
+          mkdir -p _site/assets/pdf/templates
+          for f in _includes/templates/*.md; do
+            [ -f "$f" ] || continue
+            base=$(basename "$f" .md)
+            md-to-pdf "$f" --pdf-options '{"format":"Letter","margin":{"top":"0.75in","right":"0.75in","bottom":"0.75in","left":"0.75in"}}' --dest "_site/assets/pdf/templates/" || echo "PDF gen failed for $f — skipping"
+          done
       - name: Deploy 🚀
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@d92aa235d04922e8f08b40ce78cc5442fcfbfa2f # v4

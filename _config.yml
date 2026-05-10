@@ -156,6 +156,9 @@ collections:
   conferences:
     output: true
     permalink: /cybersecurity-calendar/:title/
+  templates:
+    output: true
+    permalink: /templates/:title/
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
