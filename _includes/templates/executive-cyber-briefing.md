@@ -10,38 +10,40 @@ A monthly or quarterly report template for non-technical executives, board membe
 
 ## 2. Risk dashboard
 
-| Area | Status | Change vs last period | Notes |
-|------|--------|----------------------|-------|
-| Vulnerability remediation | 🟢 / 🟡 / 🔴 | ▲ / ▬ / ▼ | [Open critical CVEs aging > SLA] |
-| Identity & access | 🟢 / 🟡 / 🔴 | ▲ / ▬ / ▼ | [MFA coverage %] |
-| Endpoint protection | 🟢 / 🟡 / 🔴 | ▲ / ▬ / ▼ | [EDR coverage, last 30d incidents] |
-| Email security | 🟢 / 🟡 / 🔴 | ▲ / ▬ / ▼ | [Phishing reports, BEC attempts] |
-| Backups & recovery | 🟢 / 🟡 / 🔴 | ▲ / ▬ / ▼ | [Last successful restore test] |
-| Third-party / vendor | 🟢 / 🟡 / 🔴 | ▲ / ▬ / ▼ | [SOC 2 expirations, new vendors] |
+| Area                      | Status       | Change vs last period | Notes                              |
+| ------------------------- | ------------ | --------------------- | ---------------------------------- |
+| Vulnerability remediation | 🟢 / 🟡 / 🔴 | ▲ / ▬ / ▼             | [Open critical CVEs aging > SLA]   |
+| Identity & access         | 🟢 / 🟡 / 🔴 | ▲ / ▬ / ▼             | [MFA coverage %]                   |
+| Endpoint protection       | 🟢 / 🟡 / 🔴 | ▲ / ▬ / ▼             | [EDR coverage, last 30d incidents] |
+| Email security            | 🟢 / 🟡 / 🔴 | ▲ / ▬ / ▼             | [Phishing reports, BEC attempts]   |
+| Backups & recovery        | 🟢 / 🟡 / 🔴 | ▲ / ▬ / ▼             | [Last successful restore test]     |
+| Third-party / vendor      | 🟢 / 🟡 / 🔴 | ▲ / ▬ / ▼             | [SOC 2 expirations, new vendors]   |
 
 🟢 within tolerance · 🟡 watch · 🔴 action required
 
 ## 3. What changed this period
 
 **Improvements**
+
 - [Concrete win, e.g., "Rolled out app-based MFA to remaining 12% of staff"]
 - [Concrete win]
 
 **Setbacks or new risks**
+
 - [Issue + business impact + plan + ETA]
 - [Issue + business impact + plan + ETA]
 
 ## 4. Incidents
 
-| Date | Severity | Summary | Status |
-|------|----------|---------|--------|
+| Date         | Severity            | Summary        | Status                      |
+| ------------ | ------------------- | -------------- | --------------------------- |
 | [YYYY-MM-DD] | [Low/Med/High/Crit] | [One sentence] | [Open / Contained / Closed] |
 
 If zero incidents: state that explicitly. Boards distrust silence.
 
 ## 5. Threat landscape (external)
 
-Two or three items relevant to *our* industry, vendors, or geography. Avoid generic news.
+Two or three items relevant to _our_ industry, vendors, or geography. Avoid generic news.
 
 - **[Threat or trend]** — [What it means for us specifically. What we are doing about it.]
 - **[Threat or trend]** — [Same.]
@@ -55,13 +57,13 @@ If nothing is needed: say so. Otherwise:
 
 ## 7. Spend snapshot
 
-| Line item | Budget | Spent YTD | Forecast variance |
-|-----------|--------|-----------|-------------------|
-| Tools & subscriptions | | | |
-| Headcount | | | |
-| Training & certifications | | | |
-| Incident response retainer | | | |
-| Insurance (cyber) | | | |
+| Line item                  | Budget | Spent YTD | Forecast variance |
+| -------------------------- | ------ | --------- | ----------------- |
+| Tools & subscriptions      |        |           |                   |
+| Headcount                  |        |           |                   |
+| Training & certifications  |        |           |                   |
+| Incident response retainer |        |           |                   |
+| Insurance (cyber)          |        |           |                   |
 
 ## 8. Next quarter focus
 

@@ -63,17 +63,19 @@ Long-term:
 
 ## Severity Quick Reference
 
-| Level | Examples | Response Time |
-|-------|----------|---------------|
+| Level    | Examples                                                    | Response Time        |
+| -------- | ----------------------------------------------------------- | -------------------- |
 | Critical | Data exfil confirmed; ransomware spreading; production down | Immediate, all hands |
-| High | Single-host compromise; phishing with credential theft | < 1 hour |
-| Medium | Suspicious activity, no confirmed compromise | < 4 hours |
-| Low | Failed exploit attempts; benign anomaly | Next business day |
+| High     | Single-host compromise; phishing with credential theft      | < 1 hour             |
+| Medium   | Suspicious activity, no confirmed compromise                | < 4 hours            |
+| Low      | Failed exploit attempts; benign anomaly                     | Next business day    |
 
 ## Communication Templates
 
 **Internal first message:**
+
 > We are investigating a potential security incident affecting [systems]. The incident ticket is [ID]. Please [specific instruction — e.g., do not log into X]. Updates every 30 minutes.
 
 **Hold-line (don't have facts yet):**
+
 > We are aware of [event]. We are currently investigating. We will share verified details as we have them. Avoid speculating internally or externally until we confirm.

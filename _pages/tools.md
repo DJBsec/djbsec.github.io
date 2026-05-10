@@ -35,6 +35,7 @@ children:
 </nav>
 
 {% for group in site.data.tools %}
+
 <section class="tools-group" id="{{ group.slug }}">
   <header class="tools-group__head">
     <h3 class="tools-group__title">

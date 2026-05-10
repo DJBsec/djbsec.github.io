@@ -90,10 +90,10 @@ For every Set-Cookie:
 
 ## Score Targets
 
-| Tool | Minimum | Target |
-|------|---------|--------|
-| Mozilla Observatory | B+ | A+ |
-| securityheaders.com | A | A+ |
+| Tool                        | Minimum                      | Target                               |
+| --------------------------- | ---------------------------- | ------------------------------------ |
+| Mozilla Observatory         | B+                           | A+                                   |
+| securityheaders.com         | A                            | A+                                   |
 | Header Analyzer (this site) | All required headers present | All required + no version disclosure |
 
 ---

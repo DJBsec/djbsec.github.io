@@ -10,13 +10,13 @@ featured: false
 published: true
 ---
 
-A two-person IT shop opened their scanner one morning to 4,200 "high or critical" findings. Patching all of them in a quarter is not realistic. Patching the 30 that *actually* matter, this week, is.
+A two-person IT shop opened their scanner one morning to 4,200 "high or critical" findings. Patching all of them in a quarter is not realistic. Patching the 30 that _actually_ matter, this week, is.
 
 This is the workflow I land on most often when I help small teams with that pile.
 
 ## Three layers of signal
 
-1. **CVSS** — how bad *if* exploited. Public, immediate, often inflated.
+1. **CVSS** — how bad _if_ exploited. Public, immediate, often inflated.
 2. **EPSS** — predicted likelihood of exploitation in the next 30 days. Public, updated daily, much closer to reality than CVSS for prioritization.
 3. **CISA KEV** — confirmed evidence of exploitation in the wild. If something is on KEV, it has already happened to someone.
 
@@ -24,12 +24,12 @@ CVSS alone gives you 4,200 critical findings. EPSS narrows that to a few hundred
 
 ## A starting matrix
 
-| Internet-facing | KEV / EPSS > 0.5 | Auth required | Action |
-|---|---|---|---|
-| Yes | Yes | Pre-auth | Emergency change — 24h |
-| Yes | No | Pre-auth | Patch in 7 days |
-| No | Yes | Pre-auth | 14 days |
-| Any | No | Auth | Monthly cycle |
+| Internet-facing | KEV / EPSS > 0.5 | Auth required | Action                 |
+| --------------- | ---------------- | ------------- | ---------------------- |
+| Yes             | Yes              | Pre-auth      | Emergency change — 24h |
+| Yes             | No               | Pre-auth      | Patch in 7 days        |
+| No              | Yes              | Pre-auth      | 14 days                |
+| Any             | No               | Auth          | Monthly cycle          |
 
 Override the matrix when:
 
@@ -59,4 +59,4 @@ If you do nothing else this week, look at:
 
 That's usually under 50 items. It's a manageable Tuesday.
 
-The point is not to ignore the other 4,150 findings. It's to know which ones to do *first* — and to have a defensible answer when leadership asks why you patched X before Y.
+The point is not to ignore the other 4,150 findings. It's to know which ones to do _first_ — and to have a defensible answer when leadership asks why you patched X before Y.

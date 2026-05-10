@@ -14,28 +14,28 @@ EPSS is the single best public signal for "how likely is this CVE to actually be
 
 Here's how I read it in real triage.
 
-## What EPSS *is*
+## What EPSS _is_
 
 A daily-updated probability (0.0 to 1.0) that a given CVE will be exploited in the wild within the next 30 days. The model considers exploit-code availability, mention frequency in security feeds, vendor patching cadence, and observed exploitation telemetry.
 
 You can look up any CVE on the [EPSS Scanner](/epss/) on this site.
 
-## What EPSS *is not*
+## What EPSS _is not_
 
 It is **not** a measure of:
 
-- How bad the exploit is *if* successful (that's CVSS).
-- Whether *your* environment is exposed (that's compensating controls + reachability).
-- Whether the exploit has *already* happened in the wild (that's CISA KEV).
+- How bad the exploit is _if_ successful (that's CVSS).
+- Whether _your_ environment is exposed (that's compensating controls + reachability).
+- Whether the exploit has _already_ happened in the wild (that's CISA KEV).
 
 ## Reading scores in practice
 
-| EPSS | Interpretation | Default action |
-|------|----------------|----------------|
-| > 0.5 (50%) | High likelihood; security press has it; PoC widely circulating | Patch this cycle, no debate |
-| 0.1 – 0.5 | Working exploit known; selective targeting | Patch within 7–14 days |
-| 0.01 – 0.1 | Some interest; no broad campaign yet | Standard cycle |
-| < 0.01 | Below noise floor for typical attackers | Standard cycle, deprioritize |
+| EPSS        | Interpretation                                                 | Default action               |
+| ----------- | -------------------------------------------------------------- | ---------------------------- |
+| > 0.5 (50%) | High likelihood; security press has it; PoC widely circulating | Patch this cycle, no debate  |
+| 0.1 – 0.5   | Working exploit known; selective targeting                     | Patch within 7–14 days       |
+| 0.01 – 0.1  | Some interest; no broad campaign yet                           | Standard cycle               |
+| < 0.01      | Below noise floor for typical attackers                        | Standard cycle, deprioritize |
 
 **Always override toward action when:**
 
@@ -51,9 +51,9 @@ It is **not** a measure of:
 
 ## The trap I see most often
 
-Teams treat CVSS 9.8 as "drop everything." Most CVSS 9.8 issues never get exploited at scale — they require auth, or a non-default config, or a specific environment. Meanwhile a CVSS 6.5 in CISA KEV with EPSS 0.7 is happening *right now* and is internet-facing on someone's edge router.
+Teams treat CVSS 9.8 as "drop everything." Most CVSS 9.8 issues never get exploited at scale — they require auth, or a non-default config, or a specific environment. Meanwhile a CVSS 6.5 in CISA KEV with EPSS 0.7 is happening _right now_ and is internet-facing on someone's edge router.
 
-Use CVSS to know how bad something *would be*. Use EPSS to know how *likely* it is. Use KEV to know what is *actually happening*. Then add your environmental context to decide what to do about it.
+Use CVSS to know how bad something _would be_. Use EPSS to know how _likely_ it is. Use KEV to know what is _actually happening_. Then add your environmental context to decide what to do about it.
 
 ## A worked example
 
@@ -70,4 +70,4 @@ A week later I check the same CVE: EPSS climbed to 0.34 because a researcher pub
 
 ## The overall rule
 
-Severity tells you *how bad*. Likelihood tells you *how soon*. Context tells you *what's worth your Tuesday*. Read all three before you patch — and certainly before you skip patching.
+Severity tells you _how bad_. Likelihood tells you _how soon_. Context tells you _what's worth your Tuesday_. Read all three before you patch — and certainly before you skip patching.

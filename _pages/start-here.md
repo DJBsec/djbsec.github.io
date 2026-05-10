@@ -29,6 +29,7 @@ nav_order: 2
 </div>
 
 {% for path in site.data.learning_paths %}
+
 <section class="learn-path" id="{{ path.id }}">
   <header class="learn-path__header">
     <p class="learn-path__audience">{{ path.audience }}</p>
@@ -39,7 +40,8 @@ nav_order: 2
     </p>
   </header>
 
-  {% for step in path.steps %}
+{% for step in path.steps %}
+
   <div class="learn-step">
     <span class="learn-step__num" aria-hidden="true">{{ forloop.index }}</span>
     <div class="learn-step__body">

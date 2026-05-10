@@ -24,6 +24,7 @@ nav: false
 {% assign field_notes = site.posts | where: "categories", "Field Notes" | sort: "date" | reverse %}
 
 {% if field_notes.size == 0 %}
+
 <p class="learn-intro" style="text-align: center;">No field notes yet — check back soon.</p>
 {% else %}
 
