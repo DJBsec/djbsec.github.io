@@ -3,7 +3,7 @@ layout: page
 title: Cybersecurity Books
 permalink: /books/
 subtitle:
-description: List of Cybersercurity Books I recommend
+description: List of Cybersecurity Books I recommend
 nav: false
 nav_order: 2
 #profile:

@@ -3,7 +3,7 @@ layout: page
 title: Cybersecurity Learning Platforms
 permalink: /platforms/
 subtitle:
-description: List of Cybersercurity Learning Platforms
+description: List of Cybersecurity Learning Platforms
 nav: false
 nav_order: 2
 ---
