@@ -1,0 +1,100 @@
+# Tools landing page data — drives _pages/tools.md grouping.
+# Each group renders as a section with .djb-card tiles.
+
+- group: Vulnerability Management
+  slug: vuln-mgmt
+  description: Triage and prioritize vulnerabilities by real-world exploit likelihood.
+  icon: shield-half-filled
+  tools:
+    - name: EPSS Scanner
+      url: /epss/
+      description: Look up Exploit Prediction Scoring System (EPSS) scores for any CVE, with 30-day history and CISA KEV cross-reference.
+      action: Launch
+      status: active
+
+- group: Web Security
+  slug: web-security
+  description: Inspect live web applications for missing protections.
+  icon: lock
+  tools:
+    - name: Header Analyzer
+      url: /tools/header-analyzer/
+      description: Inspect HTTP security headers and surface missing protections (CSP, HSTS, X-Frame-Options, Permissions-Policy).
+      action: Launch
+      status: active
+
+- group: OSINT & Intel
+  slug: osint
+  description: Reputation, attribution, and adversary research from open sources.
+  icon: world-search
+  tools:
+    - name: IP Reputation
+      url: /tools/ip-reputation/
+      description: Query IPs against AbuseIPDB, GreyNoise, and other threat-intel sources in one shot.
+      action: Launch
+      status: active
+    - name: OSINT Search
+      url: /cybersearch/
+      description: Curated OSINT and cybersecurity-focused search engines for threat intelligence research.
+      action: Open
+      status: active
+    - name: MITRE ATT&CK
+      url: https://attack.mitre.org/
+      description: Globally accessible knowledge base of adversary tactics, techniques, and procedures.
+      action: Open
+      external: true
+      status: active
+
+- group: Forensics & Analysis
+  slug: forensics
+  description: Identify files, hashes, and indicators of compromise.
+  icon: fingerprint
+  tools:
+    - name: Hash Lookup
+      url: /tools/hash-lookup/
+      description: Check MD5/SHA-1/SHA-256 hashes against CIRCL Hashlookup (NSRL known-good and known-malicious).
+      action: Launch
+      status: active
+    - name: Log Analyzer
+      url: "#"
+      description: Parse common log formats (Apache, Nginx, syslog, JSON-lines) to surface suspicious patterns and IOCs.
+      action: In development
+      status: planned
+
+- group: Threat Mapping
+  slug: maps
+  description: Real-time threat telemetry and global attack visualization.
+  icon: map-2
+  tools:
+    - name: Threat Maps
+      url: /maps/
+      description: Curated set of live threat maps from major vendors and security feeds.
+      action: Open
+      status: active
+
+- group: AI & Prompt Engineering
+  slug: ai
+  description: Prompts and AI tooling for daily security work.
+  icon: sparkles
+  tools:
+    - name: AI Tools & Prompts
+      url: /ai-tools-prompts/
+      description: Hand-tuned prompts for ChatGPT and Copilot covering policy drafting, log analysis, and incident triage.
+      action: Open
+      status: active
+
+- group: Hubs
+  slug: hubs
+  description: Themed landing pages that group tools by audience.
+  icon: layout-grid
+  tools:
+    - name: Blue Team
+      url: /blue-team/
+      description: Defender-focused tool index with quick-start workflow.
+      action: Open
+      status: active
+    - name: Red Team
+      url: /red-team/
+      description: Offensive testing reference (read-only resource list).
+      action: Open
+      status: active

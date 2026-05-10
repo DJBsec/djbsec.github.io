@@ -4,7 +4,7 @@ title: Calendar
 permalink: /cybersecurity-calendar/
 description: "US cybersecurity conferences for 2026 — dates, locations, and travel cost estimates from Houston (HOU)."
 nav: true
-nav_order: 2
+nav_order: 6
 ---
 
 <div class="row justify-content-center">

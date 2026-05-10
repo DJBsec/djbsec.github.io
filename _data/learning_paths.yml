@@ -1,0 +1,205 @@
+# Learning paths for /start/. Each path = persona + ordered steps.
+# step.kind: "explained" (article from _explained), "tool" (from /tools/),
+#            "external" (off-site link), "checkpoint" (review milestone).
+# step.url is required for explained/tool/external; optional for checkpoint.
+
+- id: new-to-cyber
+  title: New to Cybersecurity
+  audience: For curious beginners with no prior background.
+  icon: seedling
+  description: >
+    Build a working mental model of how attacks happen and how defenders
+    respond. No tools, no jargon — start here, then branch into a role.
+  goal: Understand the basics; protect your own accounts and devices.
+  duration: ~45 min reading
+  steps:
+    - kind: explained
+      title: The CIA Triad
+      url: /explained/cia-triad/
+      desc: The three security goals every control maps back to.
+    - kind: explained
+      title: Strong Passwords
+      url: /explained/strong-passwords/
+      desc: Why length beats complexity and how attackers crack weak ones.
+    - kind: explained
+      title: Password Managers
+      url: /explained/password-managers/
+      desc: One vault, unique passwords, no reuse.
+    - kind: explained
+      title: Multi-Factor Authentication
+      url: /explained/two-factor-authentication/
+      desc: Even a leaked password should not be enough.
+    - kind: explained
+      title: Phishing & Social Engineering
+      url: /explained/social-engineering/
+      desc: Most breaches start with a person, not a zero-day.
+    - kind: explained
+      title: Malware
+      url: /explained/malware/
+      desc: Viruses, worms, trojans — what they are and how they spread.
+    - kind: explained
+      title: Ransomware
+      url: /explained/ransomware/
+      desc: The dominant criminal threat to small organizations today.
+    - kind: explained
+      title: Backups
+      url: /explained/backups/
+      desc: The single most cost-effective ransomware control.
+    - kind: checkpoint
+      title: Personal Hardening Checklist
+      desc: Pick a password manager, turn on MFA on email + bank + work, set up backups for one important folder. Then continue.
+
+- id: blue-team-analyst
+  title: Blue Team Analyst
+  audience: For aspiring SOC analysts or working defenders.
+  icon: shield-check
+  description: >
+    Move from concepts to daily operations: vulnerability triage, IOC
+    research, log review, and incident response.
+  goal: Be able to triage a CVE, look up an IP, and read a hash result.
+  duration: ~90 min + tool practice
+  steps:
+    - kind: explained
+      title: CVEs & CVSS Scoring
+      url: /explained/cve-cvss/
+      desc: How vulnerabilities get IDs and how severity is scored.
+    - kind: explained
+      title: EPSS — Exploit Likelihood
+      url: /explained/epss/
+      desc: Why CVSS alone is not enough and where EPSS fits.
+    - kind: tool
+      title: EPSS Scanner
+      url: /epss/
+      desc: Look up a real CVE — try CVE-2021-44228 (Log4Shell).
+    - kind: explained
+      title: Patch Management
+      url: /explained/patch-management/
+      desc: Turn vulnerability data into a patching cadence.
+    - kind: explained
+      title: Attack Surface
+      url: /explained/attack-surface/
+      desc: What you expose is what you have to defend.
+    - kind: explained
+      title: Incident Response
+      url: /explained/incident-response/
+      desc: The PICERL lifecycle — Prepare, Identify, Contain, Eradicate, Recover, Lessons.
+    - kind: tool
+      title: IP Reputation
+      url: /tools/ip-reputation/
+      desc: Pivot a suspicious IP across multiple intel sources.
+    - kind: tool
+      title: Hash Lookup
+      url: /tools/hash-lookup/
+      desc: Identify whether a file hash is known-good (NSRL) or known-malicious.
+    - kind: explained
+      title: OSINT
+      url: /explained/osint/
+      desc: Open-source intelligence techniques for analysts.
+    - kind: explained
+      title: Red Team vs Blue Team
+      url: /explained/red-blue-team/
+      desc: How offense and defense work together (purple teaming).
+    - kind: tool
+      title: Blue Team Hub
+      url: /blue-team/
+      desc: Bookmark this — it is your daily toolkit landing page.
+
+- id: it-leader
+  title: IT Leader
+  audience: For directors, managers, and architects shaping security strategy.
+  icon: chess-king
+  description: >
+    Frameworks and architectural primitives for building a defensible
+    program. Light on tools, heavy on principles and tradeoffs.
+  goal: Speak fluently about zero trust, segmentation, and supply chain risk.
+  duration: ~70 min reading
+  steps:
+    - kind: explained
+      title: The CIA Triad
+      url: /explained/cia-triad/
+      desc: The vocabulary every policy and control maps to.
+    - kind: explained
+      title: Least Privilege
+      url: /explained/least-privilege/
+      desc: The single most leveraged architectural control.
+    - kind: explained
+      title: Zero Trust
+      url: /explained/zero-trust/
+      desc: Never trust, always verify — and what that means in practice.
+    - kind: explained
+      title: Network Segmentation
+      url: /explained/network-segmentation/
+      desc: Containing blast radius when (not if) something gets in.
+    - kind: explained
+      title: Multi-Factor Authentication
+      url: /explained/mfa-apps/
+      desc: Choosing app-based MFA over SMS — why and how to roll out.
+    - kind: explained
+      title: Supply Chain Attacks
+      url: /explained/supply-chain-attacks/
+      desc: SolarWinds-class risk and how to reason about vendor dependencies.
+    - kind: explained
+      title: Patch Management
+      url: /explained/patch-management/
+      desc: The operational reality behind a "patched" environment.
+    - kind: explained
+      title: Incident Response
+      url: /explained/incident-response/
+      desc: Tabletop exercise material for your leadership team.
+    - kind: explained
+      title: Backups
+      url: /explained/backups/
+      desc: Your final, tested control against ransomware.
+    - kind: checkpoint
+      title: Strategy Review
+      desc: Map each principle to one control already in place and one gap. That is your next quarter's roadmap.
+
+- id: small-business
+  title: Small Business Owner
+  audience: For owners and operators of teams under ~50 people.
+  icon: building-store
+  description: >
+    Get the highest-leverage controls in place without a full-time
+    security team. Focused on email, accounts, and recovery.
+  goal: Reach a defensible baseline you can re-audit annually.
+  duration: ~50 min reading + 1 hour setup
+  steps:
+    - kind: explained
+      title: Strong Passwords
+      url: /explained/strong-passwords/
+      desc: "Issue: most breaches start with credential reuse."
+    - kind: explained
+      title: Password Managers
+      url: /explained/password-managers/
+      desc: Pick one. Roll it to the team. Done.
+    - kind: explained
+      title: Multi-Factor Authentication (App-Based)
+      url: /explained/mfa-apps/
+      desc: Free, fast, blocks ~99% of credential-stuffing attempts.
+    - kind: explained
+      title: Email Spoofing
+      url: /explained/emailspoofing/
+      desc: SPF, DKIM, DMARC — the cheapest brand-protection wins.
+    - kind: explained
+      title: Business Email Compromise
+      url: /explained/business-email-compromise/
+      desc: Wire-fraud loss vector — train staff and add an out-of-band check.
+    - kind: explained
+      title: Ransomware
+      url: /explained/ransomware/
+      desc: Worst-case scenario you must plan for.
+    - kind: explained
+      title: Backups
+      url: /explained/backups/
+      desc: Tested, off-site, immutable if possible.
+    - kind: explained
+      title: Social Engineering
+      url: /explained/social-engineering/
+      desc: Brief your team — a 30-minute talk pays for itself.
+    - kind: explained
+      title: Patch Management
+      url: /explained/patch-management/
+      desc: Auto-update everything you can. Track the rest in a spreadsheet.
+    - kind: checkpoint
+      title: Annual Re-Audit
+      desc: Schedule the next review for one year out. The threat landscape moves; your baseline must too.

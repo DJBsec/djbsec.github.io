@@ -3,7 +3,7 @@ layout: default
 permalink: /cybernews/
 title: CyberNews
 nav: true
-nav_order: 2
+nav_order: 3
 pagination:
   enabled: true
   collection: posts
@@ -204,5 +204,7 @@ pagination:
 {% if page.pagination.enabled %}
 {% include pagination.liquid %}
 {% endif %}
+
+{% include subscribe-cta.html %}
 
 </div>
