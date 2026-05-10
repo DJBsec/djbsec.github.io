@@ -1,5 +1,6 @@
 {% assign latest_post = site.posts | first %} {% assign explained_posts = site.explained | sort: 'date' | reverse %} {% assign explained_post =
-explained_posts | first %} {% assign next_conf = site.data.cybersecurity_calendar | sort: 'start_date' | first %}
+explained_posts | first %} {% assign today = site.time | date: '%Y-%m-%d' %} {% assign upcoming_confs = site.data.cybersecurity_calendar | where_exp:
+'c', 'c.end_date >= today' | sort: 'start_date' %} {% assign next_conf = upcoming_confs | first %}
 
 <div class="home-section-header">
   <span class="home-section-header__title">Latest Briefing</span>
@@ -21,19 +22,30 @@ explained_posts | first %} {% assign next_conf = site.data.cybersecurity_calenda
           >
         </div>
         <div>
-          <!-- Phase A: static CVE placeholder. Phase B: pull from post front matter. -->
-          <div class="cve-row">
-            <div>Ivanti Connect Secure — RCE</div>
-            <div class="cve-row__meta">EPSS 0.94 &middot; CVSS 9.8 &middot; KEV</div>
-          </div>
-          <div class="cve-row">
-            <div>Fortinet FortiOS — Auth Bypass</div>
-            <div class="cve-row__meta">EPSS 0.87 &middot; CVSS 9.1 &middot; KEV</div>
-          </div>
-          <div class="cve-row">
-            <div>Palo Alto PAN-OS — DoS</div>
-            <div class="cve-row__meta">EPSS 0.61 &middot; CVSS 7.5 &middot; KEV</div>
-          </div>
+          {% if latest_post.cves and latest_post.cves.size > 0 %}
+            {% for cve in latest_post.cves limit: 3 %}
+              <div class="cve-row">
+                <div>{{ cve.name }}</div>
+                <div class="cve-row__meta">
+                  EPSS {{ cve.epss }} &middot; CVSS {{ cve.cvss }}{% if cve.kev %} &middot; KEV{% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          {% else %}
+            <p class="cve-row__meta" style="margin-bottom: 8px; opacity: 0.75;">Example CVEs &mdash; see latest briefing for live intel.</p>
+            <div class="cve-row">
+              <div>Ivanti Connect Secure — RCE</div>
+              <div class="cve-row__meta">EPSS 0.94 &middot; CVSS 9.8 &middot; KEV</div>
+            </div>
+            <div class="cve-row">
+              <div>Fortinet FortiOS — Auth Bypass</div>
+              <div class="cve-row__meta">EPSS 0.87 &middot; CVSS 9.1 &middot; KEV</div>
+            </div>
+            <div class="cve-row">
+              <div>Palo Alto PAN-OS — DoS</div>
+              <div class="cve-row__meta">EPSS 0.61 &middot; CVSS 7.5 &middot; KEV</div>
+            </div>
+          {% endif %}
         </div>
       </div>
     </div>
