@@ -11,7 +11,7 @@
 
 .page-eyebrow {
   font-family: $font-mono;
-  font-size: 0.68rem;
+  font-size: var(--text-2xs);
   text-transform: uppercase;
   letter-spacing: 0.14em;
   color: var(--color-accent);
@@ -21,8 +21,9 @@
 
 .page-description {
   color: var(--color-ink-muted);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   line-height: 1.6;
+  max-width: 70ch;
 }
 
 .page-divider {
@@ -67,10 +68,35 @@
 
   .badge {
     font-family: $font-mono;
-    font-size: 0.6rem;
+    font-size: var(--text-2xs);
     letter-spacing: 0.06em;
     font-weight: 600;
   }
+}
+
+// Constrain long-form prose to a comfortable reading width inside wide pages.
+// Grid/table/card markup escapes via its own width. Anchor: .post > article > p,ul,ol.
+.post > article > p,
+.post > article > ul,
+.post > article > ol,
+.post > article > blockquote,
+.post > article > h1,
+.post > article > h2,
+.post > article > h3,
+.post > article > h4 {
+  max-width: 78ch;
+}
+
+// Opt-out: anything inside an explicit row/grid/card escapes the prose width.
+.post > article .row,
+.post > article .tools-grid,
+.post > article .learn-grid,
+.post > article .tools-toc,
+.post > article .tpl-toc,
+.post > article .news-grid,
+.post > article .table-responsive,
+.post > article table {
+  max-width: none;
 }
 
 // ── Chip secondary (neutral, for Learn sub-pages) ────────────────────────────

@@ -7,8 +7,8 @@ nav: true
 nav_order: 6
 ---
 
-<div class="row justify-content-center">
-<div class="col-lg-11">
+<div class="row">
+<div class="col-12">
 
 <!-- Filter bar -->
 <div class="cal-filter-bar">

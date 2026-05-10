@@ -16,12 +16,13 @@
   --color-warning: #d97706;
   --accent-stripe-width: 2px;
 
-  // Type scale — modular 1.25 ratio. Cap long-form body at 70ch.
-  --text-2xs: 0.625rem;
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
+  // Type scale — modular 1.2 ratio. Cap long-form body at 70ch.
+  // Bumped 2026-05-09: previous 0.625/0.75 felt unreadable on dense UI.
+  --text-2xs: 0.78rem;
+  --text-xs: 0.88rem;
+  --text-sm: 0.95rem;
   --text-base: 1rem;
-  --text-lg: 1.125rem;
+  --text-lg: 1.15rem;
 }
 
 html[data-theme="dark"] {

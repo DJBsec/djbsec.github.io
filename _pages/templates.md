@@ -6,8 +6,8 @@ description: Practical security artifacts — incident response, vulnerability t
 nav: false
 ---
 
-<div class="row justify-content-center">
-  <div class="col-lg-10">
+<div class="row">
+  <div class="col-12">
 
 <p class="page-eyebrow">Downloads</p>
 

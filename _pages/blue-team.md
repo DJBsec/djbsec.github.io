@@ -6,8 +6,8 @@ permalink: /blue-team/
 nav: false
 ---
 
-<div class="row justify-content-center" markdown="1">
-  <div class="col-lg-10" markdown="1">
+<div class="row" markdown="1">
+  <div class="col-12" markdown="1">
 
 <p class="page-eyebrow">Overview</p>
 
