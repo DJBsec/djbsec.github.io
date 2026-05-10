@@ -5,3 +5,11 @@ a\.co
 vulnhub\.com
 cyberseclabs\.co\.uk
 .*%7B%7B.*
+# Frequent rate-limit / anti-bot 403 / 429 even on healthy URLs
+twitter\.com
+x\.com
+facebook\.com
+youtube\.com
+medium\.com
+# Aggregator redirect prefixes — final URLs are checked elsewhere
+go\.theregister\.com
