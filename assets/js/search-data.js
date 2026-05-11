@@ -107,7 +107,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cybersecurity-calendar/";
           },
-        },{id: "post-field-notes-reading-epss-scores-in-practice",
+        },{id: "post-djbsec-39-s-cybernews-2026-05-11",
+      
+        title: "DJBSEC&#39;s CyberNews 2026-05-11",
+      
+      description: "2026-05-11",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/cybernews/2026/cybernews0511/";
+        
+      },
+    },{id: "post-field-notes-reading-epss-scores-in-practice",
       
         title: "Field Notes — Reading EPSS Scores in Practice",
       
