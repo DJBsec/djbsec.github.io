@@ -107,7 +107,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cybersecurity-calendar/";
           },
-        },{id: "post-djbsec-39-s-cybernews-2026-05-15",
+        },{id: "post-djbsec-39-s-cybernews-2026-05-18",
+      
+        title: "DJBSEC&#39;s CyberNews 2026-05-18",
+      
+      description: "2026-05-18",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/cybernews/2026/cybernews0518/";
+        
+      },
+    },{id: "post-djbsec-39-s-cybernews-2026-05-15",
       
         title: "DJBSEC&#39;s CyberNews 2026-05-15",
       
