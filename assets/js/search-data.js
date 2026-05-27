@@ -107,7 +107,29 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cybersecurity-calendar/";
           },
-        },{id: "post-djbsec-39-s-cybernews-2026-05-25",
+        },{id: "post-djbsec-39-s-cybernews-2026-05-27",
+      
+        title: "DJBSEC&#39;s CyberNews 2026-05-27",
+      
+      description: "2026-05-27",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/cybernews/2026/cybernews0527/";
+        
+      },
+    },{id: "post-djbsec-39-s-cybernews-2026-05-26",
+      
+        title: "DJBSEC&#39;s CyberNews 2026-05-26",
+      
+      description: "2026-05-26",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/cybernews/2026/cybernews0526/";
+        
+      },
+    },{id: "post-djbsec-39-s-cybernews-2026-05-25",
       
         title: "DJBSEC&#39;s CyberNews 2026-05-25",
       
