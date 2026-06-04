@@ -291,6 +291,8 @@
         box.style.display = "none";
         return;
       }
+      // API returns newest-first; sort ascending so the chart reads left-to-right
+      trendData = [...trendData].sort((a, b) => a.date.localeCompare(b.date));
       const ctx = document.getElementById("epssChart").getContext("2d");
       if (chartInstance) chartInstance.destroy();
       box.style.display = "block";
