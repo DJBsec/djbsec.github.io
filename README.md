@@ -38,16 +38,16 @@ The CI pipeline additionally runs `purgecss` and `imagemagick` post-build; neith
 
 ## Repository layout
 
-| Path | Purpose |
-| --- | --- |
-| `_config.yml` | Site settings, plugins, collections, library versions |
-| `_pages/` | Navigable pages (Start Here, Tools, EPSS, AI Plugin Radar, …) |
-| `_posts/` | Daily CyberNews posts |
-| `_explained/` | Cybersecurity explainer articles |
-| `_data/` | Data driving pages — `tools.yml`, `learning_paths.yml`, `plugins.json`, etc. |
-| `_includes/` | Liquid partials, including the interactive tools (`cve_lookup.html`, `plugin_radar.html`) |
-| `_sass/` | Styles and design tokens |
-| `plugin_sec/` | Offline scan + review pipeline that feeds the AI Plugin Radar |
+| Path          | Purpose                                                                                   |
+| ------------- | ----------------------------------------------------------------------------------------- |
+| `_config.yml` | Site settings, plugins, collections, library versions                                     |
+| `_pages/`     | Navigable pages (Start Here, Tools, EPSS, AI Plugin Radar, …)                             |
+| `_posts/`     | Daily CyberNews posts                                                                     |
+| `_explained/` | Cybersecurity explainer articles                                                          |
+| `_data/`      | Data driving pages — `tools.yml`, `learning_paths.yml`, `plugins.json`, etc.              |
+| `_includes/`  | Liquid partials, including the interactive tools (`cve_lookup.html`, `plugin_radar.html`) |
+| `_sass/`      | Styles and design tokens                                                                  |
+| `plugin_sec/` | Offline scan + review pipeline that feeds the AI Plugin Radar                             |
 
 ## AI Plugin Radar pipeline
 
