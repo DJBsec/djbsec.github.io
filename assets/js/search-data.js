@@ -44,6 +44,13 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
+            },{id: "dropdown-ai-plugin-radar",
+              title: "AI Plugin Radar",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "";
+              },
             },{id: "dropdown-blue-team",
               title: "Blue Team",
               description: "",
