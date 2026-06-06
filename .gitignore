@@ -4,7 +4,7 @@ _site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
-.DS_store
+.DS_Store
 .ruby-version
 .tweet-cache
 Gemfile.lock
@@ -27,3 +27,10 @@ plugin_sec/json/reviews-*.json
 plugin_sec/html/
 plugin_sec/__pycache__/
 plugin_sec/.DS_Store
+
+# Editor / OS cruft
+.vscode/
+*.swp
+*~
+*.bak
+Thumbs.db
