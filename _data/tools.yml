@@ -11,6 +11,11 @@
       description: Look up Exploit Prediction Scoring System (EPSS) scores for any CVE, with 30-day history and CISA KEV cross-reference.
       action: Launch
       status: active
+    - name: AI Plugin Radar
+      url: /plugins/
+      description: Security dashboard for Claude Code and Codex plugins. Top GitHub repos, each read by Claude and risk-rated, so you can vet a plugin before installing.
+      action: Launch
+      status: active
 
 - group: Web Security
   slug: web-security

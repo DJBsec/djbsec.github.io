@@ -12,6 +12,8 @@ children:
   - title: divider
   - title: EPSS Scanner
     permalink: /epss/
+  - title: AI Plugin Radar
+    permalink: /plugins/
   - title: Blue Team
     permalink: /blue-team/
   - title: divider

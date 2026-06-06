@@ -1,4 +1,5 @@
 _site
+.playwright-cli/
 .bundle
 .sass-cache
 .jekyll-cache
@@ -19,3 +20,10 @@ assets/archive
 .superpowers/
 claude-changes.log
 AGENTS.md
+
+# Plugin radar — dated scan output + build cruft (only _data/plugins.json ships)
+plugin_sec/json/data-*.json
+plugin_sec/json/reviews-*.json
+plugin_sec/html/
+plugin_sec/__pycache__/
+plugin_sec/.DS_Store
