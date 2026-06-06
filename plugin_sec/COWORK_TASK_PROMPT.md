@@ -10,14 +10,17 @@ these steps in order.
 
 1. **Run discovery.**
    From `~/claude-code-radar/`, run:
+
    ```
    python3 scan.py
    ```
+
    `GITHUB_TOKEN` should already be set in the environment (see SETUP.md). This
    writes `json/data-YYYY-MM-DD.json` and updates `json/known_repos.json`. The
    data file includes, for each repo, a `review_inputs` block (README text plus
    the contents of high-signal files: SKILL.md, MCP configs, hook scripts,
    install scripts) and an `is_new` flag.
+
    - If it errors on missing `requests`, run `pip install requests --user` first.
    - If it errors on rate limits, wait and retry once.
    - If it returns zero repos, STOP and tell me — likely a token/network issue.
@@ -26,6 +29,7 @@ these steps in order.
    Open the new `json/data-YYYY-MM-DD.json`. For EACH repo in `repos`, read its
    `review_inputs` (README + key files) and `categories`, and produce a security
    assessment. Focus on what actually matters for Claude Code artifacts:
+
    - Instructions or scripts that exfiltrate data, phone home, or run obfuscated
      / encoded payloads.
    - `curl | bash` or other unreviewable install flows; scripts that touch
@@ -44,27 +48,29 @@ these steps in order.
    Save your assessments to `json/reviews-YYYY-MM-DD.json` (the date must match
    the data file you read). It is a single JSON object keyed by the repo's
    `full_name`, each value with EXACTLY this shape:
+
    ```json
    {
      "owner/repo": {
        "risk": "low | moderate | elevated | high",
        "summary": "one or two plain sentences: what it is and what it's for",
        "rationale": "a short paragraph explaining the risk level",
-       "findings": [
-         {"severity": "info | low | med | high", "note": "specific concern"}
-       ],
+       "findings": [{ "severity": "info | low | med | high", "note": "specific concern" }],
        "reviewed_at": "ISO-8601 timestamp"
      }
    }
    ```
+
    Use `findings: []` when nothing notable. Be specific in notes (cite the file
    or pattern). Reserve `high` for repos you would genuinely warn a colleague
    away from installing without a careful look.
 
 4. **Build the page.**
+
    ```
    python3 build_html.py
    ```
+
    This reads the newest `json/data-*.json`, merges your matching
    `json/reviews-*.json`, and writes `html/claude-code-radar-YYYY-MM-DD.html`.
    Your verdict (marked ✦) becomes the Risk column; repos you didn't review fall

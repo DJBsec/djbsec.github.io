@@ -1,58 +1,35 @@
-{%- comment -%}
-  Plugin Security Radar — renders site.data.plugins (produced by
-  plugin_sec/export_site_data.py) as an interactive, site-themed dashboard.
-
-  Security: every value below originates from untrusted GitHub repo content, so
-  ALL interpolations use `| escape`. Repo links are only rendered when the URL
-  starts with https:// (validated per row). No review_inputs ship to the site.
-{%- endcomment -%}
-
-{%- assign data = site.data.plugins -%}
-{%- assign repos = data.repos -%}
-
-{%- comment -%} Pre-compute risk band per repo + tallies for stat cards. {%- endcomment -%}
-{%- assign n_low = 0 -%}{%- assign n_mod = 0 -%}{%- assign n_elev = 0 -%}{%- assign n_high = 0 -%}
-{%- assign all_cats = "" -%}
-{%- for r in repos -%}
-  {%- assign cats = r.categories | join: "," -%}
-  {%- assign all_cats = all_cats | append: "," | append: cats -%}
-  {%- assign rk = r.claude_review.risk -%}
-  {%- if rk == "low" -%}{%- assign n_low = n_low | plus: 1 -%}
-  {%- elsif rk == "moderate" -%}{%- assign n_mod = n_mod | plus: 1 -%}
-  {%- elsif rk == "elevated" -%}{%- assign n_elev = n_elev | plus: 1 -%}
-  {%- elsif rk == "high" -%}{%- assign n_high = n_high | plus: 1 -%}
-  {%- else -%}
-    {%- assign s = r.security.score -%}
-    {%- if s >= 75 -%}{%- assign n_low = n_low | plus: 1 -%}
-    {%- elsif s >= 55 -%}{%- assign n_mod = n_mod | plus: 1 -%}
-    {%- elsif s >= 35 -%}{%- assign n_elev = n_elev | plus: 1 -%}
-    {%- else -%}{%- assign n_high = n_high | plus: 1 -%}{%- endif -%}
-  {%- endif -%}
-{%- endfor -%}
-{%- assign total = repos | size -%}
-{%- assign cat_list = all_cats | split: "," | uniq | sort -%}
+{%- comment -%} Plugin Security Radar — renders site.data.plugins (produced by plugin_sec/export_site_data.py) as an interactive, site-themed
+dashboard. Security: every value below originates from untrusted GitHub repo content, so ALL interpolations use `| escape`. Repo links are only
+rendered when the URL starts with https:// (validated per row). No review_inputs ship to the site. {%- endcomment -%} {%- assign data =
+site.data.plugins -%} {%- assign repos = data.repos -%} {%- comment -%} Pre-compute risk band per repo + tallies for stat cards. {%- endcomment -%}
+{%- assign n_low = 0 -%}{%- assign n_mod = 0 -%}{%- assign n_elev = 0 -%}{%- assign n_high = 0 -%} {%- assign all_cats = "" -%} {%- for r in repos -%}
+{%- assign cats = r.categories | join: "," -%} {%- assign all_cats = all_cats | append: "," | append: cats -%} {%- assign rk = r.claude_review.risk
+-%} {%- if rk == "low" -%}{%- assign n_low = n_low | plus: 1 -%} {%- elsif rk == "moderate" -%}{%- assign n_mod = n_mod | plus: 1 -%} {%- elsif rk ==
+"elevated" -%}{%- assign n_elev = n_elev | plus: 1 -%} {%- elsif rk == "high" -%}{%- assign n_high = n_high | plus: 1 -%} {%- else -%} {%- assign s =
+r.security.score -%} {%- if s >= 75 -%}{%- assign n_low = n_low | plus: 1 -%} {%- elsif s >= 55 -%}{%- assign n_mod = n_mod | plus: 1 -%} {%- elsif s
+>= 35 -%}{%- assign n_elev = n_elev | plus: 1 -%} {%- else -%}{%- assign n_high = n_high | plus: 1 -%}{%- endif -%} {%- endif -%} {%- endfor -%} {%-
+assign total = repos | size -%} {%- assign cat_list = all_cats | split: "," | uniq | sort -%}
 
 <div class="plugin-radar">
-
   <p class="page-eyebrow">Claude &amp; Codex Ecosystem</p>
   <h2 class="pr-title">AI Plugin Radar</h2>
   <p class="pr-sub">
-    {{ total }} curated repos &middot; {{ data.reviewed_count }} reviewed by Claude
-    {%- if data.new_count > 0 %} &middot; {{ data.new_count }} new this scan{% endif -%}
-    {%- if data.generated_at %} &middot; updated {{ data.generated_at | slice: 0, 10 }}{% endif -%}
+    {{ total }} curated repos &middot; {{ data.reviewed_count }} reviewed by Claude {%- if data.new_count > 0 %} &middot; {{ data.new_count }} new
+    this scan{% endif -%} {%- if data.generated_at %} &middot; updated {{ data.generated_at | slice: 0, 10 }}{% endif -%}
   </p>
 
   <div class="djb-card pr-disclaimer" markdown="0">
-    <strong>How to read this.</strong> The verdict marked <span class="pr-star">&#10022;</span>
-    is <strong>Claude reading each repo's README and key files</strong> (skills, MCP configs,
-    hooks, install scripts) and flagging concerns. Repos not yet reviewed fall back to a
-    <strong>heuristic indicator</strong>. Neither is a formal security audit and either can be
-    wrong &mdash; always review code yourself before installing or running anything.
+    <strong>How to read this.</strong> The verdict marked <span class="pr-star">&#10022;</span> is
+    <strong>Claude reading each repo's README and key files</strong> (skills, MCP configs, hooks, install scripts) and flagging concerns. Repos not
+    yet reviewed fall back to a <strong>heuristic indicator</strong>. Neither is a formal security audit and either can be wrong &mdash; always review
+    code yourself before installing or running anything.
   </div>
 
   <div class="pr-stats">
     <div class="pr-stat"><span class="pr-stat-num">{{ total }}</span><span class="pr-stat-label">Repositories</span></div>
-    <div class="pr-stat pr-stat--accent"><span class="pr-stat-num">{{ data.reviewed_count }}</span><span class="pr-stat-label">Claude-reviewed</span></div>
+    <div class="pr-stat pr-stat--accent">
+      <span class="pr-stat-num">{{ data.reviewed_count }}</span><span class="pr-stat-label">Claude-reviewed</span>
+    </div>
     <div class="pr-stat pr-band-low"><span class="pr-stat-num">{{ n_low }}</span><span class="pr-stat-label">Lower risk</span></div>
     <div class="pr-stat pr-band-mod"><span class="pr-stat-num">{{ n_mod }}</span><span class="pr-stat-label">Moderate</span></div>
     <div class="pr-stat pr-band-elev"><span class="pr-stat-num">{{ n_elev }}</span><span class="pr-stat-label">Elevated</span></div>
@@ -60,300 +37,672 @@
   </div>
 
   {%- if total > 0 -%}
-  <div class="pr-riskbar" role="img" aria-label="Risk distribution: {{ n_low }} lower, {{ n_mod }} moderate, {{ n_elev }} elevated, {{ n_high }} higher risk">
-    {%- assign p_low = n_low | times: 1.0 | divided_by: total | times: 100 -%}
-    {%- assign p_mod = n_mod | times: 1.0 | divided_by: total | times: 100 -%}
-    {%- assign p_elev = n_elev | times: 1.0 | divided_by: total | times: 100 -%}
-    {%- assign p_high = n_high | times: 1.0 | divided_by: total | times: 100 -%}
-    {%- if n_low > 0 %}<span class="pr-seg pr-band-low" style="width:{{ p_low }}%"></span>{% endif -%}
-    {%- if n_mod > 0 %}<span class="pr-seg pr-band-mod" style="width:{{ p_mod }}%"></span>{% endif -%}
-    {%- if n_elev > 0 %}<span class="pr-seg pr-band-elev" style="width:{{ p_elev }}%"></span>{% endif -%}
-    {%- if n_high > 0 %}<span class="pr-seg pr-band-high" style="width:{{ p_high }}%"></span>{% endif -%}
+  <div
+    class="pr-riskbar"
+    role="img"
+    aria-label="Risk distribution: {{ n_low }} lower, {{ n_mod }} moderate, {{ n_elev }} elevated, {{ n_high }} higher risk"
+  >
+    {%- assign p_low = n_low | times: 1.0 | divided_by: total | times: 100 -%} {%- assign p_mod = n_mod | times: 1.0 | divided_by: total | times: 100
+    -%} {%- assign p_elev = n_elev | times: 1.0 | divided_by: total | times: 100 -%} {%- assign p_high = n_high | times: 1.0 | divided_by: total |
+    times: 100 -%} {%- if n_low > 0 %}<span class="pr-seg pr-band-low" style="width:{{ p_low }}%"></span>{% endif -%} {%- if n_mod > 0 %}<span
+      class="pr-seg pr-band-mod"
+      style="width:{{ p_mod }}%"
+    ></span
+    >{% endif -%} {%- if n_elev > 0 %}<span class="pr-seg pr-band-elev" style="width:{{ p_elev }}%"></span>{% endif -%} {%- if n_high > 0 %}<span
+      class="pr-seg pr-band-high"
+      style="width:{{ p_high }}%"
+    ></span
+    >{% endif -%}
   </div>
   {%- endif -%}
 
   <div class="pr-controls">
-    <input type="text" id="pr-search" class="pr-search" placeholder="Search repos by name, description, or finding&hellip;" aria-label="Search plugins">
-    <label class="pr-toggle"><input type="checkbox" id="pr-newonly"> New only</label>
+    <input
+      type="text"
+      id="pr-search"
+      class="pr-search"
+      placeholder="Search repos by name, description, or finding&hellip;"
+      aria-label="Search plugins"
+    />
+    <label class="pr-toggle"><input type="checkbox" id="pr-newonly" /> New only</label>
   </div>
 
   <div class="pr-filters" role="group" aria-label="Filter by category">
     <button class="pr-filter active" data-cat="ALL">All <b>{{ total }}</b></button>
-    {%- for c in cat_list -%}
-      {%- if c != "" -%}
-      {%- assign cc = 0 -%}
-      {%- for r in repos -%}{%- if r.categories contains c -%}{%- assign cc = cc | plus: 1 -%}{%- endif -%}{%- endfor -%}
-      <button class="pr-filter" data-cat="{{ c | escape }}">{{ c | escape }} <b>{{ cc }}</b></button>
-      {%- endif -%}
-    {%- endfor -%}
+    {%- for c in cat_list -%} {%- if c != "" -%} {%- assign cc = 0 -%} {%- for r in repos -%}{%- if r.categories contains c -%}{%- assign cc = cc |
+    plus: 1 -%}{%- endif -%}{%- endfor -%}
+    <button class="pr-filter" data-cat="{{ c | escape }}">{{ c | escape }} <b>{{ cc }}</b></button>
+    {%- endif -%} {%- endfor -%}
   </div>
 
   <div class="pr-tablewrap">
-  <table class="pr-table">
-    <thead>
-      <tr>
-        <th data-sort="name">Repository</th>
-        <th data-sort="stars" class="pr-num pr-desc">Stars</th>
-        <th data-sort="forks" class="pr-num">Forks</th>
-        <th>Language</th>
-        <th>License</th>
-        <th>Updated</th>
-        <th data-sort="score">Risk</th>
-      </tr>
-    </thead>
-    <tbody id="pr-tbody">
-    {%- for r in repos -%}
-      {%- comment -%} Resolve band + verdict label for this repo. {%- endcomment -%}
-      {%- assign rk = r.claude_review.risk -%}
-      {%- assign reviewed = false -%}
-      {%- if rk == "low" -%}{%- assign band = "low" -%}{%- assign vlabel = "Lower risk" -%}{%- assign sortscore = 90 -%}{%- assign reviewed = true -%}
-      {%- elsif rk == "moderate" -%}{%- assign band = "mod" -%}{%- assign vlabel = "Moderate" -%}{%- assign sortscore = 65 -%}{%- assign reviewed = true -%}
-      {%- elsif rk == "elevated" -%}{%- assign band = "elev" -%}{%- assign vlabel = "Elevated" -%}{%- assign sortscore = 45 -%}{%- assign reviewed = true -%}
-      {%- elsif rk == "high" -%}{%- assign band = "high" -%}{%- assign vlabel = "Higher risk" -%}{%- assign sortscore = 20 -%}{%- assign reviewed = true -%}
-      {%- else -%}
-        {%- assign sortscore = r.security.score -%}
-        {%- if sortscore >= 75 -%}{%- assign band = "low" -%}
-        {%- elsif sortscore >= 55 -%}{%- assign band = "mod" -%}
-        {%- elsif sortscore >= 35 -%}{%- assign band = "elev" -%}
-        {%- else -%}{%- assign band = "high" -%}{%- endif -%}
-      {%- endif -%}
-      {%- assign catstr = r.categories | join: "|" | escape -%}
-      {%- assign pushed = r.pushed_at | slice: 0, 10 -%}
-      <tr class="pr-row pr-band-{{ band }}"
-          data-cats="{{ catstr }}" data-stars="{{ r.stars }}" data-forks="{{ r.forks }}"
-          data-score="{{ sortscore }}" data-new="{% if r.is_new %}1{% else %}0{% endif %}"
-          data-name="{{ r.full_name | downcase | escape }}">
-        <td class="pr-c-repo">
-          {%- if r.url contains "https://" -%}
+    <table class="pr-table">
+      <thead>
+        <tr>
+          <th data-sort="name">Repository</th>
+          <th data-sort="stars" class="pr-num pr-desc">Stars</th>
+          <th data-sort="forks" class="pr-num">Forks</th>
+          <th>Language</th>
+          <th>License</th>
+          <th>Updated</th>
+          <th data-sort="score">Risk</th>
+        </tr>
+      </thead>
+      <tbody id="pr-tbody">
+        {%- for r in repos -%} {%- comment -%} Resolve band + verdict label for this repo. {%- endcomment -%} {%- assign rk = r.claude_review.risk -%}
+        {%- assign reviewed = false -%} {%- if rk == "low" -%}{%- assign band = "low" -%}{%- assign vlabel = "Lower risk" -%}{%- assign sortscore = 90
+        -%}{%- assign reviewed = true -%} {%- elsif rk == "moderate" -%}{%- assign band = "mod" -%}{%- assign vlabel = "Moderate" -%}{%- assign
+        sortscore = 65 -%}{%- assign reviewed = true -%} {%- elsif rk == "elevated" -%}{%- assign band = "elev" -%}{%- assign vlabel = "Elevated"
+        -%}{%- assign sortscore = 45 -%}{%- assign reviewed = true -%} {%- elsif rk == "high" -%}{%- assign band = "high" -%}{%- assign vlabel =
+        "Higher risk" -%}{%- assign sortscore = 20 -%}{%- assign reviewed = true -%} {%- else -%} {%- assign sortscore = r.security.score -%} {%- if
+        sortscore >= 75 -%}{%- assign band = "low" -%} {%- elsif sortscore >= 55 -%}{%- assign band = "mod" -%} {%- elsif sortscore >= 35 -%}{%-
+        assign band = "elev" -%} {%- else -%}{%- assign band = "high" -%}{%- endif -%} {%- endif -%} {%- assign catstr = r.categories | join: "|" |
+        escape -%} {%- assign pushed = r.pushed_at | slice: 0, 10 -%}
+        <tr
+          class="pr-row pr-band-{{ band }}"
+          data-cats="{{ catstr }}"
+          data-stars="{{ r.stars }}"
+          data-forks="{{ r.forks }}"
+          data-score="{{ sortscore }}"
+          data-new="{% if r.is_new %}1{% else %}0{% endif %}"
+          data-name="{{ r.full_name | downcase | escape }}"
+        >
+          <td class="pr-c-repo">
+            {%- if r.url contains "https://" -%}
             <a href="{{ r.url | escape }}" target="_blank" rel="noopener noreferrer">{{ r.full_name | escape }}</a>
-          {%- else -%}
-            <span class="pr-reponame">{{ r.full_name | escape }}</span>
-          {%- endif -%}
-          {% if r.is_new %}<span class="pr-new">NEW</span>{% endif %}<span class="pr-caret" aria-hidden="true"></span>
-          <div class="pr-cats">
-            {%- for c in r.categories -%}<span class="pr-cat">{{ c | escape }}</span>{%- endfor -%}
-          </div>
-        </td>
-        <td class="pr-num">{{ r.stars }}</td>
-        <td class="pr-num">{{ r.forks }}</td>
-        <td>{{ r.language | default: "&mdash;" | escape }}</td>
-        <td>{{ r.license | default: "&mdash;" | escape }}</td>
-        <td class="pr-nowrap">{{ pushed | escape }}</td>
-        <td>
-          {%- if reviewed -%}
-            <span class="pr-badge pr-band-{{ band }}" title="Security verdict by Claude (reading the code, not a formal audit)">&#10022; {{ vlabel | escape }}</span>
-          {%- else -%}
-            <span class="pr-badge pr-band-{{ band }}" title="Heuristic indicator (no Claude review yet)">{{ r.security.score }} &middot; {{ r.security.label | escape }}</span>
-          {%- endif -%}
-        </td>
-      </tr>
-      <tr class="pr-detail" hidden>
-        <td colspan="7">
-          {%- assign summary = r.claude_review.summary | default: r.description -%}
-          {%- if r.description and r.description != "" -%}<p class="pr-desc-line">{{ r.description | escape }}</p>{%- endif -%}
-          {%- if summary and summary != "" and summary != r.description -%}<p class="pr-summary">{{ summary | escape }}</p>{%- endif -%}
-          {%- if r.topics and r.topics.size > 0 -%}
-          <div class="pr-topics">{%- for t in r.topics limit: 10 -%}<span class="pr-topic">{{ t | escape }}</span>{%- endfor -%}</div>
-          {%- endif -%}
-
-          {%- if reviewed -%}
-          <h4 class="pr-h4"><span class="pr-star">&#10022;</span> Claude review &mdash; {{ vlabel | escape }}</h4>
-          {%- if r.claude_review.rationale and r.claude_review.rationale != "" -%}<p class="pr-summary">{{ r.claude_review.rationale | escape }}</p>{%- endif -%}
-          <ul class="pr-findings">
-            {%- if r.claude_review.findings and r.claude_review.findings.size > 0 -%}
-              {%- for f in r.claude_review.findings -%}
-              <li class="pr-sev-{{ f.severity | escape }}"><b>{{ f.severity | upcase | escape }}</b> {{ f.note | escape }}</li>
-              {%- endfor -%}
             {%- else -%}
-              <li class="pr-sev-info"><b>INFO</b> No specific findings flagged.</li>
+            <span class="pr-reponame">{{ r.full_name | escape }}</span>
+            {%- endif -%} {% if r.is_new %}<span class="pr-new">NEW</span>{% endif %}<span class="pr-caret" aria-hidden="true"></span>
+            <div class="pr-cats">{%- for c in r.categories -%}<span class="pr-cat">{{ c | escape }}</span>{%- endfor -%}</div>
+          </td>
+          <td class="pr-num">{{ r.stars }}</td>
+          <td class="pr-num">{{ r.forks }}</td>
+          <td>{{ r.language | default: "&mdash;" | escape }}</td>
+          <td>{{ r.license | default: "&mdash;" | escape }}</td>
+          <td class="pr-nowrap">{{ pushed | escape }}</td>
+          <td>
+            {%- if reviewed -%}
+            <span class="pr-badge pr-band-{{ band }}" title="Security verdict by Claude (reading the code, not a formal audit)"
+              >&#10022; {{ vlabel | escape }}</span
+            >
+            {%- else -%}
+            <span class="pr-badge pr-band-{{ band }}" title="Heuristic indicator (no Claude review yet)"
+              >{{ r.security.score }} &middot; {{ r.security.label | escape }}</span
+            >
             {%- endif -%}
-          </ul>
-          {%- endif -%}
-
-          {%- if r.security.factors and r.security.factors.size > 0 -%}
-          <h4 class="pr-h4">Heuristic signals</h4>
-          <ul class="pr-factors">
-            {%- for f in r.security.factors -%}
-            <li class="pr-f-{{ f[0] | escape }}">{{ f[1] | escape }}</li>
-            {%- endfor -%}
-          </ul>
-          {%- endif -%}
-        </td>
-      </tr>
-    {%- endfor -%}
-    </tbody>
-  </table>
+          </td>
+        </tr>
+        <tr class="pr-detail" hidden>
+          <td colspan="7">
+            {%- assign summary = r.claude_review.summary | default: r.description -%} {%- if r.description and r.description != "" -%}
+            <p class="pr-desc-line">{{ r.description | escape }}</p>
+            {%- endif -%} {%- if summary and summary != "" and summary != r.description -%}
+            <p class="pr-summary">{{ summary | escape }}</p>
+            {%- endif -%} {%- if r.topics and r.topics.size > 0 -%}
+            <div class="pr-topics">{%- for t in r.topics limit: 10 -%}<span class="pr-topic">{{ t | escape }}</span>{%- endfor -%}</div>
+            {%- endif -%} {%- if reviewed -%}
+            <h4 class="pr-h4"><span class="pr-star">&#10022;</span> Claude review &mdash; {{ vlabel | escape }}</h4>
+            {%- if r.claude_review.rationale and r.claude_review.rationale != "" -%}
+            <p class="pr-summary">{{ r.claude_review.rationale | escape }}</p>
+            {%- endif -%}
+            <ul class="pr-findings">
+              {%- if r.claude_review.findings and r.claude_review.findings.size > 0 -%} {%- for f in r.claude_review.findings -%}
+              <li class="pr-sev-{{ f.severity | escape }}"><b>{{ f.severity | upcase | escape }}</b> {{ f.note | escape }}</li>
+              {%- endfor -%} {%- else -%}
+              <li class="pr-sev-info"><b>INFO</b> No specific findings flagged.</li>
+              {%- endif -%}
+            </ul>
+            {%- endif -%} {%- if r.security.factors and r.security.factors.size > 0 -%}
+            <h4 class="pr-h4">Heuristic signals</h4>
+            <ul class="pr-factors">
+              {%- for f in r.security.factors -%}
+              <li class="pr-f-{{ f[0] | escape }}">{{ f[1] | escape }}</li>
+              {%- endfor -%}
+            </ul>
+            {%- endif -%}
+          </td>
+        </tr>
+        {%- endfor -%}
+      </tbody>
+    </table>
   </div>
   <div class="pr-empty" id="pr-empty" hidden>No repos match your filters.</div>
 
   <p class="pr-foot">
-    <span class="pr-star">&#10022;</span> AI Plugin Radar &middot; {{ total }} repositories scanned &middot;
-    Claude review + heuristic signals &middot; <strong>not a security audit</strong> &mdash;
-    always review code before installing.
+    <span class="pr-star">&#10022;</span> AI Plugin Radar &middot; {{ total }} repositories scanned &middot; Claude review + heuristic signals
+    &middot; <strong>not a security audit</strong> &mdash; always review code before installing.
   </p>
 </div>
 
 <style>
-.plugin-radar{--rk-low:var(--color-severity-low);--rk-mod:#ca8a04;--rk-elev:#ea580c;--rk-high:var(--color-severity-critical);}
-html[data-theme="dark"] .plugin-radar{--rk-mod:#eab308;--rk-elev:#fb923c;}
-.plugin-radar .pr-title{margin:.1rem 0 .25rem;font-weight:700;}
-.plugin-radar .pr-sub{color:var(--color-ink-muted);font-size:var(--text-sm);margin-bottom:1.2rem;}
-.plugin-radar .pr-star{color:var(--color-accent);}
-.plugin-radar .pr-disclaimer{padding:.85rem 1.1rem;font-size:var(--text-sm);line-height:1.55;border-left:3px solid var(--color-warning);margin-bottom:1.4rem;}
-/* stat cards */
-.plugin-radar .pr-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.7rem;margin-bottom:1rem;}
-.plugin-radar .pr-stat{background:var(--global-card-bg,var(--color-surface-raised));border:1px solid var(--color-surface-border);border-radius:12px;padding:.85rem 1rem;border-top:3px solid var(--color-surface-border);}
-.plugin-radar .pr-stat-num{display:block;font-size:1.9rem;font-weight:700;line-height:1;}
-.plugin-radar .pr-stat-label{display:block;margin-top:.35rem;font-size:var(--text-2xs);text-transform:uppercase;letter-spacing:.06em;color:var(--color-ink-muted);}
-.plugin-radar .pr-stat--accent{border-top-color:var(--color-accent);}
-.plugin-radar .pr-stat--accent .pr-stat-num{color:var(--color-accent);}
-.plugin-radar .pr-band-low.pr-stat{border-top-color:var(--rk-low);} .plugin-radar .pr-band-low .pr-stat-num{color:var(--rk-low);}
-.plugin-radar .pr-band-mod.pr-stat{border-top-color:var(--rk-mod);} .plugin-radar .pr-band-mod .pr-stat-num{color:var(--rk-mod);}
-.plugin-radar .pr-band-elev.pr-stat{border-top-color:var(--rk-elev);} .plugin-radar .pr-band-elev .pr-stat-num{color:var(--rk-elev);}
-.plugin-radar .pr-band-high.pr-stat{border-top-color:var(--rk-high);} .plugin-radar .pr-band-high .pr-stat-num{color:var(--rk-high);}
-/* risk bar */
-.plugin-radar .pr-riskbar{display:flex;height:12px;border-radius:9999px;overflow:hidden;border:1px solid var(--color-surface-border);margin-bottom:1.2rem;}
-.plugin-radar .pr-seg{height:100%;}
-.plugin-radar .pr-seg.pr-band-low{background:var(--rk-low);} .plugin-radar .pr-seg.pr-band-mod{background:var(--rk-mod);}
-.plugin-radar .pr-seg.pr-band-elev{background:var(--rk-elev);} .plugin-radar .pr-seg.pr-band-high{background:var(--rk-high);}
-/* controls */
-.plugin-radar .pr-controls{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin-bottom:.7rem;}
-.plugin-radar .pr-search{flex:1;min-width:220px;padding:.55rem .8rem;border:1px solid var(--color-surface-border);border-radius:8px;background:var(--color-surface);color:var(--color-ink);font-size:var(--text-sm);}
-.plugin-radar .pr-search:focus-visible{outline:2px solid var(--color-accent);outline-offset:1px;border-color:var(--color-accent);}
-.plugin-radar .pr-toggle{display:inline-flex;align-items:center;gap:.4rem;color:var(--color-ink-muted);font-size:var(--text-sm);cursor:pointer;white-space:nowrap;}
-/* filters */
-.plugin-radar .pr-filters{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem;}
-.plugin-radar .pr-filter{background:transparent;border:1px solid var(--color-surface-border);color:var(--color-ink-muted);padding:.3rem .7rem;border-radius:9999px;cursor:pointer;font-size:var(--text-2xs);text-transform:uppercase;letter-spacing:.05em;transition:color .15s,background .15s,border-color .15s;}
-.plugin-radar .pr-filter:hover{border-color:var(--color-ink-muted);color:var(--color-ink);}
-.plugin-radar .pr-filter:focus-visible{outline:2px solid var(--color-accent);outline-offset:1px;}
-.plugin-radar .pr-filter.active{background:var(--color-accent);color:#fff;border-color:var(--color-accent);}
-.plugin-radar .pr-filter b{opacity:.65;margin-left:.15rem;}
-/* table */
-.plugin-radar .pr-tablewrap{overflow-x:auto;}
-.plugin-radar .pr-table{width:100%;border-collapse:collapse;font-size:var(--text-sm);}
-.plugin-radar .pr-table thead th{text-align:left;padding:.6rem .65rem;border-bottom:1px solid var(--color-surface-border);color:var(--color-ink-muted);font-size:var(--text-2xs);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;}
-.plugin-radar .pr-table th[data-sort]{cursor:pointer;user-select:none;}
-.plugin-radar .pr-table th[data-sort]:hover{color:var(--color-ink);}
-.plugin-radar .pr-table th.pr-asc::after{content:" \2191";} .plugin-radar .pr-table th.pr-desc::after{content:" \2193";}
-.plugin-radar .pr-num{text-align:right;font-variant-numeric:tabular-nums;}
-.plugin-radar .pr-row{cursor:pointer;border-bottom:1px solid var(--color-surface-border);}
-.plugin-radar .pr-row:hover{background:var(--color-surface-raised);}
-.plugin-radar .pr-row td{padding:.6rem .65rem;vertical-align:top;}
-.plugin-radar .pr-row td:first-child{box-shadow:inset 3px 0 0 transparent;}
-.plugin-radar .pr-row.pr-band-low td:first-child{box-shadow:inset 3px 0 0 var(--rk-low);}
-.plugin-radar .pr-row.pr-band-mod td:first-child{box-shadow:inset 3px 0 0 var(--rk-mod);}
-.plugin-radar .pr-row.pr-band-elev td:first-child{box-shadow:inset 3px 0 0 var(--rk-elev);}
-.plugin-radar .pr-row.pr-band-high td:first-child{box-shadow:inset 3px 0 0 var(--rk-high);}
-.plugin-radar .pr-c-repo a,.plugin-radar .pr-reponame{font-weight:600;color:var(--color-ink);text-decoration:none;word-break:break-all;}
-.plugin-radar .pr-c-repo a:hover{color:var(--color-accent);}
-.plugin-radar .pr-nowrap{white-space:nowrap;color:var(--color-ink-muted);}
-.plugin-radar .pr-caret{margin-left:.4rem;color:var(--color-ink-muted);}
-.plugin-radar .pr-caret::before{content:"+";}
-.plugin-radar .pr-row.open .pr-caret::before{content:"\2212";}
-.plugin-radar .pr-cats{display:flex;flex-wrap:wrap;gap:.25rem;margin-top:.4rem;}
-.plugin-radar .pr-cat{background:var(--color-accent-subtle);color:var(--color-accent);font-size:var(--text-2xs);text-transform:uppercase;letter-spacing:.04em;padding:.1rem .45rem;border-radius:9999px;}
-.plugin-radar .pr-new{background:var(--color-ink);color:var(--color-surface);font-size:var(--text-2xs);font-weight:700;padding:.05rem .4rem;border-radius:9999px;margin-left:.5rem;text-transform:uppercase;letter-spacing:.08em;}
-.plugin-radar .pr-badge{display:inline-block;white-space:nowrap;font-size:var(--text-2xs);text-transform:uppercase;letter-spacing:.05em;padding:.2rem .55rem;border-radius:9999px;font-weight:600;}
-.plugin-radar .pr-badge.pr-band-low{background:color-mix(in srgb,var(--rk-low) 16%,transparent);color:var(--rk-low);}
-.plugin-radar .pr-badge.pr-band-mod{background:color-mix(in srgb,var(--rk-mod) 18%,transparent);color:var(--rk-mod);}
-.plugin-radar .pr-badge.pr-band-elev{background:color-mix(in srgb,var(--rk-elev) 16%,transparent);color:var(--rk-elev);}
-.plugin-radar .pr-badge.pr-band-high{background:color-mix(in srgb,var(--rk-high) 16%,transparent);color:var(--rk-high);}
-/* detail */
-.plugin-radar .pr-detail td{background:var(--color-surface-raised);padding:.4rem 1.1rem 1.1rem;}
-.plugin-radar .pr-desc-line{margin:.5rem 0;}
-.plugin-radar .pr-summary{color:var(--color-ink-muted);line-height:1.6;max-width:72ch;}
-.plugin-radar .pr-topics{display:flex;flex-wrap:wrap;gap:.25rem;margin:.5rem 0;}
-.plugin-radar .pr-topic{background:var(--color-surface);border:1px solid var(--color-surface-border);color:var(--color-ink-muted);font-size:var(--text-2xs);padding:.1rem .45rem;border-radius:9999px;}
-.plugin-radar .pr-h4{margin:1rem 0 .35rem;font-size:var(--text-2xs);text-transform:uppercase;letter-spacing:.08em;color:var(--color-ink-muted);}
-.plugin-radar .pr-findings,.plugin-radar .pr-factors{list-style:none;padding:0;margin:.3rem 0 0;font-size:var(--text-sm);}
-.plugin-radar .pr-findings li{padding:.2rem 0;line-height:1.5;}
-.plugin-radar .pr-findings b{display:inline-block;font-size:var(--text-2xs);font-weight:700;padding:.05rem .4rem;border-radius:9999px;margin-right:.5rem;text-transform:uppercase;letter-spacing:.06em;background:var(--color-surface);border:1px solid var(--color-surface-border);color:var(--color-ink-muted);}
-.plugin-radar .pr-sev-high b{background:color-mix(in srgb,var(--rk-high) 16%,transparent);color:var(--rk-high);border-color:transparent;}
-.plugin-radar .pr-sev-med b,.plugin-radar .pr-sev-medium b{background:color-mix(in srgb,var(--rk-elev) 16%,transparent);color:var(--rk-elev);border-color:transparent;}
-.plugin-radar .pr-sev-low b{background:color-mix(in srgb,var(--rk-mod) 18%,transparent);color:var(--rk-mod);border-color:transparent;}
-.plugin-radar .pr-factors li{padding:.2rem 0;display:flex;gap:.5rem;}
-.plugin-radar .pr-factors li::before{font-weight:700;}
-.plugin-radar .pr-f-\+{color:var(--rk-low);} .plugin-radar .pr-f-\+::before{content:"+";}
-.plugin-radar .pr-f-\-{color:var(--rk-high);} .plugin-radar .pr-f-\-::before{content:"\2212";}
-.plugin-radar .pr-f-i{color:var(--color-ink-muted);} .plugin-radar .pr-f-i::before{content:"\00B7";}
-.plugin-radar .pr-empty{padding:3rem 1rem;text-align:center;color:var(--color-ink-muted);}
-.plugin-radar .pr-foot{margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--color-surface-border);color:var(--color-ink-muted);font-size:var(--text-2xs);line-height:1.6;}
+  .plugin-radar {
+    --rk-low: var(--color-severity-low);
+    --rk-mod: #ca8a04;
+    --rk-elev: #ea580c;
+    --rk-high: var(--color-severity-critical);
+  }
+  html[data-theme="dark"] .plugin-radar {
+    --rk-mod: #eab308;
+    --rk-elev: #fb923c;
+  }
+  .plugin-radar .pr-title {
+    margin: 0.1rem 0 0.25rem;
+    font-weight: 700;
+  }
+  .plugin-radar .pr-sub {
+    color: var(--color-ink-muted);
+    font-size: var(--text-sm);
+    margin-bottom: 1.2rem;
+  }
+  .plugin-radar .pr-star {
+    color: var(--color-accent);
+  }
+  .plugin-radar .pr-disclaimer {
+    padding: 0.85rem 1.1rem;
+    font-size: var(--text-sm);
+    line-height: 1.55;
+    border-left: 3px solid var(--color-warning);
+    margin-bottom: 1.4rem;
+  }
+  /* stat cards */
+  .plugin-radar .pr-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  .plugin-radar .pr-stat {
+    background: var(--global-card-bg, var(--color-surface-raised));
+    border: 1px solid var(--color-surface-border);
+    border-radius: 12px;
+    padding: 0.85rem 1rem;
+    border-top: 3px solid var(--color-surface-border);
+  }
+  .plugin-radar .pr-stat-num {
+    display: block;
+    font-size: 1.9rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .plugin-radar .pr-stat-label {
+    display: block;
+    margin-top: 0.35rem;
+    font-size: var(--text-2xs);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-ink-muted);
+  }
+  .plugin-radar .pr-stat--accent {
+    border-top-color: var(--color-accent);
+  }
+  .plugin-radar .pr-stat--accent .pr-stat-num {
+    color: var(--color-accent);
+  }
+  .plugin-radar .pr-band-low.pr-stat {
+    border-top-color: var(--rk-low);
+  }
+  .plugin-radar .pr-band-low .pr-stat-num {
+    color: var(--rk-low);
+  }
+  .plugin-radar .pr-band-mod.pr-stat {
+    border-top-color: var(--rk-mod);
+  }
+  .plugin-radar .pr-band-mod .pr-stat-num {
+    color: var(--rk-mod);
+  }
+  .plugin-radar .pr-band-elev.pr-stat {
+    border-top-color: var(--rk-elev);
+  }
+  .plugin-radar .pr-band-elev .pr-stat-num {
+    color: var(--rk-elev);
+  }
+  .plugin-radar .pr-band-high.pr-stat {
+    border-top-color: var(--rk-high);
+  }
+  .plugin-radar .pr-band-high .pr-stat-num {
+    color: var(--rk-high);
+  }
+  /* risk bar */
+  .plugin-radar .pr-riskbar {
+    display: flex;
+    height: 12px;
+    border-radius: 9999px;
+    overflow: hidden;
+    border: 1px solid var(--color-surface-border);
+    margin-bottom: 1.2rem;
+  }
+  .plugin-radar .pr-seg {
+    height: 100%;
+  }
+  .plugin-radar .pr-seg.pr-band-low {
+    background: var(--rk-low);
+  }
+  .plugin-radar .pr-seg.pr-band-mod {
+    background: var(--rk-mod);
+  }
+  .plugin-radar .pr-seg.pr-band-elev {
+    background: var(--rk-elev);
+  }
+  .plugin-radar .pr-seg.pr-band-high {
+    background: var(--rk-high);
+  }
+  /* controls */
+  .plugin-radar .pr-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+    margin-bottom: 0.7rem;
+  }
+  .plugin-radar .pr-search {
+    flex: 1;
+    min-width: 220px;
+    padding: 0.55rem 0.8rem;
+    border: 1px solid var(--color-surface-border);
+    border-radius: 8px;
+    background: var(--color-surface);
+    color: var(--color-ink);
+    font-size: var(--text-sm);
+  }
+  .plugin-radar .pr-search:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 1px;
+    border-color: var(--color-accent);
+  }
+  .plugin-radar .pr-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--color-ink-muted);
+    font-size: var(--text-sm);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  /* filters */
+  .plugin-radar .pr-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+  .plugin-radar .pr-filter {
+    background: transparent;
+    border: 1px solid var(--color-surface-border);
+    color: var(--color-ink-muted);
+    padding: 0.3rem 0.7rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    font-size: var(--text-2xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition:
+      color 0.15s,
+      background 0.15s,
+      border-color 0.15s;
+  }
+  .plugin-radar .pr-filter:hover {
+    border-color: var(--color-ink-muted);
+    color: var(--color-ink);
+  }
+  .plugin-radar .pr-filter:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 1px;
+  }
+  .plugin-radar .pr-filter.active {
+    background: var(--color-accent);
+    color: #fff;
+    border-color: var(--color-accent);
+  }
+  .plugin-radar .pr-filter b {
+    opacity: 0.65;
+    margin-left: 0.15rem;
+  }
+  /* table */
+  .plugin-radar .pr-tablewrap {
+    overflow-x: auto;
+  }
+  .plugin-radar .pr-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+  }
+  .plugin-radar .pr-table thead th {
+    text-align: left;
+    padding: 0.6rem 0.65rem;
+    border-bottom: 1px solid var(--color-surface-border);
+    color: var(--color-ink-muted);
+    font-size: var(--text-2xs);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+  .plugin-radar .pr-table th[data-sort] {
+    cursor: pointer;
+    user-select: none;
+  }
+  .plugin-radar .pr-table th[data-sort]:hover {
+    color: var(--color-ink);
+  }
+  .plugin-radar .pr-table th.pr-asc::after {
+    content: " \2191";
+  }
+  .plugin-radar .pr-table th.pr-desc::after {
+    content: " \2193";
+  }
+  .plugin-radar .pr-num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+  .plugin-radar .pr-row {
+    cursor: pointer;
+    border-bottom: 1px solid var(--color-surface-border);
+  }
+  .plugin-radar .pr-row:hover {
+    background: var(--color-surface-raised);
+  }
+  .plugin-radar .pr-row td {
+    padding: 0.6rem 0.65rem;
+    vertical-align: top;
+  }
+  .plugin-radar .pr-row td:first-child {
+    box-shadow: inset 3px 0 0 transparent;
+  }
+  .plugin-radar .pr-row.pr-band-low td:first-child {
+    box-shadow: inset 3px 0 0 var(--rk-low);
+  }
+  .plugin-radar .pr-row.pr-band-mod td:first-child {
+    box-shadow: inset 3px 0 0 var(--rk-mod);
+  }
+  .plugin-radar .pr-row.pr-band-elev td:first-child {
+    box-shadow: inset 3px 0 0 var(--rk-elev);
+  }
+  .plugin-radar .pr-row.pr-band-high td:first-child {
+    box-shadow: inset 3px 0 0 var(--rk-high);
+  }
+  .plugin-radar .pr-c-repo a,
+  .plugin-radar .pr-reponame {
+    font-weight: 600;
+    color: var(--color-ink);
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .plugin-radar .pr-c-repo a:hover {
+    color: var(--color-accent);
+  }
+  .plugin-radar .pr-nowrap {
+    white-space: nowrap;
+    color: var(--color-ink-muted);
+  }
+  .plugin-radar .pr-caret {
+    margin-left: 0.4rem;
+    color: var(--color-ink-muted);
+  }
+  .plugin-radar .pr-caret::before {
+    content: "+";
+  }
+  .plugin-radar .pr-row.open .pr-caret::before {
+    content: "\2212";
+  }
+  .plugin-radar .pr-cats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-top: 0.4rem;
+  }
+  .plugin-radar .pr-cat {
+    background: var(--color-accent-subtle);
+    color: var(--color-accent);
+    font-size: var(--text-2xs);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.1rem 0.45rem;
+    border-radius: 9999px;
+  }
+  .plugin-radar .pr-new {
+    background: var(--color-ink);
+    color: var(--color-surface);
+    font-size: var(--text-2xs);
+    font-weight: 700;
+    padding: 0.05rem 0.4rem;
+    border-radius: 9999px;
+    margin-left: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .plugin-radar .pr-badge {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: var(--text-2xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.2rem 0.55rem;
+    border-radius: 9999px;
+    font-weight: 600;
+  }
+  .plugin-radar .pr-badge.pr-band-low {
+    background: color-mix(in srgb, var(--rk-low) 16%, transparent);
+    color: var(--rk-low);
+  }
+  .plugin-radar .pr-badge.pr-band-mod {
+    background: color-mix(in srgb, var(--rk-mod) 18%, transparent);
+    color: var(--rk-mod);
+  }
+  .plugin-radar .pr-badge.pr-band-elev {
+    background: color-mix(in srgb, var(--rk-elev) 16%, transparent);
+    color: var(--rk-elev);
+  }
+  .plugin-radar .pr-badge.pr-band-high {
+    background: color-mix(in srgb, var(--rk-high) 16%, transparent);
+    color: var(--rk-high);
+  }
+  /* detail */
+  .plugin-radar .pr-detail td {
+    background: var(--color-surface-raised);
+    padding: 0.4rem 1.1rem 1.1rem;
+  }
+  .plugin-radar .pr-desc-line {
+    margin: 0.5rem 0;
+  }
+  .plugin-radar .pr-summary {
+    color: var(--color-ink-muted);
+    line-height: 1.6;
+    max-width: 72ch;
+  }
+  .plugin-radar .pr-topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin: 0.5rem 0;
+  }
+  .plugin-radar .pr-topic {
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    color: var(--color-ink-muted);
+    font-size: var(--text-2xs);
+    padding: 0.1rem 0.45rem;
+    border-radius: 9999px;
+  }
+  .plugin-radar .pr-h4 {
+    margin: 1rem 0 0.35rem;
+    font-size: var(--text-2xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-ink-muted);
+  }
+  .plugin-radar .pr-findings,
+  .plugin-radar .pr-factors {
+    list-style: none;
+    padding: 0;
+    margin: 0.3rem 0 0;
+    font-size: var(--text-sm);
+  }
+  .plugin-radar .pr-findings li {
+    padding: 0.2rem 0;
+    line-height: 1.5;
+  }
+  .plugin-radar .pr-findings b {
+    display: inline-block;
+    font-size: var(--text-2xs);
+    font-weight: 700;
+    padding: 0.05rem 0.4rem;
+    border-radius: 9999px;
+    margin-right: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-border);
+    color: var(--color-ink-muted);
+  }
+  .plugin-radar .pr-sev-high b {
+    background: color-mix(in srgb, var(--rk-high) 16%, transparent);
+    color: var(--rk-high);
+    border-color: transparent;
+  }
+  .plugin-radar .pr-sev-med b,
+  .plugin-radar .pr-sev-medium b {
+    background: color-mix(in srgb, var(--rk-elev) 16%, transparent);
+    color: var(--rk-elev);
+    border-color: transparent;
+  }
+  .plugin-radar .pr-sev-low b {
+    background: color-mix(in srgb, var(--rk-mod) 18%, transparent);
+    color: var(--rk-mod);
+    border-color: transparent;
+  }
+  .plugin-radar .pr-factors li {
+    padding: 0.2rem 0;
+    display: flex;
+    gap: 0.5rem;
+  }
+  .plugin-radar .pr-factors li::before {
+    font-weight: 700;
+  }
+  .plugin-radar .pr-f-\+ {
+    color: var(--rk-low);
+  }
+  .plugin-radar .pr-f-\+::before {
+    content: "+";
+  }
+  .plugin-radar .pr-f-\- {
+    color: var(--rk-high);
+  }
+  .plugin-radar .pr-f-\-::before {
+    content: "\2212";
+  }
+  .plugin-radar .pr-f-i {
+    color: var(--color-ink-muted);
+  }
+  .plugin-radar .pr-f-i::before {
+    content: "\00B7";
+  }
+  .plugin-radar .pr-empty {
+    padding: 3rem 1rem;
+    text-align: center;
+    color: var(--color-ink-muted);
+  }
+  .plugin-radar .pr-foot {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-surface-border);
+    color: var(--color-ink-muted);
+    font-size: var(--text-2xs);
+    line-height: 1.6;
+  }
 </style>
 
 <script>
-(function () {
-  var root = document.querySelector('.plugin-radar');
-  if (!root) return;
-  var tbody = root.querySelector('#pr-tbody');
-  var rows = Array.prototype.slice.call(tbody.querySelectorAll('tr.pr-row'));
-  var search = root.querySelector('#pr-search');
-  var newonly = root.querySelector('#pr-newonly');
-  var empty = root.querySelector('#pr-empty');
-  var activeCat = 'ALL', sortKey = 'stars', sortDir = -1;
-  var detailOf = function (r) { return r.nextElementSibling; };
+  (function () {
+    var root = document.querySelector(".plugin-radar");
+    if (!root) return;
+    var tbody = root.querySelector("#pr-tbody");
+    var rows = Array.prototype.slice.call(tbody.querySelectorAll("tr.pr-row"));
+    var search = root.querySelector("#pr-search");
+    var newonly = root.querySelector("#pr-newonly");
+    var empty = root.querySelector("#pr-empty");
+    var activeCat = "ALL",
+      sortKey = "stars",
+      sortDir = -1;
+    var detailOf = function (r) {
+      return r.nextElementSibling;
+    };
 
-  function apply() {
-    var q = (search.value || '').toLowerCase();
-    var no = newonly.checked;
-    var visible = 0;
+    function apply() {
+      var q = (search.value || "").toLowerCase();
+      var no = newonly.checked;
+      var visible = 0;
+      rows.forEach(function (r) {
+        var cats = (r.dataset.cats || "").split("|");
+        var okCat = activeCat === "ALL" || cats.indexOf(activeCat) !== -1;
+        var okNew = !no || r.dataset.new === "1";
+        var d = detailOf(r);
+        var text = (r.textContent + " " + (d ? d.textContent : "")).toLowerCase();
+        var okSearch = !q || text.indexOf(q) !== -1;
+        var show = okCat && okNew && okSearch;
+        r.hidden = !show;
+        if (d && !show) {
+          d.hidden = true;
+          r.classList.remove("open");
+        }
+        if (show) visible++;
+      });
+      empty.hidden = visible !== 0;
+    }
+
+    function sortRows() {
+      var pairs = rows.map(function (r) {
+        return [r, detailOf(r)];
+      });
+      pairs.sort(function (a, b) {
+        var cmp;
+        if (sortKey === "name") cmp = a[0].dataset.name.localeCompare(b[0].dataset.name);
+        else cmp = +a[0].dataset[sortKey] - +b[0].dataset[sortKey];
+        return cmp * sortDir;
+      });
+      pairs.forEach(function (p) {
+        tbody.appendChild(p[0]);
+        if (p[1]) tbody.appendChild(p[1]);
+      });
+    }
+
+    search.addEventListener("input", apply);
+    newonly.addEventListener("change", apply);
+
+    root.querySelectorAll("th[data-sort]").forEach(function (th) {
+      th.addEventListener("click", function () {
+        var k = th.dataset.sort;
+        if (sortKey === k) sortDir *= -1;
+        else {
+          sortKey = k;
+          sortDir = k === "name" ? 1 : -1;
+        }
+        root.querySelectorAll("th[data-sort]").forEach(function (x) {
+          x.classList.remove("pr-asc", "pr-desc");
+        });
+        th.classList.add(sortDir > 0 ? "pr-asc" : "pr-desc");
+        sortRows();
+      });
+    });
+
+    root.querySelectorAll(".pr-filter").forEach(function (b) {
+      b.addEventListener("click", function () {
+        root.querySelectorAll(".pr-filter").forEach(function (x) {
+          x.classList.remove("active");
+        });
+        b.classList.add("active");
+        activeCat = b.dataset.cat;
+        apply();
+      });
+    });
+
     rows.forEach(function (r) {
-      var cats = (r.dataset.cats || '').split('|');
-      var okCat = activeCat === 'ALL' || cats.indexOf(activeCat) !== -1;
-      var okNew = !no || r.dataset.new === '1';
-      var d = detailOf(r);
-      var text = (r.textContent + ' ' + (d ? d.textContent : '')).toLowerCase();
-      var okSearch = !q || text.indexOf(q) !== -1;
-      var show = okCat && okNew && okSearch;
-      r.hidden = !show;
-      if (d && !show) { d.hidden = true; r.classList.remove('open'); }
-      if (show) visible++;
+      r.addEventListener("click", function (e) {
+        if (e.target.closest("a")) return;
+        var d = detailOf(r);
+        if (!d) return;
+        var open = d.hidden;
+        d.hidden = !open;
+        r.classList.toggle("open", open);
+      });
     });
-    empty.hidden = visible !== 0;
-  }
-
-  function sortRows() {
-    var pairs = rows.map(function (r) { return [r, detailOf(r)]; });
-    pairs.sort(function (a, b) {
-      var cmp;
-      if (sortKey === 'name') cmp = a[0].dataset.name.localeCompare(b[0].dataset.name);
-      else cmp = (+a[0].dataset[sortKey]) - (+b[0].dataset[sortKey]);
-      return cmp * sortDir;
-    });
-    pairs.forEach(function (p) { tbody.appendChild(p[0]); if (p[1]) tbody.appendChild(p[1]); });
-  }
-
-  search.addEventListener('input', apply);
-  newonly.addEventListener('change', apply);
-
-  root.querySelectorAll('th[data-sort]').forEach(function (th) {
-    th.addEventListener('click', function () {
-      var k = th.dataset.sort;
-      if (sortKey === k) sortDir *= -1;
-      else { sortKey = k; sortDir = (k === 'name') ? 1 : -1; }
-      root.querySelectorAll('th[data-sort]').forEach(function (x) { x.classList.remove('pr-asc', 'pr-desc'); });
-      th.classList.add(sortDir > 0 ? 'pr-asc' : 'pr-desc');
-      sortRows();
-    });
-  });
-
-  root.querySelectorAll('.pr-filter').forEach(function (b) {
-    b.addEventListener('click', function () {
-      root.querySelectorAll('.pr-filter').forEach(function (x) { x.classList.remove('active'); });
-      b.classList.add('active');
-      activeCat = b.dataset.cat;
-      apply();
-    });
-  });
-
-  rows.forEach(function (r) {
-    r.addEventListener('click', function (e) {
-      if (e.target.closest('a')) return;
-      var d = detailOf(r);
-      if (!d) return;
-      var open = d.hidden;
-      d.hidden = !open;
-      r.classList.toggle('open', open);
-    });
-  });
-})();
+  })();
 </script>
