@@ -5,20 +5,22 @@ them, scores them for risk, and builds an interactive HTML page.
 
 ## What's in this folder
 
-| File | Purpose |
-|---|---|
-| `scan.py` | Discovers repos via the GitHub Search API, classifies them, scores risk, writes `data-YYYY-MM-DD.json` |
-| `build_html.py` | Turns the latest JSON into a self-contained interactive HTML page |
-| `COWORK_TASK_PROMPT.md` | The standing instructions you paste into the Cowork scheduled task |
-| `SETUP.md` | This file |
+| File                    | Purpose                                                                                                |
+| ----------------------- | ------------------------------------------------------------------------------------------------------ |
+| `scan.py`               | Discovers repos via the GitHub Search API, classifies them, scores risk, writes `data-YYYY-MM-DD.json` |
+| `build_html.py`         | Turns the latest JSON into a self-contained interactive HTML page                                      |
+| `COWORK_TASK_PROMPT.md` | The standing instructions you paste into the Cowork scheduled task                                     |
+| `SETUP.md`              | This file                                                                                              |
 
 ## One-time setup
 
 ### 1. Put the folder where Cowork can reach it
+
 Copy this whole folder to your home directory, e.g. `~/claude-code-radar/`.
 Cowork needs file-system access granted to that location.
 
 ### 2. Get a GitHub token (read-only)
+
 - GitHub → Settings → Developer settings → **Fine-grained tokens** → Generate new.
 - Repository access: **Public repositories (read-only)**. No account scopes needed.
 - Copy the token (starts with `github_pat_...`).
@@ -26,13 +28,16 @@ Cowork needs file-system access granted to that location.
   well under that.
 
 ### 3. Make the token available to the script
+
 The script reads `GITHUB_TOKEN` from the environment. Two safe options:
 
 **Option A — shell profile (simplest on a personal Mac):**
 Add to `~/.zshrc`:
+
 ```
 export GITHUB_TOKEN="github_pat_xxx"
 ```
+
 Then `source ~/.zshrc`. Cowork's terminal sessions inherit this.
 
 **Option B — a local env file the task sources:**
@@ -44,16 +49,19 @@ Do not paste the token into the Cowork prompt itself — keep it in the
 environment so it doesn't get stored in the task's standing instructions.
 
 ### 4. Install the one dependency
+
 ```
 cd ~/claude-code-radar
 pip3 install requests --user
 ```
 
 ### 5. Test it manually once
+
 ```
 python3 scan.py        # writes data-<today>.json
 python3 build_html.py  # writes claude-code-radar-<today>.html
 ```
+
 Open the HTML in a browser. Confirm it looks right before scheduling.
 
 ## Schedule it in Cowork
