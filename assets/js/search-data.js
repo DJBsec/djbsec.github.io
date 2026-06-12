@@ -114,6 +114,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cybersecurity-calendar/";
           },
+        },{id: "nav-roadmap",
+          title: "Roadmap",
+          description: "What&#39;s been shipped and what&#39;s on the backlog — a public view of where this site is headed.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/roadmap/";
+          },
         },{id: "post-djbsec-39-s-cybernews-2026-06-12",
       
         title: "DJBSEC&#39;s CyberNews 2026-06-12",
