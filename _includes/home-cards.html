@@ -1,6 +1,13 @@
-{% assign latest_post = site.posts | first %} {% assign explained_posts = site.explained | sort: 'date' | reverse %} {% assign explained_post =
-explained_posts | first %} {% assign today = site.time | date: '%Y-%m-%d' %} {% assign upcoming_confs = site.data.cybersecurity_calendar | where_exp:
-'c', 'c.end_date >= today' | sort: 'start_date' %} {% assign next_conf = upcoming_confs | first %}
+{% assign latest_post = site.posts | first %}
+{% assign has_latest_cves = false %}
+{% if latest_post.cves and latest_post.cves.size > 0 %}
+  {% assign has_latest_cves = true %}
+{% endif %}
+{% assign explained_posts = site.explained | sort: 'date' | reverse %}
+{% assign explained_post = explained_posts | first %}
+{% assign today = site.time | date: '%Y-%m-%d' %}
+{% assign upcoming_confs = site.data.cybersecurity_calendar | where_exp: 'c', 'c.end_date >= today' | sort: 'start_date' %}
+{% assign next_conf = upcoming_confs | first %}
 
 <div class="home-section-header">
   <span class="home-section-header__title">Latest Briefing</span>
@@ -11,7 +18,7 @@ explained_posts | first %} {% assign today = site.time | date: '%Y-%m-%d' %} {% 
   <!-- Featured card -->
   <div class="home-priority-grid__featured">
     <div class="djb-card djb-card--featured">
-      <div class="djb-card--featured-inner">
+      <div class="djb-card--featured-inner{% unless has_latest_cves %} djb-card--featured-inner--single{% endunless %}">
         <div>
           <span class="chip chip--news">CyberNews</span>
           <p class="djb-card__date mono">{{ latest_post.date | date: "%Y-%m-%d" }}</p>
@@ -21,28 +28,22 @@ explained_posts | first %} {% assign today = site.time | date: '%Y-%m-%d' %} {% 
             >Read briefing &rarr;</a
           >
         </div>
+        {% if has_latest_cves %}
         <div>
-          {% if latest_post.cves and latest_post.cves.size > 0 %} {% for cve in latest_post.cves limit: 3 %}
+          <p class="cve-row-heading">CVEs in this briefing</p>
+          {% for cve in latest_post.cves limit: 3 %}
           <div class="cve-row">
             <div>{{ cve.name }}</div>
-            <div class="cve-row__meta">EPSS {{ cve.epss }} &middot; CVSS {{ cve.cvss }}{% if cve.kev %} &middot; KEV{% endif %}</div>
+            <div class="cve-row__meta">
+              {% if cve.epss %}EPSS {{ cve.epss }}{% endif %}
+              {% if cve.epss and cve.cvss %} &middot; {% endif %}
+              {% if cve.cvss %}CVSS {{ cve.cvss }}{% endif %}
+              {% if cve.kev %}{% if cve.epss or cve.cvss %} &middot; {% endif %}KEV{% endif %}
+            </div>
           </div>
-          {% endfor %} {% else %}
-          <p class="cve-row__meta" style="margin-bottom: 8px; opacity: 0.75">Example CVEs &mdash; see latest briefing for live intel.</p>
-          <div class="cve-row">
-            <div>Ivanti Connect Secure — RCE</div>
-            <div class="cve-row__meta">EPSS 0.94 &middot; CVSS 9.8 &middot; KEV</div>
-          </div>
-          <div class="cve-row">
-            <div>Fortinet FortiOS — Auth Bypass</div>
-            <div class="cve-row__meta">EPSS 0.87 &middot; CVSS 9.1 &middot; KEV</div>
-          </div>
-          <div class="cve-row">
-            <div>Palo Alto PAN-OS — DoS</div>
-            <div class="cve-row__meta">EPSS 0.61 &middot; CVSS 7.5 &middot; KEV</div>
-          </div>
-          {% endif %}
+          {% endfor %}
         </div>
+        {% endif %}
       </div>
     </div>
   </div>

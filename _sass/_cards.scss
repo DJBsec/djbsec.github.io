@@ -63,12 +63,25 @@
   gap: 24px;
   align-items: center;
 
+  &--single {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   @media (max-width: 640px) {
     grid-template-columns: 1fr;
   }
 }
 
 // Mini CVE headline row (inside featured card right column)
+.cve-row-heading {
+  font-family: $font-mono;
+  font-size: var(--text-2xs);
+  color: var(--color-accent);
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
 .cve-row {
   font-size: 1rem;
   font-weight: 500;
