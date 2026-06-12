@@ -352,7 +352,11 @@
       const v2c = cvssCol(data.cvss_v2);
       const v3c = cvssCol(data.cvss_v3);
       const v4c = cvss4 ? cvssCol(cvss4.baseScore) : null;
-      const v4text = cvss4 ? `${cvss4.baseScore}${typeof cvss4.baseSeverity === "string" ? " (" + cvss4.baseSeverity.charAt(0) + cvss4.baseSeverity.slice(1).toLowerCase() + ")" : ""}` : null;
+      const v4text = cvss4
+        ? `${cvss4.baseScore}${
+            typeof cvss4.baseSeverity === "string" ? " (" + cvss4.baseSeverity.charAt(0) + cvss4.baseSeverity.slice(1).toLowerCase() + ")" : ""
+          }`
+        : null;
 
       // KEV section
       const kevHtml = kevEntry
@@ -383,7 +387,9 @@
         <h4>🔢 CVSS Severity Scores <small style="font-weight:normal; font-size:0.8em;">(v4 from CVE.org)</small></h4>
         <strong>CVSS v2:</strong> <span style="color:${v2c}; font-weight:bold;">${esc(data.cvss_v2) || "N/A"}</span>&emsp;
         <strong>CVSS v3:</strong> <span style="color:${v3c}; font-weight:bold;">${esc(data.cvss_v3) || "N/A"}</span>&emsp;
-        <strong>CVSS v4:</strong> <span style="color:${v4c || "inherit"}; font-weight:bold;"${cvss4?.vectorString ? ` title="${esc(cvss4.vectorString)}"` : ""}>${esc(v4text) || "N/A"}</span>
+        <strong>CVSS v4:</strong> <span style="color:${v4c || "inherit"}; font-weight:bold;"${
+          cvss4?.vectorString ? ` title="${esc(cvss4.vectorString)}"` : ""
+        }>${esc(v4text) || "N/A"}</span>
        </div>`;
 
       // Details section — reference URLs validated to https: only
