@@ -8,15 +8,16 @@ categories: News
 thumbnail: assets/img/cybernews.webp
 featured: false
 published: false
-# Optional: top CVEs covered in this briefing. When present on the latest post,
-# the home page CVE block renders these instead of the example placeholder.
+# Optional: top CVEs covered in this briefing. The latest post is enriched at
+# build time from its linked stories, CISA KEV, EPSS, and CVE.org. Use this
+# only when you need to override or pin the automated selection.
 # cves:
-#   - name: Ivanti Connect Secure — RCE
-#     epss: 0.94
+#   - name: CVE-YYYY-NNNN — Ivanti Connect Secure RCE
+#     epss: 94.0%
 #     cvss: 9.8
 #     kev: true
-#   - name: Fortinet FortiOS — Auth Bypass
-#     epss: 0.87
+#   - name: CVE-YYYY-NNNN — Fortinet FortiOS Auth Bypass
+#     epss: 87.0%
 #     cvss: 9.1
 #     kev: true
 ---
