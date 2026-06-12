@@ -1,13 +1,7 @@
-{% assign latest_post = site.posts | first %}
-{% assign has_latest_cves = false %}
-{% if latest_post.cves and latest_post.cves.size > 0 %}
-  {% assign has_latest_cves = true %}
-{% endif %}
-{% assign explained_posts = site.explained | sort: 'date' | reverse %}
-{% assign explained_post = explained_posts | first %}
-{% assign today = site.time | date: '%Y-%m-%d' %}
-{% assign upcoming_confs = site.data.cybersecurity_calendar | where_exp: 'c', 'c.end_date >= today' | sort: 'start_date' %}
-{% assign next_conf = upcoming_confs | first %}
+{% assign latest_post = site.posts | first %} {% assign has_latest_cves = false %} {% if latest_post.cves and latest_post.cves.size > 0 %} {% assign
+has_latest_cves = true %} {% endif %} {% assign explained_posts = site.explained | sort: 'date' | reverse %} {% assign explained_post =
+explained_posts | first %} {% assign today = site.time | date: '%Y-%m-%d' %} {% assign upcoming_confs = site.data.cybersecurity_calendar | where_exp:
+'c', 'c.end_date >= today' | sort: 'start_date' %} {% assign next_conf = upcoming_confs | first %}
 
 <div class="home-section-header">
   <span class="home-section-header__title">Latest Briefing</span>
@@ -35,10 +29,8 @@
           <div class="cve-row">
             <div>{{ cve.name }}</div>
             <div class="cve-row__meta">
-              {% if cve.epss %}EPSS {{ cve.epss }}{% endif %}
-              {% if cve.epss and cve.cvss %} &middot; {% endif %}
-              {% if cve.cvss %}CVSS {{ cve.cvss }}{% endif %}
-              {% if cve.kev %}{% if cve.epss or cve.cvss %} &middot; {% endif %}KEV{% endif %}
+              {% if cve.epss %}EPSS {{ cve.epss }}{% endif %} {% if cve.epss and cve.cvss %} &middot; {% endif %} {% if cve.cvss %}CVSS {{ cve.cvss
+              }}{% endif %} {% if cve.kev %}{% if cve.epss or cve.cvss %} &middot; {% endif %}KEV{% endif %}
             </div>
           </div>
           {% endfor %}
