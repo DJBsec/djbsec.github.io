@@ -1,0 +1,107 @@
+# Public roadmap data — drives _pages/roadmap.md
+#
+# SECURITY: This file is PUBLIC. Keep it to user-facing feature descriptions only.
+# Do NOT add: branch names, file paths, server/worker hostnames, API keys or secrets,
+# internal infrastructure, security-audit findings, or any PII. The private working
+# backlog lives in .gsd/ (gitignored) — this is the sanitized, outward-facing view.
+#
+# status values for planned[]: "in-progress" | "planned"
+
+updated: "June 2026"
+
+planned:
+  - title: Log Analyzer
+    status: in-progress
+    area: Blue Team
+    description: >-
+      A browser-based tool to parse common log formats — web server access logs,
+      syslog, and EDR exports — and surface suspicious patterns and indicators of
+      compromise. Runs entirely in your browser, so log data never leaves your machine.
+
+  - title: Richer Hash Lookup threat intel
+    status: planned
+    area: Tools
+    link: /tools/hash-lookup/
+    description: >-
+      Extend the Hash Lookup tool with multi-engine antivirus detection ratios and
+      malware family labels alongside the existing known-file reputation data.
+
+  - title: Conference travel cost estimator
+    status: planned
+    area: Calendar
+    link: /cybersecurity-calendar/
+    description: >-
+      Pick your home airport in the conference calendar to see tailored airfare and
+      total-cost estimates for each event.
+
+  - title: Comments on CyberNews posts
+    status: planned
+    area: Blog
+    link: /cybernews/
+    description: >-
+      Enable threaded discussion on the daily CyberNews posts so readers can weigh in
+      and ask questions.
+
+shipped:
+  - title: CVSS 4.0 in the EPSS tool
+    date: "June 2026"
+    area: Tools
+    link: /epss/
+    description: >-
+      The EPSS CVE lookup now shows the CVSS 4.0 base score and severity (with the full
+      vector on hover) alongside the existing CVSS v2 and v3 scores.
+
+  - title: AI Plugin Security Radar
+    date: "June 2026"
+    area: Tools
+    link: /plugins/
+    description: >-
+      An interactive dashboard reviewing the security posture of popular AI plugins —
+      searchable and filterable, with per-plugin findings and rationale.
+
+  - title: Security templates & downloads
+    date: "May 2026"
+    area: Resources
+    link: /templates/
+    description: >-
+      A collection of ready-to-use checklists and worksheets — incident response,
+      vulnerability triage, MFA rollout, and more — each downloadable and copy-ready.
+
+  - title: Guided learning paths
+    date: "May 2026"
+    area: Learn
+    link: /start/
+    description: >-
+      A "Start Here" page with curated, step-by-step learning paths for newcomers,
+      blue-team analysts, IT leaders, and small-business owners.
+
+  - title: Tools landing page
+    date: "May 2026"
+    area: Tools
+    link: /tools/
+    description: >-
+      Every tool on the site, grouped by what it helps you do — vulnerability management,
+      web security, OSINT, forensics, and AI.
+
+  - title: Field Notes
+    date: "May 2026"
+    area: Blog
+    link: /field-notes/
+    description: >-
+      Practitioner write-ups on real-world security work — prioritizing vulnerabilities
+      on a small team, building a program from scratch, and reading EPSS in practice.
+
+  - title: Hash Lookup tool
+    date: "April 2026"
+    area: Blue Team
+    link: /tools/hash-lookup/
+    description: >-
+      Look up the reputation of a file by its MD5, SHA-1, or SHA-256 hash, with
+      one-click pivots to VirusTotal, MalwareBazaar, and Hybrid Analysis.
+
+  - title: Site design refresh
+    date: "April 2026"
+    area: Site
+    description: >-
+      A site-wide visual pass — consistent color and type system, refined cards, and
+      improved light and dark themes.
