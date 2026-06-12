@@ -90,8 +90,8 @@ module LatestCveEnricher
     end
 
     def strip_html(html)
-      html.gsub(/<script\b.*?<\/script>/im, " ")
-          .gsub(/<style\b.*?<\/style>/im, " ")
+      html.gsub(/<script\b[^>]*>.*?<\/script(?:\s+[^>]*)?\s*>/im, " ")
+          .gsub(/<style\b[^>]*>.*?<\/style(?:\s+[^>]*)?\s*>/im, " ")
           .gsub(/<[^>]+>/, " ")
           .gsub(/&[a-zA-Z0-9#]+;/, " ")
           .gsub(/\s+/, " ")
