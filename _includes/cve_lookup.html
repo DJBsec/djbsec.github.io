@@ -230,6 +230,24 @@
         .catch(() => null);
     }
 
+    /* ── CVSS 4.0 from CVE.org Record API ──────────────────────────── */
+    function getCvss4(cve) {
+      return fetch(`https://cveawg.mitre.org/api/cve/${encodeURIComponent(cve)}`)
+        .then((r) => (r.ok ? r.json() : null))
+        .then((d) => {
+          if (!d) return null;
+          const containers = [d.containers?.cna, ...(Array.isArray(d.containers?.adp) ? d.containers.adp : [])];
+          const v4s = containers
+            .flatMap((c) => (Array.isArray(c?.metrics) ? c.metrics : []))
+            .map((m) => m?.cvssV4_0)
+            .filter((m) => m && typeof m.baseScore === "number");
+          if (!v4s.length) return null;
+          // Multiple v4 entries possible (e.g., scenarios with/without mitigations) — show the worst case
+          return v4s.reduce((a, b) => (b.baseScore > a.baseScore ? b : a));
+        })
+        .catch(() => null);
+    }
+
     /* ── Recent lookups (SEC-08: validated on read) ─────────────────── */
     const CVE_RE = /^CVE-\d{4}-\d{4,}$/;
 
@@ -328,11 +346,13 @@
     }
 
     /* ── Render results (SEC-13: all API values escaped, refs validated) */
-    function renderResults(data, kevEntry) {
+    function renderResults(data, kevEntry, cvss4) {
       const ec = epssCol(data.epss);
       const pc = epssCol(data.percentile);
       const v2c = cvssCol(data.cvss_v2);
       const v3c = cvssCol(data.cvss_v3);
+      const v4c = cvss4 ? cvssCol(cvss4.baseScore) : null;
+      const v4text = cvss4 ? `${cvss4.baseScore}${typeof cvss4.baseSeverity === "string" ? " (" + cvss4.baseSeverity.charAt(0) + cvss4.baseSeverity.slice(1).toLowerCase() + ")" : ""}` : null;
 
       // KEV section
       const kevHtml = kevEntry
@@ -360,9 +380,10 @@
 
       // CVSS section
       const cvssHtml = `<div class="result-section">
-        <h4>🔢 CVSS Severity Scores</h4>
+        <h4>🔢 CVSS Severity Scores <small style="font-weight:normal; font-size:0.8em;">(v4 from CVE.org)</small></h4>
         <strong>CVSS v2:</strong> <span style="color:${v2c}; font-weight:bold;">${esc(data.cvss_v2) || "N/A"}</span>&emsp;
-        <strong>CVSS v3:</strong> <span style="color:${v3c}; font-weight:bold;">${esc(data.cvss_v3) || "N/A"}</span>
+        <strong>CVSS v3:</strong> <span style="color:${v3c}; font-weight:bold;">${esc(data.cvss_v3) || "N/A"}</span>&emsp;
+        <strong>CVSS v4:</strong> <span style="color:${v4c || "inherit"}; font-weight:bold;"${cvss4?.vectorString ? ` title="${esc(cvss4.vectorString)}"` : ""}>${esc(v4text) || "N/A"}</span>
        </div>`;
 
       // Details section — reference URLs validated to https: only
@@ -393,6 +414,7 @@
         `EPSS Percentile: ${data.percentile}%`,
         `CVSS v2: ${data.cvss_v2 || "N/A"}`,
         `CVSS v3: ${data.cvss_v3 || "N/A"}`,
+        `CVSS v4: ${v4text || "N/A"}`,
         `Published: ${data.published_time || "N/A"}`,
         `Summary: ${data.summary || "N/A"}`,
       ].join("\n");
@@ -484,8 +506,9 @@
             .then((r) => r.json())
             .catch(() => null),
           getKevData(),
+          getCvss4(cve),
         ])
-          .then(([, workerData, trendResp, kevData]) => {
+          .then(([, workerData, trendResp, kevData, cvss4]) => {
             // SEC-03: validate worker response shape before rendering
             if (workerData.error || typeof workerData.epss !== "number" || typeof workerData.cve !== "string") {
               resultDiv.innerHTML = `<p style="color:red;">Error: ${esc(workerData.error || "Unexpected response from API")}</p>`;
@@ -493,7 +516,7 @@
             }
             // SEC-03: validate KEV data shape before accessing .vulnerabilities
             const kevEntry = Array.isArray(kevData?.vulnerabilities) ? kevData.vulnerabilities.find((v) => v.cveID === cve) || null : null;
-            renderResults(workerData, kevEntry);
+            renderResults(workerData, kevEntry, cvss4);
             renderChart(trendResp?.data?.[0]?.["time-series"] || null);
             addRecent(cve);
           })
