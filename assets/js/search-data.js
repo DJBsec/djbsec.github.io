@@ -121,7 +121,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/roadmap/";
           },
-        },{id: "post-djbsec-39-s-cybernews-2026-06-24",
+        },{id: "post-djbsec-39-s-cybernews-2026-06-25",
+      
+        title: "DJBSEC&#39;s CyberNews 2026-06-25",
+      
+      description: "2026-06-25",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/cybernews/2026/cybernews0625/";
+        
+      },
+    },{id: "post-djbsec-39-s-cybernews-2026-06-24",
       
         title: "DJBSEC&#39;s CyberNews 2026-06-24",
       
