@@ -121,7 +121,29 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/roadmap/";
           },
-        },{id: "post-djbsec-39-s-cybernews-2026-07-21",
+        },{id: "post-djbsec-39-s-cybernews-2026-07-23",
+      
+        title: "DJBSEC&#39;s CyberNews 2026-07-23",
+      
+      description: "2026-07-23",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/cybernews/2026/cybernews0723/";
+        
+      },
+    },{id: "post-djbsec-39-s-cybernews-2026-07-22",
+      
+        title: "DJBSEC&#39;s CyberNews 2026-07-22",
+      
+      description: "2026-07-22",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/cybernews/2026/cybernews0722/";
+        
+      },
+    },{id: "post-djbsec-39-s-cybernews-2026-07-21",
       
         title: "DJBSEC&#39;s CyberNews 2026-07-21",
       
