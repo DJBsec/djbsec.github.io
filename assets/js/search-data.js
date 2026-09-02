@@ -121,73 +121,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/roadmap/";
           },
-        },{id: "post-djbsec-39-s-cybernews-2026-09-01",
-      
-        title: "DJBSEC&#39;s CyberNews 2026-09-01",
-      
-      description: "2026-09-01",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/cybernews/2026/cybernews0901/";
-        
-      },
-    },{id: "post-djbsec-39-s-cybernews-2026-08-31",
-      
-        title: "DJBSEC&#39;s CyberNews 2026-08-31",
-      
-      description: "2026-08-31",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/cybernews/2026/cybernews0831/";
-        
-      },
-    },{id: "post-djbsec-39-s-cybernews-2026-08-28",
-      
-        title: "DJBSEC&#39;s CyberNews 2026-08-28",
-      
-      description: "2026-08-28",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/cybernews/2026/cybernews0828/";
-        
-      },
-    },{id: "post-djbsec-39-s-cybernews-2026-08-27",
-      
-        title: "DJBSEC&#39;s CyberNews 2026-08-27",
-      
-      description: "2026-08-27",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/cybernews/2026/cybernews0827/";
-        
-      },
-    },{id: "post-djbsec-39-s-cybernews-2026-08-26",
-      
-        title: "DJBSEC&#39;s CyberNews 2026-08-26",
-      
-      description: "2026-08-26",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/cybernews/2026/cybernews0826/";
-        
-      },
-    },{id: "post-djbsec-39-s-cybernews-2026-08-25",
-      
-        title: "DJBSEC&#39;s CyberNews 2026-08-25",
-      
-      description: "2026-08-25",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/cybernews/2026/cybernews0825/";
-        
-      },
-    },{id: "post-djbsec-39-s-cybernews-2026-08-24",
+        },{id: "post-djbsec-39-s-cybernews-2026-08-24",
       
         title: "DJBSEC&#39;s CyberNews 2026-08-24",
       
